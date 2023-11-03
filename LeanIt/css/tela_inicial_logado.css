@@ -15,6 +15,7 @@
     background-image: url(carro.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    /* background-attachment: fixed;   */
     background-size: cover;
     height: 600px;
 }
@@ -100,10 +101,11 @@ main{
 }
 
 .card{
-    border: #fb8314 solid 3px;
+    border: var(--corUm) solid 3px;
     width: 300px;
     padding: 30px 30px 30px 30px;
     color: white;
+    margin-bottom: 50px ;
 }
 
 .card span{
@@ -118,4 +120,44 @@ main{
     width: 100%;
     color: white;
     font-size: 15px;
+}
+
+.card button:hover{
+    background-color: var(--corUm);
+}
+
+.localizacaoCarro{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.localizarCarro{
+    border: solid 2px var(--corUm);
+    background-color: var(--corDois);
+    padding: 7px;
+    color: white;
+    width: 40%;
+}
+
+.pesquisar{
+    background-color: var(--corUm);
+    padding: 7px;
+    color: white;
+    border: solid 2px var(--corUm);
+}
+
+.pesquisar:hover{
+    background-color: #e7913f;
+}
+
+.dentroFooter{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.dentroFooter i{
+    color: white;
+    font-size: 20px;
 }
