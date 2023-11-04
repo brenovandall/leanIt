@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo_sem_fundo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c9c3a726d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/tela_perfil_usuario.css">
+    <title>LeanIt Perfil Usuário</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dentroNavbar">
+            <div>
+                <a href="#"><img src="images/logo_sem_fundo.png" class="logo" alt="logo"></a>
+            </div>
+            <div>
+                <ul>
+                    <li class="home" id="home"><a href="tela_inicial_logado.html">Home</a></li>
+                    <li class="categorias" id="categorias"><a href="#">Categorias</a></li>
+                    <li class="precos"><a href="#">Precos</a></li>
+                    <li class="precos"><a href="#">Precos</a></li>
+                    <li class="perfil" id="perfil" ><a href="tela_perfil_usuario.html"><i class="fa-solid fa-user"></i> Usuário</a></li>
+                </ul>
+            </div>
+        </div> 
+        <div>
+            <div class="header">
+                <h1 style="color: #1c1c1c; font-size: 50px;">Meu <span style="color:#fb8314">Perfil</span></h1>
+                <div class="dentroHeader">
+                    <div>
+                        <img src="images/perfil.png" style="width: 250px;" alt="">
+                    </div>
+                    <div class="usuario-informacoes">
+                        <p style="color: #1c1c1c;"><strong>Nome: </strong><span>Usuário</span></p>
+                        <p style="color: #1c1c1c;"><strong>Sexo: </strong><span>M</span></p>
+                        <p style="color: #1c1c1c;"><strong>Data nascimento: </strong><span>00/00/0000</span></p>
+                        <p style="color: #1c1c1c;"><strong>CPF: </strong><span>000.000.000-00</span></p>
+                        <p style="color: #1c1c1c;"><strong>CNH: </strong><span>000000000</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="retangulo">
+            <div class="retangulo-informacoes">
+                <div>
+                    <p>250+</p>
+                    <span>Carros</span>
+                </div>
+                <div>
+                    <p>R$12</p>
+                    <span>Por hora</span>
+                </div>
+                <div>
+                    <p>1500</p>
+                    <span>Cadastros</span>
+                </div>
+                <div>
+                    <p>5+</p>
+                    <span>Cidades</span>
+                </div>
+            </div>
+        </div> 
+    </nav>
+    <main>
+        <div class="dentroMain">
+            <div>
+                <h1 style="font-size: 50px; color: white;">Altere seu</h1>
+                <h1 style="font-size: 50px; color: #fb8314;">Cadastro</h1>
+            </div>
+            <form action="">
+                <div class="camposAlterarCadastro">
+                    <div>
+                        <div>
+                            <label for="endereco" style="color: white;">Endereço</label>
+                            <div>
+                                <input type="text" style="width: 411px;" id="endereco" name="endereco" placeholder="Digite seu endereço">
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div style="margin-right: 10px;">
+                                <label for="nuemro" style="color: white;">Número</label>
+                                <div>
+                                    <input type="number" id="numero" name="numero" placeholder="Digite seu número">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="cep" style="color: white;">CEP</label>
+                                <div>
+                                    <input type="text" id="cep" name="cep" placeholder="Digite seu cep">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="complemento" style="color: white;">Complemento</label>
+                                <div>
+                                    <input type="text" style="width: 411px;" id="complemento" name="complemento" placeholder="Digite seu complemento">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" id="submit-alterarCadastro" id="alterar" class="alterar" value="Alterar">
+                        </div>
+                    </div>
+                    <div style="margin-left: 95px;">
+                        <div>
+                            <label for="cidade" style="color: white;">Cidade</label>
+                            <div>
+                                <input type="text" style="width: 411px;" id="cidade" name="cidade" placeholder="Digite seu cidade">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="cidade" style="color: white;">Estado</label>
+                            <div>
+                                <input type="text" style="width: 411px;" id="estado" name="estado" placeholder="Digite seu estado">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <section>
+        <div>
+            <p style="text-align: center; color: #1c1c1c;">Registros</p>
+            <h1 style="text-align: center; color: #1c1c1c;">Histórico de</h1>
+            <h1 style="text-align: center; color: #1c1c1c;">suas <span style="color: #fb8314;">viagens</span></h1>
+        </div>
+        <div style="text-align: center;">
+            <img src="images/elemento_titulos.png" style="width: 180px; margin-top: -30px;" alt="elemento">
+        </div>
+        <div class="registros">
+            <div class="card-registro">
+                <div>
+                    <p style="color: #1c1c1c;"><strong>Data do aluguel:</strong> 00/00/0000</p>
+                    <p style="color: #1c1c1c;"><strong>Carro marca:</strong> Fiat</p>
+                    <p style="color: #1c1c1c;"><strong>Carro placa:</strong> 000000</p>
+                </div>
+                <div>
+                    <p style="color: #1c1c1c;"><strong>Preço:</strong> R$00,00</p>
+                    <p style="color: #1c1c1c;"><strong>Carro modelo:</strong> Uno</p>
+                    <p style="color: #1c1c1c;"><strong>Carro cor:</strong> Preto</p>
+                </div>
+            </div>
+            <div class="card-registro">
+                <div>
+                    <p style="color: #1c1c1c;"><strong>Data do aluguel:</strong> 00/00/0000</p>
+                    <p style="color: #1c1c1c;"><strong>Carro marca:</strong> Fiat</p>
+                    <p style="color: #1c1c1c;"><strong>Carro placa:</strong> 000000</p>
+                </div>
+                <div>
+                    <p style="color: #1c1c1c;"><strong>Preço:</strong> R$00,00</p>
+                    <p style="color: #1c1c1c;"><strong>Carro modelo:</strong> Uno</p>
+                    <p style="color: #1c1c1c;"><strong>Carro cor:</strong> Preto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: #fb8314; margin-top: 50px;">
+        <div class="dentroFooter">
+            <div>
+                <h3>Sobre a LeanIt</h3>
+                <p style="width: 280px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex adipisci, harum minima vel non ducimus porro dicta esse nemo in atque neque repellendus fugit illum dolorum! Voluptatum rem sequi delectus!</p>
+                <div>
+                    <i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-x-twitter"></i>
+                </div>
+            </div>
+            <div>
+                <h3>Nossa Página</h3>
+                <p style="width: 280px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iure deserunt possimus vero autem ex provident ut, ratione, voluptate quibusdam rem, </p>
+            </div>
+            <div>
+                <h3>Contate-nos</h3>
+                <p><i class="fa-solid fa-phone"></i> +55 (47)99734-2343</p>
+                <p><i class="fa-solid fa-envelope"></i>  leanit@gmail.com.br</p>
+            </div>
+        </div>
+        <p style="text-align: center; background-color: white;">
+            Copyright©2023 All rights deserved
+        </p>
+    </footer>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/tela_perfil_usuario.js"></script>
+</body>
+</html>
