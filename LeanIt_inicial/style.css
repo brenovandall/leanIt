@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    width: 100%;
+    
+}
+
+header{
+    background-image: url(Imagens/pexels-photo-14550540.jpg);
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    height: 48em;
+    position: relative;
+    z-index: 1;
+}
+
+/* ------------------------- */
+/* Barra de navegação do site */
+/* ------------------------- */
+
+.logo{
+    width: 164.5px;
+    height: 46px;
+    margin-left: 9em;
+    margin-top: 3.5em;
+}
+
+nav{
+    position: absolute;
+    top: 50px;
+    right: 200px;
+}
+
+nav ul{    
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+    border-bottom: transparent ;
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+
+.button-home{
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register{
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+.button-do-register:hover{
+    background-color: rgb(26, 26, 26);
+}
+
+nav ul li:nth-child(-n+3) a{
+    transition: 0.6s border;
+}
+
+nav ul li:nth-child(-n+3) a:hover{
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
+
+nav li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 30px 0 0;
+    padding: 13px;
+    font-size: 22px;
+    color: rgb(26, 26, 26);
+}
+
+/* ------------------------- */
+/* Texto informativo sobre a empresa */
+/* ------------------------- */
+
+.article-description{
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.paragraph-welcome{
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+
+.article-description h1{
+    font-size: 55px;
+    width: 35%;
+}
+
+.destaque-title{
+    color: rgb(255, 129, 16);
+}
+
+.line-style-orange{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 190px;
+    height: 40px;
+}
+
+.paragraph-description{
+    width: 35%;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    color: rgb(26, 26, 26);
+}
+
+.destaque-saber-mais{
+    font-weight: 600;
+}
+
+.article-description-button{
+    margin-top: 20px;
+    padding: 7px 26px;
+    font-size: 21px;
+    background-color: rgb(255, 129, 16);
+    border: 0;
+    color: white;
+    transition: 0.5s background;
+}
+
+.article-description-button:hover{
+    background-color: rgb(26, 26, 26);
+    cursor: pointer;
+}
+
+/* ------------------------- */
+/* Aside informativo dos números do aplicativo */
+/* ------------------------- */
+
+.aside-info{
+    background-color: rgb(255, 129, 16);
+    width: 70%;
+    height: 10.5em;
+    position: absolute;
+    z-index: 2;
+    top: 42.5em;
+    left: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aside-info div{
+    display: inline-block;
+    margin: auto;
+}
+
+.aside-info .paragraph-bold-info{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.aside-info div p{
+    font-size: 30px;
+    text-align: left;
+    color: white;
+    font-weight: 500;
+    font-family: Helvetica;
+}
+
+/* ------------------------- */
+/* Título para descrição dos cards */
+/* ------------------------- */
+
+.article-main{
+    background-color: rgb(26, 26, 26);
+    padding-top: 170px;
+    padding-bottom: 100px;
+}
+
+.article-main-text{
+    text-align: center;
+}
+
+.article-main h2{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Arial;
+}
+
+.article-main h1{
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    width: 45%;
+    margin: auto;
+    font-family: arial;
+    letter-spacing: 2px;
+}
+
+.destaque-familia{
+    color: rgb(255, 129, 16);
+    font-size: inherit;
+    font-family: arial;
+}
+
+.line-style-orange-article-main{
+    width: 190px;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ------------------------- */
+/* Cards de descrição */
+/* ------------------------- */
+
+.cards{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.card-1, .card-2, .card-3{
+    width: 33%;
+    margin-left: 3%;
+    text-align: center;
+    border: 3px solid rgb(255, 129, 16);
+    color: white;
+    height: 32em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.card-1{
+    margin-left: 0;
+}
+
+.card-title{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-size: 28px;
+    font-family: arial;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.paragraph-hour{
+    padding-bottom: 30px;
+    border-bottom: 3px dotted white;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.paragraph-description-categories{
+    font-size: 20px;
+    width: 84%;
+    margin: auto;
+    margin-top: 35px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.value-hour{
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cards button{
+    padding: 10px 40px;
+    font-size: 20px;
+    background-color: rgb(26, 26, 26);
+    border: 3px solid rgb(255, 129, 16);
+    color: white;
+    transition: 0.4s all;
+}
+
+.cards button:hover{
+    background-color: rgb(255, 129, 16);
+    border: 3px solid white;
+    cursor: pointer;
+}
+/* ------------------------- */
+/* Campo localização no mapa */
+/* ------------------------- */
+
+.aside-search-localization{
+    padding-top: 100px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 120px;
+}
+
+.paragraph-map{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.paragraph-map p{
+    width: 50%;
+    font-size: 24px;
+    padding-bottom: 30px;
+    font-family: arial;
+    color: rgb(26, 26, 26);
+}
+
+.paragraph-right-map{
+    text-align: end;
+}
+
+.form-map label{
+    font-family: arial;
+    font-size: 70px;
+    font-weight: 700;
+    display: block;
+    color: rgb(26, 26, 26);
+}
+
+.search-map{
+    margin-top: 15px;
+    align-items: center;
+    display: flex;
+    width: 58%;
+    margin-bottom: 35px;
+}
+
+.search-map input{
+    flex: 1;
+    height: 50px;
+    font-size: 26px;
+    padding-left: 8px;
+    border-radius: 0;
+    border: 3px solid rgb(255, 129, 16);
+    background-color: rgb(26, 26, 26);
+    color: white;
+}
+
+.form-map input[type="text"]:focus{
+    border: 3px solid rgb(255, 129, 16);
+    outline: none;
+    background-color: #4f4f4f;
+}
+
+.form-map input[type="text"]::placeholder {
+    color: white
+}
+
+.form-map button{
+    margin-bottom: 0;
+    height: 56px;
+    width: 190px;
+    background-color: rgb(255, 129, 16);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* ------------------------- */
+/* Footer */
+/* ------------------------- */
+
+.footer-main{
+    display: flex;
+    background-color: rgb(255, 129, 16);
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.footer-main a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+.footer-main a:hover{
+    color: white;
+}
+
+.footer-title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-main div{
+    width: 30%;
+    text-align: center;
+}
+
+.footer-paragraph-about{
+    width: 60%;
+    text-align: start;
+    margin: auto;
+    line-height: 1.5em;
+}
+
+.footer-about i{
+    color: white;
+    font-size: 25px;
+    margin-left: 4%; 
+    margin-top: 10px;
+}
+
+.icons-about{
+    text-align: left;
+    margin-left: 16%;
+}
+
+.footer-extra a{
+    line-height: 1.5em;
+}
+
+.footer-contact i{
+    color: white;
+    display: inline-block;
+}
+
+.phone-icon{
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.email-icon{
+    display: inline-block; 
+    margin-right: 10px; 
+    margin-top: 1px;
+}
+
+.paragraph-contact-top{
+    margin-bottom: 10px;
+}
+
+.paragraph-contact{
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer-copyright{
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
