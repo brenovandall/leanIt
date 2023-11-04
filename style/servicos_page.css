@@ -12,12 +12,8 @@
 }
 
 .navbar{
-    background-image: url(carro.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    /* background-attachment: fixed;   */
-    background-size: cover;
-    height: 600px;
+    max-height: 84vh;
+
 }
 
 .dentroNavbar{
@@ -57,13 +53,8 @@ li a:hover{
     color: var(--corDois)
 }
 
-.header{
-    margin-left: 200px;
-}
-
 .elemento{
     width: 180px;
-    margin-top: -50px;
 }
 
 .saiba{
@@ -75,24 +66,45 @@ li a:hover{
 }
 
 .retangulo{
-    display: flex;
-    justify-content: center;
+    margin-left: 25vw;
+    
+    
 }
-
 .retangulo-informacoes{
     display: flex;
     justify-content: space-around;
     background-color: var(--corUm);
     font-size: 28px;
-    width: 600px;
+    width: 50vw;
     padding: 30px;
     color: white;
     font-weight: bolder;
     margin-top: 7px;
 }
 
+.div1 {
+    min-height: 30vh;
+    
+}
+
+.div2 {
+    background-color: #1c1c1c;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    margin-top: -12vh;
+}
+
+
+
+/*main {
+    flex: 1;
+}
+
 main{
     background-color: var(--corDois);
+    position:relative;
+
 }
 
 .dentroMain{
@@ -173,4 +185,4 @@ main{
 .dentroFooter i{
     color: white;
     font-size: 20px;
-}
+}*/
