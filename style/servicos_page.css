@@ -67,7 +67,7 @@ li a:hover{
 
 .retangulo{
     margin-left: 25vw;
-    
+    position: absolute;
     
 }
 .retangulo-informacoes{
@@ -83,17 +83,36 @@ li a:hover{
 }
 
 .div1 {
-    min-height: 30vh;
+    min-height: 71vh;
     
 }
 
 .div2 {
     background-color: #1c1c1c;
     width: 100vw;
-    position: absolute;
-    z-index: -1;
     margin-top: -12vh;
+
 }
+
+.carousel-container {
+    display: flex;
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
 
 
 
