@@ -12,8 +12,11 @@
 }
 
 .navbar{
-    max-height: 84vh;
-
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed;   */
+    background-size: cover;
+    height: 600px;
 }
 
 .dentroNavbar{
@@ -55,6 +58,7 @@ li a:hover{
 
 .elemento{
     width: 180px;
+    margin-top: -50px;
 }
 
 .saiba{
@@ -66,36 +70,47 @@ li a:hover{
 }
 
 .retangulo{
-    margin-left: 25vw;
-    position: absolute;
+    display: flex;
+    justify-content: center;
 }
+
 .retangulo-informacoes{
     display: flex;
     justify-content: space-around;
     background-color: var(--corUm);
     font-size: 28px;
-    width: 50vw;
+    width: 600px;
     padding: 30px;
     color: white;
     font-weight: bolder;
     margin-top: 7px;
 }
 
-.div1 {
-    min-height: 71vh;
-    
+main{
+    background-color: var(--corDois);
 }
 
-.div2 {
-    background-color: #1c1c1c;
-    width: 100vw;
-
+.dentroMain{
+    padding-top: 150px;
 }
+
+
+.dentroFooter{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.dentroFooter i{
+    color: white;
+    font-size: 20px;
+}
+
 
 .carousel-container {
     position: relative;
     width: 100%;
-    margin-top: 15vh;
+
     overflow: hidden;
 }
 
@@ -124,119 +139,3 @@ button {
     background-color: transparent;
     border: none;
 }
-
-#prevBtn {
-    left: 0;
-}
-
-#nextBtn {
-    right: 0;
-}
-
-
-.dentroFooter{
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
-}
-
-.dentroFooter i{
-    color: white;
-    font-size: 20px;
-}
-
-
-
-
-
-
-
-/*main {
-    flex: 1;
-}
-
-main{
-    background-color: var(--corDois);
-    position:relative;
-
-}
-
-.dentroMain{
-    padding-top: 150px;
-}
-
-.dentroMain h1{
-    font-size: 40px;
-}
-
-.cards{
-    display: flex;
-    justify-content: space-around;
-}
-
-.card ul{
-    display: block;
-    margin-top: 20px;
-}
-
-.card{
-    border: var(--corUm) solid 3px;
-    width: 300px;
-    padding: 30px 30px 30px 30px;
-    color: white;
-    margin-bottom: 50px ;
-}
-
-.card span{
-    font-size: 20px;
-}
-
-.card button{
-    border: solid 2px var(--corUm);
-    background-color: var(--corDois);
-    margin-top: 15px;
-    padding: 5px;
-    width: 100%;
-    color: white;
-    font-size: 15px;
-}
-
-.card button:hover{
-    background-color: var(--corUm);
-}
-
-.localizacaoCarro{
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
-}
-
-.localizarCarro{
-    border: solid 2px var(--corUm);
-    background-color: var(--corDois);
-    padding: 7px;
-    color: white;
-    width: 40%;
-}
-
-.pesquisar{
-    background-color: var(--corUm);
-    padding: 7px;
-    color: white;
-    border: solid 2px var(--corUm);
-}
-
-.pesquisar:hover{
-    background-color: #e7913f;
-}
-
-.dentroFooter{
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
-}
-
-.dentroFooter i{
-    color: white;
-    font-size: 20px;
-}*/
