@@ -1,21 +1,28 @@
 
 
-let carouselContainer = document.querySelector('.carousel-container');
-let slides = document.querySelectorAll('.carousel-slide');
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector('.carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let counter = 0;
 
-let currentIndex = 0;
+    nextBtn.addEventListener('click', function () {
+        counter++;
+        updateCarousel();
+    });
 
-function updateCarousel() {
-    let newTransformValue = -currentIndex * 100 + '%';
-    carouselContainer.style.transform = 'translateX(' + newTransformValue + ')';
-}
+    prevBtn.addEventListener('click', function () {
+        counter--;
+        updateCarousel();
+    });
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
-}
+    function updateCarousel() {
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+        if (counter > totalItems - 1) {
+            counter = 0; // Reset to the first item
+        } else if (counter < 0) {
+            counter = totalItems - 1; // Go to the last item
+        }
+        carousel.style.transform = `translateX(${-counter * 100}%)`;
+    }
+});

@@ -68,7 +68,6 @@ li a:hover{
 .retangulo{
     margin-left: 25vw;
     position: absolute;
-    
 }
 .retangulo-informacoes{
     display: flex;
@@ -90,25 +89,61 @@ li a:hover{
 .div2 {
     background-color: #1c1c1c;
     width: 100vw;
-    margin-top: -12vh;
 
 }
 
 .carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 15vh;
+    overflow: hidden;
+}
+
+.carousel {
     display: flex;
-    width: 100%;
+    transition: transform 0.5s ease;
 }
 
-.carousel-slide {
+.carousel-item {
+    width: 100%;
     min-width: 100%;
-    transition: transform 0.5s ease-in-out;
+    min-height: 50vh;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+
 }
 
-img {
-    width: 100%;
-    height: auto;
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
+#prevBtn {
+    left: 0;
+}
+
+#nextBtn {
+    right: 0;
+}
+
+
+.dentroFooter{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.dentroFooter i{
+    color: white;
+    font-size: 20px;
+}
 
 
 
