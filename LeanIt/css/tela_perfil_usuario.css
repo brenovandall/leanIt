@@ -142,17 +142,24 @@ section h1{
 
 .registros p{
     font-size: 20px;
+    color: white;
+}
+
+.registros strong{
+    color: var(--corUm);
 }
 
 .card-registro{
     margin-bottom: 70px;
     border: var(--corUm) solid 3px;
     display: flex;
-    padding: 10px;
+    background-color: var(--corDois);
+    padding: 15px;
 }
 
 .card-registro div{
     margin-right: 15px;
+    background-color: var(--corDois);
 }
 
 .dentroFooter{
