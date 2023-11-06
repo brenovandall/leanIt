@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --corUm: #fb8314;
+    --corDois: #1c1c1c;
+}
+
+.navbar{
+    height: 600px;
+}
+
+.dentroNavbar{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.logo{
+    width: 150px;
+    margin-top: -60px;
+}
+
+ul{
+    display: flex;
+}
+
+.navbar li{
+    margin-left: 20px;
+    font-size: 18px;
+    list-style: none;
+}
+
+li a{
+    color: var(--corDois);
+}
+
+li a:hover{
+    color: var(--corUm);
+}
+
+.perfil a{
+    color: var(--corUm)
+}
+
+.perfil a:hover{
+    color: var(--corDois)
+}
+
+.retangulo{
+    display: flex;
+    justify-content: center;
+}
+.retangulo-informacoes{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--corUm);
+    font-size: 28px;
+    width: 600px;
+    padding: 30px;
+    color: white;
+    font-weight: bolder;
+    margin-top: 100px;
+}
+
+main{
+    background-color: var(--corDois);
+}
+
+.dentroMain{
+    padding-top: 150px;
+    margin-left: 200px;
+    padding-bottom: 100px;
+}
+
+
+.imagens{
+    color: white;
+    font-size: 20px;
+}
+
+.imagens h2{
+    color: var(--corUm);
+}
+
+.primeiraImagem{
+    display: flex;
+    margin-top: 80px;
+}
+
+.primeiraImagem img{
+    margin-left: -220px;
+}
+
+.segundaImagem{
+    display: flex;
+}
+
+.terceiraImagem{
+    display: flex;
+}
+
+.terceiraImagem img{
+    margin-top: 80px;
+    margin-left: -80px;
+}
+
+.quartaImagem{
+    display: flex;
+}
+
+
+
+.dentroFooter{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.dentroFooter i{
+    color: white;
+    font-size: 20px;
+}
