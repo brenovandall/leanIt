@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo_sem_fundo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c9c3a726d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style_tela_pagemnto.css">
+    <title>LeanIt Pagamento</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dentroNavbar">
+            <div>
+                <a href="#"><img src="./img/logo_sem_fundo.png" class="logo" alt="logo"></a>
+            </div>
+            <div>
+                <ul>
+                    <li class="perfil" id="perfil" ><a href="tela_perfil_usuario.html"><i class="fa-solid fa-user"></i> Usuário</a></li>
+                </ul>
+            </div>
+        </div> 
+        <div>
+            <div class="header" style="text-align: center;">
+                <h1 style="font-size: 50px;">Efetue o <span style="color: #fb8314;">Pagamento</span></h1>
+                <div>
+                    <img src="./img/elemento_titulos.png" alt="" style="width:180px;">
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <p class="sobre" style="margin-top: -27px; width:500px">Prezado cliente, gostaríamos de expressar nossa sincera gratidão por escolher o LeanIt como seu sistema de aluguel de carros. Esperamos que nossa plataforma tenha contribuído para tornar sua experiência de aluguel mais fácil e conveniente. Agradecemos por confiar em nós e estamos comprometidos em oferecer continuamente um serviço de qualidade para atender às suas necessidades. Obrigado por ser um cliente valioso do LeanIt. </p>
+                </div>
+            </div>
+        </div>
+        <div class="retangulo">
+            <div class="retangulo-informacoes">
+                <div>
+                    <p>250+</p>
+                    <span>Carros</span>
+                </div>
+                <div>
+                    <p>R$12</p>
+                    <span>Por hora</span>
+                </div>
+                <div>
+                    <p>1500</p>
+                    <span>Cadastros</span>
+                </div>
+                <div>
+                    <p>5+</p>
+                    <span>Cidades</span>
+                </div>
+            </div>
+        </div> 
+    </nav>
+    <main>
+        <div class="dentroMain">
+            <div class="resumo_pagamento">
+                <h1 style="color: white; font-size: 50px;">Resumo do <p style="color: #fb8314;">Aluguel</p></h1>
+                <div class="resumo">
+                    <p><strong>Modelo do carro: </strong><span>Uno</span></p>
+                    <p><strong>Minutos: </strong><span>00</span></p>
+                    <p><strong>Preço: </strong><span>R$100,00</span></p>
+                </div>
+            </div>
+            <div class="pagamento">
+                <div class="bandeiras">
+                    <div class="bandeira_visa">
+                        <img src="./img/logo_bandeira_visa.png" alt="" style=" width:50px; margin-top: -3px;">
+                    </div>
+                    <div class="bandeira_masterCard"> 
+                        <img src="img/logo_bandeira_mastercard.png" alt="" style=" width:50px;padding-left: 10px;">
+                    </div>
+                    <div class="bandeira_elo">
+                        <img src="img/logo_bandeira_elo.png" alt="" style=" width: 70px; margin-top: -6px;">
+                    </div>
+                </div>
+                <div class="nomePagamento">
+                    <label for="nome" >Nome do Tilular</label>
+                    <div>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o nome">
+                    </div>
+                </div>
+                <div class="numeroCartao">
+                    <label for="numero">Nº do Cartão</label>
+                    <div>
+                        <input type="number" name="numero" id="numero" placeholder="Número do cartão">
+                    </div>
+                </div>
+                <div class="cvvCartao">
+                    <label for="cvv">Cvv do Cartão</label>
+                    <div>
+                        <input type="number" name="cvv" id="cvv" placeholder="Número do cvv">
+                    </div>
+                </div>
+                <div class="validadeCartao">
+                    <label for="validade">Validade do Cartão</label>
+                    <div>
+                        <input type="date" name="validade" id="validade">
+                    </div>
+                </div>
+                <div>
+                    <input class="botaoPagamento" type="button" value="Confirmar pagamento">
+                </div>
+            </div>
+        </div>
+            
+    </main>
+    <footer style="background-color: #fb8314;">
+        <div class="dentroFooter">
+            <div>
+                <h3>Sobre a LeanIt</h3>
+                <p style="width: 280px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex adipisci, harum minima vel non ducimus porro dicta esse nemo in atque neque repellendus fugit illum dolorum! Voluptatum rem sequi delectus!</p>
+                <div>
+                    <i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-x-twitter"></i>
+                </div>
+            </div>
+            <div>
+                <h3>Nossa Página</h3>
+                <p style="width: 280px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iure deserunt possimus vero autem ex provident ut, ratione, voluptate quibusdam rem, </p>
+            </div>
+            <div>
+                <h3>Contate-nos</h3>
+                <p><i class="fa-solid fa-phone"></i> +55 (47)99734-2343</p>
+                <p><i class="fa-solid fa-envelope"></i>  leanit@gmail.com.br</p>
+            </div>
+        </div>
+        <p style="text-align: center; background-color: white;">
+            Copyright©2023 All rights deserved
+        </p>
+    </footer>
+</body>
+</html>
