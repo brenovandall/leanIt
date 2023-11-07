@@ -110,7 +110,7 @@ main{
 .carousel-container {
     position: relative;
     width: 100%;
-
+    margin: auto;
     overflow: hidden;
 }
 
@@ -129,7 +129,8 @@ main{
 
 }
 
-button {
+#prevBtn,
+#nextBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -138,4 +139,12 @@ button {
     cursor: pointer;
     background-color: transparent;
     border: none;
+}
+
+#prevBtn {
+    left: 0;
+}
+
+#nextBtn {
+    right: 0;
 }
