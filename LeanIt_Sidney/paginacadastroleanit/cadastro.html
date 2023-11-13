@@ -103,17 +103,30 @@
                                 type="text" placeholder="Digite seu E-mail"></input>
                         </div>
 
-                        <div class="inputDataNSC">
+                        <div class="divInputSenha">
                             <p
                                 style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
-                                Digite
-                                sua data de nascimento</p> ></p>
-                            <input class="inputDataCadastro"
-                                style="padding:10px; color: grey ; margin-top: -15px; margin-left: 80px; width: 340px;"
-                                type="date">
+                                Digite uma senha
+                            </p>
+                            <input class="inputSenhaCadastro"
+                                style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
+                                type="password" placeholder="Digite a senha aqui">
+                                <button style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
                         </div>
 
-                        <div class="divSexoCadastro">
+                        <div class="divConfirmarSenha">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Confirme sua senha
+                            </p>
+                            <input class="inputConfirmarSenha"
+                            style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
+                            type="password" placeholder="Digite a senha aqui">
+                            <button type="button" style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
+                        </div>
+
+
+                        <div  class="divSexoCadastro">
                             <p class="informeSexoCadastro" style="color:white; margin-left: 80px; margin-top: 25px;"
                                 type="text">Informe seu sexo</p>
 
@@ -125,7 +138,17 @@
                         </div>
                     </div>
 
-                    <div class="maeCadastro2">
+                    <div style="margin-top: -100px;" class="maeCadastro2">
+                        <div class="inputDataNSC">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Digite
+                                sua data de nascimento</p> ></p>
+                            <input class="inputDataCadastro"
+                                style="padding:10px; color: grey ; margin-top: -15px; margin-left: 80px; width: 340px;"
+                                type="date">
+                        </div>
+
                         <div class="informeCepCadastro">
                             <p style="color:white; margin-left: 80px; margin-top: 25px;">Digite seu CEP</p>
                             <input class="inputCepCadastro"
@@ -245,7 +268,7 @@
         </p>
     </footer>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

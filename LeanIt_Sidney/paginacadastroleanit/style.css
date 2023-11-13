@@ -273,8 +273,18 @@ main {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 520px;
-    margin-left: -480px;
+    margin-left: -200px;
     background-color: #fb8314;
     font-size: large;
     color: white;
+}
+.inputSenhaCadastro{
+    background-color: #1c1c1c;
+    border-color: #fb8314;
+    border-width: 2px;
+}
+.inputConfirmarSenha{
+    background-color: #1c1c1c;
+    border-color: #fb8314;
+    border-width: 2px;
 }
