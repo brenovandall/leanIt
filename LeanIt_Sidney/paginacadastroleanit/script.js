@@ -34,7 +34,7 @@ function mostrarSenha() {
         input.type = "text"
     }
 
-    else {
+    else if (input.type == "text") {
         input.type = "password";
     }
 }
