@@ -3,7 +3,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -115,8 +115,9 @@ nav li{
 }
 
 .paragraph-description{
-    width: 35%;
+    width: 55%;
     font-size: 22px;
+    font-weight: 200;
     letter-spacing: 1.5px;
     color: rgb(26, 26, 26);
 }
@@ -267,6 +268,7 @@ nav li{
 
 .paragraph-description-categories{
     font-size: 20px;
+    font-weight: 200;
     width: 84%;
     margin: auto;
     margin-top: 35px;
@@ -316,24 +318,25 @@ nav li{
     display: inline-flex;
     justify-content: space-between;
     width: 100%;
+    font-weight: 200;
 }
 
 .paragraph-map p{
     width: 50%;
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 200;
     padding-bottom: 30px;
-    font-family: arial;
     color: rgb(26, 26, 26);
 }
 
 .paragraph-right-map{
     text-align: end;
+    font-weight: 200;
 }
 
 .form-map label{
-    font-family: arial;
     font-size: 70px;
-    font-weight: 700;
+    font-weight: 500;
     display: block;
     color: rgb(26, 26, 26);
 }
@@ -342,15 +345,16 @@ nav li{
     margin-top: 15px;
     align-items: center;
     display: flex;
-    width: 58%;
+    width: 100%;
     margin-bottom: 35px;
 }
 
 .search-map input{
     flex: 1;
     height: 50px;
-    font-size: 26px;
-    padding-left: 8px;
+    font-size: 16px;
+    font-weight: 200;
+    padding-left: 12px;
     border-radius: 0;
     border: 3px solid rgb(255, 129, 16);
     background-color: rgb(26, 26, 26);
