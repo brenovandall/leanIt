@@ -1,110 +1,285 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
 
 :root{
     --corUm: #fb8314;
     --corDois: #1c1c1c;
 }
 
-.navbar{
-    background-repeat: no-repeat;
-    background-position: center;
-    /* background-attachment: fixed;   */
-    background-size: cover;
-    height: 600px;
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.dentroNavbar{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
+body{
+    width: 100%;
+    
 }
+
+header{
+    background-image: url(Imagens/pexels-photo-14550540.jpg);
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    height: 38em;
+    position: relative;
+    z-index: 1;
+}
+
+/* ------------------------- */
+/* Barra de navegação do site */
+/* ------------------------- */
 
 .logo{
-    width: 150px;
-    margin-top: -60px;
+    width: 164.5px;
+    height: 46px;
+    margin-left: 9em;
+    margin-top: 3.5em;
 }
 
-ul{
-    display: flex;
+nav{
+    position: absolute;
+    top: 50px;
+    right: 200px;
 }
 
-.navbar li{
-    margin-left: 20px;
-    font-size: 18px;
+nav ul{    
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+    border-bottom: transparent ;
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+
+.button-home{
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register{
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+.button-do-register:hover{
+    background-color: rgb(26, 26, 26);
+}
+
+nav ul li:nth-child(-n+3) a{
+    transition: 0.6s border;
+}
+
+nav ul li:nth-child(-n+3) a:hover{
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
+
+nav li{
     list-style: none;
+    display: inline-block;
+    margin: 0 30px 0 0;
+    padding: 13px;
+    font-size: 22px;
+    color: rgb(26, 26, 26);
 }
 
-li a{
-    color: var(--corDois);
-}
+/* ------------------------- */
+/* Texto informativo sobre a empresa */
+/* ------------------------- */
 
-li a:hover{
-    color: var(--corUm);
-}
-
-.perfil a{
-    color: var(--corUm)
-}
-
-.perfil a:hover{
-    color: var(--corDois)
-}
-
-.elemento{
-    width: 180px;
-    margin-top: -50px;
-}
-
-.saiba{
-    background-color: var(--corUm);
-    padding: 8px;
-    border: none;
-    margin-top: 15px;
-    color: white;
-}
-
-.retangulo{
+article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
-.retangulo-informacoes{
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--corUm);
-    font-size: 28px;
-    width: 600px;
-    padding: 30px;
+.article-description{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.paragraph-welcome{
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+
+.article-description h1{
+    font-size: 55px;
+    width: 35%;
+}
+
+.destaque-title{
+    color: rgb(255, 129, 16);
+}
+
+.line-style-orange{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 190px;
+    height: 40px;
+}
+
+.paragraph-description{
+    width: 55%;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+    color: rgb(26, 26, 26);
+}
+
+.destaque-saber-mais{
+    font-weight: 600;
+}
+
+.article-description-button{
+    margin-top: 20px;
+    padding: 7px 26px;
+    font-size: 21px;
+    background-color: rgb(255, 129, 16);
+    border: 0;
     color: white;
-    font-weight: bolder;
-    margin-top: 7px;
+    transition: 0.5s background;
+}
+
+.article-description-button:hover{
+    background-color: rgb(26, 26, 26);
+    cursor: pointer;
+}
+
+/* ------------------------- */
+/* Aside informativo dos números do aplicativo */
+/* ------------------------- */
+
+.aside-info{
+    background-color: rgb(255, 129, 16);
+    width: 70%;
+    height: 10.5em;
+    position: absolute;
+    z-index: 2;
+    top: 32.5em;
+    left: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aside-info div{
+    display: inline-block;
+    margin: auto;
+}
+
+.aside-info .paragraph-bold-info{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.aside-info div p{
+    font-size: 30px;
+    text-align: left;
+    color: white;
+    font-weight: 500;
+    font-family: Helvetica;
 }
 
 main{
     background-color: var(--corDois);
 }
 
-.dentroMain{
-    padding-top: 150px;
-}
-
-
-.dentroFooter{
+.footer-main{
     display: flex;
+    background-color: rgb(255, 129, 16);
     justify-content: space-around;
-    padding: 40px;
+    padding: 50px 0;
 }
 
-.dentroFooter i{
-    color: white;
-    font-size: 20px;
+.footer-main a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
 }
+
+.footer-main a:hover{
+    color: white;
+}
+
+.footer-title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-main div{
+    width: 30%;
+    text-align: center;
+}
+
+.footer-paragraph-about{
+    width: 60%;
+    text-align: start;
+    margin: auto;
+    line-height: 1.5em;
+}
+
+.footer-about i{
+    color: white;
+    font-size: 25px;
+    margin-left: 4%; 
+    margin-top: 10px;
+}
+
+.icons-about{
+    text-align: left;
+    margin-left: 16%;
+}
+
+.footer-extra a{
+    line-height: 1.5em;
+}
+
+.footer-contact i{
+    color: white;
+    display: inline-block;
+}
+
+.phone-icon{
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.email-icon{
+    display: inline-block; 
+    margin-right: 10px; 
+    margin-top: 1px;
+}
+
+.paragraph-contact-top{
+    margin-bottom: 10px;
+}
+
+.paragraph-contact{
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer-copyright{
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
+
+
 
 
 .carousel-container {
@@ -147,4 +322,8 @@ main{
 
 #nextBtn {
     right: 0;
+}
+
+.dentroMain {
+    padding-top: 35px;
 }
