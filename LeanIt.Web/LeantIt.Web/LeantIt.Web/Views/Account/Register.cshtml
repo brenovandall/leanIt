@@ -1,0 +1,190 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<main>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Voltar para a tela inicial</a>
+        <form action="">
+            <div style="margin-left: 220px; margin-top: -30px;" class="dentroMain">
+                <div>
+                    <h1 style="text-align: left; margin-left: 80px; color: white;">Faça seu</h1>
+                    <h1 style="text-align: left; margin-left: 80px; color: white;"><span
+                            style="color: #fb8314;">Cadastro</span></h1>
+                </div>
+                <div class="paiCadastro">
+                    <div class="maeCadastro">
+                        <div class="divInputNome">
+                            <P
+                                style="text-align: left; color: white; margin-left: 80px; margin-top: 30px; font-size: 15px;">
+                                Digite
+                                seu nome completo</P>
+                            <input class="inputNomeCadastro"
+                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
+                                type="text" placeholder="Digite aqui">
+                        </div>
+
+                        <div class="inputCPF">
+                            <p
+                                style="text-align: left; color: white; margin-left: 80px; margin-top: 30px; font-size: 15px;">
+                                Digite
+                                seu CPF</P>
+                            <input class="inputCpfCadastro"
+                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
+                                type="text" placeholder="xxx.xxx.xxx-xx" maxlength="14" onblur="validaCPF()">
+                        </div>
+
+                        <div class="divInputEmail">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Digite
+                                seu E-mail</p>
+                            <input class="inputEmailCadastro"
+                                style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
+                                type="text" placeholder="Digite seu E-mail"></input>
+                        </div>
+
+                        <div class="divInputSenha">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Digite uma senha
+                            </p>
+                            <input class="inputSenhaCadastro"
+                                style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
+                                type="password" placeholder="Digite a senha aqui">
+                                <button type="password" style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
+                        </div>
+
+                        <div class="divConfirmarSenha">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Confirme sua senha
+                            </p>
+                            <input class="inputConfirmarSenha"
+                            style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
+                            type="password" placeholder="Digite a senha aqui">
+                            <button type="password" style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
+                        </div>
+
+
+                        <div  class="divSexoCadastro">
+                            <p class="informeSexoCadastro" style="color:white; margin-left: 80px; margin-top: 25px;"
+                                type="text">Informe seu sexo</p>
+
+                            <input id="a1" class="checkInput" type="checkbox">
+                            <label style="color: white; " for="a1">Masculino</label>
+
+                            <input id="a2" class="chekInput2" type="checkbox">
+                            <label style="color: white;" for="a2">Feminino</label>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: -100px;" class="maeCadastro2">
+                        <div class="inputDataNSC">
+                            <p
+                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
+                                Digite
+                                sua data de nascimento</p> ></p>
+                            <input class="inputDataCadastro"
+                                style="padding:10px; color: grey ; margin-top: -15px; margin-left: 80px; width: 340px;"
+                                type="date">
+                        </div>
+
+                        <div class="informeCepCadastro">
+                            <p style="color:white; margin-left: 80px; margin-top: 25px;">Digite seu CEP</p>
+                            <input class="inputCepCadastro"
+                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
+                                type="text" placeholder="Digite seu CEP" onblur="dadosEndereco()">
+                        </div>
+
+                        <div class="enderecoCadastro">
+                            <p style="color: white; margin-left: 80px; margin-top: 30px;">Endereço</p>
+                            <input class="inputEnderecoCadastro"
+                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
+                                placeholder="Digite seu endereço" type="text">
+                        </div>
+
+                        <div class="paiEnderecoNumero">
+                            <div class="informeNumeroCadastro">
+                                <p style="color: white; margin-left: 80px; margin-top: 25px;">Numero</p>
+                                <input class="inputNumeroCadastro"
+                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 80px; width: 160px;"
+                                    placeholder="Digite seu nº" type="text">
+                            </div>
+                            <div class="informeComplementoCadastro">
+                                <p style="color: white; margin-left: 20px; margin-top: 25px;">Complemento</p>
+                                <input class="inputComplementoCadastro"
+                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 20px; width: 160px;"
+                                    placeholder="Digite aqui" type="text">
+                            </div>
+                        </div>
+
+                        <div style="display: flex;" class="paiBairroEstado">
+                            <div class="divEstadoCadastro">
+                                <p style="color: white; margin-left: 80px; margin-top: 30px;">Estado</p>
+                                <div class=" ls-custom-select">
+                                    <select id="estado" name="estado">
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                        <option value="EX">Estrangeiro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="divBairroCadastro">
+                                <p style="color: white; margin-left: 20px; margin-top: 30px;">Bairro</p>
+                                <input class="inputBairroCadastro"
+                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 20px; width: 160px;"
+                                    placeholder="Informe seu Bairro" type="text">
+                            </div>
+                        </div>
+
+
+                        <div class="divCidadeCadastro">
+                            <p style="color: white; margin-left: 80px; margin-top: 25px;">Cidade</p>
+                            <input class="inputCidadeCadastro"
+                                style="padding: 10px; color: white; margin-top: 7px; margin-left: 80px; width: 340px;"
+                                placeholder="Informe sua cidade" type="text">
+                        </div>
+                    </div>
+
+                    <div class="divButtonCadastro">
+                        <button class="buttonCadastrese" type="submit">Cadaste-se</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+
+@section Styles {
+        <link rel="stylesheet" href="~/css/register.css" />
+}
