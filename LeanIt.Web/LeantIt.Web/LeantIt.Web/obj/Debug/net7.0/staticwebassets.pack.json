@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
+      "Id": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\services.css",
+      "PackagePath": "staticwebassets\\css\\services.css"
+    },
+    {
       "Id": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

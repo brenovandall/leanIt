@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eNXL8YJfDZIr9c+or6+6GnCiEX4OH2Goy7P0a1uTcyk=",
+  "Hash": "Jd4te5WWPmQuZ161wmnNO3tvC0nSYMNW4mwShcICWCE=",
   "Source": "LeantIt.Web",
   "BasePath": "_content/LeantIt.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\register.css"
+    },
+    {
+      "Identity": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\services.css",
+      "SourceId": "LeantIt.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\",
+      "BasePath": "_content/LeantIt.Web",
+      "RelativePath": "css/services.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\services.css"
     },
     {
       "Identity": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\site.css",
