@@ -3,7 +3,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header{
@@ -45,12 +45,13 @@ nav ul li{
 nav ul li a{
     color: rgb(26, 26, 26);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     letter-spacing: 2px;
     font-family: 'Poppins';
     transition: 0.5s all;
     border: transparent;
 }
+
 
 .button-home{
     color: rgb(255, 129, 16);
@@ -76,23 +77,25 @@ nav ul li:nth-child(-n+3) a:hover{
 }
 
 .article-description{
-    width: 68vh;
+    width: 98vh;
     margin-top: 5vh;
     margin-left: 10vh;
+    font-weight: 200;
 }
 
 .paragraph-welcome{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-family: 'Poppins';
 }
 
 .article-description h1{
-    font-size: 4rem;
+    font-size: 2rem;
     margin-bottom: 3vh;
 }
 
 .destaque-title{
     color: rgb(255, 129, 16);
+    width: 1vw;
 }
 
 .paragraph-description{
@@ -102,7 +105,7 @@ nav ul li:nth-child(-n+3) a:hover{
 }
 
 .destaque-saber-mais{
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .article-description-button{
@@ -136,7 +139,7 @@ nav ul li:nth-child(-n+3) a:hover{
 }
 
 .aside-info .paragraph-bold-info{
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     font-family: 'Poppins';
 }
@@ -165,7 +168,7 @@ main{
 }
 
 .article-main-text h1{
-    font-size: 4rem;
+    font-size: 2rem;
     width: 100vh;
     margin: auto;
     line-height: 9vh;
@@ -182,15 +185,15 @@ main{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 3vh;
+    margin-top: 5vh;
 }
 
 .card-1, .card-2, .card-3{
     flex-wrap: wrap;
     text-align: center;
     width: 50vh;
-    min-height: 42vh;
-    max-height: 42vh;
+    min-height: 72vh;
+    max-height: 72vh;
     border: 3px solid rgb(255, 129, 16);
     position: relative;  
     margin-bottom: 2vh;
@@ -200,7 +203,7 @@ main{
     font-family: 'Poppins';
     margin-top: 2vh;
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .paragraph-hour{
@@ -212,13 +215,14 @@ main{
 .value-hour{
     font-size: 3.3rem;
     font-family: 'Poppins';
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .paragraph-description-categories{
     margin: 0 3vh;
     line-height: 1.5rem;
     word-spacing: 0.1rem;
+    font-weight: 200;
 }
 
 .button-container {
@@ -230,7 +234,7 @@ main{
 
 .cards button{
     padding: 1vh 5vh;
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     background-color: rgb(26, 26, 26);
     border: 3px solid rgb(255, 129, 16);
     color: white;
@@ -255,11 +259,13 @@ main{
     display: flex;
     justify-content: space-between;
     margin-bottom: 3.5vh;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    font-weight: 200;
 }
 
 .form-map label{
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 .search-map{
@@ -272,7 +278,8 @@ main{
     width: 82%;
     max-height: 5vh;
     min-height: 5vh;
-    font-size: 2rem;
+    font-size: 0.9rem;
+    font-weight: 200;
     padding-left: 8px;
     border-radius: 0;
     border: 3px solid rgb(255, 129, 16);
