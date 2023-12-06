@@ -14,10 +14,9 @@ header {
     background-color:  #ffffff;
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    height: 70vh;
     position: relative;
     z-index: 1;
-
 }
 
 .logo {
@@ -30,7 +29,6 @@ header nav {
     position: absolute;
     top: 0;
     right: 0;
-
 }
 
 nav ul {
@@ -80,17 +78,10 @@ nav ul li:nth-child(-n+3) a {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 
-
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
 .article-description {
     width: 98vh;
+    text-align: center;
+    margin: auto;
     margin-top: 5vh;
     font-weight: 200;
 }
