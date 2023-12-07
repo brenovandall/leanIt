@@ -532,3 +532,13 @@ main {
 .dentroMain {
     padding-top: 35px;
 }
+
+.badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--corUm);
+    color: #fff;
+    border-radius: 4px;
+}
