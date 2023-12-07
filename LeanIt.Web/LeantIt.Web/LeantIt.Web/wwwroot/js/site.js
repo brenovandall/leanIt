@@ -72,3 +72,32 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.style.transform = `translateX(${-counter * 100}%)`;
     }
 });
+
+
+
+
+
+
+
+
+
+// Espera até que o DOM esteja completamente carregado
+document.addEventListener('DOMContentLoaded', function () {
+    function initMap() {
+        // Coordenadas iniciais para o centro do mapa
+        var myLatLng = { lat: -23.550520, lng: -46.633308 };
+
+        // Crie um mapa e passe as opções
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 8
+        });
+
+        // Crie um marcador e o adicione ao mapa
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+});

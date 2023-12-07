@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LeanIt.Web",
+    "\\LeanIt.Web\\LeantIt.Web",
+    "\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web",
+    "\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot",
+    "\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css"
   ],
+  "SelectedNode": "\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\services.css",
   "PreviewInSolutionExplorer": false
 }
