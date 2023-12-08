@@ -74,30 +74,31 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+let map;
 
+async function initMap() {
 
+    const position = { lat: -26.915946, lng: -49.072369 };
+    // -26.915946, -49.072369
 
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
+    map = new Map(document.getElementById("map"), {
+        zoom: 15,
+        center: position,
+        mapId: "DEMO_MAP_ID",
+    });
 
+    var image = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702065092/image-removebg-preview_ghorta_yzn6o4.png';
 
+    // 
+    const marker = new google.maps.Marker({
+        map: map,
+        position: position,
+        icon: image,
+        animation: google.maps.Animation.DROP
+    });
+}
 
-// Espera até que o DOM esteja completamente carregado
-document.addEventListener('DOMContentLoaded', function () {
-    function initMap() {
-        // Coordenadas iniciais para o centro do mapa
-        var myLatLng = { lat: -23.550520, lng: -46.633308 };
-
-        // Crie um mapa e passe as opções
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            zoom: 8
-        });
-
-        // Crie um marcador e o adicione ao mapa
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
-    }
-});
+initMap();

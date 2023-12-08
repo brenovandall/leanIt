@@ -22,6 +22,10 @@ header {
     height: 5vh;
 }
 
+#map {
+
+}
+
 header nav {
     position: absolute;
     top: 0;

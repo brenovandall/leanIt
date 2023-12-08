@@ -117,30 +117,12 @@
 
     @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227806.87476532854!2d-49.099103799999995!3d-26.85640995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1e408b5c3095%3A0xacfb8520bc1a7644!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1699039096703!5m2!1spt-BR!2sbr" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> *@
 
-    <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&callback=initMap" async defer></script>
-    @* <script>
-        // Espera até que o DOM esteja completamente carregado
-        document.addEventListener('DOMContentLoaded', function () {
-            function initMap() {
-                // Coordenadas iniciais para o centro do mapa
-                var myLatLng = { lat: -23.550520, lng: -46.633308 };
+    <div id="map" style="width: 100%; height:650px"></div>
 
-                // Crie um mapa e passe as opções
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    center: myLatLng,
-                    zoom: 8
-                });
-
-                // Crie um marcador e o adicione ao mapa
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: 'Hello World!'
-                });
-            }
-        });
-    </script> *@
+    <!-- prettier-ignore -->
+    <script>
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+            ({ key: "AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI", v: "beta" });</script>
 
 </aside>
 
