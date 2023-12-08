@@ -206,3 +206,10 @@ C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\D
 C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\MySqlConnector.dll
 C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.csproj.CopyComplete
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\MySqlConnector.dll
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.csproj.AssemblyReference.cache
+C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.csproj.CopyComplete

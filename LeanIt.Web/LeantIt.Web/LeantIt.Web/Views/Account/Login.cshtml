@@ -4,41 +4,45 @@
 @{
 }
 
-
-<main>
-    <div class="main-content">
-        <aside>
-            <div class="imagem-fundo">
-                <img class="carro-img" src="https://res.cloudinary.com/dtvypcack/image/upload/v1701803454/tela_login_imagem_by6rnl.jpg" alt="imagem de um carro acizentada" />
-            </div>
-        </aside>
-        <div class="container">
-            <div class="itens-login">
-                <div>
-                    <h1 class="title-content">Log <span id="title-span">In</span></h1>
+<form method="post"> 
+    <main>
+        <div class="main-content">
+            <aside>
+                <div class="imagem-fundo">
+                    <img class="carro-img" src="https://res.cloudinary.com/dtvypcack/image/upload/v1701803454/tela_login_imagem_by6rnl.jpg" alt="imagem de um carro acizentada" />
                 </div>
-                <div class="forms-login">
+            </aside>
+            <div class="container">
+                <div class="itens-login">
                     <div>
-                        <label>Digite seu e-mail</label>
-                        <input id="input-email" type="email" placeholder="Digite aqui">
+                        <h1 class="title-content">Log <span id="title-span">In</span></h1>
                     </div>
-                    <div class="senha-form">
-                        <label>Digite sua senha</label>
-                        <input id="input-senha" type="password" placeholder="Digite aqui">
-                    </div>
+                    <div class="forms-login">
+                        <div>
+                            <label>Digite seu e-mail</label>
+                            <input id="input-email" type="email" placeholder="Digite aqui">
+                        </div>
+                        <div class="senha-form">
+                            <label>Digite sua senha</label>
+                            <input id="input-senha" type="password" placeholder="Digite aqui">
+                        </div>
 
-                    <p id="login-redirect">Não tem cadastro? <a id="cadastrar-redirect" asp-area="" asp-controller="Account" asp-action="Register">Registre-se agora</a></p>
+                        <p id="login-redirect">Não tem cadastro? <a id="cadastrar-redirect" asp-area="" asp-controller="Account" asp-action="Register">Registre-se agora</a></p>
+                    </div>
+                    <div class="botao-forms" style="display:flex; justify-content: space-between;">
+                        <button class="botao-entrar" style="width:45%; background-color: #dcdcdc;" asp-area="" asp-controller="Home" asp-action="Index">
+                            Voltar
+                        </button>
+                        <button class="botao-entrar" style="width:45%;">
+                            Entrar
+                        </button>
+                    </div>
                 </div>
-                <div class="botao-forms">
-                    <button class="botao-entrar">
-                        Entrar
-                    </button>
-                </div>
+
             </div>
-
         </div>
-    </div>
-</main>
+    </main>
+</form>
 
 
 @section Styles {
