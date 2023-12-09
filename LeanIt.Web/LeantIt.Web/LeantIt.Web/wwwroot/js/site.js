@@ -78,6 +78,25 @@ let map;
 
 async function initMap() {
 
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+
+
+    searchBox.addListener('places_changed', function () {
+        var places = searchBox.getPlaces();
+
+        if (places.length === 0) {
+            return;
+        }
+
+        // Get information about the selected location if needed
+        var selectedPlace = places[0];
+        console.log(selectedPlace);
+
+        // Update the map with the new location
+        map.setCenter(selectedPlace.geometry.location);
+    });
+
     const position = { lat: -26.915946, lng: -49.072369 };
     // -26.915946, -49.072369
 
@@ -101,22 +120,22 @@ async function initMap() {
     });
 }
 
-var input = document.querySelector('pac-input');
-var searchBox = new google.maps.places.SearchBox(input);
-searchBox.addListener('places_changed', function () {
-    var places = searchBox.getPlaces();
+//var input = document.querySelector('pac-input');
+//var searchBox = new google.maps.places.SearchBox(input);
+//searchBox.addListener('places_changed', function () {
+//    var places = searchBox.getPlaces();
 
-    if (places.length === 0) {
-        return;
-    }
+//    if (places.length === 0) {
+//        return;
+//    }
 
-    // Get information about the selected location if needed
-    var selectedPlace = places[0];
-    console.log(selectedPlace);
+//    // Get information about the selected location if needed
+//    var selectedPlace = places[0];
+//    console.log(selectedPlace);
 
-    // Update the map with the new location
-    map.setCenter(selectedPlace.geometry.location);
-});
+//    // Update the map with the new location
+//    map.setCenter(selectedPlace.geometry.location);
+//});
 
 
 initMap();
