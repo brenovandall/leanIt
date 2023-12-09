@@ -130,62 +130,39 @@
 
     <script>
         
+        // Initialize and add the map
         let map;
 
-        function initMap() {
-
-            // var input = document.getElementById('pac-input');
-            // var searchBox = new google.maps.places.SearchBox(input);
-
-
-            // searchBox.addListener('places_changed', function () {
-            //     var places = searchBox.getPlaces();
-
-            //     if (places.length === 0) {
-            //         return;
-            //     }
-
-            //     // Get information about the selected location if needed
-            //     var selectedPlace = places[0];
-            //     console.log(selectedPlace);
-
-            //     // Update the map with the new location
-            //     map.setCenter(selectedPlace.geometry.location);
-            // });
-
+        async function initMap() {
+            // The location of Uluru
             const position = { lat: -26.915946, lng: -49.072369 };
-            // -26.915946, -49.072369
-
+            // Request needed libraries.
             const { Map } = await google.maps.importLibrary("maps");
-            const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
+            // The map, centered at Uluru
             map = new Map(document.getElementById("map"), {
                 zoom: 15,
                 center: position,
                 mapId: "DEMO_MAP_ID",
             });
 
-            var image = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702065092/image-removebg-preview_ghorta_yzn6o4.png';
+            var iconToTheMarker = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702153486/image-removebg-preview_ghorta_yzn6o4_mebdq3.png';
 
-            //
 
             @foreach(var carro in Model)
             {
                 <text>
-
-                            const marker = new google.maps.Marker({
+                                // The marker, positioned at Uluru
+                            new google.maps.Marker({
                             map: map,
                             position: { lat: @carro.Latitude, lng: @carro.Longitude },
-                            icon: image,
-                            animation: google.maps.Animation.DROP
+                            icon: iconToTheMarker,
+                        animation: google.maps.Animation.DROP
                         });
-
                 </text>
             }
-
             
         }
-
 
         initMap();
 
