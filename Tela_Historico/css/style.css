@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+span{
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.titulo{
+    margin-top: 70px;
+    margin-bottom: 90px;
+}
+
+.pnavbar{
+    margin-left: 63px;
+    font-size: 34px;
+    font-weight:500;
+}
+
+.voltar{
+    padding-left: 50px;
+    color: black;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+}
+
+.ptitulo{
+    margin-left: 80px;
+}
+
+.detalhes{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.informacoes{
+    width: 397px;
+    margin-right: 120px;
+}
+
+
+.caminhos{
+    margin-left: 20px;
+    padding-left: 70px;
+    padding-right: 80px;
+    cursor: pointer;
+}
+
+.caminhos .historico{
+    border: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+.caminhos .outros{
+    border-bottom: 2px solid rgb(255, 129, 16);
+    border-left: 2px solid rgb(255, 129, 16);
+    border-right: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+.historicoCarro{
+    background-color: rgb(255, 129, 16);
+}
+
+
+.dados{
+    display: flex;
+    background-color: rgb(246, 245, 245);
+    box-shadow: 5px 5px 5px rgb(230, 229, 229);
+}
+
+.informacaoCarro p{
+    width: 300px;
+}
+
+.informacaoCarro{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.informacaoTempo{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(246, 245, 245);
+    box-shadow: 5px 5px 5px rgb(230, 229, 229);
+    padding: 20px 20px 20px 20px;
+    margin-top: 10px;
+}
+
+.carro{
+    padding-left: 20px;
+}
+
+.marca{
+    color: rgb(199, 199, 199);
+}
+
+.valor{
+    color: rgb(255, 129, 16);
+}

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+span{
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.titulo{
+    margin-top: 70px;
+    margin-bottom: 90px;
+}
+
+.pnavbar{
+    margin-left: 63px;
+    font-size: 34px;
+    font-weight:500;
+}
+
+.voltar{
+    padding-left: 50px;
+    color: black;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+}
+
+.ptitulo{
+    margin-left: 80px;
+}
+
+.detalhes{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+form{
+    padding-right: 120px;
+}
+
+.informacoes{
+    width: 397px;
+}
+
+.informacoes input{
+    width: 450px;
+    border: 2px solid rgb(255, 129, 16);
+    padding: 8px;
+    margin-bottom: 2px;
+}
+
+.alterarSenha{
+    background-color: rgb(255, 129, 16);
+}
+
+.caminhos{
+    margin-left: 20px;
+    padding-left: 70px;
+    padding-right: 80px;
+    cursor: pointer;
+}
+
+.caminhos .historico{
+    border: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+.caminhos .outros{
+    border-bottom: 2px solid rgb(255, 129, 16);
+    border-left: 2px solid rgb(255, 129, 16);
+    border-right: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+.alterar{
+    background-color: rgb(255, 129, 16);
+    margin-top: 20px;
+    color: white
+}
+
+.alterar:hover{
+    background-color:rgb(255, 161, 79) ;
+    transition: 0.5s;
+    border: solid 2px rgb(255, 161, 79);
+    cursor: pointer;
+}
