@@ -130,16 +130,12 @@
 
     <script>
         
-        // Initialize and add the map
         let map;
 
         async function initMap() {
-            // The location of Uluru
             const position = { lat: -26.915946, lng: -49.072369 };
-            // Request needed libraries.
             const { Map } = await google.maps.importLibrary("maps");
 
-            // The map, centered at Uluru
             map = new Map(document.getElementById("map"), {
                 zoom: 15,
                 center: position,
@@ -152,7 +148,6 @@
             @foreach(var carro in Model)
             {
                 <text>
-                                // The marker, positioned at Uluru
                             new google.maps.Marker({
                             map: map,
                             position: { lat: @carro.Latitude, lng: @carro.Longitude },
