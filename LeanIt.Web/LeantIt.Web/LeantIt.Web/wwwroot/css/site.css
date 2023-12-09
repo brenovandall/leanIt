@@ -72,11 +72,11 @@ nav ul li a {
         background-color: rgb(26, 26, 26);
     }
 
-nav ul li:nth-child(-n+3) a {
+nav ul li:nth-child(-n+4) a {
     transition: 0.6s border;
 }
 
-    nav ul li:nth-child(-n+3) a:hover {
+    nav ul li:nth-child(-n+4) a:hover {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 

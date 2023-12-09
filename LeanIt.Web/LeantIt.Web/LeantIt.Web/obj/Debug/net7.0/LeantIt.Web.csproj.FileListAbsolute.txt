@@ -213,3 +213,8 @@ C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\
 C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.csproj.AssemblyReference.cache
 C:\Users\vbren\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.csproj.CopyComplete
+C:\Users\vbren\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Humanizer.dll
+C:\Users\vbren\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\vbren\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\vbren\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\vbren\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\System.CodeDom.dll

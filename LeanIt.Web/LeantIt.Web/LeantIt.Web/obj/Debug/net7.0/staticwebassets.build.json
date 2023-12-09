@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zla/NIT1a3MGH4W7dn3rYptktd2wqItaqn7cFdsAunw=",
+  "Hash": "yTGqHdciTgdCF/rtvkfxU0xAS8T1YzFeDPALAqevgHk=",
   "Source": "LeantIt.Web",
   "BasePath": "_content/LeantIt.Web",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\LeantIt.Web.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\carros.css",
+      "SourceId": "LeantIt.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\",
+      "BasePath": "_content/LeantIt.Web",
+      "RelativePath": "css/carros.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\carros.css"
     },
     {
       "Identity": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\login.css",

@@ -1,0 +1,76 @@
+﻿@model LeantIt.Web.Models.ViewModels.AdicionarCarroViewModel
+@{
+}
+
+
+    <div class="container">
+        <a asp-area="" asp-controller="Home" asp-action="Index">Voltar para a tela inicial</a>
+        <div class="itens-login">
+            <div>
+                <h1 class="title-content">Adicionar Um Carro - Administrador</span></h1>
+            </div>
+        <form method="post">
+            <div class="forms-login" style="display:flex;">
+                
+                <div>
+                    <div>
+                        <label>Descrição do Carro</label>
+                        <input id="input-email" type="text" placeholder="Digite aqui" asp-for="@Model.Descricao">
+                    </div>
+                    <div class="senha-form">
+                        <label>Marca</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Marca">
+                    </div>
+                    <div class="senha-form">
+                        <label>Modelo</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Modelo">
+                    </div>
+                    <div class="senha-form">
+                        <label>Ano</label>
+                        <input id="input-senha" type="date" placeholder="Digite aqui" asp-for="@Model.Year">
+                    </div>
+                    <div class="senha-form">
+                        <label>Placa</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Placa">
+                    </div>
+                    <div class="senha-form">
+                        <label>Cor</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Cor">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="senha-form">
+                        <label>Status</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Status">
+                    </div>
+                    <div class="senha-form">
+                        <label>Latitude</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Latitude">
+                    </div>
+                    <div class="senha-form">
+                        <label>Longitude</label>
+                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="botao-forms" style="display:flex; justify-content: space-between;">
+                <button class="botao-entrar" style="width:45%; background-color: #dcdcdc;">
+                    Voltar
+                </button>
+                <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Adicionar">
+                    Adicionar Carro
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+
+@section Styles {
+
+    <link rel="stylesheet" href="~/css/carros.css" />
+}

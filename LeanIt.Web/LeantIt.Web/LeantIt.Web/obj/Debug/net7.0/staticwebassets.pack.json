@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\LeantIt.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\carros.css",
+      "PackagePath": "staticwebassets\\css\\carros.css"
+    },
+    {
       "Id": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
