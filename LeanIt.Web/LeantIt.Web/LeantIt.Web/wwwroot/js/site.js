@@ -136,6 +136,3 @@ document.addEventListener("DOMContentLoaded", function () {
 ////    // Update the map with the new location
 ////    map.setCenter(selectedPlace.geometry.location);
 ////});
-
-
-//initMap();
