@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C79fybVzxOEk2Wk3TtsrqcEdVng06VtGcDJ8iOGgojNI8wFuegw7HNGB50z7x/l8N7HF7lilWTo32BiV8u/0zQ==",
+  "dgSpecHash": "RpecpL2zsQ88R6qcFJOgAw4hP/sSoD586iQdgXvi9A1agluDtHS2CCXrdZ/X+RSgTb4hszx+En/pxY03Iy+rNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+  "projectFilePath": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vbren\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.2\\microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
     "C:\\Users\\vbren\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.2\\microsoft.entityframeworkcore.abstractions.7.0.2.nupkg.sha512",

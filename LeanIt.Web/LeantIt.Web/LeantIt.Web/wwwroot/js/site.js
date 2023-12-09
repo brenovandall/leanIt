@@ -101,4 +101,22 @@ async function initMap() {
     });
 }
 
+var input = document.querySelector('pac-input');
+var searchBox = new google.maps.places.SearchBox(input);
+searchBox.addListener('places_changed', function () {
+    var places = searchBox.getPlaces();
+
+    if (places.length === 0) {
+        return;
+    }
+
+    // Get information about the selected location if needed
+    var selectedPlace = places[0];
+    console.log(selectedPlace);
+
+    // Update the map with the new location
+    map.setCenter(selectedPlace.geometry.location);
+});
+
+
 initMap();
