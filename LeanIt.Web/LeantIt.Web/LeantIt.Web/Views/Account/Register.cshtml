@@ -5,185 +5,159 @@
     ViewData["Title"] = "Registre-se";
 }
 
-<main>
-    <a asp-area="" asp-controller="Home" asp-action="Index">Voltar para a tela inicial</a>
-        <form action="">
-            <div style="margin-left: 220px; margin-top: -30px;" class="dentroMain">
-                <div>
-                    <h1 style="text-align: left; margin-left: 80px; color: white;">Faça seu</h1>
-                    <h1 style="text-align: left; margin-left: 80px; color: white;"><span
-                            style="color: #fb8314;">Cadastro</span></h1>
-                </div>
-                <div class="paiCadastro">
-                    <div class="maeCadastro">
-                        <div class="divInputNome">
-                            <P
-                                style="text-align: left; color: white; margin-left: 80px; margin-top: 30px; font-size: 15px;">
-                                Digite
-                                seu nome completo</P>
-                            <input class="inputNomeCadastro"
-                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
-                                type="text" placeholder="Digite aqui">
-                        </div>
+    <header>
+    <a href="index.html"><img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/logo_recorte_dxihjz_uv4xfy.png" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Adicionar">Categorias</a></li>
+                <li><a href="#">Preços</a></li>
+            <li><a asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+            <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                        <div class="inputCPF">
-                            <p
-                                style="text-align: left; color: white; margin-left: 80px; margin-top: 30px; font-size: 15px;">
-                                Digite
-                                seu CPF</P>
-                            <input class="inputCpfCadastro"
-                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
-                                type="text" placeholder="xxx.xxx.xxx-xx" maxlength="14" onblur="validaCPF()">
-                        </div>
+    
+    <div class="tituloCadastro">
+        <h3 class="container">Cadastre-se</h3>
+    </div>
+    <hr>
+    <h4 class="container">Estamos perto de realizar seu cadastro!</h4>
 
-                        <div class="divInputEmail">
-                            <p
-                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
-                                Digite
-                                seu E-mail</p>
-                            <input class="inputEmailCadastro"
-                                style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
-                                type="text" placeholder="Digite seu E-mail"></input>
-                        </div>
+    <div class="tituloInformacao">
+        <p class="container">Informações pessoais</p>
+    </div>
 
-                        <div class="divInputSenha">
-                            <p
-                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
-                                Digite uma senha
-                            </p>
-                            <input class="inputSenhaCadastro"
-                                style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
-                                type="password" placeholder="Digite a senha aqui">
-                                <button type="password" style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
-                        </div>
+    <div class="informacoesPessoais container">
+        <div class="mb-3">
+            <label for="nomeCadastro" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="nomeCadastro" name="nomeCadastro" placeholder="Digite aqui">
+        </div>
+        <div  class="mb-3">
+            <label for="cpfCadastro" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpfCadastro" name="cpfCadastro" onblur="validaCPF()"  placeholder="xxx.xxx.xxx-xx">
+        </div>
+        <div  class="mb-3">
+            <label for="dataCadastro" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="dataCadastro" name="dataCadastro">
+        </div>
+        <div class="escolhaSexo">
+            <label for="escolhaSexoCadastro" class="form-label">Sexo</label>
+            <select id="escolhaSexoCadastro" name="escolhaSexoCadastro"  class="form-select form-select-lg mb-3">
+                <option for="escolhaSexoCadastro" value="1">Masculino</option>
+                <option for="escolhaSexoCadastro" value="2">Feminino</option>
+            </select>
+        </div>
+    </div>
 
-                        <div class="divConfirmarSenha">
-                            <p
-                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
-                                Confirme sua senha
-                            </p>
-                            <input class="inputConfirmarSenha"
-                            style="padding: 10px; color: white; margin-top: 5px; margin-left: 80px; width: 340px;"
-                            type="password" placeholder="Digite a senha aqui">
-                            <button type="password" style="width: 20px; padding: 5px;" id="tooglePass" onclick="mostrarSenha()"></button>
-                        </div>
+    <div style="margin-top: -5px;" class="informacoes2 container">
+        <div class="mb-3">
+            <label for="telefoneCadastro"  class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefoneCadastro" name="telefoneCadastro" placeholder="Digite seu número aqui">
+          </div>
+          <div class="mb-3">
+            <label for="celularCadastro"  class="form-label">Celular</label>
+            <input type="text" class="form-control" id="celularCadastro" name="celularCadastro" placeholder="Digite seu número aqui">
+        </div>
+        <div class="mb-3">
+            <label for="emailCadastro" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailCadastro" name="emailCadastro" placeholder="Informe seu e-mail">
+          </div>
+    </div>
 
+    <div>
+        <p class="container">Informações residenciais</p>
+    </div>
 
-                        <div  class="divSexoCadastro">
-                            <p class="informeSexoCadastro" style="color:white; margin-left: 80px; margin-top: 25px;"
-                                type="text">Informe seu sexo</p>
+    <div class="informacoesResidenciais container">
+        <div class="mb-3">
+            <label for="inputCep" class="form-label">Informe seu CEP</label>
+            <input type="text" class="form-control" id="inputCep" name="inputCep" onblur="dadosEndereco()" placeholder="Digite seu CEP">
+          </div>
+          <div class="mb-3">
+            <label for="inputEndereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="inputEndereco" name="inputEndereco" placeholder="Digite aqui">
+        </div>
+        <div class="mb-3">
+            <label for="inputNumero" class="form-label">Número</label>
+            <input style="width: 100px;" type="text" class="form-control" id="inputNumero" placeholder="Nº">
+          </div>
+          <div class="mb-3">
+            <label for="inputComplemento" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="inputComplemento" name="inputComplemento" placeholder="Digite aqui">
+        </div>
+    </div>
 
-                            <input id="a1" class="checkInput" type="checkbox">
-                            <label style="color: white; " for="a1">Masculino</label>
+    <div style="margin-top: -5px;" class="informacoesResidenciais2 container">
+        <div class="mb-3">
+            <label for="inputCidade" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="inputCidade" name="inputCidade" placeholder="Digite Aqui">
+          </div>
+          <div class="mb-3">
+            <label for="inputBairro" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="inputBairro" name="inputBairro" placeholder="Digite aqui">
+        </div>
+        <div class="mb-3">
+            <label for="inputEstado" class="form-label">Estado</label>
+            <select id="inputEstado" name="inputEstado" class="form-select form-select-lg mb-3">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
+            </select>
+        </div>
+    </div>
 
-                            <input id="a2" class="chekInput2" type="checkbox">
-                            <label style="color: white;" for="a2">Feminino</label>
-                        </div>
-                    </div>
+    <div>
+        <p style="margin-top: -2px;" class="container">Crie sua senha</p>
+    </div>
 
-                    <div style="margin-top: -100px;" class="maeCadastro2">
-                        <div class="inputDataNSC">
-                            <p
-                                style="text-align: left; margin-top: 30px; color: white; margin-left: 80px; font-size: 15px;">
-                                Digite
-                                sua data de nascimento</p> ></p>
-                            <input class="inputDataCadastro"
-                                style="padding:10px; color: grey ; margin-top: -15px; margin-left: 80px; width: 340px;"
-                                type="date">
-                        </div>
+    <div class="criarSenha container">
+        <div class="mb-3">
+            <label for="inputSenha" class="form-label">Crie uma senha</label>
+            <input type="password" class="form-control" id="inputSenha" name="inputSenha" placeholder="*********">
+          </div>
+          <div class="mb-3">
+            <label for="inputConfirmarSenha" class="form-label">Confirme sua senha</label>
+            <input type="password" class="form-control" id="inputConfirmarSenha" form="inputConfirmarSenha" placeholder="*********">
+        </div>
+    </div>
 
-                        <div class="informeCepCadastro">
-                            <p style="color:white; margin-left: 80px; margin-top: 25px;">Digite seu CEP</p>
-                            <input class="inputCepCadastro"
-                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
-                                type="text" placeholder="Digite seu CEP" onblur="dadosEndereco()">
-                        </div>
+    <div class="confirmarCadastro container">
+        <button class="buttonCadastro button-do-register" type="submit">Cadastrar</button>
+        <button class="buttonCancelarCadastro button-do-register" asp-area="" asp-controller="Account" asp-action="Login" type="submit">Cancelar</button>
+    </div>
 
-                        <div class="enderecoCadastro">
-                            <p style="color: white; margin-left: 80px; margin-top: 30px;">Endereço</p>
-                            <input class="inputEnderecoCadastro"
-                                style="padding:10px; color: white; margin-top: 10px; margin-left: 80px; width: 340px;"
-                                placeholder="Digite seu endereço" type="text">
-                        </div>
-
-                        <div class="paiEnderecoNumero">
-                            <div class="informeNumeroCadastro">
-                                <p style="color: white; margin-left: 80px; margin-top: 25px;">Numero</p>
-                                <input class="inputNumeroCadastro"
-                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 80px; width: 160px;"
-                                    placeholder="Digite seu nº" type="text">
-                            </div>
-                            <div class="informeComplementoCadastro">
-                                <p style="color: white; margin-left: 20px; margin-top: 25px;">Complemento</p>
-                                <input class="inputComplementoCadastro"
-                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 20px; width: 160px;"
-                                    placeholder="Digite aqui" type="text">
-                            </div>
-                        </div>
-
-                        <div style="display: flex;" class="paiBairroEstado">
-                            <div class="divEstadoCadastro">
-                                <p style="color: white; margin-left: 80px; margin-top: 30px;">Estado</p>
-                                <div class=" ls-custom-select">
-                                    <select id="estado" name="estado">
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantins</option>
-                                        <option value="EX">Estrangeiro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="divBairroCadastro">
-                                <p style="color: white; margin-left: 20px; margin-top: 30px;">Bairro</p>
-                                <input class="inputBairroCadastro"
-                                    style="padding: 10px; color: white; margin-top: 7px; margin-left: 20px; width: 160px;"
-                                    placeholder="Informe seu Bairro" type="text">
-                            </div>
-                        </div>
-
-
-                        <div class="divCidadeCadastro">
-                            <p style="color: white; margin-left: 80px; margin-top: 25px;">Cidade</p>
-                            <input class="inputCidadeCadastro"
-                                style="padding: 10px; color: white; margin-top: 7px; margin-left: 80px; width: 340px;"
-                                placeholder="Informe sua cidade" type="text">
-                        </div>
-                    </div>
-
-                    <div class="divButtonCadastro">
-                        <button class="buttonCadastrese" type="submit">Cadaste-se</button>
-                    </div>
-                </div>
-            </div>
-
-        </form>
-    </main>
-
-
-@section Styles {
-        <link rel="stylesheet" href="~/css/register.css" />
-}
+    @section Styles{
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/register.css" />
+    }
+    @section Scripts{
+    <script src="~/js/register.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    }

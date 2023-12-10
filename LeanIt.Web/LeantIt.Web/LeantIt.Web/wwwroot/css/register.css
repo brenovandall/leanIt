@@ -1,291 +1,177 @@
 ﻿* {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.form-control {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    padding: 4px;
+    width: 20%;
 }
 
-:root {
-    --corUm: #fb8314;
-    --corDois: #1c1c1c;
+.form-check-input {
+    border: 3px solid #fb8314;
+    border-radius: 5px;
+    margin-right: 5px;
+    width: auto;
+    height: auto;
+    padding: 5px;
 }
 
-.navbar {
-    background-image: url(carro.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    /* background-attachment: fixed;   */
+.escolhaSexo select {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    font-size: small;
+}
+
+#inputEstado {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    font-size: small;
+}
+header {
+    width: 100%;
     background-size: cover;
-    height: 600px;
-}
-
-.dentroNavbar {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
+    background-position: center;
+    height: 15vh;
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
-    width: 150px;
-    margin-top: -60px;
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
 }
 
-ul {
-    display: flex;
+header nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
 }
 
-.navbar li {
-    margin-left: 20px;
-    font-size: 18px;
-    list-style: none;
-}
-
-.textJunt {
-    text-align: center;
-    text-align: center;
-    margin-top: -40px;
-}
-
-li a {
-    color: var(--corDois);
-}
-
-.header {
-    margin-top: 70px;
-    text-align: center;
-}
-
-.elemento {
-    width: 180px;
-    margin-top: -60px;
-    text-align: center;
-}
-
-.saiba {
-    background-color: var(--corUm);
-    padding: 8px;
-    border: none;
-    margin-top: 15px;
-    color: white;
-}
-
-.retangulo {
-    display: flex;
-    justify-content: center;
-}
-
-.retangulo-informacoes {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--corUm);
-    font-size: 28px;
-    width: 600px;
-    padding: 30px;
-    color: white;
-    font-weight: bolder;
-    margin-top: 170px;
-}
-
-main {
-    background-color: var(--corDois);
-}
-
-.dentroMain {
-    padding-top: 150px;
-}
-
-    .dentroMain h1 {
-        font-size: 40px;
-    }
-
-.cards {
+nav ul {
+    margin: 0 10vh 0 0;
+    padding: 0;
     display: flex;
     justify-content: space-around;
 }
 
-.card ul {
-    display: block;
-    margin-top: 20px;
-}
-
-.card {
-    border: var(--corUm) solid 3px;
-    width: 300px;
-    padding: 30px 30px 30px 30px;
-    color: white;
-    margin-bottom: 50px;
-}
-
-    .card span {
-        font-size: 20px;
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
     }
 
-    .card button {
-        border: solid 2px var(--corUm);
-        background-color: var(--corDois);
-        margin-top: 15px;
-        padding: 5px;
-        width: 100%;
-        color: white;
-        font-size: 15px;
-    }
-
-        .card button:hover {
-            background-color: var(--corUm);
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
         }
 
-.localizacaoCarro {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
+
+.button-home {
+    color: rgb(255, 129, 16);
 }
 
-.localizarCarro {
-    border: solid 2px var(--corUm);
-    background-color: var(--corDois);
-    padding: 7px;
+.button-do-register {
+    background-color: rgb(255, 129, 16);
     color: white;
-    width: 40%;
+    padding: 7px 11px;
+    transition: 0.5s background;
 }
 
-.pesquisar {
-    background-color: var(--corUm);
-    padding: 7px;
-    color: white;
-    border: solid 2px var(--corUm);
-}
-
-    .pesquisar:hover {
-        background-color: #e7913f;
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
     }
 
-.dentroFooter {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
+nav ul li:nth-child(-n+3) a {
+    transition: 0.6s border;
 }
 
-    .dentroFooter i {
-        color: white;
-        font-size: 20px;
+    nav ul li:nth-child(-n+3) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
     }
 
-.inputNomeCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.inputEmailCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.checkInput {
-    width: 15px;
-    height: 15px;
-    margin-left: 100px;
-    margin-top: 20px;
-}
-
-.inputCpfCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.inputDataCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.divSexoCadastro {
-    padding-bottom: 150px;
-}
-
-.paiCadastro {
+.informacoesPessoais {
     display: flex;
+    width: 100%;
+    gap: 2vw;
 }
 
-.inputCepCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
+    .informacoesPessoais input {
+        width: 300px;
+    }
 
-.inputEnderecoCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.inputNumeroCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
-
-.paiEnderecoNumero {
+.informacoes2 {
     display: flex;
+    width: 100%;
+    gap: 2vw;
 }
 
-.inputComplementoCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
+    .informacoes2 input {
+        width: 300px;
+    }
+
+.informacoesResidenciais {
+    display: flex;
+    width: 100%;
+    gap: 2vw;
 }
 
-.inputEstadoCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
+    .informacoesResidenciais input {
+        width: 300px;
+    }
+
+.container {
+    margin-left: 43px;
+    margin-top: 30px;
 }
 
-#estado {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    padding: 10px;
-    width: 160px;
-    border-width: 2px;
-    color: white;
-    margin-left: 80px;
-    margin-top: 10px;
+.informacoesResidenciais2 {
+    display: flex;
+    width: 100%;
+    gap: 2vw;
 }
 
-.inputCidadeCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
+    .informacoesResidenciais2 input {
+        width: 300px;
+    }
+
+.criarSenha {
+    display: flex;
+    width: 100%;
+    gap: 2vw;
 }
 
-.inputBairroCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
-}
+    .criarSenha input {
+        width: 300px;
+    }
 
-.buttonCadastrese {
-    width: 200px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 520px;
-    margin-left: -200px;
+.buttonCadastro {
+    border: 1px solid #ffffff;
     background-color: #fb8314;
-    font-size: large;
     color: white;
+    width: 200px;
+    padding: 8px;
+    font-size: larger;
 }
 
-.inputSenhaCadastro {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
+.buttonCancelarCadastro {
+    border: 1px solid #ffffff;
+    background-color: #dcdcdc;
+    color: white;
+    width: 200px;
+    padding: 8px;
+    font-size: larger;
 }
 
-.inputConfirmarSenha {
-    background-color: #1c1c1c;
-    border-color: #fb8314;
-    border-width: 2px;
+.confirmarCadastro {
+    margin-bottom: 50px;
 }
