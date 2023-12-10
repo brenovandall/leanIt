@@ -74,65 +74,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//let map;
-
-////async function initMap() {
-
-////    var input = document.getElementById('pac-input');
-////    var searchBox = new google.maps.places.SearchBox(input);
+var input = document.getElementById('pac-input');
+var searchBox = new google.maps.places.SearchBox(input);
 
 
-////    searchBox.addListener('places_changed', function () {
-////        var places = searchBox.getPlaces();
+searchBox.addListener('places_changed', function () {
+    var places = searchBox.getPlaces();
 
-////        if (places.length === 0) {
-////            return;
-////        }
+    if (places.length === 0) {
+        return;
+    }
 
-////        // Get information about the selected location if needed
-////        var selectedPlace = places[0];
-////        console.log(selectedPlace);
+    // Get information about the selected location if needed
+    var selectedPlace = places[0];
+    console.log(selectedPlace);
 
-////        // Update the map with the new location
-////        map.setCenter(selectedPlace.geometry.location);
-////    });
-
-////    const position = { lat: -26.915946, lng: -49.072369 };
-////    // -26.915946, -49.072369
-
-////    const { Map } = await google.maps.importLibrary("maps");
-////    const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-
-////    map = new Map(document.getElementById("map"), {
-////        zoom: 15,
-////        center: position,
-////        mapId: "DEMO_MAP_ID",
-////    });
-
-////    var image = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702065092/image-removebg-preview_ghorta_yzn6o4.png';
-
-////    // 
-////    const marker = new google.maps.Marker({
-////        map: map,
-////        position: position,
-////        icon: image,
-////        animation: google.maps.Animation.DROP
-////    });
-////}
-
-////var input = document.querySelector('pac-input');
-////var searchBox = new google.maps.places.SearchBox(input);
-////searchBox.addListener('places_changed', function () {
-////    var places = searchBox.getPlaces();
-
-////    if (places.length === 0) {
-////        return;
-////    }
-
-////    // Get information about the selected location if needed
-////    var selectedPlace = places[0];
-////    console.log(selectedPlace);
-
-////    // Update the map with the new location
-////    map.setCenter(selectedPlace.geometry.location);
-////});
+    // Update the map with the new location
+    map.setCenter(selectedPlace.geometry.location);
+});

@@ -145,8 +145,8 @@ h2{
 
 .img-1{
     background-image: url(imagens/prefeitura.jpg);
-    height: 45vh;
-    width: 30%;
+    height: 22vw;
+    width: 28%;
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -162,8 +162,8 @@ h2{
 
 .img-2{
     background-image: url(Imagens/igreja.jpg);
-    height: 45vh;
-    width: 30%;
+    height: 22vw;
+    width: 28%;
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -179,8 +179,8 @@ h2{
 
 .img-3{
     background-image: url(imagens/vila.jpg);
-    height: 45vh;
-    width: 30%;
+    height: 22vw;
+    width: 28%;
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -196,8 +196,8 @@ h2{
 
 .img-4{
     background-image: url(imagens/castelinho.jpg);
-    height: 45vh;
-    width: 30%;
+    height: 22vw;
+    width: 28%;
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;

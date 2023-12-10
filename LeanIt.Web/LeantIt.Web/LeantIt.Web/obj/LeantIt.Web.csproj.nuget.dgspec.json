@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
+    "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
+    "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
         "projectName": "LeantIt.Web",
-        "projectPath": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "projectPath": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
         "packagesPath": "C:\\Users\\vbren\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vbren\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+        "outputPath": "C:\\Users\\vbren\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vbren\\AppData\\Roaming\\NuGet\\NuGet.Config",

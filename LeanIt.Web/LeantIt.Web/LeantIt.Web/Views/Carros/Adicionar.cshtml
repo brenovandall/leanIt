@@ -3,70 +3,128 @@
 }
 
 
-    <div class="container">
-        <a asp-area="" asp-controller="Home" asp-action="Index">Voltar para a tela inicial</a>
-        <div class="itens-login">
-            <div>
-                <h1 class="title-content">Adicionar Um Carro - Administrador</span></h1>
-            </div>
-        <form method="post">
-            <div class="forms-login" style="display:flex;">
-                
-                <div>
-                    <div>
-                        <label>Descrição do Carro</label>
-                        <input id="input-email" type="text" placeholder="Digite aqui" asp-for="@Model.Descricao">
+<header>
+
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            <li><a href="#">Preços</a></li>
+            <li><a asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+            <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <form method="post">
+
+        <div class="container" style="margin-bottom: 15vh">
+            <h1 class="add-cars-title">Adicionar Carros - Administrador</h1>
+            <div class="form-add">
+
+                <div class="item-content" style="width: 100%; display: flex;">
+                    <div style="width: 100%;">
+                        <div style="width: 100%;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Descrição do Carro</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Descricao">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Marca do Carro</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Marca">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Modelo do Carro</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Modelo">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Ano Do Carro</label>
+                                <input id="input" type="date" placeholder="Digite aqui" asp-for="@Model.Year">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Placa do Carro</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Placa">
+                            </div>
+                        </div>
                     </div>
-                    <div class="senha-form">
-                        <label>Marca</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Marca">
-                    </div>
-                    <div class="senha-form">
-                        <label>Modelo</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Modelo">
-                    </div>
-                    <div class="senha-form">
-                        <label>Ano</label>
-                        <input id="input-senha" type="date" placeholder="Digite aqui" asp-for="@Model.Year">
-                    </div>
-                    <div class="senha-form">
-                        <label>Placa</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Placa">
-                    </div>
-                    <div class="senha-form">
-                        <label>Cor</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Cor">
+
+
+                    <div style="width: 100%;">
+                        <div style="width: 100%;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Cor Do Carro</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Cor">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Status</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Status">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Latitude</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Latitude">
+                            </div>
+
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Longitude</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
+                            </div>
+                        </div>
+
+                        <div class="botao-forms">
+                            <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Adicionar">
+                                Adicionar Carro
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="senha-form">
-                        <label>Status</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Status">
-                    </div>
-                    <div class="senha-form">
-                        <label>Latitude</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Latitude">
-                    </div>
-                    <div class="senha-form">
-                        <label>Longitude</label>
-                        <input id="input-senha" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
-                    </div>
-                </div>
-
 
             </div>
-            <div class="botao-forms" style="display:flex; justify-content: space-between;">
-                <button class="botao-entrar" style="width:45%; background-color: #dcdcdc;">
-                    Voltar
-                </button>
-                <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Adicionar">
-                    Adicionar Carro
-                </button>
-            </div>
-            </form>
+
+        </div>
+
+    </form>
+    
+    
+</main>
+
+
+<footer>
+
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-x-twitter"></i></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="#">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p><a href="#">Serviços</a></p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
         </div>
     </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
 
 
 

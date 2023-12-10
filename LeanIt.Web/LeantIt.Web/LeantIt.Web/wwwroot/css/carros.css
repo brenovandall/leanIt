@@ -1,71 +1,114 @@
-﻿* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+﻿
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.main-content {
+header {
+    width: 100;
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+nav ul {
+    margin: 0 10vh 0 0;
+    padding: 0;
     display: flex;
+    justify-content: space-around;
 }
 
-.imagem-fundo img {
-    width: 50vw;
-    height: 100vh;
-    object-fit: cover;
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
+
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
+
+
+.button-home {
+    color: rgb(255, 129, 16);
 }
 
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+nav ul li:nth-child(-n+4) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+4) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 
 .container {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
+    width: 70vw;
+
 }
 
-.forms-login {
+.form-add {
     display: flex;
-    width: 25vw;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
-#input-email,
-#input-senha {
+.add-cars-title {
+    margin-bottom: 5vh;
+}
+
+#input {
     border: 2px solid #fb8314;
-    width: 100%;
+    width: 90%;
     height: 4vh;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-left: 7px;
 }
 
-.itens-login {
-    display: flex;
-    flex-direction: column;
-}
-
-#title-span {
-    color: #fb8314;
-}
-
-#login-redirect {
-    font-size: 12px;
-}
-
-#cadastrar-redirect {
-    color: #fb8314;
-    text-decoration: none;
-}
-
-    #cadastrar-redirect:hover {
-        text-decoration: underline;
-    }
-
 .botao-forms {
     display: flex;
+    margin-top: 20px;
     justify-content: center;
+    width: 90%;
 }
 
 .botao-entrar {
@@ -84,20 +127,91 @@
 }
 
 
-.senha-form {
-    margin-top: 3vh;
+.footer-main {
+    margin-top: 5vh;
+    display: flex;
+    background-color: rgb(255, 129, 16);
+    justify-content: space-around;
+    padding: 50px 0;
 }
 
-.title-content,
-#title-span {
-    font-size: 60px;
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+.footer-main a:hover {
+    color: white;
+}
+
+.form-add {
+
+}
+
+.footer-title {
+    font-size: 28px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.forms-login:active {
-    border: none;
+.footer-main div {
+    width: 30%;
+    text-align: center;
 }
 
-.senha-form {
-    margin-bottom: 2vh;
+.footer-paragraph-about {
+    width: 60%;
+    text-align: start;
+    margin: auto;
+    line-height: 1.5em;
+}
+
+.footer-about i {
+    color: white;
+    font-size: 25px;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+
+.icons-about {
+    text-align: left;
+    margin-left: 16%;
+}
+
+.footer-extra a {
+    line-height: 1.5em;
+}
+
+.footer-contact i {
+    color: white;
+    display: inline-block;
+}
+
+.phone-icon {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.email-icon {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 1px;
+}
+
+.paragraph-contact-top {
+    margin-bottom: 10px;
+}
+
+.paragraph-contact {
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
