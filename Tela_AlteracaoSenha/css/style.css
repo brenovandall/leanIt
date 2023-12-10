@@ -8,9 +8,75 @@
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 }
 
+
+.logo{
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+header nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+nav ul{
+    margin: 0 10vh 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 7vh 0 0 0;
+    padding: 1vh 4vh;
+}
+
+nav ul li a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    font-size: 1.0rem;
+    letter-spacing: 2px;
+    font-family: 'Poppins';
+    transition: 0.5s all;
+    border: transparent;
+}
+
+
+.button-home{
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register{
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+.button-do-register:hover{
+    background-color: rgb(26, 26, 26);
+}
+
+nav ul li:nth-child(-n+3) a{
+    transition: 0.6s border;
+}
+
+nav ul li:nth-child(-n+3) a:hover{
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
+
 span{
     font-weight: 100;
     font-size: 15px;
+}
+
+main{
+    margin-top: 30px;
+    margin-bottom: 80px;
 }
 
 .titulo{
@@ -93,4 +159,90 @@ form{
     transition: 0.5s;
     border: solid 2px rgb(255, 161, 79);
     cursor: pointer;
+}
+
+
+.footer-main{
+    margin-top: 5vh;
+    display: flex;
+    background-color: rgb(255, 129, 16);
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.footer-main a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+.footer-main a:hover{
+    color: white;
+}
+
+.footer-title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-main div{
+    width: 30%;
+    text-align: center;
+}
+
+.footer-paragraph-about{
+    width: 60%;
+    text-align: start;
+    margin: auto;
+    line-height: 1.5em;
+}
+
+.footer-about i{
+    color: white;
+    font-size: 25px;
+    margin-left: 4%; 
+    margin-top: 10px;
+}
+
+.icons-about{
+    text-align: left;
+    margin-left: 16%;
+}
+
+.footer-extra a{
+    line-height: 1.5em;
+}
+
+.footer-contact i{
+    color: white;
+    display: inline-block;
+}
+
+.phone-icon{
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.email-icon{
+    display: inline-block; 
+    margin-right: 10px; 
+    margin-top: 1px;
+}
+
+.paragraph-contact-top{
+    margin-bottom: 10px;
+}
+
+.paragraph-contact{
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer-copyright{
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
