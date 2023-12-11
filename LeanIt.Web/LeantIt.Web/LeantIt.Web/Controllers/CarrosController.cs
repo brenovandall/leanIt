@@ -51,4 +51,10 @@ public class CarrosController : Controller
 
         return View(null);
     }
+    [HttpGet]
+    public IActionResult Listar() {
+
+        var carros = _context.Carros.ToList();
+        return View(carros);
+    }
 }

@@ -1,0 +1,80 @@
+﻿<header>
+
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            <li><a href="#">Preços</a></li>
+            <li><a asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+            <li><a asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+            <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <div class="main-content">
+                    <div class="title-content">
+                        <div>
+                            <h1>@item.Marca @item.Modelo</h1>
+                        </div>
+                        <div>
+                            <h1>@item.Placa</h1>
+                        </div>
+                    </div>
+                    <div class="id-content">
+                        <p>Id: @item.Id</p>
+                    </div>
+                    <div class="btn-content">
+                        <button class="button-do-editar" type="submit">Editar</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-x-twitter"></i></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="#">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p><a href="#">Serviços</a></p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
+        </div>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
+
+
+
+@section Styles {
+
+    <link rel="stylesheet" href="~/css/listar.css" />
+}
