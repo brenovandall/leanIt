@@ -20,101 +20,102 @@
         </nav>
     </header>
     <main>
-        <div class="navbar">
-            <div class="navbarUm">
-                <div class="inicio">
-                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" style="width: 210px; height: 200px;" alt="">
-                    <div class="titulo">
-                        <span class="pnavbar">Detalhes da Conta</span>
-                        <a href="#" class="voltar">Voltar <i class="fa-solid fa-left-long"></i></a>
+        <div class="conteudo">
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" alt="">
+                <div class="caminhos">
+                    <div class="historico">
+                        <i class="fa-solid fa-car"></i> <span>Histórico de viagens</span>
+                    </div>
+                    <div class="outros detalhesConta">
+                        <i class="fa-solid fa-user"></i> <span>Detalhes da conta</span>
+                    </div>
+                    <div class="outros">
+                        <i class="fa-solid fa-lock"></i> <span>Alterar senha</span>
+                    </div>
+                    <div class="outros">
+                        <i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span>
                     </div>
                 </div>
-                <div class="detalhes">
-                    <div class="caminhos">
-                        <div class="historico">
-                            <i class="fa-solid fa-car"></i> <span>Histórico de viagens</span>
+            </div>
+            <div class="preencher">
+                <div class="titulo">
+                    <span class="pnavbar">Detalhes da Conta</span>
+                    <div class="voltar">       
+                        <a href="#">Voltar <i class="fa-solid fa-left-long"></i></a>
+                    </div>
+                </div>
+                <form>
+                    <div class="informacoes">
+                        <div>
+                            <div>
+                                <label for="nome">Nome Completo</label>
+                            </div>
+                            <input type="text" name="nome" id="nome" placeholder="Digite seu nome complemento">
                         </div>
-                        <div class="outros detalhesConta">
-                            <i class="fa-solid fa-user"></i> <span>Detalhes da conta</span>
+                        <div>
+                            <div>
+                                <label for="email">Email</label>
+                            </div>
+                            <input type="text" name="email" id="email" class="readonly" readonly>
                         </div>
-                        <div class="outros">
-                            <i class="fa-solid fa-lock"></i> <span>Alterar senha</span>
+                        <div>
+                            <div>
+                                <label for="cnh">CNH</label>
+                            </div>
+                            <input type="text" name="cnh" id="cnh" class="readonly" readonly>
                         </div>
-                        <div class="outros">
-                            <i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span>
+                        <div>
+                            <div>
+                                <label for="cep">CEP</label>
+                            </div>
+                            <input type="text" name="cep" id="cep" placeholder="Digite seu cep">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="numero">Número</label>
+                            </div>
+                            <input type="text" name="numero" id="numero" placeholder="Digite seu número">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="endereco">Endereço</label>
+                            </div>
+                            <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="bairro">Bairro</label>
+                            </div>
+                            <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="cidade">Cidade</label>
+                            </div>
+                            <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="estado">Estado</label>
+                            </div>
+                            <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
+                        </div>
+                        <div>
+                            <div>
+                                <label for="complemento">Complemento</label>
+                            </div>
+                            <input type="text" name="complemento" id="complemento"  placeholder="Digite o complemento">
+                        </div>
+                        <div>
+                            <input type="submit" value="Salvar" class="enviar">
                         </div>
                     </div>
-                    <form>
-                        <div class="informacoes">
-                            <div>
-                                <div>
-                                    <label for="nome">Nome Completo</label>
-                                </div>
-                                <input type="text" name="nome" id="nome" placeholder="Digite seu nome complemento">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="email">Email</label>
-                                </div>
-                                <input type="text" name="email" id="email" class="readonly" readonly>
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="cnh">CNH</label>
-                                </div>
-                                <input type="text" name="cnh" id="cnh" class="readonly" readonly>
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="cep">CEP</label>
-                                </div>
-                                <input type="text" name="cep" id="cep" placeholder="Digite seu cep">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="numero">Número</label>
-                                </div>
-                                <input type="text" name="numero" id="numero" placeholder="Digite seu número">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="endereco">Endereço</label>
-                                </div>
-                                <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="bairro">Bairro</label>
-                                </div>
-                                <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="cidade">Cidade</label>
-                                </div>
-                                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="estado">Estado</label>
-                                </div>
-                                <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="complemento">Complemento</label>
-                                </div>
-                                <input type="text" name="complemento" id="complemento"  placeholder="Digite o complemento">
-                            </div>
-                            <div>
-                                <input type="submit" value="Salvar" class="enviar">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </main>
+
     <footer>
 
         <div class="footer-main">

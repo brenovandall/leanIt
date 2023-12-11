@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c9c3a726d9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Alterar Perfil</title>
+    <title>Alterar Senha</title>
 </head>
 <body>
     <header>
@@ -21,60 +20,58 @@
         </nav>
     </header>
     <main>
-        <div class="navbar">
-            <div class="navbarUm">
-                <div class="inicio">
-                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" style="width: 210px; height: 200px;" alt="">
-                    <div class="titulo">
-                        <span class="pnavbar">Detalhes da Conta</span>
-                        <a href="#" class="voltar">Voltar <i class="fa-solid fa-left-long"></i></a>
+        <div class="conteudo">
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" alt="">
+                <div class="caminhos">
+                    <div class="historico">
+                        <i class="fa-solid fa-car"></i> <span>Histórico de viagens</span>
+                    </div>
+                    <div class="outros">
+                        <i class="fa-solid fa-user"></i> <span>Detalhes da conta</span>
+                    </div>
+                    <div class="outros alterarSenha">
+                        <i class="fa-solid fa-lock"></i> <span>Alterar senha</span>
+                    </div>
+                    <div class="outros">
+                        <i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span>
                     </div>
                 </div>
-                <div class="detalhes">
-                    <div class="caminhos">
-                        <div class="historico">
-                            <i class="fa-solid fa-car"></i> <span>Histórico de viagens</span>
+            </div>
+            <div class="preencher">
+                <div class="titulo">
+                    <span class="pnavbar">Detalhes da Conta</span>
+                    <div class="voltar">       
+                        <a href="#">Voltar <i class="fa-solid fa-left-long"></i></a>
+                    </div>
+                </div>
+                <form>
+                    <div class="informacoes">
+                        <div>
+                            <div>
+                                <label for="senhaAtual">Senha atual</label>
+                            </div>
+                            <input type="text" name="senhaAtual" id="senhaAtual" placeholder="Digite sua senha atual">
                         </div>
-                        <div class="outros">
-                            <i class="fa-solid fa-user"></i> <span>Detalhes da conta</span>
+                        <div>
+                            <div>
+                                <label for="senhaNova">Senha nova</label>
+                            </div>
+                            <input type="text" name="senhaNova" id="senhaNova" placeholder="Digite a sua senha nova">
                         </div>
-                        <div class="outros alterarSenha">
-                            <i class="fa-solid fa-lock"></i> <span>Alterar senha</span>
-                        </div>
-                        <div class="outros">
-                            <i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span>
+                        <div>
+                            <div>
+                                <label for="confirmarSenha">Confimar senha</label>
+                            </div>
+                            <input type="text" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha">
+                        <div>
+                            <input type="submit" value="Salvar" class="enviar">
                         </div>
                     </div>
-                    <form>
-                        <div class="informacoes">
-                            <div>
-                                <div>
-                                    <label for="senhaAtual">Senha atual</label>
-                                </div>
-                                <input type="text" name="senhaAtual" id="senhaAtual" placeholder="Digite sua senha atual">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="senhaNova">Nova senha</label>
-                                </div>
-                                <input type="text" name="senhaNova" id="senhaNova" placeholder="Digite sua nova senha">
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="confirmarSenha">Confirme sua senha</label>
-                                </div>
-                                <input type="text" name="confirmarSenha" id="confirmarSenha" placeholder="Digite a senha novamente">
-                            </div>
-                            <div>
-                                <input type="submit" value="Alterar" class="alterar">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </main>
-
     <footer>
 
         <div class="footer-main">
