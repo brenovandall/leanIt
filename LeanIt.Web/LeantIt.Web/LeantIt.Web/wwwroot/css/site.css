@@ -197,8 +197,8 @@ main {
     flex-wrap: wrap;
     text-align: center;
     width: 50vh;
-    min-height: 72vh;
-    max-height: 72vh;
+    min-height: 68.5vh;
+    max-height: 68.5vh;
     border: 3px solid rgb(255, 129, 16);
     position: relative;
     margin-bottom: 2vh;
@@ -233,7 +233,7 @@ main {
 .button-container {
     display: block;
     position: absolute;
-    bottom: 1.5vh;
+    bottom: 2.5vh;
     width: 100%;
 }
 
@@ -313,86 +313,54 @@ main {
 
 .footer-main {
     margin-top: 5vh;
-    display: flex;
     background-color: rgb(255, 129, 16);
+    display: flex;
     justify-content: space-around;
-    padding: 50px 0;
+    text-align: center;
 }
 
-    .footer-main a {
-        color: rgb(26, 26, 26);
-        text-decoration: none;
-    }
+.footer-about, .footer-extra, .footer-contact {
+    width: 20%;
+    color: rgb(26, 26, 26);
+}
 
-        .footer-main a:hover {
-            color: white;
-        }
+.footer-extra {
+    margin-bottom: 3vh;
+}
+
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+    .footer-main a:hover {
+        color: white;
+    }
 
 .footer-title {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-}
-
-.footer-main div {
-    width: 30%;
-    text-align: center;
-}
-
-.footer-paragraph-about {
-    width: 60%;
-    text-align: start;
-    margin: auto;
-    line-height: 1.5em;
+    margin-top: 2vh;
 }
 
 .footer-about i {
     color: white;
-    font-size: 25px;
+    font-size: 3vh;
     margin-left: 4%;
     margin-top: 10px;
 }
 
-.icons-about {
-    text-align: left;
-    margin-left: 16%;
-}
-
-.footer-extra a {
-    line-height: 1.5em;
-}
-
 .footer-contact i {
     color: white;
-    display: inline-block;
-}
-
-.phone-icon {
-    display: inline-block;
-    margin-right: 7px;
-}
-
-.email-icon {
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 1px;
-}
-
-.paragraph-contact-top {
-    margin-bottom: 10px;
-}
-
-.paragraph-contact {
-    text-align: start;
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
+    margin-right: 1vh;
 }
 
 .footer-copyright {
     text-align: center;
-    padding: 10px 0;
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.8vh;
 }
+
 
