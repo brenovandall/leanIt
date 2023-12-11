@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --corUm: #fb8314;
+    --corDois: #1c1c1c;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #d5cdd519;
+}
+.pagamento{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.esquerda{
+    margin: 15px;
+}
+.resumo{
+    margin-top: 20px;
+}
+.resumo span{
+    font-weight: 100;
+}
+
+.tituloModelo{
+    margin-left: 30px;
+}
+.resultadoModelo{
+    margin-left: 130px;
+}
+
+
+
+.minuto{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.tituloMinutos{
+    margin-left: 30px;
+}
+.resultadoMinutos{
+    margin-left: 140px;
+    
+}
+
+.tituloCategoria{
+    margin-left: 30px;
+}
+.resultadoCategoria{
+    margin-left: 194px;
+}
+
+.cupom {
+    margin-top: 30px;
+}
+.inputs{
+    margin-top: 40px;
+}
+.inputs input{
+    height: 30px;
+    border: var(--corUm) solid 2px;
+}
+
+#inserir{
+    width: 250px;
+    padding-left: 2px;
+}
+
+#botao{
+    width: 125px;
+    margin-left: -5px;
+    border: var(--corUm) solid 2px;
+    background-color: var(--corUm);
+    color: white;
+    
+}
+#botao:hover {
+    background-color:rgb(255, 161, 79) ;
+    transition: 0.5s;
+    border: solid 2px rgb(255, 161, 79);
+    cursor: pointer;
+
+}
+.direita{
+    margin: 15px;
+    margin-left: 100px;
+}
+
+
+
+.informacaoFinal{
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    width: 400px;
+    height: 222px;
+    margin-top: 20px;
+    border: white 2px solid;
+    border-top-left-radius: 5px  ;
+    border-top-right-radius: 5px  ;
+}
+
+.resultadoDesconto{
+    margin-left: 130px;
+}
+
+.valorAluguel{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.resultadoValorAluguel{
+    margin-left: 140px;
+}
+
+.resultadoValorFinal{
+    margin-left: 70px;
+}
+
+.direita input{
+    border: var(--corUm) solid 2px;
+    background-color: var(--corUm);
+    color: white;
+    height: 32px;
+    width: 400px;
+    padding-top: -100px;
+    border-bottom-left-radius: 5px  ;
+    border-bottom-right-radius: 5px  ;
+}
+
+.direita input:hover {
+    background-color:rgb(255, 161, 79) ;
+    transition: 0.5s;
+    border: solid 2px rgb(255, 161, 79);
+    cursor: pointer;
+
+}
