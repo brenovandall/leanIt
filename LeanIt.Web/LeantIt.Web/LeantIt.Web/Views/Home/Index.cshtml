@@ -161,7 +161,6 @@
 
 
 @section Scripts {
-
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -172,6 +171,25 @@
             var array = [];
             var icon = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702156334/image-removebg-preview_5_vjrfkz_iq0hzk.png';
             // Marcar cada carro no mapa
+
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+
+                if (places.length === 0) {
+                    return;
+                }
+
+                // Get information about the selected location if needed
+                var selectedPlace = places[0];
+                console.log(selectedPlace);
+
+                // Update the map with the new location
+                map.setCenter(selectedPlace.geometry.location);
+            });
+
         @foreach (var carro in Model)
         {
             <text>
