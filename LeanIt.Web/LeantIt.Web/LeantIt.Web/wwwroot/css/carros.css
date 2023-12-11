@@ -75,6 +75,41 @@ nav ul li:nth-child(-n+4) a {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 
+.nav-item {
+    position: relative;
+}
+
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 200px;
+    padding-bottom: 40px;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+
 
 main {
     width: 100vw;
