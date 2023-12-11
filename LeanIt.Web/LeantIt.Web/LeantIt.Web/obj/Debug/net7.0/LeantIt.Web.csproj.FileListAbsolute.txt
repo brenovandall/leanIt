@@ -307,3 +307,8 @@ C:\Users\Sidney\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug
 C:\Users\Sidney\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.pdb
 C:\Users\Sidney\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\LeantIt.Web.genruntimeconfig.cache
 C:\Users\Sidney\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\obj\Debug\net7.0\ref\LeantIt.Web.dll
+C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Humanizer.dll
+C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\bin\Debug\net7.0\System.CodeDom.dll
