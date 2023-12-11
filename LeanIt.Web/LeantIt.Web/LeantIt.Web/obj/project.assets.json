@@ -1024,19 +1024,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sidney\\.nuget\\packages\\": {}
+    "C:\\Users\\vbren\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sidney\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "projectUniqueName": "C:\\Users\\vbren\\Source\\Repos\\leanItupd\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
       "projectName": "LeantIt.Web",
-      "projectPath": "C:\\Users\\Sidney\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
-      "packagesPath": "C:\\Users\\Sidney\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sidney\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+      "projectPath": "C:\\Users\\vbren\\Source\\Repos\\leanItupd\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "packagesPath": "C:\\Users\\vbren\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vbren\\Source\\Repos\\leanItupd\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sidney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vbren\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1096,7 +1096,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
