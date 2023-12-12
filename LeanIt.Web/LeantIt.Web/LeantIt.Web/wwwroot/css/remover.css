@@ -105,21 +105,14 @@ nav ul li:nth-child(-n+4) a {
     transition: 0.6s border;
 }
 
-    nav ul li:nth-child(-n+4) a:hover {
-        border-bottom: 1px solid rgb(26, 26, 26);
-    }
-
+nav ul li:nth-child(-n+4) a:hover {
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
 
 main {
     display: flex;
     justify-content: center;
 }
-
-.container {
-    width: 70%;
-    margin-top: 3vh;
-}
-
 .card {
     border: 1px solid #dcdcdc;
     box-shadow: 3px 3px #dcdcdc;
@@ -128,25 +121,35 @@ main {
     margin-bottom: 5vh;
 }
 
-.botoesAcao{
+form{
+    margin-top: 5vh;
+    width: 69.2%;
+    height: 35vh;
+}
+
+.title-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.botoesAcao {
     display: flex;
     justify-content: flex-end;
 }
 
-.botoesAcao a{
-    text-decoration:none;
-    color: white;
-}
+    .botoesAcao a {
+        text-decoration: none;
+        color: white;
+    }
 
 .botaoRemover {
     background-color: black;
     margin-left: 10px;
     padding: 6px;
-    font-size: 15px
-}
-
-.botaoRemover a{
-    padding-left: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
 }
 
 .botaoRemover:hover {
@@ -170,23 +173,18 @@ main {
     justify-content: space-between;
 }
 
-.btn-content {
-    display: flex;
-    justify-content: end;
+.botaoVoltar{
+    padding-top: 5px;
 }
 
-.button-do-editar {
-    background-color: rgb(255, 129, 16);
-    color: white;
-    padding: 7px 11px;
-    transition: 0.5s background;
-    border: none;
-    width: 5vw;
+.botaoVoltar a{
+    color: black;
 }
 
-    .button-do-editar:hover {
-        background-color: rgb(26, 26, 26);
-    }
+.botaoVoltar a:hover {
+    color: rgb(255, 129, 16);
+}
+
 
 .footer-main {
     margin-top: 5vh;
@@ -194,7 +192,6 @@ main {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    margin-top: 50vh;
 }
 
 .footer-about, .footer-extra, .footer-contact {

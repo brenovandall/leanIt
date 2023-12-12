@@ -19,37 +19,31 @@
 </header>
 
 <main>
-    <div class="container">
-        @foreach (var item in Model)
-        {
+    <form asp-action="Remover" method="post">
             <div class="card">
                 <div class="main-content">
                     <div class="title-content">
                         <div>
-                            <h1>@item.Marca @item.Modelo</h1>
+                            <h1>@Model.Marca @Model.Modelo</h1>
                         </div>
                         <div>
-                            <h1>@item.Placa</h1>
+                            <h1>@Model.Placa</h1>
                         </div>
                     </div>
                     <div class="id-content">
-                        <p>Id: @item.Id</p>
+                        <p>Id: @Model.Id</p>
                     </div>
                     <div class="botoesAcao">
-                        <div class="btn-content">
-                            <button class="button-do-editar" type="submit">Editar</button>
+                        <div class="botaoVoltar">
+                            <a asp-area="" asp-controller="Carros" asp-action="Listar">Voltar </a>
                         </div>
-                        <div class="botaoRemover">
-                            @Html.ActionLink("Remover" , "Remover", new {id = @item.Id} );
+                        <div>
+                        <input class="botaoRemover" type="submit" value="Deletar" />
                         </div>
                     </div>
                 </div>
             </div>
-        }
-
-    </div>
-
-
+    </form>
 </main>
 
 
@@ -86,5 +80,5 @@
 
 @section Styles {
 
-    <link rel="stylesheet" href="~/css/listar.css" />
+    <link rel="stylesheet" href="~/css/remover.css" />
 }

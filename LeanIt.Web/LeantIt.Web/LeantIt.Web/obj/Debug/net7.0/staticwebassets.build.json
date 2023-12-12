@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GRH06WIV0LZUSbT29jLV9nSZXOuuiUgE8UxydRj3kbY=",
+  "Hash": "Vs4YjwX0y35h28H6nR0cKyApKJHGiIUXBhXtrnXCF1Y=",
   "Source": "LeantIt.Web",
   "BasePath": "_content/LeantIt.Web",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\register.css"
+    },
+    {
+      "Identity": "C:\\Users\\Pedro\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\remover.css",
+      "SourceId": "LeantIt.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pedro\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\",
+      "BasePath": "_content/LeantIt.Web",
+      "RelativePath": "css/remover.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\remover.css"
     },
     {
       "Identity": "C:\\Users\\Pedro\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\services.css",

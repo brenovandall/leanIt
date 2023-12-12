@@ -57,4 +57,37 @@ public class CarrosController : Controller
         var carros = _context.Carros.ToList();
         return View(carros);
     }
+
+    [HttpGet]
+    public IActionResult Remover(Guid? id)
+    {
+        var carros = _context.Carros.ToList();
+
+        foreach(var carro in carros)
+        {
+            if(id == carro.Id)
+            {
+                return View(carro);
+            }
+        }
+
+        return RedirectToAction("Listar");
+    }
+
+    [HttpPost]
+    public IActionResult Remover(CarroModel carro)
+    {
+        var carros = _context.Carros.ToList();
+
+        foreach (var carroItem in carros)
+        {
+            if (carroItem.Id == carro.Id)
+            {
+                _context.Carros.Remove(carroItem);
+                _context.SaveChanges();
+            }
+        }
+
+        return RedirectToAction("Index", "Home");
+    }
 }

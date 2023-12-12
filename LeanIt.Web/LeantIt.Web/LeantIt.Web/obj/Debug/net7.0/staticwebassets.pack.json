@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
+      "Id": "C:\\Users\\Pedro\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\remover.css",
+      "PackagePath": "staticwebassets\\css\\remover.css"
+    },
+    {
       "Id": "C:\\Users\\Pedro\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\wwwroot\\css\\services.css",
       "PackagePath": "staticwebassets\\css\\services.css"
     },
