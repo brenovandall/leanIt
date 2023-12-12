@@ -1,6 +1,8 @@
-﻿:root {
-    --corUm: #fb8314;
-    --corDois: #1c1c1c;
+﻿
+/* Estas são as cores padrões do projeto */
+:root {
+    --corUm: #fb8314; /* Cor Laranja */
+    --corDois: #1c1c1c; /* Cor Cinza Escuro */
 }
 
 * {
@@ -9,6 +11,7 @@
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Aqui é o header da página de serviços */
 header {
     width: 100%;
     background-color:  #ffffff;
@@ -25,6 +28,7 @@ header {
     height: 5vh;
 }
 
+/* Começo da estilização do navbar */
 header nav {
     position: absolute;
     top: 0;
@@ -38,21 +42,21 @@ nav ul {
     justify-content: space-around;
 }
 
-    nav ul li {
-        list-style: none;
-        margin: 7vh 0 0 0;
-        padding: 1vh 4vh;
-    }
+nav ul li {
+    list-style: none;
+    margin: 7vh 0 0 0;
+    padding: 1vh 4vh;
+}
 
-        nav ul li a {
-            color: rgb(26, 26, 26);
-            text-decoration: none;
-            font-size: 1.0rem;
-            letter-spacing: 2px;
-            font-family: 'Poppins';
-            transition: 0.5s all;
-            border: transparent;
-        }
+nav ul li a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    font-size: 1.0rem;
+    letter-spacing: 2px;
+    font-family: 'Poppins';
+    transition: 0.5s all;
+    border: transparent;
+}
 
 
 .button-home {
@@ -82,13 +86,13 @@ nav ul li:nth-child(-n+3) a {
     position: relative;
 }
 
-    .nav-item a {
-        display: block;
-        text-decoration: none;
-        color: #333;
-    }
+.nav-item a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
 
-
+/* Aqui é o menu dropdown com as opções de administrador */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -133,6 +137,7 @@ nav ul li:nth-child(-n+3) a {
     }
 
 
+/* Aqui começa a estilização do article */
 .article-description {
     width: 98vh;
     text-align: center;
@@ -177,10 +182,10 @@ nav ul li:nth-child(-n+3) a {
     transition: 0.5s background;
 }
 
-    .article-description-button:hover {
-        background-color: rgb(26, 26, 26);
-        cursor: pointer;
-    }
+.article-description-button:hover {
+    background-color: rgb(26, 26, 26);
+    cursor: pointer;
+}
 
 /* aside números informativos */
 
@@ -363,6 +368,12 @@ main {
     cursor: pointer;
 }
 
+
+/* Aqui é apenas a estilização do Main */
+main {
+    background-color: var(--corDois);
+}
+
 /* Footer */
 
 .footer-main {
@@ -424,12 +435,7 @@ main {
 }
 
 
-main {
-    background-color: var(--corDois);
-}
-
-
-
+/* Aqui começa o carousel de carros/categorias */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -451,6 +457,7 @@ main {
     text-align: center;
 }
 
+/* Botões com estilização do font-awesome */
 #prevBtn,
 #nextBtn {
     position: absolute;
@@ -475,6 +482,8 @@ main {
     padding-top: 35px;
 }
 
+
+/* Este badge está sendo exibido dentro do carousel com algumas infromações */
 .badge {
     display: inline-flex;
     flex-direction: column;
