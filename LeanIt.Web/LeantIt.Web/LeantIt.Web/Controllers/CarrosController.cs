@@ -5,24 +5,29 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LeantIt.Web.Controllers;
 
+// ************************************************ //
+// CONTROLADOR DAS ALTERAÇÕES E INSERÇÃO DE CARROS  //
+// ************************************************ //
 public class CarrosController : Controller
 {
 
-    private AppDbContext _context;
+    private AppDbContext _context; // este é o DbContext (contexto da base de dados usada no nosso projeto)
+                                   // em todas os casos de tratamentos de dados, utilize "_context" para acessar as tabelas...
 
+    // construtor do controller, aqui, devem ser assinadas todas as injeções de dependencias
     public CarrosController(AppDbContext context)
     {
         _context = context;
     }
 
-
+    // Aqui a view retorna a página de adicionar
     [HttpGet]
     public IActionResult Adicionar()
     {
         return View();
     }
 
-
+    // Aqui a view envia os dados da página "Adicionar"
     [HttpPost]
     public IActionResult Adicionar(AdicionarCarroViewModel adicionarCarroViewModel)
     {
@@ -51,6 +56,8 @@ public class CarrosController : Controller
 
         return View(null);
     }
+
+    // Aqui a view retorna os dados para a pagina
     [HttpGet]
     public IActionResult Listar() {
 
@@ -58,6 +65,8 @@ public class CarrosController : Controller
         return View(carros);
     }
 
+
+    // Aqui a view retorna os dados para uma simples pagina de deletar o carro
     [HttpGet]
     public IActionResult Remover(Guid? id)
     {
@@ -74,6 +83,7 @@ public class CarrosController : Controller
         return RedirectToAction("Listar");
     }
 
+    // Aqui a view efetivamente deleta o carro 
     [HttpPost]
     public IActionResult Remover(CarroModel carro)
     {
@@ -90,6 +100,8 @@ public class CarrosController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+
+    // Aqui a view retorna os dados para fazer a edição de um carro, trazendo todos os dados do carro existente
     [HttpGet]
     public IActionResult Editar(Guid? id)
     {
@@ -105,6 +117,7 @@ public class CarrosController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    // Aqui a view envia os dados atualizados e efetua uma atualização nas colunas
     [HttpPost]
     public IActionResult Editar(CarroModel carro)
     {
