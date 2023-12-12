@@ -132,7 +132,7 @@ nav ul li:nth-child(-n+4) a {
 
 
 .button-home {
-    color: rgb(255, 129, 16);
+    color: rgb(26, 26, 26);
 }
 
 .button-home:hover {
@@ -167,6 +167,34 @@ nav ul li:nth-child(-n+4) a {
         text-decoration: none;
         color: #333;
     }
+
+.form-control {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    padding: 4px;
+    width: 20%;
+}
+
+.form-check-input {
+    border: 3px solid #fb8314;
+    border-radius: 5px;
+    margin-right: 5px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+.escolhaSexo select {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    font-size: small;
+}
+
+#inputEstado {
+    border: 1px solid #fb8314;
+    border-radius: 5px;
+    font-size: small;
+}
 
 .informacoesPessoais {
     display: flex;
