@@ -1029,11 +1029,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\breno.dall\\Source\\Repos\\leanItupdate\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "projectUniqueName": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
       "projectName": "LeantIt.Web",
-      "projectPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanItupdate\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "projectPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
       "packagesPath": "C:\\Users\\breno.dall\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanItupdate\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+      "outputPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\breno.dall\\AppData\\Roaming\\NuGet\\NuGet.Config",

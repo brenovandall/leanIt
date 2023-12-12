@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v7LFkZCDRBm0BkGAU2krxx63c3zNRjkzPC/eUoWwjMhrxGTOLWwruv6sZ2MFMpjPLc2pLntcNIGNEhegLMfpIQ==",
+  "dgSpecHash": "sYdc374ZN2Fw6PD/8IgBi2eE1IN7Z8WRAmPul7fqyFWYwkyeBPiqZ3KQ3tmMeJ6L+bTe0zt3i7Yjonv84DReQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\breno.dall\\Source\\Repos\\leanItupdate\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+  "projectFilePath": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\breno.dall\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\breno.dall\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",

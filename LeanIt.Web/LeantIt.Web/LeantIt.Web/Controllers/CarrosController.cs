@@ -98,7 +98,7 @@ public class CarrosController : Controller
             }
         }
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Listar");
     }
 
     // Aqui a view retorna os dados para fazer a edição de um carro, trazendo todos os dados do carro existente
@@ -141,6 +141,6 @@ public class CarrosController : Controller
                 _context.SaveChanges();
             }
         }
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Listar");
     }
 }
