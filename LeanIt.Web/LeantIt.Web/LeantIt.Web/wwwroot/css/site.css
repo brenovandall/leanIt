@@ -231,8 +231,8 @@ main {
     flex-wrap: wrap;
     text-align: center;
     width: 50vh;
-    min-height: 68.5vh;
-    max-height: 68.5vh;
+    min-height: 68vh;
+    max-height: 68vh;
     border: 3px solid rgb(255, 129, 16);
     position: relative;
     margin-bottom: 2vh;
@@ -351,6 +351,11 @@ main {
     display: flex;
     justify-content: space-around;
     text-align: center;
+}
+
+.footer-about a{
+    display: inline-block;
+    margin-right: 1vh;
 }
 
 .footer-about, .footer-extra, .footer-contact {

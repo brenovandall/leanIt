@@ -398,6 +398,11 @@ main {
     background-color: white;
 }
 
+.footer-about a {
+    display: inline-block;
+    margin-right: 1vh;
+}
+
 
 main {
     background-color: var(--corDois);
