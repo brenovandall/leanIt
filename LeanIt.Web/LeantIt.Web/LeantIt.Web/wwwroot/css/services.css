@@ -106,7 +106,7 @@ nav ul li:nth-child(-n+3) a {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 170px;
+    width: 180px;
     margin-left: -28px;
     padding-left: 5px;
 }

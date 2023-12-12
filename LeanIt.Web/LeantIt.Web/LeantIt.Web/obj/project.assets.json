@@ -1024,19 +1024,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\breno.dall\\.nuget\\packages\\": {}
+    "C:\\Users\\pedro.garcia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\breno.dall\\Source\\Repos\\leanItup\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "projectUniqueName": "C:\\Users\\pedro.garcia\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
       "projectName": "LeantIt.Web",
-      "projectPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanItup\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
-      "packagesPath": "C:\\Users\\breno.dall\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanItup\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+      "projectPath": "C:\\Users\\pedro.garcia\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "packagesPath": "C:\\Users\\pedro.garcia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pedro.garcia\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\breno.dall\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pedro.garcia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

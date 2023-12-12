@@ -3,38 +3,12 @@
     margin: 0;
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.form-control {
-    border: 1px solid #fb8314;
-    border-radius: 5px;
-    padding: 4px;
-    width: 20%;
-}
 
-.form-check-input {
-    border: 3px solid #fb8314;
-    border-radius: 5px;
-    margin-right: 5px;
-    width: auto;
-    height: auto;
-    padding: 5px;
-}
-
-.escolhaSexo select {
-    border: 1px solid #fb8314;
-    border-radius: 5px;
-    font-size: small;
-}
-
-#inputEstado {
-    border: 1px solid #fb8314;
-    border-radius: 5px;
-    font-size: small;
-}
 header {
-    width: 100%;
+    width: 100;
     background-size: cover;
     background-position: center;
-    height: 15vh;
+    height: 20vh;
     position: relative;
     z-index: 1;
 }
@@ -76,6 +50,31 @@ nav ul {
         }
 
 
+.button-home {
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+        color: white;
+    }
+
+nav ul li:nth-child(-n+4) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+4) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+        color: black;
+    }
+
 .nav-item {
     position: relative;
 }
@@ -100,7 +99,7 @@ nav ul {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 170px;
+    width: 180px;
     margin-left: -28px;
     padding-left: 5px;
 }
@@ -136,6 +135,10 @@ nav ul {
     color: rgb(255, 129, 16);
 }
 
+.button-home:hover {
+    color: rgb(255, 129, 16);
+}
+
 .button-do-register {
     background-color: rgb(255, 129, 16);
     color: white;
@@ -147,12 +150,22 @@ nav ul {
         background-color: rgb(26, 26, 26);
     }
 
-nav ul li:nth-child(-n+3) a {
+nav ul li:nth-child(-n+4) a {
     transition: 0.6s border;
 }
 
-    nav ul li:nth-child(-n+3) a:hover {
+    nav ul li:nth-child(-n+4) a:hover {
         border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+.nav-item {
+    position: relative;
+}
+
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
     }
 
 .informacoesPessoais {

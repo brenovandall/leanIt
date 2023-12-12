@@ -5,24 +5,25 @@
     ViewData["Title"] = "Registre-se";
 }
 
-    <header>
-    <a href="index.html"><img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/logo_recorte_dxihjz_uv4xfy.png" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index" class="button-home">Home</a></li>
+<header>
+
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index" class="button-home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
-                <li><a href="#">Preços</a></li>
+            <li><a href="#">Preços</a></li>
             <li class="nav-item dropdown">
                 <a href="#">Admin</a>
                 <ul class="dropdown-menu">
-                    <li><a asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
-                    <li><a asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                    <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                    <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
                 </ul>
             </li>
             <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
-            </ul>
-        </nav>
-    </header>
+        </ul>
+    </nav>
+</header>
 
     
     <div class="tituloCadastro">

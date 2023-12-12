@@ -74,7 +74,7 @@ nav ul {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 170px;
+    width: 180px;
     margin-left: -28px;
     padding-left: 5px;
 }
@@ -147,6 +147,10 @@ form{
     height: 35vh;
 }
 
+form h1{
+    margin-bottom: 30px
+}
+
 .title-content {
     display: flex;
     width: 100%;
@@ -164,17 +168,18 @@ form{
     }
 
 .botaoRemover {
-    background-color: black;
+    background-color: red;
     margin-left: 10px;
     padding: 6px;
     font-size: 15px;
     color: white;
     border: none;
+    transition: all 0.5s
 }
 
-.botaoRemover:hover {
-    background-color: rgb(26, 26, 26);
-}
+    .botaoRemover:hover {
+        background-color: #FF2E2E;
+    }
 
 .main-content {
     padding-left: 30px;
@@ -207,7 +212,7 @@ form{
 
 
 .footer-main {
-    margin-top: 5vh;
+    margin-top: 9vh;
     background-color: rgb(255, 129, 16);
     display: flex;
     justify-content: space-around;

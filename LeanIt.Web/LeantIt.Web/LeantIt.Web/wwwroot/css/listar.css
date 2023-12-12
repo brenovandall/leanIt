@@ -74,7 +74,7 @@ nav ul {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 170px;
+    width: 180px;
     margin-left: -28px;
     padding-left: 5px;
 }
@@ -158,21 +158,18 @@ main {
     color: white;
 }
 
-.botaoRemover {
+.botaoRemover a {
     background-color: black;
     margin-left: 10px;
     padding: 6px;
-    font-size: 15px
+    font-size: 15px; 
+    transition: all 0.5s;
 }
 
-    .botaoRemover a {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-.botaoRemover:hover {
-    background-color: rgb(26, 26, 26);
+.botaoRemover a:hover {
+    background-color: #323232;
 }
+
 
 .main-content {
     padding-left: 30px;
@@ -196,19 +193,18 @@ main {
     justify-content: end;
 }
 
-.botaoEditar {
+.botaoEditar a {
     background-color: rgb(255, 129, 16);
-    color: white;
-    padding-left: 20px;
-    padding-top: 5px;
-    transition: 0.5s background;
-    border: none;
-    width: 5vw;
+    margin-left: 10px;
+    padding: 6px;
+    font-size: 15px;
+    transition: all 0.5s;
 }
 
-    .botaoEditar:hover {
-        background-color: rgb(26, 26, 26);
-    }
+.botaoEditar a:hover {
+    background-color: #ff9100;
+}
+
 
 .footer-main {
     margin-top: 5vh;
