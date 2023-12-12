@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.logo{
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+header nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav ul{
+    margin: 0 10vh 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 7vh 0 0 0;
+    padding: 1vh 4vh;
+}
+
+nav ul li a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    font-size: 1.0rem;
+    letter-spacing: 2px;
+    font-family: 'Poppins';
+    transition: 0.5s all;
+    border: transparent;
+}
+
+.button-home{
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register{
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+.button-do-register:hover{
+    background-color: rgb(26, 26, 26);
+}
+
+nav ul li:nth-child(-n+3) a{
+    transition: 0.6s border;
+}
+
+nav ul li:nth-child(-n+3) a:hover{
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
+
+/*main*/
+
+h1{
+    margin-top: 8vh;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1vh;
+}
+
+h2{
+    padding-top: 3.5vh;
+    padding-bottom: 1vh;
+}
+
+.first-paragraph{
+    padding-bottom: 3vh;
+}
+
+.terms{
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    background-color: rgb(235, 235, 235);
+    margin-bottom: 8vh;
+    padding: 4vh 0;
+    overflow: auto;
+    border: 2px solid black;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.terms p, .terms h2{
+    width: 90%;
+    margin: auto;
+}
+
+.terms p{
+    /* color: rgb(55, 55, 55); */
+    font-weight: 100;
+}
+
+.att-termos{
+    padding-top: 2vh;
+}
+
+/*footer*/
+
+.footer-main {
+    background-color: rgb(255, 129, 16);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-about a{
+    display: inline-block;
+    margin-right: 1vh;
+}
+
+.footer-about, .footer-extra, .footer-contact {
+    width: 20%;
+    color: rgb(26, 26, 26);
+}
+
+.footer-extra {
+    margin-bottom: 3vh;
+}
+
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+    .footer-main a:hover {
+        color: white;
+    }
+
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2vh;
+}
+
+.footer-about i {
+    color: white;
+    font-size: 3vh;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+
+.footer-contact i {
+    color: white;
+    margin-right: 1vh;
+}
+
+.footer-copyright {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.8vh;
+}
