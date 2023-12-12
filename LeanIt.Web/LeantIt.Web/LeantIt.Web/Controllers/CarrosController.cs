@@ -90,4 +90,44 @@ public class CarrosController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+    [HttpGet]
+    public IActionResult Editar(Guid? id)
+    {
+        var carros = _context.Carros.ToList();
+
+        foreach (var carro in carros)
+        {
+            if (id == carro.Id)
+            {
+                return View(carro);
+            }
+        }
+        return RedirectToAction("Index", "Home");
+    }
+
+    [HttpPost]
+    public IActionResult Editar(CarroModel carro)
+    {
+        var carros = _context.Carros.ToList();
+
+        foreach(var carroItem in carros){
+
+            if (carro.Id == carroItem.Id){
+
+                carroItem.Descricao = carro.Descricao;
+                carroItem.Marca = carro.Marca;
+                carroItem.Modelo = carro.Modelo;
+                carroItem.Year = carro.Year;
+                carroItem.Placa = carro.Placa;
+                carroItem.Cor = carro.Cor;
+                carroItem.Status = carro.Status;
+                carroItem.Latitude = carro.Latitude;
+                carroItem.Longitude = carro.Longitude;
+
+                _context.Update(carroItem);
+                _context.SaveChanges();
+            }
+        }
+        return RedirectToAction("Index", "Home");
+    }
 }

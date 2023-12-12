@@ -9,8 +9,8 @@
             <li class="nav-item dropdown">
                 <a href="#">Admin</a>
                 <ul class="dropdown-menu">
-                    <li><a asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
-                    <li><a asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                    <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                    <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
                 </ul>
             </li>
             <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
@@ -36,11 +36,11 @@
                         <p>Id: @item.Id</p>
                     </div>
                     <div class="botoesAcao">
-                        <div class="btn-content">
-                            <button class="button-do-editar" type="submit">Editar</button>
+                        <div class="botaoEditar">
+                            @Html.ActionLink("Editar" , "Editar", new {id = @item.Id} )
                         </div>
                         <div class="botaoRemover">
-                            @Html.ActionLink("Remover" , "Remover", new {id = @item.Id} );
+                            @Html.ActionLink("Remover" , "Remover", new {id = @item.Id} )
                         </div>
                     </div>
                 </div>

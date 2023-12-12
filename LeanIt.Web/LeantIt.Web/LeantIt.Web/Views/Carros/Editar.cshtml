@@ -1,10 +1,5 @@
-﻿@model LeantIt.Web.Models.ViewModels.AdicionarCarroViewModel
-@{
-}
-
-
+﻿@model LeantIt.Web.Models.CarroModel
 <header>
-
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
@@ -22,12 +17,11 @@
         </ul>
     </nav>
 </header>
-
 <main>
     <form method="post">
 
         <div class="container" style="margin-bottom: 15vh">
-            <h1 class="add-cars-title">Adicionar Carros - Administrador</h1>
+            <h1 class="add-cars-title">Editar Carros - Administrador</h1>
             <div class="form-add">
 
                 <div class="item-content" style="width: 100%; display: flex;">
@@ -85,8 +79,8 @@
                         </div>
 
                         <div class="botao-forms">
-                            <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Adicionar">
-                                Adicionar Carro
+                            <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Editar">
+                                Editar Carro
                             </button>
                         </div>
                     </div>
@@ -98,8 +92,8 @@
         </div>
 
     </form>
-    
-    
+
+
 </main>
 
 
@@ -136,5 +130,5 @@
 
 @section Styles {
 
-    <link rel="stylesheet" href="~/css/carros.css" />
+    <link rel="stylesheet" href="~/css/editar.css" />
 }
