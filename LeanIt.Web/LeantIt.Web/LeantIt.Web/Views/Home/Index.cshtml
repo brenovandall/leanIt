@@ -174,10 +174,32 @@
 
 @section Scripts {
     <script>
+
+        var lat;
+        var lng;
+
+        function success(pos) {
+            lat = pos.coords.latitude;
+            lng = pos.coords.longitude;
+            initMap();
+        }
+
+        navigator.geolocation.getCurrentPosition(success);
+
+        var meuIcon = 'https://res.cloudinary.com/dubnbered/image/upload/v1702342339/pin-do-mapa_okjn2q.png';
+
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: { lat: -26.917557, lng: -49.067870 } // Centro do mapa
+                center: { lat: lat, lng: lng } // Map center
+            });
+
+            // Create a marker with a custom icon
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng },
+                map: map,
+                icon: meuIcon,
+                animation : google.maps.Animation.BOUNCE
             });
 
             var array = [];
