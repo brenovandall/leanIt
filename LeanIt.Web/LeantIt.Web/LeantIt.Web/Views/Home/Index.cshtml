@@ -186,6 +186,12 @@
 
         navigator.geolocation.getCurrentPosition(success);
 
+
+        if (lat == null || lng == null) {
+            lat = -26.917231
+            lng = -49.071175
+        }
+
         var meuIcon = 'https://res.cloudinary.com/dubnbered/image/upload/v1702342339/pin-do-mapa_okjn2q.png';
 
         function initMap() {
