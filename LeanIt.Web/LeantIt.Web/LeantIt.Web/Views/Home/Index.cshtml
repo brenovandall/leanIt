@@ -178,36 +178,41 @@
 
         var lat;
         var lng;
+        var passou = false
 
         function success(pos) {
             lat = pos.coords.latitude;
             lng = pos.coords.longitude;
+            passou = true
             initMap();
         }
 
         navigator.geolocation.getCurrentPosition(success);
 
-
-        if (lat == null || lng == null) {
-            lat = -26.917231
-            lng = -49.071175
-        }
-
         var meuIcon = 'https://res.cloudinary.com/dubnbered/image/upload/v1702342339/pin-do-mapa_okjn2q.png';
 
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: { lat: lat, lng: lng } // Map center
-            });
+            if (passou == true) {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: { lat: lat, lng: lng } // Map center
+                });
 
-            // Create a marker with a custom icon
-            var marker = new google.maps.Marker({
-                position: { lat: lat, lng: lng },
-                map: map,
-                icon: meuIcon,
-                animation : google.maps.Animation.BOUNCE
-            });
+                // Create a marker with a custom icon
+
+                var marker = new google.maps.Marker({
+                    position: { lat: lat, lng: lng },
+                    map: map,
+                    icon: meuIcon,
+                    animation: google.maps.Animation.BOUNCE
+                });
+            }
+            else {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: { lat: -26.917231, lng: - 49.071175 } // Map center
+                });
+            }
 
             var array = [];
             var icon = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702156334/image-removebg-preview_5_vjrfkz_iq0hzk.png';
