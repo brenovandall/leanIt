@@ -207,10 +207,10 @@
             if (passou == true) {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
-                    center: { lat: lat, lng: lng } // Map center
+                    center: { lat: lat, lng: lng } // centro do mapa
                 });
 
-                // Create a marker with a custom icon
+                // Criando o marcador aqui --- >
 
                 var marker = new google.maps.Marker({
                     position: { lat: lat, lng: lng },
@@ -222,7 +222,7 @@
             else {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
-                    center: { lat: -26.917231, lng: - 49.071175 } // Map center
+                    center: { lat: -26.917231, lng: - 49.071175 } // centro do mapa
                 });
             }
 
@@ -240,11 +240,11 @@
                     return;
                 }
 
-                // Get information about the selected location if needed
+                // Gpega a informação do lugar selecionado
                 var selectedPlace = places[0];
                 console.log(selectedPlace);
 
-                // Update the map with the new location
+                //  atualiza o mapa com a localização atualizada
                 map.setCenter(selectedPlace.geometry.location);
             });
 
@@ -258,17 +258,15 @@
                     return;
                 }
 
-                // Get information about the selected location if needed
                 var selectedPlace = places[0];
                 console.log(selectedPlace);
 
-                // Update the map with the new location
                 map.setCenter(selectedPlace.geometry.location);
             });
 
             let directionsService = new google.maps.DirectionsService();
             let directionsRenderer = new google.maps.DirectionsRenderer({
-                suppressMarkers: true  // Impede que o DirectionsRenderer renderize marcadores padrão
+                suppressMarkers: true 
             });
 
             directionsRenderer.setMap(map);
@@ -316,7 +314,6 @@
                             });
                         }
 
-                        // Adiciona marcador para o ponto de chegada
                         new google.maps.Marker({
                             position: result.routes[0].legs[0].end_location,
                             map: map,
@@ -345,15 +342,15 @@
                                 // Obtém o endereço completo
                                 var enderecoCompleto = results[0].formatted_address;
 
-                                // Remove o Plus Code, se presente
+                                // Remove o Plus Code se tiver
                                 enderecoSemPlusCode = enderecoCompleto.replace(/\s[C0-9+]+$/, '');
 
                                 console.log('Endereço:', enderecoSemPlusCode);
 
-                                // Preenche o valor do campo de entrada
+                                // Preenche o valor do input de inicio
                                 input.value = enderecoSemPlusCode;
 
-                                // Chama a função para obter a localização mais próxima
+                                // Obtem a localização mais próxima
                                 obterLocalizacaoMaisProxima(latitude, longitude);
                             } else {
                                 console.error('Nenhum resultado encontrado');
@@ -364,7 +361,7 @@
                     });
                 }
 
-                // Chama a função para converter coordenadas em endereço
+                // Converte coordenadas em endereço
                 converterParaEndereco(latitude, longitude);
             }
   
@@ -403,7 +400,7 @@
                             item.infoWindow.close();
                         });
 
-                        // Abrir a janela de informações associada a este marcador
+                        // Abrir a infowindow
                         infoWindow.open(map, marker);
                     };
                 })(infoWindow, marker));
