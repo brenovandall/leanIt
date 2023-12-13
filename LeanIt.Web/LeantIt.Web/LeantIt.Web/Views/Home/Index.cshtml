@@ -248,8 +248,17 @@
 
                 var infoWindow = new google.maps.InfoWindow({
                     content: `
-                                    <p>@carro.Marca</p>
-                                    <a href='a.html'>Ir para página</a>
+                <div id="car-details">
+                    <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                    <div id="car-info">
+                        <h2>@carro.Marca @carro.Modelo</h2>
+                        <p>Modelo: @carro.Modelo</p>
+                        <p>Ano do Modelo: @carro.Year</p>
+                        @*<p>Placa: @carro.Placa</p>*@
+                        @*<p>Preço por Hora: R$ 12,00</p>*@
+                    </div>
+                    <button id="choose-car-btn">Escolher Carro</button>
+                </div>
                                 `,
                 });
 
