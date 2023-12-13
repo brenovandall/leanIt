@@ -211,6 +211,12 @@ nav ul li:nth-child(-n+4) a {
     width: 100%;
     gap: 2vw;
 }
+#dataCadastro{
+    width: 170px;
+}
+#cad1{
+    width:200px;
+}
 
     .informacoes2 input {
         width: 300px;
