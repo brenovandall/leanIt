@@ -124,12 +124,23 @@
     </div>
 
     <div class="form-map">
-        <label>Sua localização aqui</label>
+        <div class="labels">
+            <label class="labelLoc">Sua localização</label>
+            <label class="labelDestino">Seu destino</label>
+        </div>
         <div class="search-map">
-            <input id="pac-input" type="text" placeholder="Digite sua localização">
-            <button>Pesquisar</button>
+            <div class="loc">
+                <input id="pac-input" type="text" placeholder="Digite sua localização">
+            </div>
+            <div class="escolhaDestino">
+                <div>
+                    <input class="destino" id="pac-destino" type="text" placeholder="Digite sua localização">
+                    <button class="buttonPesquisar">Pesquisar</button>
+                </div>
+            </div>
         </div>
     </div>
+   
 
     @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227806.87476532854!2d-49.099103799999995!3d-26.85640995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1e408b5c3095%3A0xacfb8520bc1a7644!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1699039096703!5m2!1spt-BR!2sbr" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> *@
 
@@ -179,6 +190,7 @@
         var lat;
         var lng;
         var passou = false
+        var enderecoSemPlusCode
 
         function success(pos) {
             lat = pos.coords.latitude;
@@ -236,6 +248,126 @@
                 map.setCenter(selectedPlace.geometry.location);
             });
 
+            var inputDestino = document.getElementById('pac-destino');
+            var searchBox2 = new google.maps.places.SearchBox(inputDestino);
+
+            searchBox2.addListener('places_changed', function () {
+                var places = searchBox2.getPlaces();
+
+                if (places.length === 0) {
+                    return;
+                }
+
+                // Get information about the selected location if needed
+                var selectedPlace = places[0];
+                console.log(selectedPlace);
+
+                // Update the map with the new location
+                map.setCenter(selectedPlace.geometry.location);
+            });
+
+            let directionsService = new google.maps.DirectionsService();
+            let directionsRenderer = new google.maps.DirectionsRenderer({
+                suppressMarkers: true  // Impede que o DirectionsRenderer renderize marcadores padrão
+            });
+
+            directionsRenderer.setMap(map);
+
+            document.querySelector('.buttonPesquisar').addEventListener('click', function () {
+                var atual = input.value;
+                var destino = inputDestino.value;
+
+                let request = {
+                    origin: atual,
+                    destination: destino,
+                    travelMode: 'DRIVING'
+                };
+
+                directionsService.route(request, function (result, status) {
+                    if (status == 'OK') {
+                        if(passou == false){
+                            directionsRenderer.setDirections(result);
+                            new google.maps.Marker({
+                                position: result.routes[0].legs[0].start_location,
+                                map: map,
+                                icon: meuIcon,
+                                title: 'Partida',
+                                animation: google.maps.Animation.DROP
+                            });
+                        }
+                        else if(passou == true && input.value != enderecoSemPlusCode) {
+                            directionsRenderer.setDirections(result);
+                            new google.maps.Marker({
+                                position: result.routes[0].legs[0].start_location,
+                                map: map,
+                                icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702447989/map-pin_1_pgh2mc.png',
+                                title: 'Partida',
+                                animation: google.maps.Animation.DROP
+                            });
+                        }
+                        else{
+                            directionsRenderer.setDirections(result);
+                            new google.maps.Marker({
+                                position: result.routes[0].legs[0].start_location,
+                                map: map,
+                                title: 'Partida',
+                                icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702449262/map-pin_2_ijgdu1.png',
+                                animation: google.maps.Animation.DROP
+                            });
+                        }
+
+                        // Adiciona marcador para o ponto de chegada
+                        new google.maps.Marker({
+                            position: result.routes[0].legs[0].end_location,
+                            map: map,
+                            icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702447871/map-pin_dl4zkw.png',
+                            title: 'Chegada',
+                            animation: google.maps.Animation.DROP
+                        });
+                    }
+                });
+            });
+
+            
+
+            if (passou == true) {
+                var latitude = lat;
+                var longitude = lng;
+                var input = document.getElementById('pac-input');
+
+                function converterParaEndereco(latitude, longitude) {
+                    var latLng = new google.maps.LatLng(latitude, longitude);
+
+                    var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            if (results[0]) {
+                                // Obtém o endereço completo
+                                var enderecoCompleto = results[0].formatted_address;
+
+                                // Remove o Plus Code, se presente
+                                enderecoSemPlusCode = enderecoCompleto.replace(/\s[C0-9+]+$/, '');
+
+                                console.log('Endereço:', enderecoSemPlusCode);
+
+                                // Preenche o valor do campo de entrada
+                                input.value = enderecoSemPlusCode;
+
+                                // Chama a função para obter a localização mais próxima
+                                obterLocalizacaoMaisProxima(latitude, longitude);
+                            } else {
+                                console.error('Nenhum resultado encontrado');
+                            }
+                        } else {
+                            console.error('Geocodificação falhou devido a:', status);
+                        }
+                    });
+                }
+
+                // Chama a função para converter coordenadas em endereço
+                converterParaEndereco(latitude, longitude);
+            }
+  
         @foreach (var carro in Model)
         {
             <text>

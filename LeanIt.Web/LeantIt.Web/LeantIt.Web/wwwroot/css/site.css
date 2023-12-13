@@ -326,14 +326,35 @@ main {
     font-weight: 700;
 }
 
+.labels{
+    display: flex;
+}
+
+.labelLoc {
+    width: 51%;
+}
+
+.labelDestino {
+    width: 30%;
+}
+
 .search-map {
     padding-top: 1.5vh;
     display: flex;
+    justify-content:space-around;
     margin-bottom: 2vh;
 }
+    .search-map div{
+        width: 100%;
 
-    .search-map input {
-        width: 82%;
+    }
+
+    .search-map div #pac-input {
+        padding-bottom: 0.7px;
+    }
+
+    .search-map div input {
+        width: 100%;
         max-height: 5vh;
         min-height: 5vh;
         font-size: 0.9rem;
@@ -345,15 +366,24 @@ main {
         color: white;
         margin-right: 1%;
     }
+        .search-map .escolhaDestino {
+            margin-left: 20px;
+        }
 
-.form-map input[type="text"]:focus {
+    .search-map div .destino {
+        width: 70%;
+        padding-top: 1px;
+    }
+
+.form-map .search-map input[type="text"]:focus {
     border: 3px solid rgb(255, 129, 16);
     outline: none;
     background-color: #3b3b3b;
 }
 
-.form-map button {
-    width: 17%;
+.form-map .buttonPesquisar {
+    width: 25%;
+    padding: 4px 0px 7px 0px;
     background-color: rgb(255, 129, 16);
     color: white;
     font-size: 1.2rem;
