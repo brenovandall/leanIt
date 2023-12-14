@@ -130,57 +130,78 @@ nav ul li:nth-child(-n+4) a {
     }
 
 
-
-main {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
+/*main*/
 
 .container {
-    width: 70vw;
-
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 10vh;
 }
 
-.form-add {
+.item-content {
     display: flex;
+    justify-content: space-around;
+}
+
+.col-1 {
+    width: 45%;
+}
+
+.col-2 {
+    width: 45%;
 }
 
 .add-cars-title {
     margin-bottom: 5vh;
+    text-align: center;
 }
 
 #input {
     border: 2px solid #fb8314;
-    width: 90%;
-    height: 4vh;
+    width: 500px;
+    box-sizing: border-box;
+    height: 40px;
+    display: block;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-left: 7px;
+    margin-bottom: 7px;
 }
 
-.botao-forms {
+
+.categoria-select {
+    width: 500px;
+    height: 40px;
+    border: 2px solid #fb8314;
+    padding-left: 5px;
+    margin-bottom: 7px;
+}
+
+.checkbox-car{
     display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    width: 90%;
+}
+
+.checkbox-car input{
+    margin-left: 5px;
+    width: 18px;
 }
 
 .botao-entrar {
+    margin-top: 20px;
     background-color: #fb8314;
     border: none;
     padding: 6px 35px;
     color: #fff;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-    .botao-entrar:hover {
-        background-color: #fa7901;
-    }
-
-.voltar:hover {
-    background-color: #cccccc;
+.botao-entrar:hover {
+    background-color: #fa7901;
+    cursor: pointer;
 }
 
+/*FOOTER*/
 
 .footer-main {
     margin-top: 5vh;

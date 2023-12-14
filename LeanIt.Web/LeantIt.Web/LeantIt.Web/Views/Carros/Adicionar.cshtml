@@ -26,76 +26,76 @@
 <main>
     <form method="post">
 
-        <div class="container" style="margin-bottom: 15vh">
+        <div class="container">
             <h1 class="add-cars-title">Adicionar Carros - Administrador</h1>
             <div class="form-add">
 
-                <div class="item-content" style="width: 100%; display: flex;">
-                    <div style="width: 100%;">
-                        <div style="width: 100%;">
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Descrição do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Descricao">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Marca do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Marca">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Modelo do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Modelo">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Ano Do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Year">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Placa do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Placa">
-                            </div>
+                <div class="item-content">
+                    <div class="col-1">
+                        
+                        <div>
+                            <label>Descrição do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Descricao">
                         </div>
+
+                        <div>
+                            <label>Marca do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Marca">
+                        </div>
+
+                        <div>
+                            <label>Modelo do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Modelo">
+                        </div>
+
+                        <div>
+                            <label>Ano Do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Year">
+                        </div>
+
+                        <div>
+                            <label>Placa do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Placa">
+                        </div>
+                        
                     </div>
 
 
-                    <div style="width: 100%;">
-                        <div style="width: 100%;">
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Cor Do Carro</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Cor">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Url Da Imagem</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.UrlImagem">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Latitude</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Latitude">
-                            </div>
-
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Longitude</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
-                            </div>
+                    <div class="col-2">
+                        
+                        <div>
+                            <label>Cor Do Carro</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Cor">
                         </div>
 
-                        <div style="display: flex; flex-direction: column;">
-                            <label>Status</label>
-                            <select asp-items="@Model.Categoria" asp-for="@Model.CategoriaSelecionada"></select>
+                        <div>
+                            <label>Url Da Imagem</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.UrlImagem">
                         </div>
 
-                        <div style="display: flex; flex-direction: column;">
+                        <div>
+                            <label>Latitude</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Latitude">
+                        </div>
+
+                        <div>
+                            <label>Longitude</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
+                        </div>
+                        
+
+                        <div>
+                            <label>Categoria</label>
+                            <select asp-items="@Model.Categoria" asp-for="@Model.CategoriaSelecionada" class="categoria-select"></select>
+                        </div>
+
+                        <div class="checkbox-car">
                             <label>Status</label>
-                            <input id="input" type="checkbox" placeholder="Se estiver ativo, marque esta opção" asp-for="@Model.Status">
+                            <input type="checkbox" placeholder="Se estiver ativo, marque esta opção" asp-for="@Model.Status">
                         </div>
 
                         <div class="botao-forms">
-                            <button type="submit" class="botao-entrar" style="width:45%;" asp-area="" asp-controller="Carros" asp-action="Adicionar">
+                            <button type="submit" class="botao-entrar" asp-area="" asp-controller="Carros" asp-action="Adicionar">
                                 Adicionar Carro
                             </button>
                         </div>
