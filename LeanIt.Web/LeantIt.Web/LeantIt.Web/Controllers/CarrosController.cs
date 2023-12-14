@@ -59,10 +59,28 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para a pagina
     [HttpGet]
-    public IActionResult Listar() {
+    public IActionResult Listar(string sortOrder) {
 
-        var carros = _context.Carros.ToList();
-        return View(carros);
+        var carros = _context.Carros; // retorna os registros da tabela de carros do banco de dados
+
+        // SE FOR "Nome Crescente", ELE IRÁ CAIR NO case "nome_desc"
+        // SE FOR "Nome Decrescente", ELE IRÁ CAIR NO case "nome_asc"
+        // O VALOR DEFAULT É APENAS A LISTA DE CARROS NORMAL ASSIM COMO ESTÁ REGISTRADO NAS TABELAS
+        switch (sortOrder)
+        {
+            case "nome_desc":
+                var descOrder = carros.OrderByDescending(s => s.Marca);
+                return View(descOrder.ToList()); // retorna a view descrescente
+            case "nome_asc":
+                var ascOrder = carros.OrderBy(s => s.Marca);
+                return View(ascOrder.ToList()); // retorna a view crescente
+            default:
+                var normalOrder = carros.OrderByDescending(s => s.Marca);
+                return View(normalOrder.ToList()); // retorna a view na ordem como está regitrado no banco
+        }
+
+
+        //return View(carros);
     }
 
 

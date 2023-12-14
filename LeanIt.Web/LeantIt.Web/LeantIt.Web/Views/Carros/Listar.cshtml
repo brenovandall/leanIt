@@ -20,6 +20,19 @@
 
 <main>
     <div class="container">
+        <div style="margin-bottom: 3vh;">
+            <!-- Aqui, basicamente o valor da option é a URL que deve ser direcionado, se for o caso, perceba como a URL muda quando seleciona alguma opção...
+                Quando o valor do <select> é alterado, a propriedade location (window) é ajustada para o value que foi clicado,
+                this.value
+            -->
+            <select id="sortOrder" onchange="location = this.value;">
+                <option value="">Filtrar</option>
+                <option value="@Url.Action("Listar", new { sortOrder = "nome_asc" })">Nome Crescente</option>
+                <option value="@Url.Action("Listar", new { sortOrder = "nome_desc" })">Nome Decrescente</option>
+            </select>
+        </div>
+
+        
         @foreach (var item in Model)
         {
             <div class="card">
@@ -87,4 +100,36 @@
 @section Styles {
 
     <link rel="stylesheet" href="~/css/listar.css" />
+}
+
+@section Scripts {
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Adiciona um ouvinte de evento ao campo de pesquisa
+        document.getElementById("searchString").addEventListener("input", function () {
+            atualizarPesquisa();
+        });
+
+        // Função para enviar a solicitação AJAX
+        function atualizarPesquisa() {
+            var form = document.getElementById("searchForm");
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("resultadoPesquisa").innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send(formData);
+        }
+    });
+</script>
+
+
 }
