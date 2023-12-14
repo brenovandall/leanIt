@@ -50,7 +50,7 @@
 
                             <div style="display: flex; flex-direction: column;">
                                 <label>Ano Do Carro</label>
-                                <input id="input" type="date" placeholder="Digite aqui" asp-for="@Model.Year">
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Year">
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
@@ -69,8 +69,8 @@
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
-                                <label>Status</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Status">
+                                <label>Url Da Imagem</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.UrlImagem">
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
@@ -82,6 +82,16 @@
                                 <label>Longitude</label>
                                 <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
                             </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label>Status</label>
+                            <select asp-items="@Model.Categoria" asp-for="@Model.CategoriaSelecionada"></select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label>Status</label>
+                            <input id="input" type="checkbox" placeholder="Se estiver ativo, marque esta opção" asp-for="@Model.Status">
                         </div>
 
                         <div class="botao-forms">

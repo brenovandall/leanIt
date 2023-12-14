@@ -25,6 +25,9 @@ namespace LeantIt.Web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
+                    b.Property<Guid>("CategoriaId")
+                        .HasColumnType("char(36)");
+
                     b.Property<string>("Cor")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -53,16 +56,65 @@ namespace LeantIt.Web.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Status")
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UrlImagem")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("Year")
-                        .HasColumnType("date");
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoriaId");
+
                     b.ToTable("Carros");
+                });
+
+            modelBuilder.Entity("LeantIt.Web.Models.Categoria", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categorias");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("d09a4d10-86b5-403c-8d17-749f4fd31c74"),
+                            Descricao = "Basico"
+                        },
+                        new
+                        {
+                            Id = new Guid("effc421b-4c95-474a-be11-a6bb78b583a5"),
+                            Descricao = "Familia"
+                        },
+                        new
+                        {
+                            Id = new Guid("f70cedfc-073a-417b-8187-d5253eb725cf"),
+                            Descricao = "Carga"
+                        });
+                });
+
+            modelBuilder.Entity("LeantIt.Web.Models.CarroModel", b =>
+                {
+                    b.HasOne("LeantIt.Web.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categoria");
                 });
 #pragma warning restore 612, 618
         }

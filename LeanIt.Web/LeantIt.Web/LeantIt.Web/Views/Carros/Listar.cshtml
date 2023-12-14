@@ -1,4 +1,7 @@
-﻿<header>
+﻿@model List<LeantIt.Web.Models.CarroModel>
+
+
+<header>
 
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
@@ -49,12 +52,18 @@
                         <p>Id: @item.Id</p>
                     </div>
                     <div class="botoesAcao">
-                        <div class="botaoEditar">
-                            @Html.ActionLink("Editar" , "Editar", new {id = @item.Id})
-                        </div>
-                        <div class="botaoRemover">
-                            @Html.ActionLink("Remover" , "Remover", new {id = @item.Id})
-                        </div>
+                        <form>
+                            <div class="botaoEditar">
+                                <button type="submit" asp-area="" asp-controller="Carros" asp-action="Editar" asp-route-id="@item.Id">
+                                    Editar
+                                </button>
+
+                            </div>
+                            <div class="botaoRemover">
+                                @Html.ActionLink("Remover" , "Remover", new {id = @item.Id})
+                            </div>
+                        </form>
+                        
                     </div>
                 </div>
             </div>

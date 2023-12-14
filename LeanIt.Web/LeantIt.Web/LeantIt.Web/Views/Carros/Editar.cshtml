@@ -1,4 +1,4 @@
-﻿@model LeantIt.Web.Models.CarroModel
+﻿@model LeantIt.Web.Models.ViewModels.EditarCarroViewModel
 <header>
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
@@ -21,7 +21,7 @@
     <form method="post">
 
         <div class="container" style="margin-bottom: 15vh">
-            <h1 class="add-cars-title">Editar Carros - Administrador</h1>
+            <h1 class="add-cars-title">Adicionar Carros - Administrador</h1>
             <div class="form-add">
 
                 <div class="item-content" style="width: 100%; display: flex;">
@@ -44,7 +44,7 @@
 
                             <div style="display: flex; flex-direction: column;">
                                 <label>Ano Do Carro</label>
-                                <input id="input" type="date" placeholder="Digite aqui" asp-for="@Model.Year">
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Year">
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
@@ -63,8 +63,8 @@
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
-                                <label>Status</label>
-                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Status">
+                                <label>Url Da Imagem</label>
+                                <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.UrlImagem">
                             </div>
 
                             <div style="display: flex; flex-direction: column;">
@@ -76,6 +76,16 @@
                                 <label>Longitude</label>
                                 <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Longitude">
                             </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label>Status</label>
+                            <select asp-items="@Model.Categoria" asp-for="@Model.CategoriaSelecionada"></select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label>Status</label>
+                            <input id="input" type="checkbox" placeholder="Se estiver ativo, marque esta opção" asp-for="@Model.Status">
                         </div>
 
                         <div class="botao-forms">

@@ -2,6 +2,8 @@
 using LeantIt.Web.Models;
 using LeantIt.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace LeantIt.Web.Controllers;
 
@@ -24,14 +26,23 @@ public class CarrosController : Controller
     [HttpGet]
     public IActionResult Adicionar()
     {
-        return View();
+        var categorias = _context.Categorias.ToList();
+
+        var adicionarCarroViewModel = new AdicionarCarroViewModel()
+        {
+            Categoria = categorias.Select(x => new SelectListItem { Text = x.Descricao, Value = x.Id.ToString() })
+        };
+
+        return View(adicionarCarroViewModel);
     }
 
     // Aqui a view envia os dados da página "Adicionar"
     [HttpPost]
     public IActionResult Adicionar(AdicionarCarroViewModel adicionarCarroViewModel)
     {
-        
+        var idCategoria = Guid.Parse(adicionarCarroViewModel.CategoriaSelecionada);
+        var selecionado = _context.Categorias.FirstOrDefault(x => x.Id == idCategoria);
+
         if (adicionarCarroViewModel != null)
         {
             var carro = new CarroModel()
@@ -42,9 +53,11 @@ public class CarrosController : Controller
                 Year = adicionarCarroViewModel.Year,
                 Placa = adicionarCarroViewModel.Placa,
                 Cor = adicionarCarroViewModel.Cor,
-                Status = adicionarCarroViewModel.Status,
+                UrlImagem = adicionarCarroViewModel.UrlImagem,
                 Latitude = adicionarCarroViewModel.Latitude,
-                Longitude = adicionarCarroViewModel.Longitude
+                Categoria = selecionado,
+                Longitude = adicionarCarroViewModel.Longitude,
+                Status = adicionarCarroViewModel.Status
             };
 
             _context.Carros.Add(carro);
@@ -59,7 +72,8 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para a pagina
     [HttpGet]
-    public IActionResult Listar(string sortOrder) {
+    public IActionResult Listar(string sortOrder)
+    {
 
         var carros = _context.Carros; // retorna os registros da tabela de carros do banco de dados
 
@@ -90,9 +104,9 @@ public class CarrosController : Controller
     {
         var carros = _context.Carros.ToList();
 
-        foreach(var carro in carros)
+        foreach (var carro in carros)
         {
-            if(id == carro.Id)
+            if (id == carro.Id)
             {
                 return View(carro);
             }
@@ -121,44 +135,62 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para fazer a edição de um carro, trazendo todos os dados do carro existente
     [HttpGet]
-    public IActionResult Editar(Guid? id)
+    public IActionResult Editar(Guid id)
     {
-        var carros = _context.Carros.ToList();
+        var carroDoBancoDeDados = _context.Carros.Include(x => x.Categoria).FirstOrDefault(x => x.Id == id);
 
-        foreach (var carro in carros)
+        var categoriaSelecionada = _context.Categorias.FirstOrDefault(x => x.Id == carroDoBancoDeDados.Categoria.Id);
+
+        var categorias = _context.Categorias.ToList();
+
+        var novoModel = new EditarCarroViewModel()
         {
-            if (id == carro.Id)
-            {
-                return View(carro);
-            }
-        }
-        return RedirectToAction("Index", "Home");
+            Id = carroDoBancoDeDados.Id,
+            Descricao = carroDoBancoDeDados.Descricao,
+            Marca = carroDoBancoDeDados.Marca,
+            Modelo = carroDoBancoDeDados.Modelo,
+            Year = carroDoBancoDeDados.Year,
+            Placa = carroDoBancoDeDados.Placa,
+            Cor = carroDoBancoDeDados.Cor,
+            UrlImagem = carroDoBancoDeDados.UrlImagem,
+            Latitude = carroDoBancoDeDados.Latitude,
+            Longitude = carroDoBancoDeDados.Longitude,
+            Categoria = categorias.Select(x => new SelectListItem { Text = x.Descricao, Value = x.Id.ToString() }),
+            CategoriaSelecionada = categoriaSelecionada.Id.ToString(),
+            Status = carroDoBancoDeDados.Status
+        };
+
+        return View(novoModel);
     }
 
     // Aqui a view envia os dados atualizados e efetua uma atualização nas colunas
     [HttpPost]
-    public IActionResult Editar(CarroModel carro)
+    public IActionResult Editar(EditarCarroViewModel editarCarroViewModel)
     {
-        var carros = _context.Carros.ToList();
+        var carroAntigo = _context.Carros.FirstOrDefault(x => x.Id == editarCarroViewModel.Id);
 
-        foreach(var carroItem in carros){
+        var idCategoria = Guid.Parse(editarCarroViewModel.CategoriaSelecionada);
 
-            if (carro.Id == carroItem.Id){
+        var selecionado = _context.Categorias.FirstOrDefault(x => x.Id == idCategoria);
 
-                carroItem.Descricao = carro.Descricao;
-                carroItem.Marca = carro.Marca;
-                carroItem.Modelo = carro.Modelo;
-                carroItem.Year = carro.Year;
-                carroItem.Placa = carro.Placa;
-                carroItem.Cor = carro.Cor;
-                carroItem.Status = carro.Status;
-                carroItem.Latitude = carro.Latitude;
-                carroItem.Longitude = carro.Longitude;
+        if (carroAntigo != null)
+        {
 
-                _context.Update(carroItem);
-                _context.SaveChanges();
-            }
+            carroAntigo.Descricao = editarCarroViewModel.Descricao;
+            carroAntigo.Marca = editarCarroViewModel.Marca;
+            carroAntigo.Modelo = editarCarroViewModel.Modelo;
+            carroAntigo.Year = editarCarroViewModel.Year;
+            carroAntigo.Placa = editarCarroViewModel.Placa;
+            carroAntigo.Cor = editarCarroViewModel.Cor;
+            carroAntigo.UrlImagem = editarCarroViewModel.UrlImagem;
+            carroAntigo.Latitude = editarCarroViewModel.Latitude;
+            carroAntigo.Longitude = editarCarroViewModel.Longitude;
+            carroAntigo.Categoria = selecionado;
+            carroAntigo.Status = editarCarroViewModel.Status;
+
+            _context.SaveChanges();
         }
+
         return RedirectToAction("Listar");
     }
 }

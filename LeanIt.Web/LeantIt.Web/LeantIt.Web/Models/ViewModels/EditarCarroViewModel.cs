@@ -1,6 +1,8 @@
-﻿namespace LeantIt.Web.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-public class CarroModel
+namespace LeantIt.Web.Models.ViewModels;
+
+public class EditarCarroViewModel
 {
     public Guid Id { get; set; }
     public string Descricao { get; set; }
@@ -12,6 +14,7 @@ public class CarroModel
     public string UrlImagem { get; set; }
     public string Latitude { get; set; }
     public string Longitude { get; set; }
-    public Categoria Categoria { get; set; }
+    public IEnumerable<SelectListItem>? Categoria { get; set; }
+    public string CategoriaSelecionada { get; set; }
     public bool Status { get; set; }
 }
