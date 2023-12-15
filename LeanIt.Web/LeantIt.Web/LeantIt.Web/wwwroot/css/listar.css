@@ -129,7 +129,7 @@ nav ul li:nth-child(-n+4) a {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 
-
+    /*MAIN*/
 main {
     display: flex;
     justify-content: center;
@@ -205,7 +205,7 @@ main {
     background-color: #ff9100;
 }
 
-
+/*footer*/
 .footer-main {
     margin-top: 5vh;
     background-color: rgb(255, 129, 16);

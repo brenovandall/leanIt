@@ -188,6 +188,7 @@ nav ul li:nth-child(-n+4) a {
 
 .botao-entrar {
     margin-top: 20px;
+    width: 500px;
     background-color: #fb8314;
     border: none;
     padding: 6px 35px;

@@ -190,6 +190,7 @@ nav ul li:nth-child(-n+4) a {
     background-color: #fb8314;
     border: none;
     padding: 6px 35px;
+    width: 500px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;

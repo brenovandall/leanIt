@@ -1024,19 +1024,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Benden\\.nuget\\packages\\": {}
+    "C:\\Users\\felipe.shulz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Benden\\Desktop\\termos\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "projectUniqueName": "C:\\Users\\felipe.shulz\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
       "projectName": "LeantIt.Web",
-      "projectPath": "C:\\Users\\Benden\\Desktop\\termos\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
-      "packagesPath": "C:\\Users\\Benden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Benden\\Desktop\\termos\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+      "projectPath": "C:\\Users\\felipe.shulz\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+      "packagesPath": "C:\\Users\\felipe.shulz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\felipe.shulz\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Benden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\felipe.shulz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1096,7 +1096,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

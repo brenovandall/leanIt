@@ -51,20 +51,17 @@
                     <div class="id-content">
                         <p>Id: @item.Id</p>
                     </div>
-                    <div class="botoesAcao">
-                        <form>
+                    <form>
+                        <div class="botoesAcao">
                             <div class="botaoEditar">
-                                <button type="submit" asp-area="" asp-controller="Carros" asp-action="Editar" asp-route-id="@item.Id">
-                                    Editar
-                                </button>
-
+                                @Html.ActionLink("Editar" , "Editar", new {id = @item.Id})
                             </div>
+                                
                             <div class="botaoRemover">
                                 @Html.ActionLink("Remover" , "Remover", new {id = @item.Id})
                             </div>
-                        </form>
-                        
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         }
