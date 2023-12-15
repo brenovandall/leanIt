@@ -381,46 +381,50 @@
   
             @foreach (var carro in Model)
             {
+            @if (carro.Status != false)
+            {
                 <text>
-                        var marker = new google.maps.Marker({
+                                        var marker = new google.maps.Marker({
                             position: { lat: @carro.Latitude, lng: @carro.Longitude },
                             map: map,
-                            icon : icon,
+                            icon: icon,
                             title: '@carro.Marca'
                         });
 
                     var infoWindow = new google.maps.InfoWindow({
-                        content: 
-                        `
-                            <div id="car-details">
-                                <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
-                                <div id="car-info">
-                                    <h2>@carro.Marca @carro.Modelo</h2>
-                                    <p>Modelo: @carro.Modelo</p>
-                                    <p>Ano do Modelo: @carro.Year</p>
-                                    @*<p>Placa: @carro.Placa</p>*@
-                                    @*<p>Preço por Hora: R$ 12,00</p>*@
-                                </div>
-                                <button id="choose-car-btn">Escolher Carro</button>
-                            </div>
-                        `,
+                        content:
+                            `
+                                            <div id="car-details">
+                                                <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                                                <div id="car-info">
+                                                    <h2>@carro.Marca @carro.Modelo</h2>
+                                                    <p>Modelo: @carro.Modelo</p>
+                                                    <p>Ano do Modelo: @carro.Year</p>
+                            @*<p>Placa: @carro.Placa</p>*@
+                            @*<p>Preço por Hora: R$ 12,00</p>*@
+                                                </div>
+                                                <button id="choose-car-btn">Escolher Carro</button>
+                                            </div>
+                                        `,
                     });
 
-                array.push({ marker: marker, infoWindow: infoWindow });
+                    array.push({ marker: marker, infoWindow: infoWindow });
 
-                marker.addListener('click', (function (infoWindow, marker) {
-                    return function () {
-                        handleMarkerClick(marker);
-                        // Fechar todas as janelas de informações abertas
-                        array.forEach(function (item) {
-                            item.infoWindow.close();
-                        });
+                    marker.addListener('click', (function (infoWindow, marker) {
+                        return function () {
+                            handleMarkerClick(marker);
+                            // Fechar todas as janelas de informações abertas
+                            array.forEach(function (item) {
+                                item.infoWindow.close();
+                            });
 
-                        // Abrir a infowindow
-                        infoWindow.open(map, marker);
-                    };
-                })(infoWindow, marker));
+                            // Abrir a infowindow
+                            infoWindow.open(map, marker);
+                        };
+                    })(infoWindow, marker));
                 </text>
+            }
+            
             }
 
             function handleMarkerClick(marker) {
