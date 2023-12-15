@@ -5,7 +5,7 @@
 }
 
 header {
-    width: 100;
+    width: 100%;
     background-size: cover;
     background-position: center;
     height: 20vh;
@@ -193,13 +193,25 @@ main {
     justify-content: end;
 }
 
-.botaoEditar a {
-    background-color: rgb(255, 129, 16);
-    margin-left: 10px;
-    padding: 6px;
-    font-size: 15px;
-    transition: all 0.5s;
+.search-select{
+    padding: 5px;
+    border: 3px solid rgb(255, 129, 16);
+    font-weight: 600;
 }
+
+.search-select option {
+    background-color: white;
+    color: black; 
+    font-weight: 600;
+}
+
+    .botaoEditar a {
+        background-color: rgb(255, 129, 16);
+        margin-left: 10px;
+        padding: 6px;
+        font-size: 15px;
+        transition: all 0.5s;
+    }
 
 .botaoEditar a:hover {
     background-color: #ff9100;

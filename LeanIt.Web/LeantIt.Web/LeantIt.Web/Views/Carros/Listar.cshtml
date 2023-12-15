@@ -28,7 +28,7 @@
                 Quando o valor do <select> é alterado, a propriedade location (window) é ajustada para o value que foi clicado,
                 this.value
             -->
-            <select id="sortOrder" onchange="location = this.value;">
+            <select class="search-select" id="sortOrder" onchange="location = this.value;">
                 <option value="">Filtrar</option>
                 <option value="@Url.Action("Listar", new { sortOrder = "nome_asc" })">Nome Crescente</option>
                 <option value="@Url.Action("Listar", new { sortOrder = "nome_desc" })">Nome Decrescente</option>
