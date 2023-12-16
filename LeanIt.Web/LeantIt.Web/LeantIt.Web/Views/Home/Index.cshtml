@@ -130,7 +130,18 @@
         </div>
         <div class="search-map">
             <div class="loc">
-                <input id="pac-input" type="text" placeholder="Digite sua localização">
+                <div>
+                    <input id="pac-input" type="text" placeholder="Digite sua localização">
+                </div>
+                
+                <select id="opcoesDeViagens">
+                    <option>Selecione transporte</option>
+                    <option value="WALKING">A pé</option>
+                    <option value="DRIVING">Carro</option>
+                    <option value="BICYCLING">Bicicleta</option>
+                    <option value="TRANSIT">Transporte</option>
+                </select>
+               
             </div>
             <div class="escolhaDestino">
                 <div>
@@ -274,13 +285,17 @@
             directionsRenderer.setMap(map);
 
             document.querySelector('.buttonPesquisar').addEventListener('click', function () {
+                var modoViagem = document.querySelector('#opcoesDeViagens')
+                var modo = modoViagem.value
                 var atual = input.value;
                 var destino = inputDestino.value;
+
+                console.log(modoViagem)
 
                 let request = {
                     origin: atual,
                     destination: destino,
-                    travelMode: 'WALKING'
+                    travelMode: modo
                 };
 
                 directionsService.route(request, function (result, status) {
@@ -364,7 +379,6 @@
                                     passouHandleMarkerClick = false
                                 }
                                 else{
-                                    console.log('djf')
                                     input.value = enderecoSemPlusCode;
                                 }
 
@@ -384,7 +398,7 @@
             @if (carro.Status != false)
             {
                 <text>
-                                        var marker = new google.maps.Marker({
+                            var marker = new google.maps.Marker({
                             position: { lat: @carro.Latitude, lng: @carro.Longitude },
                             map: map,
                             icon: icon,
