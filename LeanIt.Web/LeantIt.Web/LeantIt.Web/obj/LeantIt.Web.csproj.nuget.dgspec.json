@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
+    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
+    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
         "projectName": "LeantIt.Web",
-        "projectPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "projectPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
         "packagesPath": "C:\\Users\\sidney.zuanazzi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+        "outputPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sidney.zuanazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
