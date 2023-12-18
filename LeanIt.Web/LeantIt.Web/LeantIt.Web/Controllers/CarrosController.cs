@@ -96,6 +96,8 @@ public class CarrosController : Controller
                 break;
         }
 
+
+        // comentario teste 2 
         //retorna a view no modelo PagedList, com o numero da pagina que está junto com a quantidade.
         //comentario teste
         return View(carros.ToPagedList(pageNumber, pageSize));
