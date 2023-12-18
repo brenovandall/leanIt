@@ -100,6 +100,7 @@ public class CarrosController : Controller
         // comentario teste equipe testando 
         //retorna a view no modelo PagedList, com o numero da pagina que está junto com a quantidade.
         // segundo comentario
+        // teste 3
         return View(carros.ToPagedList(pageNumber, pageSize));
     }
 
