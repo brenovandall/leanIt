@@ -87,14 +87,17 @@ public class CarrosController : Controller
         {
             case "nome_desc":
                 var descOrder = carros.OrderByDescending(s => s.Marca);
-                return View(descOrder.ToPagedList(pageNumber, pageSize));
+                break;
             case "nome_asc":
                 var ascOrder = carros.OrderBy(s => s.Marca);
-                return View(ascOrder.ToPagedList(pageNumber, pageSize));
+                break;
             default:
                 var normalOrder = carros.OrderByDescending(s => s.Marca);
-                return View(normalOrder.ToPagedList(pageNumber, pageSize));
+                break;
         }
+
+        //retorna a view no modelo PagedList, com o numero da pagina que está junto com a quantidade.
+        return View(carros.ToPagedList(pageNumber, pageSize));
     }
 
 
