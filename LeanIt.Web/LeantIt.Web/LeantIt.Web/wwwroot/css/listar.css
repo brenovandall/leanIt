@@ -217,6 +217,31 @@ main {
     background-color: #ff9100;
 }
 
+/*PagedList*/
+.pagedList {
+    text-decoration: none;
+    flex-direction: row;
+    justify-content: center;
+}
+
+    .pagedList ul {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .pagedList li {
+        text-decoration: none;
+        color: #000;
+        list-style: none;
+    }
+
+    .pagedList a {
+        text-decoration: none;
+    }
+
+
 /*footer*/
 .footer-main {
     margin-top: 5vh;
@@ -270,3 +295,5 @@ main {
     font-weight: 400;
     font-size: 1.8vh;
 }
+
+

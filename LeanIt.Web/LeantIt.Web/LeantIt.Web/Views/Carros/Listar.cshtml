@@ -1,5 +1,6 @@
-﻿@model List<LeantIt.Web.Models.CarroModel>
-
+﻿@model X.PagedList.IPagedList<LeantIt.Web.Models.CarroModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
 
 <header>
 
@@ -35,7 +36,6 @@
             </select>
         </div>
 
-        
         @foreach (var item in Model)
         {
             <div class="card">
@@ -65,10 +65,13 @@
                 </div>
             </div>
         }
-        <p>Teste</p>
+        <div class="pagedList">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("listar",
+                     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        </div>
     </div>
-
-
 </main>
 
 
@@ -136,6 +139,4 @@
         }
     });
 </script>
-
-
 }
