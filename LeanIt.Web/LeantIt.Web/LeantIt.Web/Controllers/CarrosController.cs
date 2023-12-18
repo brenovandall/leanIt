@@ -4,6 +4,7 @@ using LeantIt.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace LeantIt.Web.Controllers;
 
@@ -72,10 +73,12 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para a pagina
     [HttpGet]
-    public IActionResult Listar(string sortOrder)
+    public IActionResult Listar(string sortOrder, int? page)
     {
-
+        
         var carros = _context.Carros; // retorna os registros da tabela de carros do banco de dados
+        int pageSize = 5; // Quantidade de itens que aparecerão por página
+        int pageNumber = (page ?? 1); // Referência de qual página o usuário está no momento
 
         // SE FOR "Nome Crescente", ELE IRÁ CAIR NO case "nome_desc"
         // SE FOR "Nome Decrescente", ELE IRÁ CAIR NO case "nome_asc"
@@ -84,17 +87,17 @@ public class CarrosController : Controller
         {
             case "nome_desc":
                 var descOrder = carros.OrderByDescending(s => s.Marca);
-                return View(descOrder.ToList()); // retorna a view descrescente
+                break;
             case "nome_asc":
                 var ascOrder = carros.OrderBy(s => s.Marca);
-                return View(ascOrder.ToList()); // retorna a view crescente
+                break;
             default:
                 var normalOrder = carros.OrderByDescending(s => s.Marca);
-                return View(normalOrder.ToList()); // retorna a view na ordem como está regitrado no banco
+                break;
         }
 
-
-        //return View(carros);
+        //retorna a view no modelo PagedList, com o numero da pagina que está junto com a quantidade.
+        return View(carros.ToPagedList(pageNumber, pageSize));
     }
 
 
