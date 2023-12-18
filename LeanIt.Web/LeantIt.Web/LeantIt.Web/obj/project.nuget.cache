@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xp4tRnkuUvNJ1l1CNCXZ5DjZR+0WpzJdL3GlT4HRqY2ImOAuh3RuCb+KpsCC5tzr0F9prm3wfCaYmKSX1Jb1xg==",
+  "dgSpecHash": "LH/wKYcPVtBvoJZIIh65zdFfpsgKj5dyBNjB+YQ6PqLB1sMnf+pq9BpVx7/UhTwsDXaMGmVuw77s3K2PLM4yzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+  "projectFilePath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanItupdate1\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sidney.zuanazzi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\sidney.zuanazzi\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
