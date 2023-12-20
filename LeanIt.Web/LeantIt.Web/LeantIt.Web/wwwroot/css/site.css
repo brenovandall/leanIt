@@ -160,23 +160,24 @@ nav ul li:nth-child(-n+4) a {
     margin-top: 3vh;
     font-size: 1.1rem;
     line-height: 1.6rem;
+    margin-bottom: 6vh;
 }
 
 .destaque-saber-mais {
     font-weight: 700;
 }
 
-.article-description-button {
-    margin-top: 5vh;
+.article-description-button a {
     padding: 1vh 5vh;
     font-size: 1.1rem;
     background-color: rgb(255, 129, 16);
     border: 0;
     color: white;
     transition: 0.5s background;
+    text-decoration: none;
 }
 
-    .article-description-button:hover {
+    .article-description-button a:hover {
         background-color: rgb(26, 26, 26);
         cursor: pointer;
     }
