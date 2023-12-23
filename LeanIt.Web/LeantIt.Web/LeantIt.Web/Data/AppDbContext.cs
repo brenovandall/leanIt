@@ -1,11 +1,13 @@
 ﻿using LeantIt.Web.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace LeantIt.Web.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<AplicacaoUser>
 {
-    public AppDbContext(DbContextOptions options) : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
 

@@ -14,7 +14,6 @@
         <ul>
             <li><a href="#" class="button-home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
-            <li><a href="#">Preços</a></li>  
             <li class="nav-item dropdown">
                 <a href="#">Admin</a>
                 <ul class="dropdown-menu">
@@ -22,7 +21,7 @@
                     <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
                 </ul>
             </li>
-            <li><a class="button-do-register" asp-area="" asp-controller="Account" asp-action="Login">Fazer Login</a></li>
+            <partial name="_LoginPartial" />
         </ul>
     </nav>
 
@@ -38,7 +37,7 @@
 
         <p class="paragraph-description">Desbrave novos horizontes com nosso serviço de aluguel de carros por viagem. Liberte-se da rotina, escolha o seu caminho. Clique em <span class="destaque-saber-mais">Saber Mais</span> e descubra como reinventamos a maneira de viajar.</p>
 
-        <p class="article-description-button">@Html.ActionLink("Saiba Mais", "Index", "Saiba")</p>
+        <button class="article-description-button">Saber Mais</button>
 
     </article>
 </header>
@@ -133,7 +132,7 @@
                 <div>
                     <input id="pac-input" type="text" placeholder="Digite sua localização">
                 </div>
-                
+
                 <select id="opcoesDeViagens">
                     <option>Selecione transporte</option>
                     <option value="WALKING">A pé</option>
@@ -141,7 +140,7 @@
                     <option value="BICYCLING">Bicicleta</option>
                     <option value="TRANSIT">Transporte</option>
                 </select>
-               
+
             </div>
             <div class="escolhaDestino">
                 <div>
@@ -151,7 +150,7 @@
             </div>
         </div>
     </div>
-   
+
 
     @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227806.87476532854!2d-49.099103799999995!3d-26.85640995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1e408b5c3095%3A0xacfb8520bc1a7644!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1699039096703!5m2!1spt-BR!2sbr" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> *@
 
@@ -175,8 +174,8 @@
             <p><a href="#">Sobre o Projeto</a></p>
             <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
             <p><a href="#">Planos de Carreira</a></p>
-            <p>@Html.ActionLink("Guia Turístico", "Index", "Turismo")</p>
-            <p>@Html.ActionLink("Termos de Uso", "Index", "Termos")</p>
+            <p><a href="#">Guia Turístico</a></p>
+            <p><a href="#">Serviços</a></p>
         </div>
 
         <div class="footer-contact">
@@ -279,7 +278,7 @@
 
             let directionsService = new google.maps.DirectionsService();
             let directionsRenderer = new google.maps.DirectionsRenderer({
-                suppressMarkers: true 
+                suppressMarkers: true
             });
 
             directionsRenderer.setMap(map);
@@ -300,7 +299,7 @@
 
                 directionsService.route(request, function (result, status) {
                     if (status == 'OK') {
-                        if(passou == false){
+                        if (passou == false) {
                             directionsRenderer.setDirections(result);
                             new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
@@ -311,7 +310,7 @@
                                 animation: google.maps.Animation.DROP
                             });
                         }
-                        else if(passou == true && input.value != enderecoSemPlusCode2) {
+                        else if (passou == true && input.value != enderecoSemPlusCode2) {
                             directionsRenderer.setDirections(result);
                             new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
@@ -321,7 +320,7 @@
                                 animation: google.maps.Animation.DROP
                             });
                         }
-                        else{
+                        else {
                             directionsRenderer.setDirections(result);
                             new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
@@ -343,7 +342,7 @@
                 });
             });
 
-            
+
 
             if (passou == true) {
                 var latitude = lat;
@@ -354,51 +353,51 @@
             }
 
             function converterParaEndereco(latitude, longitude) {
-                    var latLng = new google.maps.LatLng(latitude, longitude);
+                var latLng = new google.maps.LatLng(latitude, longitude);
 
-                    var geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({ 'latLng': latLng }, function (results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            if (results[0]) {
-                                // Obtém o endereço completo
-                                var enderecoCompleto = results[0].formatted_address;
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[0]) {
+                            // Obtém o endereço completo
+                            var enderecoCompleto = results[0].formatted_address;
 
-                                // Remove o Plus Code se tiver
-                                enderecoSemPlusCode = enderecoCompleto.replace(/\s[C0-9+]+$/, '');
+                            // Remove o Plus Code se tiver
+                            enderecoSemPlusCode = enderecoCompleto.replace(/\s[C0-9+]+$/, '');
 
-                                console.log('Endereço:', enderecoSemPlusCode);
+                            console.log('Endereço:', enderecoSemPlusCode);
 
-                                // Preenche o valor do input de inicio
-                               
-                                if (enderecoSemPlusCode2 == null){
-                                    enderecoSemPlusCode2 = enderecoSemPlusCode
-                                }
+                            // Preenche o valor do input de inicio
 
-                                if (passouHandleMarkerClick == true) {
-                                    inputDestino.value = enderecoSemPlusCode
-                                    passouHandleMarkerClick = false
-                                }
-                                else{
-                                    input.value = enderecoSemPlusCode;
-                                }
-
-                                // Obtem a localização mais próxima
-                                obterLocalizacaoMaisProxima(latitude, longitude);
-                            } else {
-                                console.error('Nenhum resultado encontrado');
+                            if (enderecoSemPlusCode2 == null) {
+                                enderecoSemPlusCode2 = enderecoSemPlusCode
                             }
+
+                            if (passouHandleMarkerClick == true) {
+                                inputDestino.value = enderecoSemPlusCode
+                                passouHandleMarkerClick = false
+                            }
+                            else {
+                                input.value = enderecoSemPlusCode;
+                            }
+
+                            // Obtem a localização mais próxima
+                            obterLocalizacaoMaisProxima(latitude, longitude);
                         } else {
-                            console.error('Geocodificação falhou devido a:', status);
+                            console.error('Nenhum resultado encontrado');
                         }
-                    });
-                }
-  
-            @foreach (var carro in Model)
-            {
+                    } else {
+                        console.error('Geocodificação falhou devido a:', status);
+                    }
+                });
+            }
+
+        @foreach (var carro in Model)
+        {
             @if (carro.Status != false)
             {
                 <text>
-                            var marker = new google.maps.Marker({
+                                            var marker = new google.maps.Marker({
                             position: { lat: @carro.Latitude, lng: @carro.Longitude },
                             map: map,
                             icon: icon,
@@ -408,18 +407,18 @@
                     var infoWindow = new google.maps.InfoWindow({
                         content:
                             `
-                                            <div id="car-details">
-                                                <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
-                                                <div id="car-info">
-                                                    <h2>@carro.Marca @carro.Modelo</h2>
-                                                    <p>Modelo: @carro.Modelo</p>
-                                                    <p>Ano do Modelo: @carro.Year</p>
+                            <div id="car-details">
+                                <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                                <div id="car-info">
+                                    <h2>@carro.Marca @carro.Modelo</h2>
+                                    <p>Modelo: @carro.Modelo</p>
+                                    <p>Ano do Modelo: @carro.Year</p>
                             @*<p>Placa: @carro.Placa</p>*@
                             @*<p>Preço por Hora: R$ 12,00</p>*@
-                                                </div>
-                                                <button id="choose-car-btn">Escolher Carro</button>
-                                            </div>
-                                        `,
+                                    </div>
+                                    <button id="choose-car-btn">Escolher Carro</button>
+                                </div>
+                            `,
                     });
 
                     array.push({ marker: marker, infoWindow: infoWindow });
@@ -438,24 +437,24 @@
                     })(infoWindow, marker));
                 </text>
             }
-            
-            }
 
-            function handleMarkerClick(marker) {
-                // Obter a posição do marcador clicado
-                var position = marker.getPosition();
+        }
 
-                // Agora você pode usar position.lat() e position.lng() conforme necessário
-                console.log('Latitude:', position.lat());
-                console.log('Longitude:', position.lng());
-                passouHandleMarkerClick = true;
+                function handleMarkerClick(marker) {
+                    // Obter a posição do marcador clicado
+                    var position = marker.getPosition();
 
-                converterParaEndereco(position.lat(), position.lng())
-                // Adicione lógica adicional com base na posição do marcador clicado
-            }
+                    // Agora você pode usar position.lat() e position.lng() conforme necessário
+                    console.log('Latitude:', position.lat());
+                    console.log('Longitude:', position.lng());
+                    passouHandleMarkerClick = true;
+
+                    converterParaEndereco(position.lat(), position.lng())
+                    // Adicione lógica adicional com base na posição do marcador clicado
+                }
         }
     </script>
     <script async
-             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">
     </script>
 }

@@ -1,5 +1,7 @@
 using LeantIt.Web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using LeantIt.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,11 @@ builder.Services.AddDbContext<AppDbContext>(opts => opts.
     UseMySql(builder.Configuration.GetConnectionString("AppLeanItConnection"),
     ServerVersion.AutoDetect(builder.Configuration.
     GetConnectionString("AppLeanItConnection"))));
+
+builder.Services.AddDefaultIdentity<AplicacaoUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddSignInManager<SignInManager<AplicacaoUser>>(); // Certifique-se de usar AplicacaoUser aqui
+
 
 var app = builder.Build();
 
@@ -28,8 +35,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapRazorPages();
+});
 
 app.Run();
