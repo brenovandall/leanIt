@@ -23,7 +23,6 @@ header {
 }
 
 #map {
-
 }
 
 header nav {
@@ -40,21 +39,21 @@ nav ul {
     justify-content: space-around;
 }
 
-nav ul li {
-    list-style: none;
-    margin: 7vh 0 0 0;
-    padding: 1vh 4vh;
-}
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
 
-nav ul li a {
-    color: rgb(26, 26, 26);
-    text-decoration: none;
-    font-size: 1.0rem;
-    letter-spacing: 2px;
-    font-family: 'Poppins';
-    transition: 0.5s all;
-    border: transparent;
-}
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
 
 .nav-item {
     position: relative;
@@ -80,9 +79,9 @@ nav ul li a {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 180px;
+    width: 170px;
     margin-left: -28px;
-    padding-left: 5px;
+    padding-left: 18px;
 }
 
 .dropdown-menu li {
@@ -125,6 +124,17 @@ nav ul li a {
         background-color: rgb(26, 26, 26);
     }
 
+.button-do-logout {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-logout:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
 nav ul li:nth-child(-n+4) a {
     transition: 0.6s border;
 }
@@ -160,24 +170,23 @@ nav ul li:nth-child(-n+4) a {
     margin-top: 3vh;
     font-size: 1.1rem;
     line-height: 1.6rem;
-    margin-bottom: 6vh;
 }
 
 .destaque-saber-mais {
     font-weight: 700;
 }
 
-.article-description-button a {
+.article-description-button {
+    margin-top: 5vh;
     padding: 1vh 5vh;
     font-size: 1.1rem;
     background-color: rgb(255, 129, 16);
     border: 0;
     color: white;
     transition: 0.5s background;
-    text-decoration: none;
 }
 
-    .article-description-button a:hover {
+    .article-description-button:hover {
         background-color: rgb(26, 26, 26);
         cursor: pointer;
     }
@@ -296,11 +305,11 @@ main {
     transition: 0.4s all;
 }
 
-.cards button:hover {
-    background-color: rgb(255, 129, 16);
-    border: 3px solid white;
-    cursor: pointer;
-}
+    .cards button:hover {
+        background-color: rgb(255, 129, 16);
+        border: 3px solid white;
+        cursor: pointer;
+    }
 
 /* aside mapa */
 
@@ -323,7 +332,7 @@ main {
     font-weight: 700;
 }
 
-.labels{
+.labels {
     display: flex;
 }
 
@@ -331,8 +340,8 @@ main {
     width: 51%;
 }
 
-.loc{
-    display:flex
+.loc {
+    display: flex
 }
 
 
@@ -359,35 +368,36 @@ select {
 .search-map {
     padding-top: 1.5vh;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     margin-bottom: 2vh;
 }
-    .search-map div{
+
+    .search-map div {
         width: 100%;
-
     }
 
-    .search-map div #pac-input {
-        padding-bottom: 0.7px;
-        width: 93%;
-    }
-
-    .search-map div input {
-        width: 100%;
-        max-height: 5vh;
-        min-height: 5vh;
-        font-size: 0.9rem;
-        font-weight: 200;
-        padding-left: 8px;
-        border-radius: 0;
-        border: 3px solid rgb(255, 129, 16);
-        background-color: rgb(26, 26, 26);
-        color: white;
-        margin-right: 1%;
-    }
-        .search-map .escolhaDestino {
-            margin-left: 20px;
+        .search-map div #pac-input {
+            padding-bottom: 0.7px;
+            width: 93%;
         }
+
+        .search-map div input {
+            width: 100%;
+            max-height: 5vh;
+            min-height: 5vh;
+            font-size: 0.9rem;
+            font-weight: 200;
+            padding-left: 8px;
+            border-radius: 0;
+            border: 3px solid rgb(255, 129, 16);
+            background-color: rgb(26, 26, 26);
+            color: white;
+            margin-right: 1%;
+        }
+
+    .search-map .escolhaDestino {
+        margin-left: 20px;
+    }
 
     .search-map div .destino {
         width: 62%;
@@ -421,7 +431,7 @@ select {
     text-align: center;
 }
 
-.footer-about a{
+.footer-about a {
     display: inline-block;
     margin-right: 1vh;
 }
@@ -484,7 +494,7 @@ select {
 #car-image {
     width: 100%;
     max-height: 100px;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 #car-info {

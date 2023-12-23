@@ -1,0 +1,110 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<form id="account" method="post">
+    <main>
+        <div class="main-content">
+            <aside>
+                <div class="imagem-fundo">
+                    <img class="carro-img" src="https://res.cloudinary.com/dtvypcack/image/upload/v1701803454/tela_login_imagem_by6rnl.jpg" alt="imagem de um carro acizentada" />
+                </div>
+            </aside>
+            <div class="container">
+                <div class="itens-login">
+                    <div>
+                        <h1 class="title-content">Log <span id="title-span">In</span></h1>
+                    </div>
+                    <div class="forms-login">
+                        @* <div asp-validation-summary="ModelOnly"></div> *@
+                        <div>
+                            <label asp-for="Input.Email">E-mail</label>
+                            <input id="input-email" asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="Digite seu e-mail" />
+                        </div>
+                        <div class="senha-form">
+                            <label asp-for="Input.Password">Senha</label>
+                            <input id="input-senha" asp-for="Input.Password" autocomplete="current-password" aria-required="true" placeholder="Digite sua senha" />
+                        </div>
+                        @*                         <div class="checkbox mb-3">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                        </div> *@
+                        <p id="login-redirect">Não tem cadastro? <a id="cadastrar-redirect" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registre-se agora</a></p>
+                    </div>
+                    @*                     <div>
+                    <p>
+                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <p>
+                    <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                    </p>
+                    </div> *@
+                    <div class="botao-forms" style="display:flex; justify-content: space-between;">
+                        <button class="botao-entrar" style="width:45%; background-color: #dcdcdc;" asp-area="" asp-controller="Home" asp-action="Index">
+                            Voltar
+                        </button>
+                        <button id="login-submit" type="submit" class="botao-entrar" style="width:45%;">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</form>
+
+
+@* @* <h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+
+            </form>
+        </section>
+    </div>
+    @* <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to log in.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div> *@
+@* </div> *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
