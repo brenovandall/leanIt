@@ -36,11 +36,12 @@
                         </div> *@
                         <p id="login-redirect">Não tem cadastro? <a id="cadastrar-redirect" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registre-se agora</a></p>
                     </div>
-                    @*                     <div>
-                    <p>
-                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
+                    @*@<div>
+                        <p>
+                        <a id="forgot-password" asp-page="./forgotpassword">forgot your password?</a>
+                        </p>
+                    </div>
+                    @<p>
                     <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                     </p>
                     <p>
@@ -48,10 +49,10 @@
                     </p>
                     </div> *@
                     <div class="botao-forms" style="display:flex; justify-content: space-between;">
+                        <button id="login-submit" type="submit" class="botao-entrar" style="width:45%;">Entrar</button>
                         <button class="botao-entrar" style="width:45%; background-color: #dcdcdc;" asp-area="" asp-controller="Home" asp-action="Index">
                             Voltar
                         </button>
-                        <button id="login-submit" type="submit" class="botao-entrar" style="width:45%;">Entrar</button>
                     </div>
                 </div>
             </div>

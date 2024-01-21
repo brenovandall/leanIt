@@ -19,6 +19,9 @@ header {
     height: 5vh;
 }
 
+#map {
+}
+
 header nav {
     position: absolute;
     top: 0;
@@ -49,32 +52,6 @@ nav ul {
             border: transparent;
         }
 
-
-.button-home {
-    color: rgb(255, 129, 16);
-}
-
-.button-do-register {
-    background-color: rgb(255, 129, 16);
-    color: white;
-    padding: 7px 11px;
-    transition: 0.5s background;
-}
-
-    .button-do-register:hover {
-        background-color: rgb(26, 26, 26);
-        color: white;
-    }
-
-nav ul li:nth-child(-n+4) a {
-    transition: 0.6s border;
-}
-
-    nav ul li:nth-child(-n+4) a:hover {
-        border-bottom: 1px solid rgb(26, 26, 26);
-        color: black;
-    }
-
 .nav-item {
     position: relative;
 }
@@ -99,9 +76,9 @@ nav ul li:nth-child(-n+4) a {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 180px;
+    width: 170px;
     margin-left: -28px;
-    padding-left: 5px;
+    padding-left: 18px;
 }
 
 .dropdown-menu li {
@@ -129,13 +106,7 @@ nav ul li:nth-child(-n+4) a {
         display: inline-block;
     }
 
-
-
 .button-home {
-    color: rgb(26, 26, 26);
-}
-
-.button-home:hover {
     color: rgb(255, 129, 16);
 }
 
@@ -150,6 +121,17 @@ nav ul li:nth-child(-n+4) a {
         background-color: rgb(26, 26, 26);
     }
 
+.button-do-logout {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-logout:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
 nav ul li:nth-child(-n+4) a {
     transition: 0.6s border;
 }
@@ -158,15 +140,25 @@ nav ul li:nth-child(-n+4) a {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 
-.nav-item {
-    position: relative;
+.tituloCadastro {
+    margin-left: 55px;
+    margin-bottom: 20px;
 }
 
-    .nav-item a {
-        display: block;
-        text-decoration: none;
-        color: #333;
-    }
+.frase {
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+.tituloInformacao {
+    margin-left: 55px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tituloInformacao p{
+    font-weight: 400;
+}
 
 .form-control {
     border: 1px solid #fb8314;
@@ -198,29 +190,87 @@ nav ul li:nth-child(-n+4) a {
 
 .informacoesPessoais {
     display: flex;
-    width: 100%;
-    gap: 2vw;
+    justify-content: space-between; 
+    margin-left: 55px;
+    width: 84%;
 }
 
-    .informacoesPessoais input {
-        width: 300px;
+.informacoesPessoais div{
+    width: 100%;
+    margin-right: 30px;
+}
+
+    .informacoesPessoais .inp input {
+        padding: 8px;
+        width: 100%;
+        border: 2px solid rgb(255, 129, 16);
     }
+
+    .informacoesPessoais .inpSemDate input {
+        padding-bottom: 10px;
+    }
+
 
 .informacoes2 {
     display: flex;
-    width: 100%;
-    gap: 2vw;
-}
-#dataCadastro{
-    width: 170px;
-}
-#cad1{
-    width:200px;
+    justify-content: space-between;
+    margin-left: 55px;
+    width: 84.3%;
 }
 
-    .informacoes2 input {
-        width: 300px;
+    .informacoes2 div {
+        width: 100%;
+        margin-right: 30px;
     }
+
+    .informacoes2 .inp input {
+        padding: 8px;
+        width: 100%;
+        border: 2px solid rgb(255, 129, 16);
+    }
+
+    .informacoes2 .inpSexo{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 7px;
+    }
+
+        .informacoes2 .inpSexo .inpSexoMasc{
+            width: 50%;
+            margin-right: 5px
+        }
+
+        .informacoes2 .inpSexo .inpSexoFemi{
+            width: 50%;
+            display: flex;
+            justify-content:flex-end;
+        }
+
+.senhas {
+    display: flex;
+    margin-left: 55px;
+    width: 84%;
+}
+
+    .senhas div {
+        width: 100%;
+        margin-right: 30px;
+    }
+
+        .senhas div input{
+            padding: 8px;
+            width: 100%;
+            border: 2px solid rgb(255, 129, 16);
+        }
+
+.select {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    width: 105%;
+    border: 2px solid rgb(255, 129, 16);
+    padding: 7px;
+}
 
 .informacoesResidenciais {
     display: flex;
@@ -257,6 +307,20 @@ nav ul li:nth-child(-n+4) a {
         width: 300px;
     }
 
+.botaoCadastro {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 10px;
+    transition: 0.5s background;
+    border: none;
+    font-size: 15px;
+}
+
+
+    .botaoCadastro:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
 .buttonCadastro {
     border: 1px solid #ffffff;
     background-color: #fb8314;
@@ -277,4 +341,6 @@ nav ul li:nth-child(-n+4) a {
 
 .confirmarCadastro {
     margin-bottom: 50px;
+    margin-left: 55px;
+    border: none;
 }

@@ -4,25 +4,27 @@
     ViewData["Title"] = "Início";
 }
 
-
-
-
 <header>
 
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
-            <li><a href="#" class="button-home">Home</a></li>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
-            <li class="nav-item dropdown">
-                <a href="#">Admin</a>
-                <ul class="dropdown-menu">
-                    <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
-                    <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
-                </ul>
-            </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                    </ul>
+                </li>      
+            }
             <partial name="_LoginPartial" />
-        </ul>
     </nav>
 
     <article class="article-description">
@@ -37,14 +39,14 @@
 
         <p class="paragraph-description">Desbrave novos horizontes com nosso serviço de aluguel de carros por viagem. Liberte-se da rotina, escolha o seu caminho. Clique em <span class="destaque-saber-mais">Saber Mais</span> e descubra como reinventamos a maneira de viajar.</p>
 
-        <button class="article-description-button">Saber Mais</button>
+        <button class="article-description-button" asp-action="Index" asp-area="" asp-controller="Saiba">Saiba Mais</button>
 
     </article>
 </header>
 <main>
     <aside class="aside-info">
         <div>
-            <p class="paragraph-bold-info">250+</p>
+            <p class="paragraph-bold-info">@ViewBag.QntCarros+</p>
             <p>Carros</p>
         </div>
 
@@ -54,7 +56,7 @@
         </div>
 
         <div>
-            <p class="paragraph-bold-info">1500</p>
+            <p class="paragraph-bold-info">@ViewBag.QntPessoas</p>
             <p>Cadastros</p>
         </div>
 
@@ -174,8 +176,8 @@
             <p><a href="#">Sobre o Projeto</a></p>
             <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
             <p><a href="#">Planos de Carreira</a></p>
-            <p><a href="#">Guia Turístico</a></p>
-            <p><a href="#">Serviços</a></p>
+            <p><a asp-area="" asp-controller="OurServices" asp-action="Index">Guia Turístico</a></p>
+            <p><a asp-area="" asp-controller="OurServices" asp-action="Index">Serviços</a></p>
         </div>
 
         <div class="footer-contact">
@@ -203,6 +205,9 @@
         var passouHandleMarkerClick = false
         var enderecoSemPlusCode
         var enderecoSemPlusCode2 = null
+        var arrayMarcadores = [];
+
+        //Function para o GeoLocation
 
         function success(pos) {
             lat = pos.coords.latitude;
@@ -213,16 +218,18 @@
 
         navigator.geolocation.getCurrentPosition(success);
 
+        //
+
         var meuIcon = 'https://res.cloudinary.com/dubnbered/image/upload/v1702342339/pin-do-mapa_okjn2q.png';
+
+        //Iniciando o mapa, caso o usuário tenha o GeoLocation ele cai no if se não no else
 
         function initMap() {
             if (passou == true) {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
-                    center: { lat: lat, lng: lng } // centro do mapa
+                    center: { lat: lat, lng: lng } //Posição do usuário através do GeoLocation
                 });
-
-                // Criando o marcador aqui --- >
 
                 var marker = new google.maps.Marker({
                     position: { lat: lat, lng: lng },
@@ -234,14 +241,15 @@
             else {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
-                    center: { lat: -26.917231, lng: - 49.071175 } // centro do mapa
+                    center: { lat: -26.917231, lng: - 49.071175 } //Centro de Blumenau
                 });
             }
 
+
             var array = [];
             var icon = 'https://res.cloudinary.com/dtvypcack/image/upload/v1702156334/image-removebg-preview_5_vjrfkz_iq0hzk.png';
-            // Marcar cada carro no mapa
 
+            //Input de onde o usuário está. Dá locais conforme o usuário está digitando
             var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
 
@@ -252,14 +260,16 @@
                     return;
                 }
 
-                // Gpega a informação do lugar selecionado
+                //Pega a informação do lugar selecionado
                 var selectedPlace = places[0];
                 console.log(selectedPlace);
 
-                //  atualiza o mapa com a localização atualizada
+                //Atualiza o mapa com a localização atualizada
                 map.setCenter(selectedPlace.geometry.location);
             });
 
+
+            //Input de onde o usuário vai. Dá locais conforme o usuário está digitando
             var inputDestino = document.getElementById('pac-destino');
             var searchBox2 = new google.maps.places.SearchBox(inputDestino);
 
@@ -270,9 +280,11 @@
                     return;
                 }
 
+                //Pega a informação do lugar selecionado
                 var selectedPlace = places[0];
                 console.log(selectedPlace);
 
+                //Atualiza o mapa com a localização atualizada
                 map.setCenter(selectedPlace.geometry.location);
             });
 
@@ -283,7 +295,24 @@
 
             directionsRenderer.setMap(map);
 
+            // Funcao para limpar marcadores que sao criados atraves de rotas geradas
+            function limparRota(){
+
+                //Confiro se tem marcadores dentro da array, se tiver ele entra
+                if(arrayMarcadores.length > 0){
+
+                    //Faço um for para pecorrer na array e nele tiro os marcadores do mapa usando o setMap null
+                    for (let i = 0; i < arrayMarcadores.length; i++){
+                        arrayMarcadores[i].setMap(null)
+                    }
+
+                    arrayMarcadores = []
+                }
+            }
+
+            //Gera as rotas
             document.querySelector('.buttonPesquisar').addEventListener('click', function () {
+
                 var modoViagem = document.querySelector('#opcoesDeViagens')
                 var modo = modoViagem.value
                 var atual = input.value;
@@ -297,53 +326,57 @@
                     travelMode: modo
                 };
 
+
                 directionsService.route(request, function (result, status) {
                     if (status == 'OK') {
+
+                        limparRota();
+
+                        //Quando gerar a rota, se o usuário não tiver o Geolocation, ele gera cria o icon de pessoa
                         if (passou == false) {
                             directionsRenderer.setDirections(result);
-                            new google.maps.Marker({
+                            arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
                                 // icon pessoa
                                 icon: meuIcon,
                                 title: 'Partida',
                                 animation: google.maps.Animation.DROP
-                            });
+                            }));
                         }
                         else if (passou == true && input.value != enderecoSemPlusCode2) {
                             directionsRenderer.setDirections(result);
-                            new google.maps.Marker({
+                            arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
                                 icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702447989/map-pin_1_pgh2mc.png',
                                 title: 'Partida',
                                 animation: google.maps.Animation.DROP
-                            });
+                            }));
                         }
                         else {
                             directionsRenderer.setDirections(result);
-                            new google.maps.Marker({
+                            arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
                                 title: 'Partida',
                                 icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702449262/map-pin_2_ijgdu1.png',
                                 animation: google.maps.Animation.DROP
-                            });
+                            }));
                         }
 
-                        new google.maps.Marker({
+                        arrayMarcadores.push(new google.maps.Marker({
                             position: result.routes[0].legs[0].end_location,
                             map: map,
                             icon: 'https://res.cloudinary.com/dubnbered/image/upload/v1702447871/map-pin_dl4zkw.png',
                             title: 'Chegada',
                             animation: google.maps.Animation.DROP
-                        });
+                        }));
                     }
                 });
             });
 
-
-
+            //Converter os números de longitude e latitude do Geolocation para nome de locais
             if (passou == true) {
                 var latitude = lat;
                 var longitude = lng;
@@ -351,6 +384,8 @@
                 // Converte coordenadas em endereço
                 converterParaEndereco(latitude, longitude);
             }
+
+            //
 
             function converterParaEndereco(latitude, longitude) {
                 var latLng = new google.maps.LatLng(latitude, longitude);
@@ -368,7 +403,6 @@
                             console.log('Endereço:', enderecoSemPlusCode);
 
                             // Preenche o valor do input de inicio
-
                             if (enderecoSemPlusCode2 == null) {
                                 enderecoSemPlusCode2 = enderecoSemPlusCode
                             }
@@ -391,70 +425,88 @@
                     }
                 });
             }
-
-        @foreach (var carro in Model)
-        {
-            @if (carro.Status != false)
+            @if (ViewBag.Pendente == null)
             {
-                <text>
-                                            var marker = new google.maps.Marker({
-                            position: { lat: @carro.Latitude, lng: @carro.Longitude },
-                            map: map,
-                            icon: icon,
-                            title: '@carro.Marca'
-                        });
-
-                    var infoWindow = new google.maps.InfoWindow({
-                        content:
-                            `
-                            <div id="car-details">
-                                <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
-                                <div id="car-info">
-                                    <h2>@carro.Marca @carro.Modelo</h2>
-                                    <p>Modelo: @carro.Modelo</p>
-                                    <p>Ano do Modelo: @carro.Year</p>
-                            @*<p>Placa: @carro.Placa</p>*@
-                            @*<p>Preço por Hora: R$ 12,00</p>*@
-                                    </div>
-                                    <button id="choose-car-btn">Escolher Carro</button>
-                                </div>
-                            `,
-                    });
-
-                    array.push({ marker: marker, infoWindow: infoWindow });
-
-                    marker.addListener('click', (function (infoWindow, marker) {
-                        return function () {
-                            handleMarkerClick(marker);
-                            // Fechar todas as janelas de informações abertas
-                            array.forEach(function (item) {
-                                item.infoWindow.close();
+                @foreach (var carro in Model)
+                {
+                    //Renderiza os carros no mapa caso o carro esteja disponível
+                    @if (carro.Status != false)
+                    {
+                        <text>
+                            var marker = new google.maps.Marker({
+                                position: { lat: @carro.Latitude, lng: @carro.Longitude },
+                                map: map,
+                                icon: icon,
+                                title: '@carro.Marca'
                             });
 
-                            // Abrir a infowindow
-                            infoWindow.open(map, marker);
-                        };
-                    })(infoWindow, marker));
-                </text>
+                            var urlImagemCarro;
+
+                            var infoWindow = new google.maps.InfoWindow({
+                                content:
+                                    `
+                                        <div id="car-details">
+                                            @switch (carro.Categoria.Descricao)
+                                            {
+                                                case "Basico":
+                                                    <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                                                    break;
+                                                case "Carga":
+                                                    <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226093/carro_lexus_df6cto_xykuob.png" alt="Imagem do Carro">
+                                                    break;
+                                                case "Familia":
+                                                    <img id="car-image" class="car-family" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" alt="Imagem do Carro">
+                                                    break;
+                                            }
+                                            <div id="car-info">
+                                                <h2>@carro.Marca @carro.Modelo</h2>
+                                                <p>Modelo: @carro.Modelo</p>
+                                                <p>Ano do Modelo: @carro.Year</p>
+                                                <p>Categoria: @carro.Categoria.Descricao</p>
+                                                </div>
+                                            <div id="choose-car-btn">
+                                                @Html.ActionLink("Selecionar carro", "Index", "CarroEscolhido", new {id = @carro.Id})
+                                            </div>
+                                        </div>
+                                    `,
+                            });
+
+                            array.push({ marker: marker, infoWindow: infoWindow });
+
+                            marker.addListener('click', (function (infoWindow, marker) {
+                                return function () {
+                                    handleMarkerClick(marker);
+                                    // Fechar todas as janelas de informações abertas
+                                    array.forEach(function (item) {
+                                        item.infoWindow.close();
+                                    });
+
+                                    // Abrir a infowindow
+                                    infoWindow.open(map, marker);
+                                };
+                            })(infoWindow, marker));
+                        </text>
+                    }
+
+                }
             }
 
-        }
+            function handleMarkerClick(marker) {
+                // Obter a posição do marcador clicado
+                var position = marker.getPosition();
 
-                function handleMarkerClick(marker) {
-                    // Obter a posição do marcador clicado
-                    var position = marker.getPosition();
+                // Agora você pode usar position.lat() e position.lng() conforme necessário
+                console.log('Latitude:', position.lat());
+                console.log('Longitude:', position.lng());
+                passouHandleMarkerClick = true;
 
-                    // Agora você pode usar position.lat() e position.lng() conforme necessário
-                    console.log('Latitude:', position.lat());
-                    console.log('Longitude:', position.lng());
-                    passouHandleMarkerClick = true;
-
-                    converterParaEndereco(position.lat(), position.lng())
-                    // Adicione lógica adicional com base na posição do marcador clicado
-                }
+                converterParaEndereco(position.lat(), position.lng())
+                // Adicione lógica adicional com base na posição do marcador clicado
+            }
         }
     </script>
     <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">
     </script>
+    <script src="~/js/contagemMinutos.js"></script>
 }

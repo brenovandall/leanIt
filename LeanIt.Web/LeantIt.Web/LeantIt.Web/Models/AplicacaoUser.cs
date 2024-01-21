@@ -9,6 +9,7 @@ namespace LeantIt.Web.Models
         public string Sexo { get; set; }
         public string Telefone { get; set; }
         public string DataNascimento { get; set; }
+        public string Nome { get; set; }
     }
 }
 

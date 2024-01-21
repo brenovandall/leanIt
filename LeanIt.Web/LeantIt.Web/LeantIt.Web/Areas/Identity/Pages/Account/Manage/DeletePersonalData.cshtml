@@ -1,0 +1,55 @@
+﻿@page
+@model DeletePersonalDataModel
+@{
+    ViewData["Title"] = "Delete Personal Data";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+<main>
+    <div>
+        <p>
+            <strong>A exclusão desses dados removerá permanentemente sua conta, e isso não poderá ser recuperado.</strong>
+        </p>
+
+
+        <form method="post">
+            <div>
+            @if (Model.RequirePassword)
+            {
+                <div>
+                    <label asp-for="Input.Password">Senha</label>
+                    <input id="input" asp-for="Input.Password" autocomplete="current-password" aria-required="true" placeholder="Digite sua senha" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="msgInfo" role="alert"></div>
+            }
+            </div>
+            <div>
+                <button id="botao" class="excluir" type="submit">Excluir conta</button>
+
+                <button class="voltar" asp-area="" asp-action="Index" asp-controller="Home">Sair</button>
+            </div>
+
+        </form>
+    </div>
+
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/contagemMinutos.js"></script>
+    <script>
+        document.getElementById("botao").addEventListener("click", (e) => {
+            var input = document.getElementById("input").value;
+
+            if (input === null || input.trim() === "") {
+                e.preventDefault();
+            }
+        });
+    </script>
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/deletarDadosPessoal.css" />
+}

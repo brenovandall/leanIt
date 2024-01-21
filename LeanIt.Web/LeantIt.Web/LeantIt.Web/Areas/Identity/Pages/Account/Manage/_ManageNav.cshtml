@@ -1,0 +1,26 @@
+﻿@using LeantIt.Web.Models;
+@inject SignInManager<AplicacaoUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+
+<img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" alt="">
+<div class="caminhos">
+    <div class="historico">
+        <i class="fa-solid fa-car"></i> <span><a asp-area="" asp-controller="Historico" asp-action="Index">Histórico de viagens</a></span>
+    </div>
+    <div class="outros detalhesConta">
+        <i class="fa-solid fa-user"></i> <span><a class="@ManageNavPages.IndexNavClass(ViewContext)" asp-page="./Index">Perfil</a></span>
+    </div>
+    <div class="outros alterarSenha">
+        <i class="fa-solid fa-lock"></i> <span><a class="@ManageNavPages.ChangePasswordNavClass(ViewContext)" asp-page="./ChangePassword">Redefinir senha</a></span>
+    </div>
+    <div class="outros">
+        <i class="fa-solid fa-trash"></i> <span><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Deletar perfil</a></span>
+    </div>
+</div>
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/manage.css" />
+}

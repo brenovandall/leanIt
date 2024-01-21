@@ -1,6 +1,8 @@
 ﻿using LeantIt.Web.Data;
 using LeantIt.Web.Models;
 using LeantIt.Web.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,18 +15,22 @@ namespace LeantIt.Web.Controllers;
 // ************************************************ //
 public class CarrosController : Controller
 {
-
+    private readonly ILogger<CarrosController> _logger;
+    private readonly SignInManager<AplicacaoUser> _signInManager;
     private AppDbContext _context; // este é o DbContext (contexto da base de dados usada no nosso projeto)
                                    // em todas os casos de tratamentos de dados, utilize "_context" para acessar as tabelas...
 
     // construtor do controller, aqui, devem ser assinadas todas as injeções de dependencias
-    public CarrosController(AppDbContext context)
+    public CarrosController(ILogger<CarrosController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager)
     {
+        _logger = logger;
         _context = context;
+        _signInManager = signInManager;
     }
 
     // Aqui a view retorna a página de adicionar
     [HttpGet]
+    [Authorize(Roles ="Admin")]
     public IActionResult Adicionar()
     {
         var categorias = _context.Categorias.ToList();
@@ -33,7 +39,15 @@ public class CarrosController : Controller
         {
             Categoria = categorias.Select(x => new SelectListItem { Text = x.Descricao, Value = x.Id.ToString() })
         };
+        if (User.Identity.IsAuthenticated)
+        {
 
+            var user = User.Identity.Name;
+            var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+            var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
+            ViewBag.Pendente = pendente;
+        }
         return View(adicionarCarroViewModel);
     }
 
@@ -73,6 +87,7 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para a pagina
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public IActionResult Listar(string sortOrder, int? page)
     {
         
@@ -83,6 +98,15 @@ public class CarrosController : Controller
         // SE FOR "Nome Crescente", ELE IRÁ CAIR NO case "nome_desc"
         // SE FOR "Nome Decrescente", ELE IRÁ CAIR NO case "nome_asc"
         // O VALOR DEFAULT É APENAS A LISTA DE CARROS NORMAL ASSIM COMO ESTÁ REGISTRADO NAS TABELAS
+        if (User.Identity.IsAuthenticated)
+        {
+
+            var user = User.Identity.Name;
+            var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+            var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
+            ViewBag.Pendente = pendente;
+        }
         switch (sortOrder)
         {
             case "nome_desc":
@@ -101,9 +125,20 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para uma simples pagina de deletar o carro
     [HttpGet]
+    [Authorize(Roles ="Admin")]
     public IActionResult Remover(Guid? id)
     {
         var carros = _context.Carros.ToList();
+
+        if (User.Identity.IsAuthenticated)
+        {
+
+            var user = User.Identity.Name;
+            var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+            var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
+            ViewBag.Pendente = pendente;
+        }
 
         foreach (var carro in carros)
         {
@@ -136,6 +171,7 @@ public class CarrosController : Controller
 
     // Aqui a view retorna os dados para fazer a edição de um carro, trazendo todos os dados do carro existente
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public IActionResult Editar(Guid id)
     {
         var carroDoBancoDeDados = _context.Carros.Include(x => x.Categoria).FirstOrDefault(x => x.Id == id);
@@ -160,6 +196,17 @@ public class CarrosController : Controller
             CategoriaSelecionada = categoriaSelecionada.Id.ToString(),
             Status = carroDoBancoDeDados.Status
         };
+
+        if (User.Identity.IsAuthenticated)
+        {
+
+            var user = User.Identity.Name;
+            var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+            var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
+            ViewBag.Pendente = pendente;
+        }
+
 
         return View(novoModel);
     }
