@@ -1,12 +1,155 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registre-se";
 }
 
-<h1>@ViewData["Title"]</h1>
+<header>
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            <partial name="_LoginPartial" />
+    </nav>
+</header>
 
-<div class="row">
+
+<div class="tituloInformacao">
+    <h3>Informações pessoais</h3>
+</div>
+
+<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+    <div class="informacoesPessoais">
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.Nome">Nome completo</label>
+            <div class="inp inpSemDate">
+                <input asp-for="Input.Nome" type="text"id="nomeCadastro" placeholder="Digite seu nome completo">
+            </div>
+            <div>
+                <span asp-validation-for="Input.Nome" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.CPF">CPF</label>
+            <div class="inp inpSemDate">
+                <input asp-for="Input.CPF" id="cpfCadastro" autocomplete="username" aria-required="true" onblur="validaCPF()" placeholder="xxx.xxx.xxx-xx">
+            </div>
+            <div>
+                <span asp-validation-for="Input.CPF" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.CNH">CNH</label>
+            <div class="inp inpSemDate">
+                <input asp-for="Input.CNH" autocomplete="username" aria-required="true" placeholder="Digite sua CNH" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.CNH" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.DataNascimento">Data de nascimento</label>
+            <div class="inp"> 
+                <input type="Date" asp-for="Input.DataNascimento"  autocomplete="username" aria-required="true" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.DataNascimento" class="text-danger"></span>
+            </div>
+        </div> 
+    </div>
+
+    <div style="margin-top: -5px;" class="informacoes2">
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.Telefone">Telefone</label>
+            <div class="inp">
+                <input asp-for="Input.Telefone" autocomplete="username" aria-required="true" placeholder="Digite seu telefone" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.Celular">Celular</label>
+            <div class="inp">
+                <input asp-for="Input.Celular" id="celularCadastro" placeholder="Digite seu celular">
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <label asp-for="Input.Email">E-mail</label>
+            <div class="inp">
+                <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="Digite seu e-mail" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <div class="escolhaSexo">
+                <label asp-for="Input.Sexo">Sexo</label>
+                <div class="inpSexo">
+                    <div class="inpSexoMasc">
+                        <input name="Input.Sexo" aria-required="true" type="radio" value="Masculino" asp-for="Input.Sexo" />
+                        <label asp-for="Input.Sexo">Masculino</label>
+                    </div>
+                    <div class="inpSexoFemi">
+                        <input name="Input.Sexo" aria-required="true" type="radio" value="Feminino" asp-for="Input.Sexo" />
+                        <label asp-for="Input.Sexo">Feminino</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="senhas">
+        <div style="margin-bottom:30px;">
+            <label asp-for="Input.Password">Senha</label>
+            <div class="inp">
+                <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="Digite sua senha" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Input.ConfirmPassword">Confirmar senha</label>
+            <div class="inp">
+                <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="Confirme sua senha" />
+            </div>
+            <div>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <div>
+                <label asp-for="Input.SelecionarRole">Funções</label>
+                <div class="inp">
+                    <select class="select" asp-for="Input.SelecionarRole" asp-items="Model.Input.SelectRoles" class="form-control"></select>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="confirmarCadastro">
+        <button class="botaoCadastro" type="submit">Cadastre-se</button>
+        @* <button class="buttonCancelarCadastro button-do-register" asp-area="" asp-controller="Account" asp-action="Login" type="submit">Cancelar</button> *@
+    </div>
+</form>
+
+@* <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
@@ -87,8 +230,16 @@
             }
         </section>
     </div>
-</div>
+</div> *@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/register.js"></script>
+    <script src="~/js/contagemMinutos.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 }
+
+@section Styles{
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/register.css" />
+    }

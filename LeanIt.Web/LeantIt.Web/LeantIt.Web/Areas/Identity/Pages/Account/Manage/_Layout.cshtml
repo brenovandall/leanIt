@@ -1,0 +1,22 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+        @RenderSection("Styles", false)
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+        @RenderSection("Styles", false)
+    }
+}
+
+
+<body>
+    @RenderBody()
+</body>
+
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

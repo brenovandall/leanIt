@@ -1,0 +1,20 @@
+﻿@model AluguelCarros
+@{
+    ViewData["Title"] = "Pagamento realizado";
+}
+
+
+<main>
+    <div>
+        <h1>@ViewData["Title"]</h1>
+        <p><a asp-area="" asp-action="Index" asp-controller="Home">Ir para home</a></p>
+    </div>
+</main>
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/pagamentoRealizado.css" />
+}
+
+@section Scripts{
+    <script src="~/js/pararContagem.js"></script>
+}

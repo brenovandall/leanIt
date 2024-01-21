@@ -1,0 +1,196 @@
+﻿@page
+
+@using LeantIt.Web.Areas.Identity.Pages.Account.Manage;
+@using LeantIt.Web.Models;
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AplicacaoUser> SignInManager
+@inject UserManager<AplicacaoUser> UserManager
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+
+<header>
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            <ul class="navbar-nav">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li>
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)</a>
+                    </li>
+                    <li>
+                        @if (Model.Aluguel == null)
+                        {
+                            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button style="border:none" id="logout" type="submit"><a class="button-do-register">Logout</a></button>
+                            </form>
+                        }
+                        else
+                        {
+                            <button style="border:none; display:block" id="pendente"><a class="button-do-register" asp-action="Pendente" asp-controller="CarroEscolhido" asp-area="">Pendente</a></button>
+
+                        }
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar-se</a>
+                    </li>
+                    <li><a class="button-do-register" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                }
+            </ul>
+    </nav>
+</header>
+
+
+<main>
+    <div class="conteudo">
+        <div>
+            <partial name="_ManageNav" />
+        </div>
+        <div class="preencher">
+            <div class="titulo">
+                <span class="pnavbar">Detalhes da Conta</span>
+                <div class="voltar">
+                    <a href="#">Voltar <i class="fa-solid fa-left-long"></i></a>
+                </div>
+            </div>
+            <form class="formu" method="post">
+                <div class="informacoes">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div>
+                        <div>
+                            <label asp-for="Username">E-mail</label>
+                        </div>
+                        <input asp-for="Username" id="email" class="readonly" readonly>
+                    </div>
+                    @* <div>
+                        <div>
+                            <label for="email">Email</label>
+                        </div>
+                        <input type="text" name="email" id="email" class="readonly" readonly>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="cnh">CNH</label>
+                        </div>
+                        <input type="text" name="cnh" id="cnh" class="readonly" readonly>
+                    </div> *@
+                    <div>
+                        <div>
+                            <label asp-for="Input.PhoneNumber">Celular</label>
+                        </div>
+                        <input asp-for="Input.PhoneNumber" id="cep" placeholder="Digite seu celular">
+                        <div>
+                            <span asp-validation-for="Input.PhoneNumber"></span>
+                        </div>
+                    </div>
+@*                     <div id="msg" onload="msg()">
+                        <partial name="_StatusMessage" for="StatusMessage" />
+                    </div> *@
+                   @*  <div>
+                        <div>
+                            <label for="numero">Número</label>
+                        </div>
+                        <input type="text" name="numero" id="numero" placeholder="Digite seu número">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="endereco">Endereço</label>
+                        </div>
+                        <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="bairro">Bairro</label>
+                        </div>
+                        <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="cidade">Cidade</label>
+                        </div>
+                        <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="estado">Estado</label>
+                        </div>
+                        <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="complemento">Complemento</label>
+                        </div>
+                        <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento">
+                    </div> *@
+                    <div>
+                        <input type="submit" value="Salvar" class="enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><a href="#"><i class="fa-brands fa-youtube"></a></i> <a href="#"><i class="fa-brands fa-facebook"></a></i> <a href="#"><i class="fa-brands fa-instagram"></i></a> <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p><a href="#">Guia Turístico</a></p>
+            <p><a href="#">Serviços</a></p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
+        </div>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
+
+@section Scripts {
+    <script src="~/js/contagemMinutos.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/perfil.css" />
+}

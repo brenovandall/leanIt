@@ -1,0 +1,59 @@
+﻿@model AluguelCarros
+@{
+    ViewData["Title"] = "Pagamento";
+}
+
+<main>
+    <form asp-action="Index" method="post">
+ 
+        <div class="pagamento">
+            <div class="esquerda">
+                <h2>Resumo <span style="color: #fb8314;">Aluguel</span></h2>
+                <p>Seus Gastos</p>
+                <div class="resumo">
+                    <div class="modelo">
+                        <i class="fa-solid fa-car"></i><span class="tituloModelo">Modelo do Carro</span><span class="resultadoModelo">@Model.Carro.Modelo</span>
+                    </div>
+                    <div class="minuto">
+                        <i class="fa-solid fa-clock"></i><span class="tituloMinutos">Minutos Usados</span><span class="resultadoMinutos">@Model.Minutos</span>
+                    </div>
+                    <div class="categoria">
+                        <i class="fa-solid fa-list"></i><span class="tituloCategoria">Categoria</span><span class="resultadoCategoria">@Model.Carro.Categoria.Descricao</span>
+                    </div>
+                </div>
+                <div class="cupom">
+                    <h3>Pagamento</h3>
+                    <label for="inserir">Insira o valor a ser pago</label>
+                    <div class="inputs">
+                        <input asp-for="@Model.Preco"  type="number" id="inserir" placeholder="Insira valor">
+                    </div>
+                </div>
+            </div>
+            <div class="direita">
+                <h2>Pagamento</h2>
+                <p>Realize Pagamento</p>
+                <div class="informacaoFinal">
+                    <div class="desconto">
+                        <span>Valor de Desconto</span><span class="resultadoDesconto">R$ 0,00</span>
+                    </div>
+                    <div class="valorAluguel">
+                        <span>Valor do Aluguel</span><span class="resultadoValorAluguel">R$ @ViewBag.Aluguel</span>
+                    </div>
+                    <div class="valorFinal">
+                        <span>Valor Final com Desconto</span><span class="resultadoValorFinal">R$ 0,00</span>
+                    </div>
+                </div>
+                <input type="submit" value="Finalizar Aluguel">
+            </div>
+        </div>
+    
+    </form>
+</main>
+
+@section Styles {
+
+    <link rel="stylesheet" href="~/css/pagamento.css" />
+}
+@section Scripts{
+    <script src="~/js/contagemMinutos.js"></script>
+}

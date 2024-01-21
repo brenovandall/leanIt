@@ -74,9 +74,9 @@ nav ul {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 180px;
+    width: 170px;
     margin-left: -28px;
-    padding-left: 5px;
+    padding-left: 18px;
 }
 
 .dropdown-menu li {
@@ -97,7 +97,7 @@ nav ul {
 
     .dropdown-menu li .add {
         display: inline-block;
-        margin-left: 5px;
+        margin-left: 4px;
     }
 
     .dropdown-menu li .listando {
@@ -141,13 +141,13 @@ main {
     margin-bottom: 5vh;
 }
 
-form{
+.formu{
     margin-top: 5vh;
     width: 69.2%;
     height: 35vh;
 }
 
-form h1{
+.formu h1{
     margin-bottom: 30px
 }
 

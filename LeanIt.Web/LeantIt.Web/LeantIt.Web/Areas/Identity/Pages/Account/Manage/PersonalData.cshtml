@@ -1,0 +1,29 @@
+﻿@page
+@model PersonalDataModel
+@{
+    ViewData["Title"] = "Personal Data";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+<main>
+    <div>
+        <p>Sua conta contém dados pessoais que você nos forneceu. Esta página permite que você exclua esses dados.</p>
+        <p>
+            <strong>A exclusão desses dados removerá permanentemente sua conta e não poderá ser recuperada.</strong>
+        </p>
+
+        <p>
+            <a id="delete" asp-page="DeletePersonalData">Clique aqui caso queira deletar</a>
+        </p>
+
+    </div>
+</main>
+
+@section Scripts {
+    <script src="~/js/contagemMinutos.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/deletarPerfil.css" />
+}

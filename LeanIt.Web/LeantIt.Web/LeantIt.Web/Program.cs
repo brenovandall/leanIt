@@ -14,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(opts => opts.
     GetConnectionString("AppLeanItConnection"))));
 
 builder.Services.AddDefaultIdentity<AplicacaoUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddSignInManager<SignInManager<AplicacaoUser>>(); // Certifique-se de usar AplicacaoUser aqui
 

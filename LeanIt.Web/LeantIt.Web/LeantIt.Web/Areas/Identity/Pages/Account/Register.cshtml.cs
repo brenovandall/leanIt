@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -30,13 +31,15 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<AplicacaoUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<AplicacaoUser> userManager,
             IUserStore<AplicacaoUser> userStore,
             SignInManager<AplicacaoUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,6 +47,16 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
+
+            Input = new InputModel
+            {
+                SelectRoles = roleManager.Roles.Select(role => new SelectListItem
+                {
+                    Value = role.Name,
+                    Text = role.Name
+                }).ToList()
+            };
         }
 
         /// <summary>
@@ -105,15 +118,28 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             [Display(Name = "Digite a CPF")]
             public string CPF { get; set; }
 
+            [BindProperty]
             [Display(Name = "Escolha o sexo")]
             public string Sexo { get; set; }
-
 
             [Display(Name = "Digite o telefone")]
             public string Telefone { get; set; }
 
+            [Display(Name = "Digite o nome")]
+            public string Nome { get; set; }
+
             [Display(Name = "Data nascimento")]
             public string DataNascimento { get; set; }
+
+            [Display(Name = "Celular")]
+            public string Celular { get; set; }
+
+            public bool ConfirmarCelular { get; set; }
+
+            public string SelecionarRole { get; set; }
+
+            [BindProperty]
+            public List<SelectListItem> SelectRoles { get; set; }
         }
 
 
@@ -129,11 +155,21 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new AplicacaoUser { UserName = Input.Email, Email = Input.Email, CNH = Input.CNH, CPF = Input.CPF, Sexo = Input.Sexo, Telefone = Input.Telefone, DataNascimento = Input.DataNascimento };
+
+                var user = new AplicacaoUser { UserName = Input.Email, Email = Input.Email, CNH = Input.CNH, CPF = Input.CPF, Sexo = Input.Sexo ?? "Desconhecido", Telefone = Input.Telefone, DataNascimento = Input.DataNascimento, PhoneNumber = Input.Celular, Nome = Input.Nome };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+                if (!string.IsNullOrEmpty(Input.SelecionarRole))
+                {
+                    var roleExists = await _roleManager.RoleExistsAsync(Input.SelecionarRole);
+                    if (roleExists)
+                    {
+                        await _userManager.AddToRoleAsync(user, Input.SelecionarRole);
+                    }
+                }
 
                 if (result.Succeeded)
                 {

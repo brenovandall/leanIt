@@ -1,0 +1,19 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Acesso Negado";
+}
+
+<main>
+    <div>
+        <h1>@ViewData["Title"]</h1>
+        <p><a asp-area="" asp-controller="Home" asp-action="Index">Ir para o menu</a></p>
+    </div>
+</main>
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/acessoNegado.css" />
+}
+@section Scripts{
+    <script src="~/js/contagemMinutos.js"></script>
+}

@@ -13,6 +13,7 @@ public class AppDbContext : IdentityDbContext<AplicacaoUser>
 
     public DbSet<Categoria> Categorias { get; set; }
     public DbSet<CarroModel> Carros { get; set; }
+    public DbSet<AluguelCarros> AlguelCarros { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

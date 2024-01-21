@@ -1,0 +1,21 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "E-mail confirmado";
+}
+
+
+<main>
+    <div>
+        <h1>@ViewData["Title"]</h1>
+        <partial name="_StatusMessage" model="Model.StatusMessage" />
+        <p><a asp-area="Identity" asp-page="/Account/Login">Ir para o login</a></p>
+    </div>
+</main>
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/confirmarEmail.css" />
+}
+@section Scripts{
+    <script src="~/js/contagemMinutos.js"></script>
+}

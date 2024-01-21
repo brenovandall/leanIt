@@ -19,6 +19,35 @@ namespace LeantIt.Web.Migrations
                 .HasAnnotation("ProductVersion", "7.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("LeantIt.Web.Models.AluguelCarros", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("CarroId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("Minutos")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Pendente")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<double>("Preco")
+                        .HasColumnType("double");
+
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarroId");
+
+                    b.ToTable("AlguelCarros");
+                });
+
             modelBuilder.Entity("LeantIt.Web.Models.AplicacaoUser", b =>
                 {
                     b.Property<string>("Id")
@@ -55,6 +84,10 @@ namespace LeantIt.Web.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -320,6 +353,17 @@ namespace LeantIt.Web.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("LeantIt.Web.Models.AluguelCarros", b =>
+                {
+                    b.HasOne("LeantIt.Web.Models.CarroModel", "Carro")
+                        .WithMany()
+                        .HasForeignKey("CarroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Carro");
                 });
 
             modelBuilder.Entity("LeantIt.Web.Models.CarroModel", b =>

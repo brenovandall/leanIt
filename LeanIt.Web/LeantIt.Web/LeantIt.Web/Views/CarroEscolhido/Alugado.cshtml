@@ -1,0 +1,180 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AplicacaoUser> SignInManager
+@inject UserManager<AplicacaoUser> UserManager
+@model AluguelCarros
+
+@{
+    ViewData["Title"] = "Carro Escolhido";
+}
+
+<header>
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            <partial name="_LoginPartial" />
+        </ul>
+    </nav>
+</header>
+<main>
+    <form asp-action="Alugado" method="post">
+        <div class="infoCarro">
+            <div id="posImg">
+                @switch (Model.Carro.Categoria.Descricao)
+                {
+                    case "Basico":
+                        <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                        break;
+                    case "Carga":
+                        <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226093/carro_lexus_df6cto_xykuob.png" alt="Imagem do Carro">
+                        break;
+                    case "Familia":
+                        <img id="car-image" class="car-family" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" alt="Imagem do Carro">
+                        break;
+                }
+            </div>
+            <div class="infos">
+                <div>
+                    <span class="spanInfo">Marca:</span>
+                    <span>@Model.Carro.Marca</span>
+                </div>
+                <div>
+                    <span class="spanInfo">Modelo:</span>
+                    <span>@Model.Carro.Modelo</span>
+                </div>
+                <div>
+                    <span class="spanInfo">Placa:</span>
+                    <span>@Model.Carro.Placa</span>
+                </div>
+                <div>
+                    <span class="spanInfo">Cor:</span>
+                    <span>@Model.Carro.Cor</span>
+                </div>
+                <div>
+                    <span class="spanInfo">Localização:</span>
+                    <span id="pos"></span>
+                </div>
+                <div style="display:none">
+                    <input asp-for="@Model.Minutos" id="pagamento"/>
+                </div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div>
+                        <button type="submit" style="display: block" class="botaoEncerrar" id="botaoEncerrar">Ir para o pagamento</button>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </form>
+</main>
+<footer>
+
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><a href="#"><i class="fa-brands fa-youtube"></a></i> <a href="#"><i class="fa-brands fa-facebook"></a></i> <a href="#"><i class="fa-brands fa-instagram"></i></a> <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p><a asp-area="" asp-controller="OurServices" asp-action="Index">Guia Turístico</a></p>
+            <p><a asp-area="" asp-controller="OurServices" asp-action="Index">Serviços</a></p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
+        </div>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/carroEscolhido.css" />
+}
+
+@section Scripts{
+    <script>
+        // Inicia ao carregar a página
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Passando para as váriaveis as posições
+            var latitude = @Model.Carro.Latitude;
+            var longitude = @Model.Carro.Longitude;
+
+            var minutos = parseInt(localStorage.getItem("tempo")) || 0;
+
+            function comecar() {
+                setInterval(function () {
+                    minutos++;
+                    localStorage.setItem("tempo", minutos);
+                    console.log('Minutos:', minutos);
+                    document.getElementById("pagamento").value = minutos
+                        }, 1000);
+            }
+            
+            //Se os minutos pegado do localStorege for = 0 ou > 0 ele chama a funcao comecar()
+            if(minutos == 0 || minutos > 0){
+                comecar()
+            }
+
+            converterParaEndereco(latitude, longitude);
+        });
+
+        function converterParaEndereco(latitude, longitude) {
+            var latLng = new google.maps.LatLng(latitude, longitude);
+            var lugarParaPosicao = document.querySelector("#pos");
+
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        // Obtém o endereço completo
+                        var enderecoCompleto = results[0].formatted_address;
+
+                        // Remove o Plus Code se tiver
+                        var enderecoSemPlusCode = enderecoCompleto.replace(/\s[C0-9+]+$/, '');
+
+                        console.log('Endereço:', enderecoSemPlusCode);
+
+                        // Passo para o html o valor obtido
+                        lugarParaPosicao.innerHTML = enderecoSemPlusCode;
+
+                        // Obtem a localização mais próxima
+                        obterLocalizacaoMaisProxima(latitude, longitude);
+                    } else {
+                        console.error('Nenhum resultado encontrado');
+                    }
+                } else {
+                    console.error('Geocodificação falhou devido a:', status);
+                }
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">
+    </script>
+}

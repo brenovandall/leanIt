@@ -1,0 +1,254 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+#map {
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+nav ul {
+    margin: 0 10vh 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
+
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
+
+.nav-item {
+    position: relative;
+}
+
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 180px;
+    padding-top: 10px;
+    left: 0;
+    background-color: #F3F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 170px;
+    margin-left: -28px;
+    padding-left: 18px;
+}
+
+.dropdown-menu li {
+    margin-top: -10px;
+}
+
+    .dropdown-menu li a {
+        margin-left: -10px
+    }
+
+.dropdown-menu li {
+    display: block;
+}
+
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+    .dropdown-menu li .add {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .dropdown-menu li .listando {
+        display: inline-block;
+    }
+
+.button-home {
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+.button-do-logout {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-logout:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+nav ul li:nth-child(-n+4) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+4) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+.pnavbar {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.conteudo {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.titulo {
+    width: 84%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .titulo a {
+        color: black;
+        cursor: pointer;
+    }
+
+        .titulo a:hover {
+            color: rgb(255, 129, 16);
+        }
+
+    .titulo .voltar {
+        margin-top: 10px;
+    }
+
+.formu {
+    margin-top: 70px;
+}
+
+.preencher {
+    width: 100%;
+    margin-left: 40px;
+}
+
+
+
+
+.caminhos {
+    width: 80%;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+    .caminhos a {
+        color: black;
+    }
+
+.historico {
+    background-color: rgb(255, 129, 16);
+}
+
+.caminhos .historico {
+    border: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+
+
+.caminhos .outros {
+    border-bottom: 2px solid rgb(255, 129, 16);
+    border-left: 2px solid rgb(255, 129, 16);
+    border-right: 2px solid rgb(255, 129, 16);
+    padding: 5px;
+}
+
+.card {
+    margin-top: 90px;
+}
+
+.dados {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    background-color: rgba(223, 223, 223, 0.219);
+    box-shadow: 3px 3px 3px rgba(230, 229, 229, 0.668);
+    padding: 25px;
+}
+
+.carro {
+    width: 100%;
+}
+
+.informacaoCarro {
+    margin-bottom: 110px;
+}
+
+.marca {
+    color: rgb(163, 163, 163);
+}
+
+
+.informacaoTempo {
+    width: 80%;
+    background-color: rgba(223, 223, 223, 0.219);
+    box-shadow: 3px 3px 3px rgba(230, 229, 229, 0.668);
+    margin-top: 10px;
+    padding: 25px;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.valor {
+    color: rgb(255, 129, 16);
+}
