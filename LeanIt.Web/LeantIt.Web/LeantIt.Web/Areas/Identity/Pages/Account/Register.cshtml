@@ -130,7 +130,7 @@
                 <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="Confirme sua senha" />
             </div>
             <div>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
         </div>
         @if (User.IsInRole("Admin"))

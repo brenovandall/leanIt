@@ -66,6 +66,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
             /// </summary>
             [Phone]
             [Display(Name = "Phone number")]
+            [Required(ErrorMessage = "O número de telefone é obrigatório.")]
             public string PhoneNumber { get; set; }
         }
 
