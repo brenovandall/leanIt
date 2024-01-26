@@ -58,9 +58,12 @@ public class AppDbContext : IdentityDbContext<AplicacaoUser>
         var adminUser = new AplicacaoUser
         {
             UserName = "admin@gmail.com",
+            NormalizedUserName = "admin@gmail.com".ToUpper(),
+            NormalizedEmail = "admin@gmail.com".ToUpper(),
             Email = "admin@gmail.com",
             CNH = "000000000000",
             CPF = "00000000000",
+            EmailConfirmed = true,
             Sexo = "Masculino" ?? "Desconhecido",
             Telefone = "0000000000",
             DataNascimento = "2000-01-01",
