@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.Data;
 
 namespace LeantIt.Web.Data;
 
@@ -43,6 +44,41 @@ public class AppDbContext : IdentityDbContext<AplicacaoUser>
             }
         );
 
+        var role = new IdentityRole()
+        {
+            Name = "Admin",
+            NormalizedName = "Admin",
+            Id = "1",
+            ConcurrencyStamp = "1"
+        };
+
+        builder.Entity<IdentityRole>().HasData(role);
+
+
+        var adminUser = new AplicacaoUser
+        {
+            UserName = "admin@gmail.com",
+            Email = "admin@gmail.com",
+            CNH = "000000000000",
+            CPF = "00000000000",
+            Sexo = "Masculino" ?? "Desconhecido",
+            Telefone = "0000000000",
+            DataNascimento = "2000-01-01",
+            PhoneNumber = "0000000000",
+            Nome = "admin@gmail.com"
+        };
+
+        adminUser.PasswordHash = new PasswordHasher<AplicacaoUser>().HashPassword(adminUser, "Ab123.");
+
+        builder.Entity<AplicacaoUser>().HasData(adminUser);
+
+        var superAdminRole = new IdentityUserRole<string>()
+        {
+            RoleId = "1",
+            UserId = adminUser.Id
+        };
+
+        builder.Entity<IdentityUserRole<string>>().HasData(superAdminRole);
     }
 
 }

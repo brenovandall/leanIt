@@ -156,7 +156,16 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
 
-                var user = new AplicacaoUser { UserName = Input.Email, Email = Input.Email, CNH = Input.CNH, CPF = Input.CPF, Sexo = Input.Sexo ?? "Desconhecido", Telefone = Input.Telefone, DataNascimento = Input.DataNascimento, PhoneNumber = Input.Celular, Nome = Input.Nome };
+                var user = new AplicacaoUser { 
+                    UserName = Input.Email, 
+                    Email = Input.Email, 
+                    CNH = Input.CNH, 
+                    CPF = Input.CPF, 
+                    Sexo = Input.Sexo ?? "Desconhecido", 
+                    Telefone = Input.Telefone, 
+                    DataNascimento = Input.DataNascimento,
+                    PhoneNumber = Input.Celular, 
+                    Nome = Input.Nome };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

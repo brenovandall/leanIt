@@ -3,6 +3,7 @@ using System;
 using LeantIt.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeantIt.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240126174334_breno proway 3")]
+    partial class brenoproway3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,24 +141,24 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9ba5da82-8ab1-4128-ad2c-ebe468ee0fd3",
+                            Id = "e8f6a54b-b06c-4b63-99a2-b00c4d4a49a0",
                             AccessFailedCount = 0,
                             CNH = "000000000000",
                             CPF = "00000000000",
-                            ConcurrencyStamp = "15fc6994-900b-4724-ad3f-22723e04f99a",
+                            ConcurrencyStamp = "72811344-0f5f-4a48-bb64-68ce1ac00304",
                             DataNascimento = "2000-01-01",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            Nome = "admin@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDBdBJ1P9kHLMBqolx3fPIeU0qZEz2+ao+B52FMDOi4va+nNKUQziNr+Ixbug+LBng==",
+                            Nome = "admin",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIR9WreUe6u5qB4fg1C8ks7u9ehwpXxn+1wmGEnA+yRKHezwSdT/exV6Ud1Hibna9Q==",
                             PhoneNumber = "0000000000",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4abd7a10-3d61-4620-83e5-60878215126f",
+                            SecurityStamp = "2e446487-1c09-4908-807b-71cb16a495c5",
                             Sexo = "Masculino",
                             Telefone = "0000000000",
                             TwoFactorEnabled = false,
-                            UserName = "admin@gmail.com"
+                            UserName = "admin"
                         });
                 });
 
@@ -270,15 +273,6 @@ namespace LeantIt.Web.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            ConcurrencyStamp = "1",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -364,13 +358,6 @@ namespace LeantIt.Web.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "9ba5da82-8ab1-4128-ad2c-ebe468ee0fd3",
-                            RoleId = "1"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

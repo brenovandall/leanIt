@@ -12,8 +12,8 @@
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
-            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
-            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" >Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index" class="button-home">Categorias</a></li>
             @if (User.IsInRole("Admin"))
             {
                 <li class="nav-item dropdown">
