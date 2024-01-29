@@ -8,7 +8,7 @@
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
-            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
             @if (User.IsInRole("Admin"))
             {
@@ -58,6 +58,10 @@
             </div>
             <div class="formu">
                 <div class="informacoes">
+                    @if (ViewBag.Qnt == null)
+                    {
+                        <p style="text-align: center; padding-top: 15px">Não há carro alugado no seu perfil.</p>
+                    }
                     @foreach(var itemModel in Model)
                     {
                         @if (itemModel.Pendente == false && itemModel.User == @ViewBag.User.Id)
@@ -81,7 +85,7 @@
                                                     <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" width="240px" height="200px" alt="">
                                                     break;
                                                 case "Carga":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226093/carro_lexus_df6cto_xykuob.png" width="240px" height="200px" alt="">
+                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" width="340px" height="200px" alt="">
                                                     break;
                                                 case "Familia":
                                                     <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" width="240px" height="200px" alt="">

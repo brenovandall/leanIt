@@ -33,13 +33,13 @@ namespace LeantIt.Web.Controllers
             switch(pagamento.Carro.Categoria.Descricao)
             {
                 case "Basico":
-                    ViewBag.Aluguel = pagamento.Minutos / 60 * 12;
+                    ViewBag.Aluguel = (pagamento.Minutos / 60 * 12) + 12;
                     break;
                 case "Carga":
-                    ViewBag.Aluguel = pagamento.Minutos / 60 * 21;
+                    ViewBag.Aluguel = (pagamento.Minutos / 60 * 21) + 21;
                     break;
                 case "Familia":
-                    ViewBag.Aluguel = pagamento.Minutos / 60 * 15;
+                    ViewBag.Aluguel = (pagamento.Minutos / 60 * 15) + 15;
                     break;
 
             }
@@ -62,13 +62,13 @@ namespace LeantIt.Web.Controllers
                 switch (pagamento.Carro.Categoria.Descricao)
                 {
                     case "Basico":
-                        valor = pagamento.Minutos / 60 * 12;
+                        valor = (pagamento.Minutos / 60 * 12) + 12;
                         break;
                     case "Carga":
-                        valor = pagamento.Minutos / 60 * 21;
+                        valor = (pagamento.Minutos / 60 * 21) + 21;
                         break;
                     case "Familia":
-                        valor = pagamento.Minutos / 60 * 15;
+                        valor = (pagamento.Minutos / 60 * 15) + 21;
                         break;
 
                 }

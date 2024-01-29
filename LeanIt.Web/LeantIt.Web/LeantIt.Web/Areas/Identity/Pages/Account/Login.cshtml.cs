@@ -129,7 +129,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "E-mail ou senha inválida");
                     return Page();
                 }
             }

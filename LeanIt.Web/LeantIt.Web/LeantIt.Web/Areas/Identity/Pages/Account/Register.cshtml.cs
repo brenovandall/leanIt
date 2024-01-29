@@ -109,7 +109,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "As senhas devem ser iguais")]
             public string ConfirmPassword { get; set; }
 
             [Display(Name = "Digite a CNH")]

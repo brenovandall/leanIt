@@ -3,6 +3,9 @@
     margin: 0;
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+#admin {
+    color: #FF8110;
+}
 
 header {
     width: 100;

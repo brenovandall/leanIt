@@ -8,12 +8,12 @@
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
-            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
             @if (User.IsInRole("Admin"))
             {
                 <li class="nav-item dropdown">
-                    <a href="#">Admin</a>
+                    <a href="#" style="color: #FF8110">Admin</a>
                     <ul class="dropdown-menu">
                         <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
                         <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
@@ -121,7 +121,7 @@
                 <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="Digite sua senha" />
             </div>
             <div>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
         </div>
         <div class="mb-3">
@@ -130,7 +130,7 @@
                 <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="Confirme sua senha" />
             </div>
             <div>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
         </div>
         @if (User.IsInRole("Admin"))
