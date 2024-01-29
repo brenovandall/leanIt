@@ -32,6 +32,9 @@ namespace LeantIt.Web.Controllers
                 var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
                 ViewBag.Pendente = pendente;
 
+                var qnt = _context.AlguelCarros.FirstOrDefault(aluguel => aluguel.User == users.Id);
+                ViewBag.Qnt = qnt;
+
                 return View(aluguel);
             }
 

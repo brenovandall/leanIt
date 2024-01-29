@@ -8,7 +8,7 @@
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
-            <li><a asp-action="Index" asp-area="" asp-controller="Home" class="button-home">Home</a></li>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home">Home</a></li>
             <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
             @if (User.IsInRole("Admin"))
             {
@@ -58,6 +58,10 @@
             </div>
             <div class="formu">
                 <div class="informacoes">
+                    @if (ViewBag.Qnt == null)
+                    {
+                        <p style="text-align: center; padding-top: 15px">Não há carro alugado no seu perfil.</p>
+                    }
                     @foreach (var itemModel in Model)
                     {
                         @if (itemModel.Pendente == false && itemModel.User == @ViewBag.User.Id)
@@ -97,10 +101,6 @@
                                 </div>
                             </div>
                         }
-                    }
-                    @if(Model.Count == 0)
-                    {
-                        <p style="font-weight: bold;">Nenhuma corrida</p>
                     }
                 </div>
             </div>
