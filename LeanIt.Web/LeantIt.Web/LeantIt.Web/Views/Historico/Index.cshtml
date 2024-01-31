@@ -64,7 +64,7 @@
                     }
                     @foreach (var itemModel in Model)
                     {
-                        @if (itemModel.Pendente == false && itemModel.User == @ViewBag.User.Id)
+                        @if (itemModel.Pendente == false && itemModel.User == @ViewBag.Users.Id)
                         {
                             <div class="card">
                                 <div>

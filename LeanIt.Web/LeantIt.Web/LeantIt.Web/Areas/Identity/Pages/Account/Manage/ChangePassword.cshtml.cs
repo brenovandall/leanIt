@@ -39,6 +39,8 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
         [BindProperty]
         public InputModel Input { get; set; }
 
+        public InputModel NomeExibicao { get; set; }
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -54,10 +56,12 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public class InputModel
         {
+            public string NomeExibicao { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            /// 
             [Required]
             [DataType(DataType.Password)]
             [Display(Name = "Current password")]
@@ -87,7 +91,15 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
         {
             if (User.Identity.IsAuthenticated)
             {
-
+                var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+                var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+                if (usuarioComNomeDeExibicao != null)
+                {
+                    NomeExibicao = new InputModel
+                    {
+                        NomeExibicao = usuarioComNomeDeExibicao.Nome
+                    };
+                }
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 

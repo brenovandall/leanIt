@@ -36,6 +36,8 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public string Username { get; set; }
 
+        public InputModel NomeExibicao { get; set; }
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -68,6 +70,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             [Required(ErrorMessage = "O número de telefone é obrigatório.")]
             public string PhoneNumber { get; set; }
+            public string NomeExibicao { get; set; }
         }
 
         private async Task LoadAsync(AplicacaoUser user)
@@ -94,7 +97,15 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
 
             if (User.Identity.IsAuthenticated)
             {
-
+                var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+                var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+                if (usuarioComNomeDeExibicao != null)
+                {
+                    NomeExibicao = new InputModel
+                    {
+                        NomeExibicao = usuarioComNomeDeExibicao.Nome
+                    };
+                }
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 

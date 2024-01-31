@@ -10,14 +10,16 @@ namespace LeantIt.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<AplicacaoUser> _userManager;
         private readonly SignInManager<AplicacaoUser> _signInManager;
         private AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager, UserManager<AplicacaoUser> userManager)
         {
             _logger = logger;
             _context = context;
             _signInManager = signInManager;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -33,7 +35,12 @@ namespace LeantIt.Web.Controllers
 
             if (User.Identity.IsAuthenticated)
             {
-
+                var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+                var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+                if (usuarioComNomeDeExibicao != null)
+                {
+                    ViewBag.User = usuarioComNomeDeExibicao.Nome;
+                }
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 

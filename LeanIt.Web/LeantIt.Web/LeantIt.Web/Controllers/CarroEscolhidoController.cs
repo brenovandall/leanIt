@@ -27,7 +27,7 @@ namespace LeantIt.Web.Controllers
             {
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
-
+                ViewBag.User = users.Nome;
                 var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
 
                 ViewBag.Pendente = pendente;
@@ -69,7 +69,7 @@ namespace LeantIt.Web.Controllers
         {
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
-
+            ViewBag.User = users.Nome;
             var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
 
             ViewBag.Pendente = pendente;
@@ -105,7 +105,7 @@ namespace LeantIt.Web.Controllers
         {
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
-
+            ViewBag.User = users.Nome;
             var pendente = _context.AlguelCarros.Include(aluguel => aluguel.Carro).FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id);
 
             return RedirectToAction("Alugado", new {id = pendente.Id});

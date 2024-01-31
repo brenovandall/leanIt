@@ -11,12 +11,14 @@ namespace LeantIt.Web.Controllers
     {
         private readonly ILogger<HistoricoController> _logger;
         private readonly SignInManager<AplicacaoUser> _signInManager;
+        private readonly UserManager<AplicacaoUser> _userManager;
         private AppDbContext _context;
-        public HistoricoController(ILogger<HistoricoController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager)
+        public HistoricoController(ILogger<HistoricoController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager, UserManager<AplicacaoUser> userManager)
         {
             _logger = logger;
             _context = context;
             _signInManager = signInManager;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -25,7 +27,8 @@ namespace LeantIt.Web.Controllers
             {
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
-                ViewBag.User = users;
+                ViewBag.User = users.Nome;
+                ViewBag.Users = users;
 
                 var aluguel = _context.AlguelCarros.Include(aluguelItem => aluguelItem.Carro).Include(aluguelItem => aluguelItem.Carro.Categoria).ToList();
 

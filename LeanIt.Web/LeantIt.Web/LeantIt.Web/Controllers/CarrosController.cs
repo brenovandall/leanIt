@@ -16,16 +16,18 @@ namespace LeantIt.Web.Controllers;
 public class CarrosController : Controller
 {
     private readonly ILogger<CarrosController> _logger;
+    private readonly UserManager<AplicacaoUser> _userManager;
     private readonly SignInManager<AplicacaoUser> _signInManager;
     private AppDbContext _context; // este é o DbContext (contexto da base de dados usada no nosso projeto)
                                    // em todas os casos de tratamentos de dados, utilize "_context" para acessar as tabelas...
 
     // construtor do controller, aqui, devem ser assinadas todas as injeções de dependencias
-    public CarrosController(ILogger<CarrosController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager)
+    public CarrosController(ILogger<CarrosController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager, UserManager<AplicacaoUser> userManager)
     {
         _logger = logger;
         _context = context;
         _signInManager = signInManager;
+        _userManager = userManager;
     }
 
     // Aqui a view retorna a página de adicionar
@@ -100,7 +102,12 @@ public class CarrosController : Controller
         // O VALOR DEFAULT É APENAS A LISTA DE CARROS NORMAL ASSIM COMO ESTÁ REGISTRADO NAS TABELAS
         if (User.Identity.IsAuthenticated)
         {
-
+            var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+            var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+            if (usuarioComNomeDeExibicao != null)
+            {
+                ViewBag.User = usuarioComNomeDeExibicao.Nome;
+            }
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 

@@ -1,4 +1,5 @@
 ﻿@using LeantIt.Web.Areas.Identity.Pages.Account.Manage;
+@using LeantIt.Web.Controllers;
 @using LeantIt.Web.Data;
 @using Microsoft.AspNetCore.Identity
 
@@ -9,7 +10,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li>
-            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)</a>
+            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@ViewBag.User</a>
         </li>
         <li>
             @if (ViewBag.Pendente == null)

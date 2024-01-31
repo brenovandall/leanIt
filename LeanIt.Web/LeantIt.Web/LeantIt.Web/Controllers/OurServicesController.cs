@@ -15,13 +15,15 @@ public class OurServicesController : Controller
 
     private readonly ILogger<OurServicesController> _logger;
     private readonly SignInManager<AplicacaoUser> _signInManager;
+    private readonly UserManager<AplicacaoUser> _userManager;
     private AppDbContext _context;
 
-    public OurServicesController(ILogger<OurServicesController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager)
+    public OurServicesController(ILogger<OurServicesController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager, UserManager<AplicacaoUser> userManager)
     {
         _logger = logger;
         _context = context;
         _signInManager = signInManager;
+        _userManager = userManager;
     }
     // essa view retorna a pagina de serviços da "empresa", os carros de cada categoria
     // os detalhes de cada categoria, etc...
@@ -36,7 +38,12 @@ public class OurServicesController : Controller
 
         if (User.Identity.IsAuthenticated)
         {
-
+            var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+            var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+            if (usuarioComNomeDeExibicao != null)
+            {
+                ViewBag.User = usuarioComNomeDeExibicao.Nome;
+            }
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 
