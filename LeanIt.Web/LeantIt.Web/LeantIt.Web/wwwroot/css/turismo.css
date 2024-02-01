@@ -7,7 +7,10 @@
 
 header {
     width: 100%;
-    height: 48vh;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
     position: relative;
     z-index: 1;
 }
@@ -22,7 +25,6 @@ header nav {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
 }
 
 nav ul {
@@ -72,19 +74,78 @@ nav ul li:nth-child(-n+3) a {
         border-bottom: 1px solid rgb(26, 26, 26);
     }
 
-.article-description {
-    width: 98vh;
-    margin-left: 10vh;
-    font-weight: 200;
-    margin: auto;
-    margin-top: 5vh;
-    text-align: center;
+.nav-item {
+    position: relative;
 }
 
-    .article-description h1 {
-        font-size: 2rem;
-        margin-bottom: 3vh;
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
     }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 180px;
+    padding-top: 10px;
+    left: 0;
+    background-color: #F3F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 170px;
+    margin-left: -28px;
+    padding-left: 18px;
+}
+
+.dropdown-menu li {
+    margin-top: -10px;
+}
+
+    .dropdown-menu li a {
+        margin-left: -10px
+    }
+
+.dropdown-menu li {
+    display: block;
+}
+
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+    .dropdown-menu li .add {
+        display: inline-block;
+        margin-left: 4px;
+    }
+
+    .dropdown-menu li .listando {
+        display: inline-block;
+    }
+
+
+.article-description {
+    width: 98vh;
+    text-align: center;
+    margin: auto;
+    margin-top: 5vh;
+    font-weight: 200;
+}
+
+.paragraph-welcome {
+    font-size: 1.1rem;
+    font-family: 'Poppins';
+}
+
+.article-description h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3vh;
+}
 
 .destaque-title {
     color: rgb(255, 129, 16);
@@ -96,6 +157,25 @@ nav ul li:nth-child(-n+3) a {
     font-size: 1.1rem;
     line-height: 1.6rem;
 }
+
+.destaque-saber-mais {
+    font-weight: 700;
+}
+
+.article-description-button {
+    margin-top: 5vh;
+    padding: 1vh 5vh;
+    font-size: 1.1rem;
+    background-color: rgb(255, 129, 16);
+    border: 0;
+    color: white;
+    transition: 0.5s background;
+}
+
+    .article-description-button:hover {
+        background-color: rgb(26, 26, 26);
+        cursor: pointer;
+    }
 
 /*gradient*/
 

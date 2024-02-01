@@ -1,8 +1,11 @@
 ﻿@page
+@using LeantIt.Web.Models
 @model RegisterModel
 @{
     ViewData["Title"] = "Registre-se";
 }
+
+@inject SignInManager<AplicacaoUser> SignInManager
 
 <header>
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
@@ -23,7 +26,39 @@
                     </ul>
                 </li>
             }
-            <partial name="_LoginPartial" />
+            <ul class="navbar-nav">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li>
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@Model.NomeExibicao.NomeExibicao</a>
+                    </li>
+                    <li>
+                        @if (Model.Aluguel == null)
+                        {
+                            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button style="border:none; background-color: transparent;" id="logout" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                    </svg>
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <button style="border:none; display:block" id="pendente"><a class="button-do-register" asp-action="Pendente" asp-controller="CarroEscolhido" asp-area="">Pendente</a></button>
+
+                        }
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar-se</a>
+                    </li>
+                    <li><a class="button-do-register" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                }
+            </ul>
     </nav>
 </header>
 
@@ -148,7 +183,35 @@
         @* <button class="buttonCancelarCadastro button-do-register" asp-area="" asp-controller="Account" asp-action="Login" type="submit">Cancelar</button> *@
     </div>
 </form>
+<footer>
 
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-x-twitter"></i></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p><a asp-area="" asp-controller="Turismo" asp-action="Index">Guia Turístico</a></p>
+            <p>@Html.ActionLink("Termos de Uso", "Index", "Termos")</p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
+        </div>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
 @* <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">

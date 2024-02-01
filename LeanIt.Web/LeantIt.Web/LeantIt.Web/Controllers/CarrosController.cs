@@ -43,6 +43,12 @@ public class CarrosController : Controller
         };
         if (User.Identity.IsAuthenticated)
         {
+            var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+            var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+            if (usuarioComNomeDeExibicao != null)
+            {
+                ViewBag.User = usuarioComNomeDeExibicao.Nome;
+            }
 
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
@@ -139,6 +145,12 @@ public class CarrosController : Controller
 
         if (User.Identity.IsAuthenticated)
         {
+            var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+            var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+            if (usuarioComNomeDeExibicao != null)
+            {
+                ViewBag.User = usuarioComNomeDeExibicao.Nome;
+            }
 
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
@@ -206,7 +218,12 @@ public class CarrosController : Controller
 
         if (User.Identity.IsAuthenticated)
         {
-
+            var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+            var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+            if (usuarioComNomeDeExibicao != null)
+            {
+                ViewBag.User = usuarioComNomeDeExibicao.Nome;
+            }
             var user = User.Identity.Name;
             var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 

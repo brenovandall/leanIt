@@ -173,8 +173,8 @@
             <p><a href="#">Sobre o Projeto</a></p>
             <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
             <p><a href="#">Planos de Carreira</a></p>
-            <p><a href="#">Guia Turístico</a></p>
-            <p><a href="#">Serviços</a></p>
+            <p><a asp-area="" asp-controller="Turismo" asp-action="Index">Guia Turístico</a></p>
+            <p>@Html.ActionLink("Termos de Uso", "Index", "Termos")</p>
         </div>
 
         <div class="footer-contact">

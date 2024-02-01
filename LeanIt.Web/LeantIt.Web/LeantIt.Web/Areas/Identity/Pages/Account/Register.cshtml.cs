@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using LeantIt.Web.Data;
 using LeantIt.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -19,6 +20,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LeantIt.Web.Areas.Identity.Pages.Account
@@ -32,6 +34,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private AppDbContext _context;
 
         public RegisterModel(
             UserManager<AplicacaoUser> userManager,
@@ -39,7 +42,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             SignInManager<AplicacaoUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager, AppDbContext appContext)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -48,6 +51,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _roleManager = roleManager;
+            _context = appContext;
 
             Input = new InputModel
             {
@@ -78,12 +82,16 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
         /// </summary>
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
+        public InputModel NomeExibicao { get; set; }
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        public AluguelCarros Aluguel {  get; set; }
         public class InputModel
         {
+            public string NomeExibicao { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -140,11 +148,30 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
 
             [BindProperty]
             public List<SelectListItem> SelectRoles { get; set; }
+
         }
 
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                var idParaEncontrar = _signInManager.UserManager.GetUserId(User);
+                var usuarioComNomeDeExibicao = _userManager.Users.FirstOrDefault(x => x.Id == idParaEncontrar);
+                if (usuarioComNomeDeExibicao != null)
+                {
+                    NomeExibicao = new InputModel
+                    {
+                        NomeExibicao = usuarioComNomeDeExibicao.Nome
+                    };
+                }
+                var user = User.Identity.Name;
+                var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+                var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
+                Aluguel = pendente;
+            }
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }

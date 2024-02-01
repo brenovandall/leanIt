@@ -3,15 +3,26 @@
 }
     <header>
 
-    <a href="index.html"><img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/logo_recorte_dxihjz_uv4xfy.png" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="#" class="button-home">Home</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Preços</a></li>
-                <li><a href="#" class="button-do-register">Fazer Cadastro</a></li>
-            </ul>
-        </nav>
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home">Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index" class="button-home">Categorias</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            <partial name="_LoginPartial" />
+    </nav>
 
         <article class="article-description">
 
@@ -103,3 +114,6 @@
     @section Styles{
     <link rel="stylesheet" href="~/css/turismo.css" />
     }
+@section Scripts {
+    <script src="~/js/contagemMinutos.js"></script>
+}

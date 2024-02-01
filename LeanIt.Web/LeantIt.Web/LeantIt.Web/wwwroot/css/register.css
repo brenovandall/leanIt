@@ -344,3 +344,57 @@ nav ul li:nth-child(-n+4) a {
     margin-left: 55px;
     border: none;
 }
+
+
+
+.footer-main {
+    margin-top: 9vh;
+    background-color: rgb(255, 129, 16);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-about, .footer-extra, .footer-contact {
+    width: 20%;
+    color: rgb(26, 26, 26);
+}
+
+.footer-extra {
+    margin-bottom: 3vh;
+}
+
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+    .footer-main a:hover {
+        color: white;
+    }
+
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2vh;
+}
+
+.footer-about i {
+    color: white;
+    font-size: 3vh;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+
+.footer-contact i {
+    color: white;
+    margin-right: 1vh;
+}
+
+.footer-copyright {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.8vh;
+}
