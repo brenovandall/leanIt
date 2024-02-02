@@ -50,7 +50,7 @@
             <p>Carros</p>
         </div>
 
-        <div>
+        <div class="hora">
             <p class="paragraph-bold-info">R$12</p>
             <p>Por Hora</p>
         </div>
@@ -60,7 +60,7 @@
             <p>Cadastros</p>
         </div>
 
-        <div>
+        <div class="cidades">
             <p class="paragraph-bold-info">5+</p>
             <p>Cidades</p>
         </div>
@@ -69,8 +69,8 @@
     <article class="article-main">
 
         <div class="article-main-text">
-            <h2 style="font-weight: 200; font-size: 1.2rem;">Preços</h2>
-            <h1>Melhores preços para você e sua <span class="destaque-familia">família</span></h1>
+            <h2 class="precos">Preços</h2>
+            <h1 class="paragrafo">Melhores preços para você e sua <span class="destaque-familia">família</span></h1>
 
             <img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711071/elemento_titulos_ulz1x5.png" class="line-style-orange-article-main" width="145rem" height="25rem">
         </div>
@@ -118,11 +118,51 @@
     </article>
 
 </main>
+
+
+
+
+
+
 <aside class="aside-search-localization">
-    <div class="paragraph-map">
+    <div class="paragraph-map" style="width: 100%;">
         <p>Escolha seu carro</p>
         <p class="paragraph-right-map">LeanIt é a sua melhor escolha</p>
     </div>
+
+    <div class="form-map-responsive" >
+        <div style="display: flex; flex-direction: column;">
+            <label>Sua localização</label>
+            <div>
+                <input id="pac-input" type="text" placeholder="Digite sua localização">
+                <select id="opcoesDeViagens">
+                    <option>Selecione</option>
+                    <option value="WALKING">A pé</option>
+                    <option value="DRIVING">Carro</option>
+                    <option value="BICYCLING">Bicicleta</option>
+                    <option value="TRANSIT">Transporte</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <label>Sua localização</label>
+            <div">
+                <input class="destino" id="pac-destino" type="text" placeholder="Digite seu destino">
+                <button class="buttonPesquisar">Gerar rota</button>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
     <div class="form-map">
         <div class="labels">

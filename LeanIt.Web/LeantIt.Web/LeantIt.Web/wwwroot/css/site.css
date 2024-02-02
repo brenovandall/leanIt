@@ -218,6 +218,14 @@ nav ul li:nth-child(-n+4) a {
         font-weight: 500;
     }
 
+.hora {
+    display: block;
+}
+
+.cidade {
+    display: block;
+}
+
 /* article cards informativos */
 
 main {
@@ -235,16 +243,21 @@ main {
     text-align: center;
 }
 
-    .article-main-text h1 {
-        font-size: 2rem;
-        width: 100vh;
-        margin: auto;
-        line-height: 9vh;
-        margin-bottom: 3vh;
-    }
+.article-main-text h1 {
+    font-size: 2rem;
+    width: 100vh;
+    margin: auto;
+    line-height: 9vh;
+    margin-bottom: 3vh;
+}
 
 .destaque-familia {
     color: rgb(255, 129, 16);
+}
+
+.precos {
+    font-weight: 200; 
+    font-size: 1.2rem;
 }
 
 /* cards preços */
@@ -421,6 +434,10 @@ select {
     cursor: pointer;
 }
 
+.form-map-responsive {
+    display: none;
+}
+
 /* Footer */
 
 .footer-main {
@@ -536,4 +553,361 @@ select {
 
 #choose-car-btn:hover a{
     background-color: #000;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .logo {
+        margin: 0px;
+    }
+
+    header {
+        padding: 0px;
+        margin: 0px;
+        height: 90vh;
+    }
+
+    .article-description {
+        width: 92%;
+        margin: 0px;
+        padding: 15px;
+    }
+
+        .article-description h1 {
+            margin: 0px;
+            font-size: 25px;
+        }
+
+    .paragraph-welcome {
+        font-size: 10px;
+    }
+
+    .line-style-orange {
+        width: 115px;
+        height: 20px;
+    }
+
+    .paragraph-description {
+        width: 90%;
+        font-size: 15px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .article-description-button {
+        margin-top: 5vh;
+        padding: 0.3vh 2vh;
+        font-size: 15px;
+        background-color: rgb(255, 129, 16);
+        border: 0;
+        color: white;
+        transition: 0.5s background;
+    }
+
+    .hora {
+        display: none;
+    }
+
+    .cidades {
+        display: none;
+    }
+
+    .aside-info .paragraph-bold-info {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Poppins';
+    }
+
+    .aside-info div p {
+        font-size: 15px;
+        color: white;
+        font-weight: 500;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .aside-info {
+        background-color: rgb(255, 129, 16);
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-left: 0px;
+        align-items: center;
+        position: relative;
+        min-height: 12vh;
+        max-height: 20vh;
+        margin-top: -8vh;
+        z-index: 2;
+    }
+
+    main {
+        background-color: rgb(26, 26, 26);
+    }
+
+    .article-main .paragrafo {
+        font-size: 25px;
+        width: 90%;
+    }
+
+    .article-main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 8vh;
+        margin: 0 0vh;
+        color: white;
+        padding-bottom: 8vh;
+    }
+
+    .article-main-text {
+        margin: 0px;
+        text-align: center;
+    }
+
+        .article-main-text h1 {
+            font-size: 2rem;
+            width: 100vh;
+            margin: auto;
+            line-height: 6vh;
+            margin-bottom: 3vh;
+        }
+
+    .destaque-familia {
+        color: rgb(255, 129, 16);
+    }
+
+    .article-main-text h2 {
+        font-size: 10px;
+    }
+
+    .line-style-orange-article-main {
+        width: 115px;
+        height: 20px;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .card-1, .card-2, .card-3 {
+        border: 3px solid rgb(255, 129, 16);
+        padding: 20px;
+        margin-bottom: 10px;
+        align-items: center;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
+        font-family: 'Poppins';
+        margin-top: 2vh;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .paragraph-hour {
+        margin: 0 8vh 3vh;
+        padding-bottom: 1vh;
+        border-bottom: 3px dotted white;
+        text-align: center;
+    }
+
+    .value-hour {
+        font-size: 37px;
+        font-family: 'Poppins';
+        font-weight: 600;
+    }
+
+    .paragraph-description-categories {
+        font-size: 15px;
+        margin: 0 5vh;
+        line-height: 1.5rem;
+        word-spacing: 0.1rem;
+        font-weight: 200;
+        height: 220px;
+        text-align: center;
+    }
+
+    .cards button {
+        padding: 1vh 5vh;
+        font-size: 1.0rem;
+        background-color: rgb(26, 26, 26);
+        border: 3px solid rgb(255, 129, 16);
+        color: white;
+        transition: 0.4s all;
+    }
+
+    .cards button:hover {
+        background-color: rgb(255, 129, 16);
+        border: 3px solid white;
+        cursor: pointer;
+    }
+
+    .aside-search-localization {
+        background-color: white;
+        padding-top: 8vh;
+        margin: 0 1vh;
+    }
+
+    .form-map-responsive {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .aside-search-localization label {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .aside-search-localization p {
+        font-size: 10px;
+    }
+
+    .paragraph-map {
+        display: none;
+    }
+
+    .form-map {
+        display: none;
+    }
+
+    select {
+        padding: 5px;
+        border: 3px solid rgb(255, 129, 16);
+        background-color: rgb(255, 129, 16);
+        color: white;
+        width: 42%
+    }
+
+    select option {
+        background-color: rgb(255, 129, 16);
+        color: white;
+        letter-spacing: 0.4px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .labelDestino {
+        width: 30%;
+    }
+
+
+    #pac-input {
+        padding-bottom: 0.7px;
+        width: 50%;
+    }
+
+    input {
+        max-height: 5vh;
+        min-height: 5vh;
+        font-size: 0.9rem;
+        font-weight: 200;
+        padding-left: 8px;
+        border-radius: 0;
+        border: 3px solid rgb(255, 129, 16);
+        background-color: rgb(26, 26, 26);
+        color: white;
+    }
+
+    .escolhaDestino {
+        margin-left: 20px;
+    }
+
+    .destino {
+        width: 50%;
+        padding-top: 1px;
+    }
+
+    .search-map input[type="text"]:focus {
+        border: 3px solid rgb(255, 129, 16);
+        outline: none;
+        background-color: #3b3b3b;
+    }
+
+    .buttonPesquisar {
+        width: 42%;
+        padding: 7px 2px 6px 2px;
+        font-size: 15px;
+        background-color: rgb(255, 129, 16);
+        color: white;
+        letter-spacing: 0.4px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-title {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-about a {
+        display: inline-block;
+        margin-right: 0vh;
+    }
+
+    .footer-about, .footer-extra, .footer-contact {
+        width: 100%;
+        color: rgb(26, 26, 26);
+    }
+
+    .footer-extra {
+        margin-bottom: 3vh;
+    }
+
+    .footer-main a {
+        color: rgb(26, 26, 26);
+        text-decoration: none;
+    }
+
+        .footer-main a:hover {
+            color: white;
+        }
+
+    .footer-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 2vh;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .footer-about i {
+        color: white;
+        font-size: 3vh;
+        margin-left: 4%;
+        margin-top: 10px;
+    }
+
+    .footer-contact i {
+        color: white;
+        margin-right: 1vh;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
 }
