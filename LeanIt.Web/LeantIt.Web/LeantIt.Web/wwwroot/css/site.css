@@ -326,7 +326,7 @@ main {
 
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
 }
 
 .comoFunciona {
