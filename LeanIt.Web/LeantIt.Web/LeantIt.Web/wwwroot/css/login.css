@@ -103,3 +103,18 @@
 .senha-form {
     margin-bottom: 2vh;
 }
+
+
+@media screen and (max-width: 800px) {
+    .imagem-fundo img {
+        display: none;
+    }
+
+    .forms-login {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}

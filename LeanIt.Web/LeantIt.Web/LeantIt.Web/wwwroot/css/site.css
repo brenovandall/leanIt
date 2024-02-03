@@ -22,6 +22,10 @@ header {
     height: 5vh;
 }
 
+.mobile-nav {
+    display: none;
+}
+
 #map {
 }
 
@@ -558,14 +562,31 @@ select {
 
 
 @media screen and (max-width: 800px) {
+    .mobile-nav {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .logo-mobile {
+        width: 90px;
+        height: 3vh;
+    }
+
+    .logo-mobile:hover {
+        cursor:pointer;
+    }
+
     .logo {
-        margin: 0px;
+        display: none;
     }
 
     header {
         padding: 0px;
         margin: 0px;
-        height: 90vh;
+        height: 72vh;
     }
 
     .article-description {
@@ -702,7 +723,7 @@ select {
         padding: 20px;
         margin-bottom: 10px;
         align-items: center;
-        width: 80%;
+        width: 70%;
         display: flex;
         flex-direction: column;
     }
