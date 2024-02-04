@@ -328,6 +328,36 @@ main {
         cursor: pointer;
     }
 
+/*passo a passo*/
+
+.mainWorks{
+    display: flex;
+    margin-left: 36px;
+}
+
+.mainWorks div{
+    margin-left: 40px
+}
+
+    .mainWorks div p{
+        text-align: center;
+    }
+
+.passoLinha {
+    margin-top: 20px;
+}
+
+.passoPasso {
+    color: white;
+    padding-bottom: 80px;
+    padding-top: 30px;
+}
+
+.comoFunciona {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 /* aside mapa */
 
 .aside-search-localization {
@@ -876,6 +906,25 @@ select {
         border: 3px solid white;
         cursor: pointer;
     }
+
+    .passoPasso {
+        overflow-x: hidden;
+    }
+
+    .mainWorks {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        margin-left: 0px;
+    }
+
+        .mainWorks div {
+            margin-right: 10px;
+        }
+
+        .efetue{
+            padding-right: 22px;
+        }
 
     .aside-search-localization {
         background-color: white;
