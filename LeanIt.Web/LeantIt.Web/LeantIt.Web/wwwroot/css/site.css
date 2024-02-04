@@ -344,7 +344,110 @@ main {
     font-weight: 200;
 }
 
-.form-map label {
+.todasInfos{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.todasInfos h1{
+    font-size: 40px
+}
+
+.tudoVc {
+    width: 50%;
+}
+
+.tudoDestino {
+    width: 50%;
+}
+
+.infoDestino {
+    display: flex;
+    width: 100%;
+}
+
+.inputDestino{
+    width: 70%
+}
+
+    .inputDestino input {
+        width: 90%;
+        max-height: 5vh;
+        min-height: 5vh;
+        font-size: 0.9rem;
+        font-weight: 200;
+        padding-left: 5px;
+        border-radius: 0;
+        border: 3px solid rgb(255, 129, 16);
+        background-color: rgb(26, 26, 26);
+        color: white;
+    }
+
+.botaoDestino {
+    width: 30%;
+}
+
+    .botaoDestino button {
+        width: 100%;
+        max-height: 5vh;
+        min-height: 6vh;
+        font-size: 15px;
+        background-color: rgb(255, 129, 16);
+        color: white;
+        letter-spacing: 0.4px;
+        border: none;
+        cursor: pointer;
+    }
+
+
+
+.infoVc {
+    display: flex;
+    width: 96%;
+}
+
+.inputVc{
+    width: 80%;
+}
+
+    .inputVc input {
+        width: 90%;
+        max-height: 5vh;
+        min-height: 5vh;
+        font-size: 0.9rem;
+        font-weight: 200;
+        padding-left: 5px;
+        border-radius: 0;
+        border: 3px solid rgb(255, 129, 16);
+        background-color: rgb(26, 26, 26);
+        color: white;
+    }
+
+
+.select {
+    width: 40%
+}
+
+select {
+    max-height: 5vh;
+    min-height: 6vh;
+    padding: 5px;
+    border: 3px solid rgb(255, 129, 16);
+    background-color: rgb(255, 129, 16);
+    color: white;
+    width: 100%
+}
+
+    select option {
+        background-color: rgb(255, 129, 16);
+        color: white;
+        letter-spacing: 0.4px;
+        border: none;
+        cursor: pointer;
+    }
+
+/*.form-map label {
     font-size: 2.5rem;
     font-weight: 700;
 }
@@ -440,7 +543,7 @@ select {
 
 .form-map-responsive {
     display: none;
-}
+}*/
 
 /* Footer */
 
@@ -780,29 +883,63 @@ select {
         margin: 0 1vh;
     }
 
-    .form-map-responsive {
+    /*.form-map-responsive {
         display: block;
         margin-bottom: 30px;
-    }
+    }*/
 
-    .aside-search-localization label {
+/*    .aside-search-localization label {
         font-size: 22px;
         font-weight: 700;
     }
 
     .aside-search-localization p {
         font-size: 10px;
-    }
+    }*/
 
     .paragraph-map {
         display: none;
     }
 
-    .form-map {
-        display: none;
+    .todasInfos {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
     }
 
-    select {
+    .tudoVc {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .todasInfos h1 {
+        font-size: 20px;
+    }
+
+    .infoVc{
+        width: 100%
+    }
+
+    .inputVc{
+        width:50%
+    }
+    .select {
+        width: 40%
+    }
+
+    .tudoDestino{
+        width: 100%;
+    }
+
+    .inputDestino{
+        width: 50%;
+    }
+
+    .botaoDestino{
+        width: 40%
+    }
+
+    /*select {
         padding: 5px;
         border: 3px solid rgb(255, 129, 16);
         background-color: rgb(255, 129, 16);
@@ -864,7 +1001,7 @@ select {
         letter-spacing: 0.4px;
         border: none;
         cursor: pointer;
-    }
+    }*/
 
     .footer-about {
         width: 100%;
