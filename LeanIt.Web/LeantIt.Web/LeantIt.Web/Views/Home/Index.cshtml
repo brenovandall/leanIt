@@ -4,6 +4,28 @@
     ViewData["Title"] = "Início";
 }
 
+<nav class="mobile-nav">
+    <div>
+        <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo-mobile" style="cursor: pointer;" /></a>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 30px;">
+        <div>
+            <a asp-area="" asp-controller="OurServices" asp-action="Index" style="color: black;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16" style="cursor: pointer;">
+                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+                </svg>
+            </a>
+        </div>
+        <div>
+            <a asp-area="Identity" asp-page="/Account/Login" style="color: black;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="cursor: pointer;">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</nav>
+
 <header>
 
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
@@ -50,7 +72,7 @@
             <p>Carros</p>
         </div>
 
-        <div>
+        <div class="hora">
             <p class="paragraph-bold-info">R$12</p>
             <p>Por Hora</p>
         </div>
@@ -60,7 +82,7 @@
             <p>Cadastros</p>
         </div>
 
-        <div>
+        <div class="cidades">
             <p class="paragraph-bold-info">5+</p>
             <p>Cidades</p>
         </div>
@@ -69,8 +91,8 @@
     <article class="article-main">
 
         <div class="article-main-text">
-            <h2 style="font-weight: 200; font-size: 1.2rem;">Preços</h2>
-            <h1>Melhores preços para você e sua <span class="destaque-familia">família</span></h1>
+            <h2 class="precos">Preços</h2>
+            <h1 class="paragrafo">Melhores preços para você e sua <span class="destaque-familia">família</span></h1>
 
             <img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711071/elemento_titulos_ulz1x5.png" class="line-style-orange-article-main" width="145rem" height="25rem">
         </div>
@@ -153,15 +175,87 @@
             </div>
         </div>
     </div>
+    <div class="passoPasso">
+
+        <div class="comoFunciona">
+            <h1>Como funciona</h1>
+            <img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711071/elemento_titulos_ulz1x5.png" class="passoLinha" width="145rem" height="25rem">
+        </div>
+
+        <div class="mainWorks">
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897873/imagem1-removebg-preview_mwwy1k.png" alt="">
+                <p>Faça seu cadastro</p>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897874/imagem2-removebg-preview_s0cszw.png" alt="">
+                <p>Escolha um veículo</p>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897873/imagem3-removebg-preview_x6mvkv.png" alt="">
+                <p >Vá até o veículo</p>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897873/imagem4-removebg-preview_vwvw9c.png" alt="">
+                <p >Aproveite</p>
+
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897873/imagem5-removebg-preview_hx9qbu.png" alt="">
+                <p>Retorne ao ponto</p>
+                <p>de partida</p>
+            </div>
+            <div class="efetue">
+                <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706897873/imagem6-removebg-preview_cyjt40.png" alt="">
+                <p>Efetue o pagamento</p>
+            </div>
+        </div>
+    </div>
 
 </main>
+
+
 <aside class="aside-search-localization">
-    <div class="paragraph-map">
+    <div class="paragraph-map" style="width: 100%;">
         <p>Escolha seu carro</p>
         <p class="paragraph-right-map">LeanIt é a sua melhor escolha</p>
     </div>
+    <div class="todasInfos">
+        <div class="tudoVc">
+            <h1>
+                Sua localização
+            </h1>
+            <div class="infoVc">
+                <div class="inputVc">
+                    <input id="pac-input" type="text" placeholder="Digite sua localização">
+                </div>
+                <div class="select">
+                    <select id="opcoesDeViagens">
+                        <option>Selecione</option>
+                        <option value="WALKING">A pé</option>
+                        <option value="DRIVING">Carro</option>
+                        <option value="BICYCLING">Bicicleta</option>
+                        <option value="TRANSIT">Transporte</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="tudoDestino">
+            <h1>
+                Seu destino
+            </h1>
+            <div class="infoDestino">
+                <div class="inputDestino">
+                    <input class="destino" id="pac-destino" type="text" placeholder="Digite seu destino">
+                </div>
+                <div class="botaoDestino">
+                    <button class="buttonPesquisar">Gerar rota</button>
+                </div>
+            </div>
 
-    <div class="form-map">
+        </div>
+    </div>
+    @* <div class="form-map">
         <div class="labels">
             <label class="labelLoc">Sua localização</label>
             <label class="labelDestino">Seu destino</label>
@@ -188,8 +282,30 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> *@
+    @* <div class="form-map-responsive" >
+        <div style="display: flex; flex-direction: column;">
+            <label>Sua localização</label>
+            <div>
+                <input id="pac-input" type="text" placeholder="Digite sua localização">
+                <select id="opcoesDeViagens">
+                    <option>Selecione</option>
+                    <option value="WALKING">A pé</option>
+                    <option value="DRIVING">Carro</option>
+                    <option value="BICYCLING">Bicicleta</option>
+                    <option value="TRANSIT">Transporte</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <label>Sua localização</label>
+            <div">
+                <input class="destino" id="pac-destino" type="text" placeholder="Digite seu destino">
+                <button class="buttonPesquisar">Gerar rota</button>
+            </div>
+            
+        </div>
+    </div> *@
 
     @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227806.87476532854!2d-49.099103799999995!3d-26.85640995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1e408b5c3095%3A0xacfb8520bc1a7644!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1699039096703!5m2!1spt-BR!2sbr" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> *@
 
