@@ -281,7 +281,7 @@ nav ul li:nth-child(-n+4) a {
     }
 
     form{
-        margin-bottom: 50px;
+        margin-bottom: 90px;
     }
 
     .infoCarro {
@@ -299,14 +299,15 @@ nav ul li:nth-child(-n+4) a {
     }
 
     .infoCarro img {
-        margin-left: 90px;
+        margin-left: 0px;
         height: 90%;
         width: 80%;
     }
 
     .infoCarro #posImg {
-        width: 80%;
+        width: 100vw;
         height: 50%;
+        margin-left: 0px;
         margin-top: 50px;
     }
 

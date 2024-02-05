@@ -701,7 +701,10 @@ select {
         flex-direction: row;
         justify-content: space-between;
         padding: 20px;
+        margin-bottom: 20px;
+        height: 5vh;
     }
+
 
     .logo-mobile {
         width: 90px;
@@ -722,8 +725,13 @@ select {
         height: 72vh;
     }
 
+    article {
+        padding-top: 150px;
+    }
+
     .article-description {
         width: 92%;
+        padding-top: 1000px;
         margin: 0px;
         padding: 15px;
     }
@@ -735,6 +743,7 @@ select {
 
     .paragraph-welcome {
         font-size: 10px;
+        padding-top: 7vh;
     }
 
     .line-style-orange {
@@ -750,7 +759,7 @@ select {
     }
 
     .article-description-button {
-        margin-top: 5vh;
+        margin-top: 3vh;
         padding: 0.3vh 2vh;
         font-size: 15px;
         background-color: rgb(255, 129, 16);
