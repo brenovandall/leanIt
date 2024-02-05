@@ -255,3 +255,125 @@ nav ul li:nth-child(-n+4) a {
     font-weight: 400;
     font-size: 1.8vh;
 }
+
+
+.mobile-nav {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    header {
+        display: none;
+    }
+
+    .mobile-nav {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .logo-mobile {
+        width: 90px;
+        height: 3vh;
+    }
+
+    form{
+        margin-bottom: 50px;
+    }
+
+    .infoCarro {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        max-width: 90%;
+    }
+
+    .infos div {
+        margin-bottom: 8px;
+        width: 90%;
+        padding-left: 30px
+    }
+
+    .infoCarro img {
+        margin-left: 90px;
+        height: 90%;
+        width: 80%;
+    }
+
+    .infoCarro #posImg {
+        width: 80%;
+        height: 50%;
+        margin-top: 50px;
+    }
+
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-title {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-about a {
+        display: inline-block;
+        margin-right: 0vh;
+    }
+
+    .footer-about, .footer-extra, .footer-contact {
+        width: 100%;
+        color: rgb(26, 26, 26);
+    }
+
+    .footer-extra {
+        margin-bottom: 3vh;
+    }
+
+    .footer-main a {
+        color: rgb(26, 26, 26);
+        text-decoration: none;
+    }
+
+        .footer-main a:hover {
+            color: white;
+        }
+
+    .footer-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 2vh;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .footer-about i {
+        color: white;
+        font-size: 3vh;
+        margin-left: 4%;
+        margin-top: 10px;
+    }
+
+    .footer-contact i {
+        color: white;
+        margin-right: 1vh;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
+}

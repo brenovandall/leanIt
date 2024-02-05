@@ -79,3 +79,49 @@ input {
 }
 
 
+@media screen and (max-width: 800px) {
+    p {
+        text-align: center
+    }
+
+    form {
+        margin-top: 10px;
+        display: block;
+        justify-content: center;
+    }
+
+        form div {
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+    .excluir {
+        margin-left: 3px;
+        background: red;
+        border: none;
+        padding: 7px;
+        transition: 0.7s;
+        color: white;
+        width: 110px;
+    }
+
+        .excluir:hover {
+            background-color: #FF4747;
+        }
+
+    .voltar {
+        color: white;
+        background: #fb8314;
+        width: 104px;
+        border: none;
+        padding: 7px;
+        transition: 0.7s;
+        margin-left: 10px;
+    }
+
+        .voltar:hover {
+            background-color: #FF9644;
+        }
+
+}
