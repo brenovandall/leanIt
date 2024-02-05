@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+i {
+    width: 10px;
+    height: 10px;
+}
+
 :root {
     --corUm: #fb8314;
     --corDois: #1c1c1c;
@@ -16,64 +21,84 @@ body {
     background-color: #d5cdd519;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #F3F3F3;
-}
-
 .pagamento {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
 
-.esquerda {
-    margin: 15px;
+
+
+.esquerda h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
 }
 
 .resumo {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
     .resumo span {
         font-weight: 100;
     }
 
+.paiModelo {
+    display: flex;
+    justify-content: space-between;
+}
+
 .tituloModelo {
-    margin-left: 30px;
+    margin-left: 50px;
+    font-size: 20px;
 }
 
 .resultadoModelo {
-    margin-left: 130px;
+    font-size: 20px;
 }
 
+.paiMinuto {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    justify-content: space-between;
+}
 
-
-.minuto {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.minuto i {
+    margin-left: -2px;
 }
 
 .tituloMinutos {
-    margin-left: 30px;
+    margin-left: 52px;
 }
 
 .resultadoMinutos {
-    margin-left: 150px;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+
+.paiCategoria {
+    display: flex;
+    justify-content: space-between;
 }
 
 .tituloCategoria {
-    margin-left: 30px;
+    margin-left: 50px;
+    font-size: 20px;
 }
 
 .resultadoCategoria {
-    margin-left: 185px;
+    font-size: 20px;
+    
 }
 
 .cupom {
-    margin-top: 30px;
+    margin-top: 40px;
+    font-size: 20px;
 }
 
 .inputs {
@@ -81,12 +106,13 @@ main {
 }
 
     .inputs input {
-        height: 30px;
+        height: 40px;
         border: var(--corUm) solid 2px;
+        font-size: 18px;
     }
 
 #inserir {
-    width:380px;
+    width: 340px;
     padding-left: 2px;
 }
 
@@ -105,49 +131,82 @@ main {
         cursor: pointer;
     }
 
+
+
 .direita {
-    margin: 15px;
     margin-left: 100px;
 }
 
+    .direita h1 {
+        font-size: 40px;
+    }
+
+.subtituloPaga {
+    font-size: 25px;
+}
 
 
 .informacaoFinal {
     padding: 20px 20px 20px 20px;
     background-color: white;
-    width: 400px;
-    height: 222px;
-    margin-top: 20px;
+    width: 550px;
+    height: 322px;
+    margin-top: 40px;
     border: white 2px solid;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.direita span {
+    font-size: 20px;
+    font-weight:bolder
+}
+
+.paiDesconto {
+    display: flex;
+    justify-content: space-between;
 }
 
 .resultadoDesconto {
-    margin-left: 130px;
+    margin-right: 10px;
+    border-bottom: 3px dotted var(--corDois);
 }
 
-.valorAluguel {
+.paiAluguel {
+    display: flex;
+    justify-content: space-between;
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
 .resultadoValorAluguel {
-    margin-left: 140px;
+    border-bottom: 3px dotted var(--corDois);
+    margin-right:17px;
+}
+
+.paiValorFinal {
+    display: flex;
+    justify-content: space-between;
 }
 
 .resultadoValorFinal {
-    margin-left: 70px;
+    border-bottom: 3px dotted var(--corDois)
+}
+
+.confirmar {
+    padding-top: 60px;
+    margin-top: -100px;
 }
 
 .direita input {
     border: var(--corUm) solid 2px;
     background-color: var(--corUm);
     color: white;
-    height: 35px;
-    width: 400px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    height: 45px;
+    width: 550px;
+    font-size: 18px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
     .direita input:hover {
@@ -156,3 +215,213 @@ main {
         border: solid 2px rgb(255, 161, 79);
         cursor: pointer;
     }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+    .pagamento {
+        margin-top: 20px;
+        display: block;
+        justify-content: center;
+        width:90%;
+    }
+
+
+    .esquerda {
+        margin-left: 45px;
+    }
+    .esquerda h1 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .resumo {
+        margin-top: 25px;
+    }
+
+
+    .paiModelo {
+        display: flex;
+    }
+
+    .tituloModelo {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    .resultadoModelo {
+        font-size: 20px;
+
+    }
+
+    .paiMinuto {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-size: 20px;
+        
+    }
+
+    .minuto i {
+        margin-left: -2px;
+    }
+
+    .tituloMinutos {
+        margin-left: 15px;
+
+    }
+
+    .resultadoMinutos {
+        font-size: 20px;
+      margin-right:-1px;
+    }
+
+
+    .paiCategoria {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tituloCategoria {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    .resultadoCategoria {
+        font-size: 20px;
+
+    }
+
+    .cupom {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .inputs {
+        margin-top: 20px;
+    }
+
+        .inputs input {
+            height: 30px;
+            border: var(--corUm) solid 2px;
+            font-size: 18px;
+        }
+
+    #inserir {
+        width: 98%;
+        padding-left: 2px;
+    }
+
+    #botao {
+        width: 125px;
+        margin-left: -5px;
+        border: var(--corUm) solid 2px;
+        background-color: var(--corUm);
+        color: white;
+    }
+
+        #botao:hover {
+            background-color: rgb(255, 161, 79);
+            transition: 0.5s;
+            border: solid 2px rgb(255, 161, 79);
+            cursor: pointer;
+        }
+
+
+
+    .direita {
+        margin-left: 45px;
+        margin-top:25px
+    }
+
+        .direita h1 {
+            font-size: 25px;
+        }
+
+    .subtituloPaga {
+        font-size: 15px;
+    }
+
+
+    .informacaoFinal {
+        padding: 20px 0 20px 0;
+        background-color: white;
+        width: 100%;
+        height: 230px;
+        margin-top: 30px;
+        border: white 2px solid;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .direita span {
+        font-size: 20px;
+        font-weight: bolder
+    }
+
+    .paiDesconto {
+        display: flex;
+     
+    }
+
+    .resultadoDesconto {
+        
+        border-bottom: 3px dotted var(--corDois);
+    }
+
+    .paiAluguel {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .resultadoValorAluguel {
+        border-bottom: 3px dotted var(--corDois);
+        margin-right: 17px;
+    }
+
+    .paiValorFinal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .resultadoValorFinal {
+        border-bottom: 3px dotted var(--corDois)
+    }
+
+    .confirmar {
+        padding-top: 60px;
+        margin-top: -100px;
+        margin-bottom:30px;
+    }
+
+    .direita input {
+        border: var(--corUm) solid 2px;
+        background-color: var(--corUm);
+        color: white;
+        height: 45px;
+        width: 100%;
+        font-size: 18px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+
+    }
+
+        .direita input:hover {
+            background-color: rgb(255, 161, 79);
+            transition: 0.5s;
+            border: solid 2px rgb(255, 161, 79);
+            cursor: pointer;
+        }
+}
