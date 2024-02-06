@@ -558,6 +558,7 @@ main {
     }
 
         .article-description h1 {
+            width: 100vw;
             margin: 0px;
             font-size: 25px;
         }
