@@ -6,18 +6,17 @@
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-header {
-    background-size: cover;
-    background-position: center;
-    height: 20vh;
-    position: relative;
-    z-index: 1;
-}
-
 .logo {
     margin: 7vh 0 0 10vh;
     width: 20vh;
     height: 5vh;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+#map {
 }
 
 header nav {
@@ -34,55 +33,31 @@ nav ul {
     justify-content: space-around;
 }
 
-nav ul li {
-    list-style: none;
-    margin: 7vh 0 0 0;
-    padding: 1vh 4vh;
-}
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
 
-nav ul li a {
-    color: rgb(26, 26, 26);
-    text-decoration: none;
-    font-size: 1.0rem;
-    letter-spacing: 2px;
-    font-family: 'Poppins';
-    transition: 0.5s all;
-    border: transparent;
-}
-
-
-.button-home {
-    color: rgb(255, 129, 16);
-}
-
-.button-do-register {
-    background-color: rgb(255, 129, 16);
-    color: white;
-    padding: 7px 11px;
-    transition: 0.5s background;
-}
-
-.button-do-register:hover {
-    background-color: rgb(26, 26, 26);
-}
-
-nav ul li:nth-child(-n+4) a {
-    transition: 0.6s border;
-}
-
-nav ul li:nth-child(-n+4) a:hover {
-    border-bottom: 1px solid rgb(26, 26, 26);
-}
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
 
 .nav-item {
     position: relative;
 }
 
-.nav-item a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-}
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
 
 
 .dropdown-menu {
@@ -98,9 +73,9 @@ nav ul li:nth-child(-n+4) a:hover {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    width: 180px;
+    width: 170px;
     margin-left: -28px;
-    padding-left: 5px;
+    padding-left: 18px;
 }
 
 .dropdown-menu li {
@@ -115,20 +90,54 @@ nav ul li:nth-child(-n+4) a:hover {
     display: block;
 }
 
-.dropdown-menu li a {
-    color: #555;
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+    .dropdown-menu li .add {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .dropdown-menu li .listando {
+        display: inline-block;
+    }
+
+.button-home {
+    color: rgb(255, 129, 16);
 }
 
-.dropdown-menu li .add {
-    display: inline-block;
-    margin-left: 5px;
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
 }
 
-.dropdown-menu li .listando {
-    display: inline-block;
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+.button-do-logout {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
 }
 
-    /*MAIN*/
+    .button-do-logout:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+nav ul li:nth-child(-n+4) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+4) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+/*MAIN*/
 
 h1 {
     margin-top: 8vh;
@@ -159,15 +168,15 @@ h2 {
     line-height: 1.5rem;
 }
 
-.terms p, .terms h2 {
-    width: 90%;
-    margin: auto;
-}
+    .terms p, .terms h2 {
+        width: 90%;
+        margin: auto;
+    }
 
-.terms p {
-    /* color: rgb(55, 55, 55); */
-    font-weight: 100;
-}
+    .terms p {
+        /* color: rgb(55, 55, 55); */
+        font-weight: 100;
+    }
 
 .att-termos {
     padding-top: 2vh;
@@ -231,4 +240,170 @@ h2 {
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 1.8vh;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/*MEDIA SCREEN*/
+
+@media screen and (max-width: 800px) {
+    .mobile-nav {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 5vh;
+    }
+
+
+    .logo-mobile {
+        width: 90px;
+        height: 3vh;
+    }
+
+        .logo-mobile:hover {
+            cursor: pointer;
+        }
+
+    .logo {
+        display: none;
+    }
+
+    article {
+        padding-top: 150px;
+    }
+
+    .article-description {
+        width: 92%;
+        padding-top: 1000px;
+        margin: 0px;
+        padding: 15px;
+    }
+
+        .article-description h1 {
+            margin: 0px;
+            font-size: 25px;
+        }
+
+    .paragraph-welcome {
+        font-size: 10px;
+        padding-top: 7vh;
+    }
+
+    .line-style-orange {
+        width: 115px;
+        height: 20px;
+    }
+
+    .paragraph-description {
+        width: 90%;
+        font-size: 15px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .article-description-button {
+        margin-top: 3vh;
+        padding: 0.3vh 2vh;
+        font-size: 15px;
+        background-color: rgb(255, 129, 16);
+        border: 0;
+        color: white;
+        transition: 0.5s background;
+    }
+
+    .hora {
+        display: none;
+    }
+
+    .cidades {
+        display: none;
+    }
+
+    .aside-info .paragraph-bold-info {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Poppins';
+    }
+
+    .aside-info div p {
+        font-size: 15px;
+        color: white;
+        font-weight: 500;
+    }
+
+    nav {
+        display: none;
+    }
+
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-title {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-about a {
+        display: inline-block;
+        margin-right: 0vh;
+    }
+
+    .footer-about, .footer-extra, .footer-contact {
+        width: 100%;
+        color: rgb(26, 26, 26);
+    }
+
+    .footer-extra {
+        margin-bottom: 3vh;
+    }
+
+    .footer-main a {
+        color: rgb(26, 26, 26);
+        text-decoration: none;
+    }
+
+        .footer-main a:hover {
+            color: white;
+        }
+
+    .footer-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 2vh;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .footer-about i {
+        color: white;
+        font-size: 3vh;
+        margin-left: 4%;
+        margin-top: 10px;
+    }
+
+    .footer-contact i {
+        color: white;
+        margin-right: 1vh;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
 }
