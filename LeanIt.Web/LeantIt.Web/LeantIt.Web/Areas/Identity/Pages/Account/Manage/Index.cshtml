@@ -1,4 +1,5 @@
 ﻿@page
+@model IndexModel
 
 @using LeantIt.Web.Areas.Identity.Pages.Account.Manage;
 @using LeantIt.Web.Models;
@@ -7,7 +8,6 @@
 @inject SignInManager<AplicacaoUser> SignInManager
 @inject UserManager<AplicacaoUser> UserManager
 
-@model IndexModel
 @{
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li style="text-decoration: none; list-style-type: none;">
-                @if (ViewBag.Pendente == null)
+                @if (Model.Aluguel == null)
                 {
                     <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                         <button style="border:none; background-color: transparent;" id="logout" type="submit">
