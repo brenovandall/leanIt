@@ -646,6 +646,64 @@
                 }
             }
 
+        @if (ViewBag.Pendente != null)
+        {
+            <text>
+                    var marker = new google.maps.Marker({
+                        position: { lat: @ViewBag.Pendente.Carro.Latitude, lng: @ViewBag.Pendente.Carro.Longitude },
+                        map: map,
+                        icon: icon,
+                        title: '@ViewBag.Pendente.Carro.Marca'
+                    });
+
+                var urlImagemCarro;
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content:
+                        `
+                            <div id="car-details">
+                                @switch (ViewBag.Pendente.Carro.Categoria.Descricao)
+                                {
+                                    case "Basico":
+                                        <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" alt="Imagem do Carro">
+                                        break;
+                                    case "Carga":
+                                        <img id="car-image" src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" alt="Imagem do Carro">
+                                        break;
+                                    case "Familia":
+                                        <img id="car-image" class="car-family" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" alt="Imagem do Carro">
+                                        break;
+                                }
+                                <div id="car-info">
+                                    <h2>@ViewBag.Pendente.Carro.Marca @ViewBag.Pendente.Carro.Modelo</h2>
+                                    <p>Modelo: @ViewBag.Pendente.Carro.Modelo</p>
+                                    <p>Ano do Modelo: @ViewBag.Pendente.Carro.Year</p>
+                                    <p>Categoria: @ViewBag.Pendente.Carro.Categoria.Descricao</p>
+                                </div>
+                                <div id="choose-car-btn">
+                                    @Html.ActionLink("Selecionar carro", "Index", "CarroEscolhido", new { id = @ViewBag.Pendente.Carro.Id })
+                                </div>
+                             </div>
+                        `,
+                });
+
+                array.push({ marker: marker, infoWindow: infoWindow });
+
+                marker.addListener('click', (function (infoWindow, marker) {
+                    return function () {
+                        handleMarkerClick(marker);
+                        // Fechar todas as janelas de informações abertas
+                        array.forEach(function (item) {
+                            item.infoWindow.close();
+                        });
+
+                        // Abrir a infowindow
+                        infoWindow.open(map, marker);
+                    };
+                })(infoWindow, marker));
+            </text>
+        }
+
             function handleMarkerClick(marker) {
                 // Obter a posição do marcador clicado
                 var position = marker.getPosition();

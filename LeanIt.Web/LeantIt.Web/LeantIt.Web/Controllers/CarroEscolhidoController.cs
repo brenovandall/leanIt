@@ -103,12 +103,17 @@ namespace LeantIt.Web.Controllers
         [HttpGet]
         public IActionResult Pendente()
         {
-            var user = User.Identity.Name;
-            var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
-            ViewBag.User = users.Nome;
-            var pendente = _context.AlguelCarros.Include(aluguel => aluguel.Carro).FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id);
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity.Name;
+                var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+                ViewBag.User = users.Nome;
+                var pendente = _context.AlguelCarros.Include(aluguel => aluguel.Carro).FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
 
-            return RedirectToAction("Alugado", new {id = pendente.Id});
+                return RedirectToAction("Alugado", new { id = pendente.Id });
+            }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

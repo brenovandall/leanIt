@@ -520,6 +520,10 @@ main {
     margin-right: 15vw;
 }
 
+.mobile-nav {
+    display: none;
+}
+
 @media screen and (max-width: 1025px) {
     .mobile-nav {
         width: 90%;
