@@ -355,11 +355,8 @@ main {
 
 .mainWorks{
     display: flex;
-    margin-left: 36px;
-}
-
-.mainWorks div{
-    margin-left: 40px
+    justify-content: center;
+    gap: 30px;
 }
 
     .mainWorks div p{
@@ -947,13 +944,33 @@ select {
 
     .mainWorks {
         display: flex;
+        justify-content: flex-start;
         width: 100%;
         overflow-x: auto;
         margin-left: 0px;
     }
 
+        .mainWorks div p {
+            text-align: center;
+        }
+
+    .passoLinha {
+        margin-top: 20px;
+    }
+
+    .passoPasso {
+        color: white;
+        padding-bottom: 80px;
+        padding-top: 30px;
+    }
+
+    .comoFunciona {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
         .mainWorks div {
-            margin-right: 10px;
+            margin-right: 0px;
         }
 
         .efetue{

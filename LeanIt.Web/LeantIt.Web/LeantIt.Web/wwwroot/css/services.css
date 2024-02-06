@@ -520,6 +520,10 @@ main {
     margin-right: 15vw;
 }
 
+.mobile-nav {
+    display: none;
+}
+
 @media screen and (max-width: 1025px) {
     .mobile-nav {
         width: 90%;
@@ -554,6 +558,7 @@ main {
     }
 
         .article-description h1 {
+            width: 100vw;
             margin: 0px;
             font-size: 25px;
         }
