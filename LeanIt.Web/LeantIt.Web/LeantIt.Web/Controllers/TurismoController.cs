@@ -8,17 +8,21 @@ namespace LeantIt.Web.Controllers
 {
     public class TurismoController : Controller
     {
-        private readonly UserManager<AplicacaoUser> _userManager;
+        private readonly ILogger<TurismoController> _logger;
         private readonly SignInManager<AplicacaoUser> _signInManager;
+        private readonly UserManager<AplicacaoUser> _userManager;
         private AppDbContext _context;
-        public TurismoController(AppDbContext appContext, UserManager<AplicacaoUser> userManager, SignInManager<AplicacaoUser> signInManager) 
+
+        public TurismoController(ILogger<TurismoController> logger, AppDbContext context, SignInManager<AplicacaoUser> signInManager, UserManager<AplicacaoUser> userManager)
         {
-            _context = appContext;
-            _userManager = userManager;
+            _logger = logger;
+            _context = context;
             _signInManager = signInManager;
+            _userManager = userManager;
         }
         public IActionResult Index()
         {
+
             if (User.Identity.IsAuthenticated)
             {
                 var idParaEncontrar = _signInManager.UserManager.GetUserId(User);

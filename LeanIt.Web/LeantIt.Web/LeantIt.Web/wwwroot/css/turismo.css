@@ -10,7 +10,7 @@ header {
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 8vh;
     position: relative;
     z-index: 1;
 }
@@ -131,6 +131,7 @@ nav ul li:nth-child(-n+3) a {
 .article-description {
     width: 98vh;
     text-align: center;
+    padding-top: 50px;
     margin: auto;
     margin-top: 5vh;
     font-weight: 200;
@@ -152,30 +153,6 @@ nav ul li:nth-child(-n+3) a {
     width: 1vw;
 }
 
-.paragraph-description {
-    margin-top: 3vh;
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-}
-
-.destaque-saber-mais {
-    font-weight: 700;
-}
-
-.article-description-button {
-    margin-top: 5vh;
-    padding: 1vh 5vh;
-    font-size: 1.1rem;
-    background-color: rgb(255, 129, 16);
-    border: 0;
-    color: white;
-    transition: 0.5s background;
-}
-
-    .article-description-button:hover {
-        background-color: rgb(26, 26, 26);
-        cursor: pointer;
-    }
 
 /*gradient*/
 
@@ -235,7 +212,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10vh;
+    margin-bottom: 4vh;
 }
 
 .img-2 {
@@ -252,7 +229,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10vh;
+    margin-bottom: 4vh;
 }
 
 .img-3 {
@@ -269,7 +246,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10vh;
+    margin-bottom: 4vh;
 }
 
 .img-4 {
@@ -285,6 +262,7 @@ h2 {
 /*footer*/
 
 .footer-main {
+   
     background-color: rgb(255, 129, 16);
     display: flex;
     justify-content: space-around;
@@ -338,4 +316,280 @@ h2 {
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 1.8vh;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .mobile-nav {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 5vh;
+    }
+
+
+    .logo-mobile {
+        width: 90px;
+        height: 3vh;
+    }
+
+        .logo-mobile:hover {
+            cursor: pointer;
+        }
+
+    .logo {
+        display: none;
+    }
+
+    /*article {
+        padding-top: 150px;
+    }*/
+
+    .article-description {
+        width: 100vw;
+        margin: auto;
+        text-align: center;
+    }
+
+        .article-description h1 {
+            margin: 0px;
+            width: 100vw;
+            font-size: 25px;
+        }
+
+    .paragraph-description{
+       width: 100vw;       
+    }
+
+    .paragraph-welcome {
+        font-size: 10px;
+        padding-top: 7vh;
+    }
+
+    .line-style-orange {
+        width: 115px;
+        height: 20px;
+    }
+
+   
+
+    .article-description-button {
+        margin-top: 3vh;
+        padding: 0.3vh 2vh;
+        font-size: 15px;
+        background-color: rgb(255, 129, 16);
+        border: 0;
+        color: white;
+        transition: 0.5s background;
+    }
+
+    .hora {
+        display: none;
+    }
+
+    .cidades {
+        display: none;
+    }
+
+    .aside-info .paragraph-bold-info {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Poppins';
+    }
+
+    .aside-info div p {
+        font-size: 15px;
+        color: white;
+        font-weight: 500;
+    }
+
+    nav {
+        display: none;
+    }
+
+
+    main {
+        background-color: rgb(235, 235, 235);
+        width: 100%;
+        color: black;
+        height:auto;
+    }
+
+    main {
+        background-color: rgb(235, 235, 235);
+        width: 100%;
+        color: black;
+    }
+
+    .cards-pontos-turisticos {
+        width: 80%;
+        margin: auto;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    .turismo-texto {
+        width: 64%;
+        letter-spacing: 1px;
+        line-height: 3.3vh;
+        padding: 20px 0;
+        border-top: 2px solid rgb(255, 129, 16);
+        border-bottom: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .ponto-turistico-1 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 3vh;
+        padding-top:0;
+    }
+
+    h2 {
+        color: rgb(255, 129, 16);
+        padding-bottom: 1.5vh;
+    }
+
+    .img-1 {
+        background-image: url(https://res.cloudinary.com/dubnbered/image/upload/v1702922839/prefeitura_kikr5x.jpg);
+        height: 22vw;
+        width: 28%;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        border-radius: 25vh;
+    }
+
+    .ponto-turistico-2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 3vh;
+        padding-top: 0;
+    }
+
+    .img-2 {
+        background-image: url(https://res.cloudinary.com/dubnbered/image/upload/v1702922839/igreja_ib7d4k.jpg);
+        height: 22vw;
+        width: 28%;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        border-radius: 25vh;
+    }
+
+    .ponto-turistico-3 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 3vh;
+        padding-top: 0;
+    }
+
+    .img-3 {
+        background-image: url(https://res.cloudinary.com/dubnbered/image/upload/v1702922839/vila_tvji3r.jpg);
+        height: 22vw;
+        width: 28%;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        border-radius: 25vh;
+    }
+
+    .ponto-turistico-4 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 3vh;
+        padding-top: 0;
+    }
+
+    .img-4 {
+        background-image: url(https://res.cloudinary.com/dubnbered/image/upload/v1702922840/castelinho_de8iug.jpg);
+        height: 22vw;
+        width: 28%;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        border-radius: 25vh;
+    }
+
+
+
+
+
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-title {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-about a {
+        display: inline-block;
+        margin-right: 0vh;
+    }
+
+    .footer-about, .footer-extra, .footer-contact {
+        width: 100%;
+        color: rgb(26, 26, 26);
+    }
+
+    .footer-extra {
+        margin-bottom: 3vh;
+    }
+
+    .footer-main a {
+        color: rgb(26, 26, 26);
+        text-decoration: none;
+    }
+
+        .footer-main a:hover {
+            color: white;
+        }
+
+    .footer-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 2vh;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .footer-about i {
+        color: white;
+        font-size: 3vh;
+        margin-left: 4%;
+        margin-top: 10px;
+    }
+
+    .footer-contact i {
+        color: white;
+        margin-right: 1vh;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
 }
