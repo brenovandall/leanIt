@@ -98,9 +98,9 @@
 
         <img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711071/elemento_titulos_ulz1x5.png" class="line-style-orange" width="145rem" height="25rem">
 
-        <p class="paragraph-description">Desbrave novos horizontes com nosso serviço de aluguel de carros por viagem. Liberte-se da rotina, escolha o seu caminho. Clique em <span class="destaque-saber-mais">Saber Mais</span> e descubra como reinventamos a maneira de viajar.</p>
+        <p class="paragraph-description">Desbrave novos horizontes com nosso serviço de aluguel de carros por viagem. Liberte-se da rotina, escolha o seu caminho. Clique em <span class="destaque-saber-mais">Alugue Aqui</span> e descubra como reinventamos a maneira de viajar.</p>
 
-        <button class="article-description-button"><a href="#tudoVc" style="color: white; text-decoration:none;>">Saiba Mais</a></button>
+        <button class="article-description-button botao-para-transicao">Alugue Aqui</button>
 
     </article>
 </header>
@@ -146,7 +146,9 @@
                 </div>
 
                 <div class="button-container">
-                    <button>Saber Mais</button>
+                    <a asp-area="" asp-controller="OurServices" asp-action="Index">
+                        <button>Saber Mais</button>
+                    </a>
                 </div>
             </div>
 
@@ -158,7 +160,9 @@
                 </div>
 
                 <div class="button-container">
-                    <button>Saber Mais</button>
+                    <a asp-area="" asp-controller="OurServices" asp-action="Index">
+                        <button>Saber Mais</button>
+                    </a>
                 </div>
             </div>
 
@@ -170,7 +174,9 @@
                 </div>
 
                 <div class="button-container">
-                    <button>Saber Mais</button>
+                    <a asp-area="" asp-controller="OurServices" asp-action="Index">
+                        <button>Saber Mais</button>
+                    </a>
                 </div>
             </div>
 
@@ -717,6 +723,12 @@
                 // Adicione lógica adicional com base na posição do marcador clicado
             }
         }
+
+        document.querySelector('.botao-para-transicao').addEventListener('click', function () {
+            document.querySelector('#tudoVc').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     </script>
     <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">

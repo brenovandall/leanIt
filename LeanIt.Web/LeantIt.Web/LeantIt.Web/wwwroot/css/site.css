@@ -6,6 +6,10 @@
     font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     width: 100%;
     background-image: url(https://res.cloudinary.com/dtvypcack/image/upload/v1701711044/pexels-photo-14550540_qvrfkz.jpg);
