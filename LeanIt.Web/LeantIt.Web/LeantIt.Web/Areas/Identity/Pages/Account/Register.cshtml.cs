@@ -96,7 +96,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Este campo deve ser preenchido")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -105,8 +105,8 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "Este campo deve ser preenchido")]
+            [StringLength(100, ErrorMessage = "A senha deve ter no mínimo 2 caracteres, sendo uma letra maiúscula, 1 especial e 1 número.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -237,7 +237,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
                 }
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError(string.Empty, "Todos os campos devem ser preenchidos corretamente");
                 }
             }
 

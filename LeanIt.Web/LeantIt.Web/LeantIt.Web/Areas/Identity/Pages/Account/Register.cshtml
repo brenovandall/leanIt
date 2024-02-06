@@ -8,7 +8,7 @@
 @inject SignInManager<AplicacaoUser> SignInManager
 
 <header>
-    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+    <a asp-area="" asp-controller="Home" asp-action="Index"><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav class="mobile-nav">
         <div>
             <a asp-area="" asp-controller="Home" asp-action="Index"><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo-mobile" style="cursor: pointer;" /></a>
@@ -22,7 +22,7 @@
 </div>
 
 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+    <div style="color: red;" asp-validation-summary="ModelOnly" class="text-danger informacoesPessoais" role="alert"></div>
     <div class="informacoesPessoais">
         <div style="margin-bottom:20px;">
             <label asp-for="Input.Nome">Nome completo</label>
@@ -30,7 +30,7 @@
                 <input asp-for="Input.Nome" type="text"id="nomeCadastro" placeholder="Digite seu nome completo">
             </div>
             <div>
-                <span asp-validation-for="Input.Nome" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.Nome" class="text-danger"></span>
             </div>
         </div>
         <div style="margin-bottom:20px;">
@@ -39,7 +39,7 @@
                 <input asp-for="Input.CPF" id="cpfCadastro" autocomplete="username" aria-required="true" onblur="validaCPF()" placeholder="xxx.xxx.xxx-xx">
             </div>
             <div>
-                <span asp-validation-for="Input.CPF" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.CPF" class="text-danger"></span>
             </div>
         </div>
         <div style="margin-bottom:20px;">
@@ -48,7 +48,7 @@
                 <input asp-for="Input.CNH" autocomplete="username" aria-required="true" placeholder="Digite sua CNH" />
             </div>
             <div>
-                <span asp-validation-for="Input.CNH" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.CNH" class="text-danger"></span>
             </div>
         </div>
         <div style="margin-bottom:20px;">
@@ -57,7 +57,7 @@
                 <input type="Date" asp-for="Input.DataNascimento"  autocomplete="username" aria-required="true" />
             </div>
             <div>
-                <span asp-validation-for="Input.DataNascimento" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.DataNascimento" class="text-danger"></span>
             </div>
         </div> 
     </div>
@@ -69,7 +69,7 @@
                 <input asp-for="Input.Telefone" autocomplete="username" aria-required="true" placeholder="Digite seu telefone" />
             </div>
             <div>
-                <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.Telefone" class="text-danger"></span>
             </div>
         </div>
         <div style="margin-bottom:20px;">
@@ -84,7 +84,7 @@
                 <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="Digite seu e-mail" />
             </div>
             <div>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
         </div>
         <div style="margin-bottom:20px;">
@@ -110,7 +110,7 @@
                 <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="Digite sua senha" />
             </div>
             <div>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <span style="color: red;" asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
         </div>
         <div class="mb-3">

@@ -23,11 +23,13 @@
                             <label asp-for="Input.Email">E-mail</label>
                             <input id="input-email" asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="Digite seu e-mail" />
                             <div style="text-decoration: none; color: red; list-style-type: none;" asp-validation-summary="ModelOnly"></div>
+                            <span style="color: red;" asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="senha-form">
                             <label asp-for="Input.Password">Senha</label>
                             <input id="input-senha" asp-for="Input.Password" autocomplete="current-password" aria-required="true" placeholder="Digite sua senha" />
                             <div style="text-decoration: none; color: red; list-style-type: none;" asp-validation-summary="ModelOnly"></div>
+                            <span style="color: red;" asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         @*                         <div class="checkbox mb-3">
                         <label asp-for="Input.RememberMe" class="form-label">
