@@ -10,7 +10,7 @@ namespace LeantIt.Web.Models
         public string User { get; set; }
         public bool Pendente { get; set; }
         public double Preco {  get; set; }
-        public int Avaliacao_Estrelas { get; set; } = 0;
-        public string Avaliacao_Descricao_Feedback { get; set; } = String.Empty;
+        public int Avaliacao_Estrelas { get; set; }
+        public string Avaliacao_Descricao_Feedback { get; set; }
     }
 }
