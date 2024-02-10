@@ -1,5 +1,3 @@
-
-
 * {
     padding: 0;
     margin: 0;
@@ -255,20 +253,20 @@ main {
     text-align: center;
 }
 
-.article-main-text h1 {
-    font-size: 2rem;
-    width: 100vh;
-    margin: auto;
-    line-height: 9vh;
-    margin-bottom: 3vh;
-}
+    .article-main-text h1 {
+        font-size: 2rem;
+        width: 100vh;
+        margin: auto;
+        line-height: 9vh;
+        margin-bottom: 3vh;
+    }
 
 .destaque-familia {
     color: rgb(255, 129, 16);
 }
 
 .precos {
-    font-weight: 200; 
+    font-weight: 200;
     font-size: 1.2rem;
 }
 
@@ -336,19 +334,17 @@ main {
         cursor: pointer;
     }
 /*passo a passo*/
-.passoLinha{
+.passoLinha {
     margin-top: 20px;
+}
 
-    
+.passoPasso {
+    color: white;
+    padding-bottom: 80px;
+    padding-top: 30px;
 }
-.passoPasso{
-   
-    color:white;
-    padding-bottom:80px;
-    padding-top:30px;
-}
+
 .mainWorks {
-
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -361,13 +357,13 @@ main {
 
 /*passo a passo*/
 
-.mainWorks{
+.mainWorks {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-    .mainWorks div p{
+    .mainWorks div p {
         text-align: center;
     }
 
@@ -402,15 +398,15 @@ main {
     font-weight: 200;
 }
 
-.todasInfos{
+.todasInfos {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.todasInfos h1{
-    font-size: 40px
-}
+    .todasInfos h1 {
+        font-size: 40px
+    }
 
 .tudoVc {
     width: 50%;
@@ -425,7 +421,7 @@ main {
     width: 100%;
 }
 
-.inputDestino{
+.inputDestino {
     width: 70%
 }
 
@@ -465,7 +461,7 @@ main {
     width: 96%;
 }
 
-.inputVc{
+.inputVc {
     width: 80%;
 }
 
@@ -702,25 +698,130 @@ select {
 
 }*/
 
-    #choose-car-btn a {
-        text-decoration: none;
-        background-color: #fb8314;
-        color: #ffffff;
-        padding: 15px 0px 15px 0px;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 0 0 10px 10px;
-        width: 100%;
-        transition: 0.5s background;
-    }
+#choose-car-btn a {
+    text-decoration: none;
+    background-color: #fb8314;
+    color: #ffffff;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    transition: 0.5s background;
+}
 
-#choose-car-btn:hover a{
+#choose-car-btn:hover a {
     background-color: #000;
 }
+
+
+#botao-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.card {
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    z-index: 9999;
+    width: 20%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-window {
+    height: 220px;
+    overflow-y: scroll;
+}
+
+.message-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.send-button {
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+    .send-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+.eu {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0px 20px 0px
+}
+
+    .eu span {
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px 0px 0px 10px;
+        color: black;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+
+.bot {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0px 10px 0px
+}
+
+    .bot span {
+        background-color: #f3f3f3;
+        color: black;
+        padding: 5px;
+        border-radius: 0px 10px 10px 0px;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+    }
 
 
 
@@ -741,9 +842,9 @@ select {
         height: 3vh;
     }
 
-    .logo-mobile:hover {
-        cursor:pointer;
-    }
+        .logo-mobile:hover {
+            cursor: pointer;
+        }
 
     .logo {
         display: none;
@@ -940,11 +1041,11 @@ select {
         transition: 0.4s all;
     }
 
-    .cards button:hover {
-        background-color: rgb(255, 129, 16);
-        border: 3px solid white;
-        cursor: pointer;
-    }
+        .cards button:hover {
+            background-color: rgb(255, 129, 16);
+            border: 3px solid white;
+            cursor: pointer;
+        }
 
     .passoPasso {
         overflow-x: hidden;
@@ -977,13 +1078,13 @@ select {
         margin-bottom: 40px;
     }
 
-        .mainWorks div {
-            margin-right: 0px;
-        }
+    .mainWorks div {
+        margin-right: 0px;
+    }
 
-        .efetue{
-            padding-right: 22px;
-        }
+    .efetue {
+        padding-right: 22px;
+    }
 
     .aside-search-localization {
         background-color: white;
@@ -996,7 +1097,7 @@ select {
         margin-bottom: 30px;
     }*/
 
-/*    .aside-search-localization label {
+    /*    .aside-search-localization label {
         font-size: 22px;
         font-weight: 700;
     }
@@ -1024,26 +1125,27 @@ select {
         font-size: 20px;
     }
 
-    .infoVc{
+    .infoVc {
         width: 100%
     }
 
-    .inputVc{
-        width:50%
+    .inputVc {
+        width: 50%
     }
+
     .select {
         width: 40%
     }
 
-    .tudoDestino{
+    .tudoDestino {
         width: 100%;
     }
 
-    .inputDestino{
+    .inputDestino {
         width: 50%;
     }
 
-    .botaoDestino{
+    .botaoDestino {
         width: 40%
     }
 
@@ -1175,5 +1277,18 @@ select {
         letter-spacing: 2px;
         font-weight: 400;
         font-size: 1.8vh;
+    }
+
+
+    .card {
+        position: fixed;
+        bottom: 80px;
+        right: 50px;
+        z-index: 9999;
+        width: 80%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
 }

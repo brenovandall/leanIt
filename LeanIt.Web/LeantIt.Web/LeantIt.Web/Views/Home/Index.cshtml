@@ -352,6 +352,34 @@
 
 </footer>
 
+<div class="card">
+    <div class="chat-header">Chat LeanIt</div>
+    <div class="chat-window">
+        <ul class="message-list"></ul>
+    </div>
+    <div class="chat-input">
+        <input type="text" class="message-input" placeholder="Digite sua dúvida">
+        <button class="send-button">Enviar</button>
+    </div>
+</div>
+<button id="botao-chat">Abrir Chat</button>
+
+
+
+@* <div class="card">
+    <div class="chat-header">Chat</div>
+    <div class="chat-window">
+        <div class="message-list">
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" class="message-input" placeholder="Type your message here">
+        <button class="send-button">Send</button>
+    </div>
+</div>
+<button id="botao-chat">Abrir Chat</button>
+ *@
 @section Styles {
     <link rel="stylesheet" href="~/css/site.css" />
 }
@@ -733,5 +761,7 @@
     <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7XqulgkrxKP_wwrWE4fX_dECUGI6xhI&libraries=places&callback=initMap">
     </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/chat.js"></script>
     <script src="~/js/contagemMinutos.js"></script>
 }
