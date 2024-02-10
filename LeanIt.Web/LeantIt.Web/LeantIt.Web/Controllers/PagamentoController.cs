@@ -104,6 +104,28 @@ namespace LeantIt.Web.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PagamentoRealizado(AluguelCarros aluguelCarros)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity.Name;
+                var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+                var aluguel = _context.AlguelCarros.FirstOrDefault(aluguelItem => aluguelItem.User == users.Id && aluguelItem.Pendente == false);
+
+                if(aluguel is not null)
+                {
+                    aluguel.Avaliacao_Estrelas = aluguelCarros.Avaliacao_Estrelas;
+                    aluguel.Avaliacao_Descricao_Feedback = aluguelCarros.Avaliacao_Descricao_Feedback;
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
 

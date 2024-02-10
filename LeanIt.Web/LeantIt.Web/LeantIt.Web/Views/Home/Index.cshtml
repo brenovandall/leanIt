@@ -517,6 +517,11 @@
                         }
                         else {
                             directionsRenderer.setDirections(result);
+                            directionsRenderer.setOptions({
+                                polylineOptions: {
+                                    strokeColor: 'orange'  // Cor personalizada
+                                }
+                            });
                             arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
