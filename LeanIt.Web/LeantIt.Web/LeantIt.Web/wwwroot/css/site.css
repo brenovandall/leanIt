@@ -1282,7 +1282,7 @@ select {
 
     .card {
         position: fixed;
-        bottom: 80px;
+        bottom: 140px;
         right: 50px;
         z-index: 9999;
         width: 80%;
@@ -1291,4 +1291,18 @@ select {
         border-radius: 5px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
+
+    #botao-chat {
+        position: fixed;
+        bottom: 80px;
+        right: 30px;
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
 }
