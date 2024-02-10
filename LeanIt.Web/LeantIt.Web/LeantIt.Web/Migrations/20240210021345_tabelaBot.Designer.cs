@@ -3,6 +3,7 @@ using System;
 using LeantIt.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeantIt.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240210021345_tabelaBot")]
+    partial class tabelaBot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,11 +141,11 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "08f3e992-28c6-4da2-994d-3b9caf8887ee",
+                            Id = "bbbab325-f53e-4d18-adea-f20185b72ecc",
                             AccessFailedCount = 0,
                             CNH = "000000000000",
                             CPF = "00000000000",
-                            ConcurrencyStamp = "93ca1301-989e-41c5-8a77-4eab0f5ffb59",
+                            ConcurrencyStamp = "9cdd8cea-8ebb-43e9-9ac7-a22d257fb788",
                             DataNascimento = "2000-01-01",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -150,10 +153,10 @@ namespace LeantIt.Web.Migrations
                             Nome = "admin@gmail.com",
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJIrWcR6saupReP9zHod23U5Flr8f+6DizK+V3WoZ8XS6H20NC5XKJoqJqaivL02aw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJhpxs4xzygkdBbQBNqV48s1e6EuVnXQZcAgisr6HxH14utB9zupTEg/12qy+qEcKg==",
                             PhoneNumber = "0000000000",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "70174373-88fe-4456-ba5f-ee78d5b936bf",
+                            SecurityStamp = "8f6063ed-f4dd-4dfb-98bf-b80043c80b27",
                             Sexo = "Masculino",
                             Telefone = "0000000000",
                             TwoFactorEnabled = false,
@@ -248,11 +251,11 @@ namespace LeantIt.Web.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LeantIt.Web.Models.RespostaChat", b =>
+            modelBuilder.Entity("LeantIt.Web.Models.MensagemResposta", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Mensagem")
                         .IsRequired()
@@ -264,7 +267,7 @@ namespace LeantIt.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RespostaChat");
+                    b.ToTable("MensagemResposta");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -389,7 +392,7 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "08f3e992-28c6-4da2-994d-3b9caf8887ee",
+                            UserId = "bbbab325-f53e-4d18-adea-f20185b72ecc",
                             RoleId = "1"
                         });
                 });

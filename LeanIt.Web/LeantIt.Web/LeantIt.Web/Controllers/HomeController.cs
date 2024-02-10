@@ -61,5 +61,26 @@ namespace LeantIt.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost("api/chat")]
+        public async Task<JsonResult> Chat(RequestApi request)
+        {
+
+            var respostaChat = await _context.RespostaChat.FirstOrDefaultAsync(m => m.Mensagem.ToUpper().Contains(request.mensagem.ToUpper()));
+
+            if (respostaChat != null)
+            {
+                var resposta = new ResponseApi { resposta = respostaChat.Resposta };
+
+                return Json(resposta);
+            }
+            else
+            {
+    
+                var resposta = new ResponseApi { resposta = "Não entendi sua pergunta. Reformule sua pergunta"};
+
+                return Json(resposta);
+            }
+        }
     }
 }
