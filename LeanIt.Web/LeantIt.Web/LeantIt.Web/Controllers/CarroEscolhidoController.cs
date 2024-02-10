@@ -54,6 +54,8 @@ namespace LeantIt.Web.Controllers
                 aluguel.Carro = carros;
                 aluguel.User = users.Id;
                 aluguel.Pendente = true;
+                aluguel.Avaliacao_Descricao_Feedback = String.Empty;
+                aluguel.Avaliacao_Estrelas = 0;
 
                 _context.AlguelCarros.Add(aluguel);
                 _context.SaveChanges();
