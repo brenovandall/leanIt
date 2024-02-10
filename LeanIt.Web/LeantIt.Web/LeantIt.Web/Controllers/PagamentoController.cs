@@ -106,14 +106,14 @@ namespace LeantIt.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PagamentoRealizado(AluguelCarros aluguelCarros)
+        public async Task<IActionResult> PagamentoRealizado([FromRoute] Guid id, AluguelCarros aluguelCarros)
         {
             if (User.Identity.IsAuthenticated)
             {
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
 
-                var aluguel = _context.AlguelCarros.FirstOrDefault(aluguelItem => aluguelItem.User == users.Id && aluguelItem.Pendente == false);
+                var aluguel = _context.AlguelCarros.FirstOrDefault(aluguelItem => aluguelItem.Id == id && aluguelItem.User == users.Id && aluguelItem.Pendente == false);
 
                 if(aluguel is not null)
                 {
