@@ -349,7 +349,14 @@ nav ul li:nth-child(-n+4) a {
     border: none;
 }
 
+.voltarLogin{
+    color: black;
+    text-decoration:none;
+}
 
+    .voltarLogin:hover {
+        text-decoration: underline;
+    }
 
 .footer-main {
     margin-top: 9vh;
