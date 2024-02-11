@@ -11,6 +11,6 @@ namespace LeantIt.Web.Models
         public bool Pendente { get; set; }
         public double Preco {  get; set; }
         public int Avaliacao_Estrelas { get; set; }
-        public string Avaliacao_Descricao_Feedback { get; set; }
+        public string? Avaliacao_Descricao_Feedback { get; set; }
     }
 }
