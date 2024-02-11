@@ -525,6 +525,11 @@
                         //Quando gerar a rota, se o usuário não tiver o Geolocation, ele gera cria o icon de pessoa
                         if (passou == false) {
                             directionsRenderer.setDirections(result);
+                            directionsRenderer.setOptions({
+                                polylineOptions: {
+                                    strokeColor: '#ff8110'  // Cor personalizada
+                                }
+                            });
                             arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
@@ -536,6 +541,11 @@
                         }
                         else if (passou == true && input.value != enderecoSemPlusCode2) {
                             directionsRenderer.setDirections(result);
+                            directionsRenderer.setOptions({
+                                polylineOptions: {
+                                    strokeColor: '#ff8110'  // Cor personalizada
+                                }
+                            });
                             arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
@@ -546,6 +556,11 @@
                         }
                         else {
                             directionsRenderer.setDirections(result);
+                            directionsRenderer.setOptions({
+                                polylineOptions: {
+                                    strokeColor: '#ff8110'  // Cor personalizada
+                                }
+                            });
                             arrayMarcadores.push(new google.maps.Marker({
                                 position: result.routes[0].legs[0].start_location,
                                 map: map,
