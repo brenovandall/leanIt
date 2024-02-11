@@ -146,18 +146,260 @@
                                                 <p class="valor">R$ @itemModel.Preco</p>
                                             </div>
                                         </div>
-                                        <div class="img">
-                                            @switch (itemModel.Carro.Categoria.Descricao)
+                                        <div style="display: flex; flex-direction: column;">
+                                            <div class="img">
+                                                @switch (itemModel.Carro.Categoria.Descricao)
+                                                {
+                                                    case "Basico":
+                                                        <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" width="240px" height="200px" alt="">
+                                                        break;
+                                                    case "Carga":
+                                                        <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" width="340px" height="200px" alt="">
+                                                        break;
+                                                    case "Familia":
+                                                        <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" width="240px" height="200px" alt="">
+                                                        break;
+                                                }
+                                            </div>
+                                            @if(itemModel.Avaliacao_Estrelas == 5)
                                             {
-                                                case "Basico":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" width="240px" height="200px" alt="">
-                                                    break;
-                                                case "Carga":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" width="340px" height="200px" alt="">
-                                                    break;
-                                                case "Familia":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" width="240px" height="200px" alt="">
-                                                    break;
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (itemModel.Avaliacao_Estrelas == 4)
+                                            {
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (itemModel.Avaliacao_Estrelas == 3)
+                                            {
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (itemModel.Avaliacao_Estrelas == 2)
+                                            {
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (itemModel.Avaliacao_Estrelas == 1)
+                                            {
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg style="fill: #FAF427;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (itemModel.Avaliacao_Estrelas == 0)
+                                            {
+                                                <div class="rating-stars-container">
+                                                    <input value="star-5" name="star" id="star-5" type="radio" />
+                                                    <label for="star-5" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-5c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-4" name="star" id="star-4" type="radio" />
+                                                    <label for="star-4" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-4c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-3" name="star" id="star-3" type="radio" />
+                                                    <label for="star-3" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-3c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-2" name="star" id="star-2" type="radio" />
+                                                    <label for="star-2" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-2c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                    <input value="star-1" name="star" id="star-1" type="radio" />
+                                                    <label for="star-1" class="star-label">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path class="star-1c" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                                                  pathLength="360"></path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
                                             }
                                         </div>
                                     </div>

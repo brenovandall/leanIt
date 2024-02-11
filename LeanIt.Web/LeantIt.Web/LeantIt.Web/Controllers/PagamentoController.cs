@@ -30,7 +30,7 @@ namespace LeantIt.Web.Controllers
 
             var pagamento = _context.AlguelCarros.Include(aluguel => aluguel.Carro).Include(aluguel => aluguel.Carro.Categoria).FirstOrDefault(aluguel => aluguel.User == users.Id && aluguel.Pendente == true);
 
-            switch(pagamento.Carro.Categoria.Descricao)
+            switch (pagamento.Carro.Categoria.Descricao)
             {
                 case "Basico":
                     ViewBag.Aluguel = (pagamento.Minutos / 60 * 12) + 12;
@@ -77,11 +77,11 @@ namespace LeantIt.Web.Controllers
 
                     pagamento.Carro.Status = true;
                     pagamento.Pendente = false;
-                    pagamento.Preco = aluguelCarros.Preco;   
+                    pagamento.Preco = aluguelCarros.Preco;
                     _context.SaveChanges();
-                    return RedirectToAction("PagamentoRealizado", new {id = pagamento.Id});
+                    return RedirectToAction("PagamentoRealizado", new { id = pagamento.Id });
                 }
-     
+
             }
 
             return RedirectToAction("Index", "Pagamento");
@@ -100,6 +100,28 @@ namespace LeantIt.Web.Controllers
                 ViewBag.AluguelFeito = alguelFeito;
 
                 return View(alguelFeito);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PagamentoRealizado([FromRoute] Guid id, AluguelCarros aluguelCarros)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity.Name;
+                var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
+
+                var aluguel = _context.AlguelCarros.FirstOrDefault(aluguelItem => aluguelItem.Id == id && aluguelItem.User == users.Id && aluguelItem.Pendente == false);
+
+                if (aluguel is not null)
+                {
+                    aluguel.Avaliacao_Estrelas = aluguelCarros.Avaliacao_Estrelas;
+                    aluguel.Avaliacao_Descricao_Feedback = aluguelCarros.Avaliacao_Descricao_Feedback;
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             return RedirectToAction("Index", "Home");
