@@ -134,7 +134,10 @@
     </div>
     <div class="confirmarCadastro">
         <button class="botaoCadastro" type="submit">Cadastre-se</button>
-        <a class="voltarLogin" asp-area="Identity" asp-page="/Account/Login">Voltar para o login</a>
+        @if (Model.Aluguel == null)
+        {
+            <a class="voltarLogin" asp-area="Identity" asp-page="/Account/Login">Voltar para o login</a>
+        }
     </div>
 </form>
 <footer>
