@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "Dasboards";
+
+}
+<header>
+    <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
+
+    <nav class="navbar-desktop">
+        <ul>
+            <li><a asp-action="Index" asp-area="" asp-controller="Home" >Home</a></li>
+            <li><a asp-area="" asp-controller="OurServices" asp-action="Index">Categorias</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a href="#" style="color:#ff8110">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="add" asp-area="" asp-controller="Carros" asp-action="Adicionar">Add Carro</a></li>
+                        <li><a class="listando" asp-area="" asp-controller="Carros" asp-action="Listar">Listar Carros</a></li>
+                        <li>
+                            <a class="add" id="register" asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                        </li>
+                        <li><a class="dash, listando" asp-area="" asp-action="Index" asp-controller="Dashboard">Dash</a></li>
+                    </ul>
+                </li>
+            }
+            <partial name="_LoginPartial" />
+    </nav>
+</header>
+<div>
+    <h2>Quantidades de Carros por Categoria</h2>
+    <div style="margin-bottom: 10%; max-height:30%; display:flex; justify-content:center">
+        <canvas id="myChart" ></canvas>
+    </div>
+    <h2>Carros Ativo/Inativo</h2>
+    <div style="margin-bottom: 10%; max-height:30%; display:flex; justify-content:center">
+
+        <canvas id="myChart2"></canvas>
+    </div>
+    <h2>Carros Usados por Categoria</h2>
+    <div style="margin-bottom: 10%; max-height:30%; display:flex; justify-content:center">
+        <canvas id="myChart3" ></canvas>
+    </div>
+</div>
+
+<footer>
+
+    <div class="footer-main">
+        <div class="footer-about">
+            <p class="footer-title">Sobre a LeanIt</p>
+            <p class="footer-paragraph-about">Nós levamos a outro nível a locomoção por meio de nossa tecnologia</p>
+            <div class="icons-about"><a href="#"><i class="fa-brands fa-youtube"></a></i> <a href="#"><i class="fa-brands fa-facebook"></a></i> <a href="#"><i class="fa-brands fa-instagram"></i></a> <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a></div>
+        </div>
+
+        <div class="footer-extra">
+            <p class="footer-title">Nossa Página</p>
+            <p><a href="#">Nosso blog</a></p>
+            <p><a href="#">Sobre o Projeto</a></p>
+            <p><a href="https://www.entra21.com.br/" target="_blank">Entra21</a></p>
+            <p><a href="#">Planos de Carreira</a></p>
+            <p>@Html.ActionLink("Guia Turístico", "Index", "Turismo")</p>
+            <p>@Html.ActionLink("Termos de Uso", "Index", "Termos")</p>
+        </div>
+
+        <div class="footer-contact">
+            <p class="footer-title">Contate-nos</p>
+            <p class="paragraph-contact paragraph-contact-top"><i class="fa-solid fa-phone phone-icon"></i>+55 (47) 9999-9999</p>
+            <p class="paragraph-contact"><i class="fa-solid fa-envelope email-icon"></i><a href="#">contact@leanit.com</a></p>
+        </div>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2023 All rights deserved</p>
+
+</footer>
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/dash.css" />
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Carro Básico', 'Carro Família', 'Carro Carga'],
+            datasets: [{
+                label: 'Quantidades de Carros por Categoria',
+                data: [@ViewBag.QCarroBasico, @ViewBag.QCarroFamilia, @ViewBag.QCarroCarga],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const ctx2 = document.getElementById('myChart2');
+    new Chart(ctx2, {
+        type: 'doughnut',
+        data:{
+        
+            labels: [
+                'Ativo',
+                'Inativo',
+            ],
+            datasets: [{
+                label: 'Carros Ativo/Inativo',
+                data: [@ViewBag.CarroAtivo, @ViewBag.CarroInativo],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)'
+                ],
+                hoverOffset: 4
+            }]
+        }
+    });
+
+
+    const ctx3 = document.getElementById('myChart3');
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Carro Básico',
+                'Carro Família',
+                'Carro Carga'
+            ],
+            datasets: [{
+                label: 'Carros Usados por Categoria',
+                data: [@ViewBag.CarroBasico, @ViewBag.CarroFamilia, @ViewBag.CarroCarga],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 205, 86)',
+                ]
+            }]
+        }
+    });
+</script>
+
