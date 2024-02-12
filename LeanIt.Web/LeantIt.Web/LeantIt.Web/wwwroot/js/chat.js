@@ -1,16 +1,9 @@
 $(function () {
 
     $(".card").hide();
-    $("#botao-chat").text("Fazer pergunta")
 
     $("#botao-chat").click(function () {
         $(".card").toggle();
-
-        if ($(".card").is(":visible")) {
-            $("#botao-chat").text("Fechar");
-        } else {
-            $("#botao-chat").text("Fazer pergunta");
-        }
     });
 
 

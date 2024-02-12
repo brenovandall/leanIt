@@ -1,0 +1,265 @@
+﻿
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+nav ul {
+    margin: 0 10vh 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
+
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
+
+
+.button-home {
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+nav ul li:nth-child(-n+4) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+4) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+.nav-item {
+    position: relative;
+}
+
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 180px;
+    padding-top: 10px;
+    left: 0;
+    background-color: #F3F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 170px;
+    margin-left: -28px;
+}
+
+.dropdown-menu li {
+    margin-top: -10px;
+    width: 100%;
+    padding: 0px;
+}
+
+    .dropdown-menu li a {
+        /*margin-left: -10px*/
+    }
+
+.dropdown-menu li {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+    .dropdown-menu li .add {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dropdown-menu li .listando {
+        display: inline-block;
+    }
+
+
+/*main*/
+
+.container {
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 10vh;
+}
+
+.item-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-1 {
+    width: 45%;
+}
+
+.col-2 {
+    width: 45%;
+}
+
+.add-cars-title {
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+#input {
+    border: 2px solid #fb8314;
+    width: 500px;
+    box-sizing: border-box;
+    height: 40px;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 7px;
+    margin-bottom: 7px;
+}
+
+
+.categoria-select {
+    width: 500px;
+    height: 40px;
+    border: 2px solid #fb8314;
+    padding-left: 5px;
+    margin-bottom: 7px;
+}
+
+.checkbox-car {
+    display: flex;
+}
+
+    .checkbox-car input {
+        margin-left: 5px;
+        width: 18px;
+    }
+
+.botao-entrar {
+    margin-top: 20px;
+    width: 500px;
+    background-color: #fb8314;
+    border: none;
+    padding: 6px 35px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+    .botao-entrar:hover {
+        background-color: #fa7901;
+        cursor: pointer;
+    }
+
+/*FOOTER*/
+
+.footer-main {
+    margin-top: 5vh;
+    background-color: rgb(255, 129, 16);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-about a {
+    display: inline-block;
+    margin-right: 1vh;
+}
+
+.footer-about, .footer-extra, .footer-contact {
+    width: 20%;
+    color: rgb(26, 26, 26);
+}
+
+.footer-extra {
+    margin-bottom: 3vh;
+}
+
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+    .footer-main a:hover {
+        color: white;
+    }
+
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2vh;
+}
+
+.footer-about i {
+    color: white;
+    font-size: 3vh;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+
+.footer-contact i {
+    color: white;
+    margin-right: 1vh;
+}
+
+.footer-copyright {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.8vh;
+}

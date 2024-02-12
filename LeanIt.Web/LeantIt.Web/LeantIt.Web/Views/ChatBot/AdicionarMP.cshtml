@@ -1,4 +1,13 @@
-﻿<header>
+﻿@using Microsoft.AspNetCore.Identity
+@model RespostaChat
+@inject SignInManager<AplicacaoUser> SignInManager
+@inject UserManager<AplicacaoUser> UserManager
+
+@{
+    ViewData["Title"] = "Adicionar Mensagem/Pergunta";
+}
+
+<header>
 
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
@@ -24,32 +33,39 @@
             <partial name="_LoginPartial" />
     </nav>
 </header>
+
 <main>
-    <form class="formu" asp-action="Remover" method="post">
-        <h1 class="add-cars-title">Remover Carro - Administrador</h1>
-            <div class="card">
-                <div class="main-content">
-                    <div class="title-content">
+    <form method="post">
+
+        <div class="container">
+            <h1 class="add-cars-title">Adicionar Mensagem/Pergunta - Administrador</h1>
+            <div class="form-add">
+
+                <div class="item-content">
+                    <div class="col-1">
+
                         <div>
-                            <h1>@Model.Marca @Model.Modelo</h1>
-                        </div>
-                        <div>
-                            <h1>@Model.Placa</h1>
+                            <label>Mensagem</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Mensagem">
                         </div>
                     </div>
-                    <div class="id-content">
-                        <p>Id: @Model.Id</p>
-                    </div>
-                    <div class="botoesAcao">
-                        <div class="botaoVoltar">
-                            <a asp-area="" asp-controller="Carros" asp-action="Listar">Voltar </a>
-                        </div>
+
+
+                    <div class="col-2">
                         <div>
-                        <input class="botaoRemover" type="submit" value="Deletar" />
+                            <label>Resposta</label>
+                            <input id="input" type="text" placeholder="Digite aqui" asp-for="@Model.Resposta">
+                        </div>
+
+                        <div class="botao-forms">
+                            <button type="submit" class="botao-entrar">
+                                Adicionar ao Chatbot
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </form>
 </main>
 
@@ -88,9 +104,9 @@
 
 @section Styles {
 
-    <link rel="stylesheet" href="~/css/remover.css" />
+    <link rel="stylesheet" href="~/css/adicionarBot.css" />
 }
 
-@section Scripts{
+@section Scripts {
     <script src="~/js/contagemMinutos.js"></script>
 }

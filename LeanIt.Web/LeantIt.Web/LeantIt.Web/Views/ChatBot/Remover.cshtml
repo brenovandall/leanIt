@@ -1,5 +1,15 @@
-﻿<header>
+﻿@model RespostaChat
+@using Microsoft.AspNetCore.Identity;
 
+@inject SignInManager<AplicacaoUser> SignInManager
+@inject UserManager<AplicacaoUser> UserManager
+
+@{
+    ViewData["Title"] = "Remover do ChatBot";
+}
+
+
+<header>
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
         <ul>
@@ -26,30 +36,30 @@
 </header>
 <main>
     <form class="formu" asp-action="Remover" method="post">
-        <h1 class="add-cars-title">Remover Carro - Administrador</h1>
-            <div class="card">
-                <div class="main-content">
-                    <div class="title-content">
-                        <div>
-                            <h1>@Model.Marca @Model.Modelo</h1>
-                        </div>
-                        <div>
-                            <h1>@Model.Placa</h1>
-                        </div>
+        <h1 class="add-cars-title">Remover Mensagem/Pergunta - Administrador</h1>
+        <div class="card">
+            <div class="main-content">
+                <div class="title-content">
+                    <div>
+                        <h1>@Model.Mensagem</h1>
                     </div>
-                    <div class="id-content">
-                        <p>Id: @Model.Id</p>
+                    <div>
+                        <h1>@Model.Resposta</h1>
                     </div>
-                    <div class="botoesAcao">
-                        <div class="botaoVoltar">
-                            <a asp-area="" asp-controller="Carros" asp-action="Listar">Voltar </a>
-                        </div>
-                        <div>
+                </div>
+                <div class="id-content">
+                    <p>Id: @Model.Id</p>
+                </div>
+                <div class="botoesAcao">
+                    <div class="botaoVoltar">
+                        <a asp-area="" asp-controller="ChatBot" asp-action="Index">Voltar </a>
+                    </div>
+                    <div>
                         <input class="botaoRemover" type="submit" value="Deletar" />
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </form>
 </main>
 
@@ -88,9 +98,9 @@
 
 @section Styles {
 
-    <link rel="stylesheet" href="~/css/remover.css" />
+    <link rel="stylesheet" href="~/css/removerBot.css" />
 }
 
-@section Scripts{
+@section Scripts {
     <script src="~/js/contagemMinutos.js"></script>
 }

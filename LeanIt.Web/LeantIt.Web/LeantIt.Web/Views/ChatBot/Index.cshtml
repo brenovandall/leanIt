@@ -1,4 +1,16 @@
-﻿<header>
+﻿@model X.PagedList.IPagedList<LeantIt.Web.Models.RespostaChat>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<AplicacaoUser> SignInManager
+@inject UserManager<AplicacaoUser> UserManager
+
+@{
+    ViewData["Title"] = "Lista ChatBot";
+}
+
+<header>
 
     <a><img src="https://res.cloudinary.com/dtvypcack/image/upload/v1701711075/logo_recorte_dxihjz.png" class="logo"></a>
     <nav>
@@ -24,33 +36,47 @@
             <partial name="_LoginPartial" />
     </nav>
 </header>
+
 <main>
-    <form class="formu" asp-action="Remover" method="post">
-        <h1 class="add-cars-title">Remover Carro - Administrador</h1>
+    <div class="container">
+        @foreach (var item in Model)
+        {
             <div class="card">
                 <div class="main-content">
                     <div class="title-content">
                         <div>
-                            <h1>@Model.Marca @Model.Modelo</h1>
+                            <h1>@item.Mensagem</h1>
                         </div>
                         <div>
-                            <h1>@Model.Placa</h1>
+                            <h1>@item.Resposta</h1>
                         </div>
                     </div>
                     <div class="id-content">
-                        <p>Id: @Model.Id</p>
+                        <p>Id: @item.Id</p>
                     </div>
-                    <div class="botoesAcao">
-                        <div class="botaoVoltar">
-                            <a asp-area="" asp-controller="Carros" asp-action="Listar">Voltar </a>
+                    <form>
+                        <div class="botoesAcao">
+                            <div class="botaoEditar">
+                                @Html.ActionLink("Editar", "Editar", new { id = @item.Id })
+                            </div>
+
+                            <div class="botaoRemover">
+                                @Html.ActionLink("Remover", "Remover", new { id = @item.Id })
+                            </div>
                         </div>
-                        <div>
-                        <input class="botaoRemover" type="submit" value="Deletar" />
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-    </form>
+        }
+
+
+        <div class="pagedList">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+                     new { page }))
+        </div>
+    </div>
 </main>
 
 
@@ -88,9 +114,35 @@
 
 @section Styles {
 
-    <link rel="stylesheet" href="~/css/remover.css" />
+    <link rel="stylesheet" href="~/css/listarBot.css" />
 }
 
-@section Scripts{
+@section Scripts {
+
+    @*     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Adiciona um ouvinte de evento ao campo de pesquisa
+        document.getElementById("searchString").addEventListener("input", function () {
+            atualizarPesquisa();
+        });
+
+        function atualizarPesquisa() {
+            var form = document.getElementById("searchForm");
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("resultadoPesquisa").innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send(formData);
+        }
+    });
+</script> *@
     <script src="~/js/contagemMinutos.js"></script>
 }
