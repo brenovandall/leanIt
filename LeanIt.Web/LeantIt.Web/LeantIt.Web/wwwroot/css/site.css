@@ -828,7 +828,7 @@ select {
     position: fixed;
     bottom: 20px;
     right: 60px;
-    padding: 10px 20px;
+    padding: 10px 50px;
     z-index: 9999;
 }
 
@@ -860,9 +860,9 @@ select {
 .tooltip {
     position: absolute;
     top: -2;
-    left: -45px; /* Altere a posição inicial para a esquerda, fora da tela */
-    transform: translateX( -32% ); /* Usando translateX para controlar a transição da esquerda para a direita */
-    width: 110px;
+    left: -25px; /* Altere a posição inicial para a esquerda, fora da tela */
+    transform: translateX( -42% ); /* Usando translateX para controlar a transição da esquerda para a direita */
+    width: 210px;
     height: 52px;
     opacity: 0;
     pointer-events: none;
@@ -900,7 +900,7 @@ select {
 }
 
 .tooltip-container:hover {
-    transform: translateX(-50px);
+    transform: translateX(-150px);
     transition: 0.5s linear;
 }
 
