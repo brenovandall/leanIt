@@ -2,6 +2,7 @@ using LeantIt.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using LeantIt.Web.Models;
+using LeantIt.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddDefaultIdentity<AplicacaoUser>(options => options.SignIn.Req
     .AddEntityFrameworkStores<AppDbContext>()
     .AddSignInManager<SignInManager<AplicacaoUser>>(); // Certifique-se de usar AplicacaoUser aqui
 
+builder.Services.AddScoped<ImageUploadProvider>();
 
 var app = builder.Build();
 

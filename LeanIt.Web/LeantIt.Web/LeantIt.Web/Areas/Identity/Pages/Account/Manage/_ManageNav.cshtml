@@ -4,7 +4,11 @@
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
 
-<img src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" alt="">
+<input id="inputExternalImage" type="file" />
+<input id="imageString" type="text" style="display: none" />
+
+
+<img src="" alt="">
 <div class="caminhos">
     <div class="historico">
         <i class="fa-solid fa-car"></i> <span><a asp-area="" asp-controller="Historico" asp-action="Index">Histórico de viagens</a></span>
@@ -24,6 +28,10 @@
 </div>
 
 
-@section Styles{
+@section Styles {
     <link rel="stylesheet" href="~/css/manage.css" />
+}
+
+@section Scripts {
+    <script src="~/js/uploadimagem.js"></script>
 }

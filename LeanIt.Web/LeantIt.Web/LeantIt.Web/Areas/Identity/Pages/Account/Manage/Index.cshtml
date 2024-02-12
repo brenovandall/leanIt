@@ -136,7 +136,33 @@
 <main>
     <div class="conteudo">
         <div>
-            <partial name="_ManageNav" />
+            <input id="imageString" type="text" style="display: none" />
+
+            <div class="profile-picture">
+                <img src="@Model.ImagemUrl" alt="Imagem de Perfil">
+                <div class="overlay">
+                    <input id="inputExternalImage" type="file" placeholder="" value="">
+                </div>
+            </div>
+
+            @* <img src="" alt=""> *@
+            <div class="caminhos">
+                <div class="historico">
+                    <i class="fa-solid fa-car"></i> <span><a asp-area="" asp-controller="Historico" asp-action="Index">Histórico de viagens</a></span>
+                </div>
+                <div class="outros detalhesConta">
+                    <i class="fa-solid fa-user"></i> <span><a class="@ManageNavPages.IndexNavClass(ViewContext)" asp-page="./Index">Perfil</a></span>
+                </div>
+                <div class="outros alterarSenha">
+                    <i class="fa-solid fa-lock"></i> <span><a class="@ManageNavPages.ChangePasswordNavClass(ViewContext)" asp-page="./ChangePassword">Redefinir senha</a></span>
+                </div>
+                @if (Model.Aluguel == null)
+                {
+                    <div class="outros">
+                        <i class="fa-solid fa-trash"></i> <span><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Deletar perfil</a></span>
+                    </div>
+                }
+            </div>
         </div>
         <div class="preencher">
             <div class="titulo">
@@ -155,16 +181,16 @@
                         <input asp-for="Username" id="email" class="readonly" readonly>
                     </div>
                     @* <div>
-                        <div>
-                            <label for="email">Email</label>
-                        </div>
-                        <input type="text" name="email" id="email" class="readonly" readonly>
+                    <div>
+                    <label for="email">Email</label>
+                    </div>
+                    <input type="text" name="email" id="email" class="readonly" readonly>
                     </div>
                     <div>
-                        <div>
-                            <label for="cnh">CNH</label>
-                        </div>
-                        <input type="text" name="cnh" id="cnh" class="readonly" readonly>
+                    <div>
+                    <label for="cnh">CNH</label>
+                    </div>
+                    <input type="text" name="cnh" id="cnh" class="readonly" readonly>
                     </div> *@
                     <div>
                         <div>
@@ -175,44 +201,44 @@
                             <span style="color: red; font-size: 15px;" asp-validation-for="Input.PhoneNumber"></span>
                         </div>
                     </div>
-@*                     <div id="msg" onload="msg()">
-                        <partial name="_StatusMessage" for="StatusMessage" />
+                    @*                     <div id="msg" onload="msg()">
+                    <partial name="_StatusMessage" for="StatusMessage" />
                     </div> *@
-                   @*  <div>
-                        <div>
-                            <label for="numero">Número</label>
-                        </div>
-                        <input type="text" name="numero" id="numero" placeholder="Digite seu número">
+                    @*  <div>
+                    <div>
+                    <label for="numero">Número</label>
+                    </div>
+                    <input type="text" name="numero" id="numero" placeholder="Digite seu número">
                     </div>
                     <div>
-                        <div>
-                            <label for="endereco">Endereço</label>
-                        </div>
-                        <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+                    <div>
+                    <label for="endereco">Endereço</label>
+                    </div>
+                    <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
                     </div>
                     <div>
-                        <div>
-                            <label for="bairro">Bairro</label>
-                        </div>
-                        <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
+                    <div>
+                    <label for="bairro">Bairro</label>
+                    </div>
+                    <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
                     </div>
                     <div>
-                        <div>
-                            <label for="cidade">Cidade</label>
-                        </div>
-                        <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
+                    <div>
+                    <label for="cidade">Cidade</label>
+                    </div>
+                    <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
                     </div>
                     <div>
-                        <div>
-                            <label for="estado">Estado</label>
-                        </div>
-                        <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
+                    <div>
+                    <label for="estado">Estado</label>
+                    </div>
+                    <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
                     </div>
                     <div>
-                        <div>
-                            <label for="complemento">Complemento</label>
-                        </div>
-                        <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento">
+                    <div>
+                    <label for="complemento">Complemento</label>
+                    </div>
+                    <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento">
                     </div> *@
                     <div>
                         <input type="submit" value="Salvar" class="enviar">
@@ -254,11 +280,12 @@
 </footer>
 
 @section Scripts {
+    <script src="~/js/uploadimagem.js"></script>
     <script src="~/js/contagemMinutos.js"></script>
     <partial name="_ValidationScriptsPartial" />
 }
 
 
-@section Styles{
+@section Styles {
     <link rel="stylesheet" href="~/css/perfil.css" />
 }

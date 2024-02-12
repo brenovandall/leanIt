@@ -23,7 +23,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
 
         public IndexModel(
             UserManager<AplicacaoUser> userManager,
-            SignInManager<AplicacaoUser> signInManager,  AppDbContext context)
+            SignInManager<AplicacaoUser> signInManager, AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -58,7 +58,9 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
         /// </summary>
         /// 
 
-        public AluguelCarros Aluguel {  get; set; }
+        public AluguelCarros Aluguel { get; set; }
+
+        public string ImagemUrl { get; set; }
 
         public class InputModel
         {
@@ -71,11 +73,12 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
             [Required(ErrorMessage = "O número de telefone é obrigatório.")]
             public string PhoneNumber { get; set; }
             public string NomeExibicao { get; set; }
+            public string ImagemUrl { get; set; }
         }
 
         private async Task LoadAsync(AplicacaoUser user)
         {
-           
+
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
@@ -111,6 +114,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
 
                 var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
                 Aluguel = pendente;
+                ImagemUrl = users.ImagemDePerfil;
             }
 
             await LoadAsync(userr);
