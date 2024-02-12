@@ -1,9 +1,13 @@
-﻿using LeantIt.Web.Areas.Identity.Pages.Account.Manage;
-using LeantIt.Web.Data;
+﻿using LeantIt.Web.Data;
 using LeantIt.Web.Models;
+using LeantIt.Web.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
+
 
 namespace LeantIt.Web.Controllers
 {
@@ -21,24 +25,27 @@ namespace LeantIt.Web.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+
             if (User.Identity.IsAuthenticated)
             {
                 var user = User.Identity.Name;
                 var users = _signInManager.UserManager.Users.FirstOrDefault(userItem => userItem.UserName == user);
                 ViewBag.User = users.Nome;
                 ViewBag.Users = users;
-
-                var aluguel = _context.AlguelCarros.Include(aluguelItem => aluguelItem.Carro).Include(aluguelItem => aluguelItem.Carro.Categoria).ToList();
-
+        
                 var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
                 ViewBag.Pendente = pendente;
+
+                var aluguel = _context.AlguelCarros.Include(item => item.Carro).Include(item => item.Carro.Categoria).Where(item => item.Pendente == false && item.User == users.Id).ToList();
 
                 var qnt = _context.AlguelCarros.FirstOrDefault(aluguel => aluguel.User == users.Id);
                 ViewBag.Qnt = qnt;
 
-                return View(aluguel);
+                return View(aluguel.ToPagedList(pageNumber, pageSize));
             }
 
             return RedirectToAction("Index", "Home");

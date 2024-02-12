@@ -28,7 +28,6 @@ namespace LeantIt.Web.Controllers
         [HttpGet]
         public IActionResult Index(int? page)
         {
-            var carros = _context.Carros; 
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
