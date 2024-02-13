@@ -87,6 +87,11 @@ namespace LeantIt.Web.Controllers
                     }
                 }
 
+                if(request.mensagem.Contains("  "))
+                {
+                    request.mensagem = request.mensagem.Replace("  ", " ");
+                }
+
                 var mensagemCompleta = await _context.RespostaChat.FirstOrDefaultAsync(x => x.Mensagem.ToUpper() == request.mensagem.ToUpper());
                 if (mensagemCompleta is not null)
                 {
