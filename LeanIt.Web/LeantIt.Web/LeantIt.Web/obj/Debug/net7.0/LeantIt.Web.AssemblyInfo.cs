@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LeantIt.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8f85d9e070bd2ea4e2aef356071d436cdef5a27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a56342a8234eeb313c247288f867107621055fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("LeantIt.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LeantIt.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

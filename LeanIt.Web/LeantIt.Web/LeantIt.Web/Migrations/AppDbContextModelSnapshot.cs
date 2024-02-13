@@ -148,11 +148,11 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8b57ae66-f0b1-4218-830e-d1b37276b175",
+                            Id = "e020b1b8-9c30-4fc0-b380-d096edb69e52",
                             AccessFailedCount = 0,
                             CNH = "000000000000",
                             CPF = "00000000000",
-                            ConcurrencyStamp = "544fef13-d131-4b56-acb3-84877adcac41",
+                            ConcurrencyStamp = "dc7730d6-34e8-4b91-bb64-574a1f581c52",
                             DataNascimento = "2000-01-01",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -161,10 +161,10 @@ namespace LeantIt.Web.Migrations
                             Nome = "admin@gmail.com",
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPjcz6po6TAHLO8XXjN07iXbIlzXUTTCiyEGKjWsXfJJ6PwoFCX/nP976fz1Q+k6kg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEB3W9e0vy4fedvmFsPaHYbl2vnu2jC3/XVsdyZKqKA5CW0p7XeqGLT2qAEQR4ZbfKw==",
                             PhoneNumber = "0000000000",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "37a8956f-d292-4249-bf89-bab743e243bf",
+                            SecurityStamp = "0cbc93b4-d4f0-4544-bf3f-b650b9c0f4a8",
                             Sexo = "Masculino",
                             Telefone = "0000000000",
                             TwoFactorEnabled = false,
@@ -400,7 +400,7 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "8b57ae66-f0b1-4218-830e-d1b37276b175",
+                            UserId = "e020b1b8-9c30-4fc0-b380-d096edb69e52",
                             RoleId = "1"
                         });
                 });
