@@ -435,7 +435,6 @@ nav ul li:nth-child(-n+4) a {
 
     .preencher {
         display: block;
-        width: 95%;
         margin-left: 12px;
     }
 
@@ -464,29 +463,14 @@ nav ul li:nth-child(-n+4) a {
         display: none;
     }
 
-    .informacoes{
-        width: 95%;
+    /*    .informacoes{
+        width: 100%;
     }
-    /*
+
     .informacoes div{
         width: 90%;
     }*/
 
-    .carga {
-        width: 200px;
-    }
-
-    .pagedList {
-        width: 90%;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .card div {
-        width: 94%;
-    }
 
     .formu {
         margin-top: 20px;
@@ -603,11 +587,6 @@ nav ul li:nth-child(-n+4) a {
 
 
 @media screen and (max-width: 280px) {
-
-    .mobile-nav {
-        padding-left: 10px;
-    }
-
     .formu .enviar {
         width: 95%;
         background-color: rgb(255, 129, 16);
@@ -615,19 +594,6 @@ nav ul li:nth-child(-n+4) a {
         margin-bottom: 60px;
     }
 
-    .preencher {
-        display: block;
-        width: 100%;
-        margin-left: 12px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .dados {
-        width: 100%;
-    }
 
     .informacoes {
         width: 91%;
@@ -659,7 +625,7 @@ nav ul li:nth-child(-n+4) a {
     }
 
     .card div{
-        width: 89%
+        width: 85%
     }
 
     .preencher{
@@ -669,9 +635,5 @@ nav ul li:nth-child(-n+4) a {
     .imgCarro {
         width: 100%;
         height: 150px;
-    }
-
-    .footer-main {
-        width: 100%;
     }
 }
