@@ -77,7 +77,8 @@ namespace LeantIt.Web.Controllers
             else
             {
     
-                var resposta = new ResponseApi { resposta = "Não entendi sua pergunta. Reformule sua pergunta"};
+                var resposta = new ResponseApi { resposta = "Não consigo " +
+                    "compreender sua mensagem. Tente reformular sua pergunta de forma mais clara" };
 
                 return Json(resposta);
             }
