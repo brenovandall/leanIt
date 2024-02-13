@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
+    "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
+    "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
         "projectName": "LeantIt.Web",
-        "projectPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
-        "packagesPath": "C:\\Users\\sidney.zuanazzi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sidney.zuanazzi\\source\\repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
+        "projectPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\LeantIt.Web.csproj",
+        "packagesPath": "C:\\Users\\breno.dall\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\breno.dall\\Source\\Repos\\leanIt\\LeanIt.Web\\LeantIt.Web\\LeantIt.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sidney.zuanazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\breno.dall\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,15 +40,47 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Cloudinary": {
+              "target": "Package",
+              "version": "[0.0.5, )"
+            },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.25.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.14, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -82,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

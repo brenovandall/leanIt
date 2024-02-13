@@ -9,67 +9,191 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LeantIt.Web
 build_property.RootNamespace = LeantIt.Web
-build_property.ProjectDir = C:\Users\sidney.zuanazzi\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\
+build_property.ProjectDir = C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sidney.zuanazzi\source\repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web
+build_property.MSBuildProjectDirectory = C:\Users\breno.dall\Source\Repos\leanIt\LeanIt.Web\LeantIt.Web\LeantIt.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Adicionar.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Accountt/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHRcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Accountt/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHRcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/CarroEscolhido/Alugado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9Fc2NvbGhpZG9cQWx1Z2Fkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/CarroEscolhido/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9Fc2NvbGhpZG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Adicionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXEFkaWNpb25hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Editar.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXEVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Listar.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Listar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXExpc3Rhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Remover.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Carros/Remover.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycm9zXFJlbW92ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Home/Index.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/ChatBot/AdicionarMP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxBZGljaW9uYXJNUC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/ChatBot/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/ChatBot/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/ChatBot/Remover.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxSZW1vdmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Historico/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWNvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Home/Privacy.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/OurServices/Index.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/OurServices/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3VyU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/Error.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Pagamento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnYW1lbnRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Pagamento/PagamentoRealizado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnYW1lbnRvXFBhZ2FtZW50b1JlYWxpemFkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Saiba/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FpYmFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/_ViewImports.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Termos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Turismo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVyaXNtb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/_ViewStart.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sidney.zuanazzi/source/repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/breno.dall/Source/Repos/leanIt/LeanIt.Web/LeantIt.Web/LeantIt.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-28sgybvxv2

@@ -3,6 +3,7 @@ using System;
 using LeantIt.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeantIt.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240213155148_breno proway dia 13-02")]
+    partial class brenoprowaydia1302
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,11 +151,11 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8b57ae66-f0b1-4218-830e-d1b37276b175",
+                            Id = "59c57002-9c30-4afc-bce1-d007f799046b",
                             AccessFailedCount = 0,
                             CNH = "000000000000",
                             CPF = "00000000000",
-                            ConcurrencyStamp = "544fef13-d131-4b56-acb3-84877adcac41",
+                            ConcurrencyStamp = "d40c5ceb-4011-4989-b154-ebd242b59061",
                             DataNascimento = "2000-01-01",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -161,10 +164,10 @@ namespace LeantIt.Web.Migrations
                             Nome = "admin@gmail.com",
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPjcz6po6TAHLO8XXjN07iXbIlzXUTTCiyEGKjWsXfJJ6PwoFCX/nP976fz1Q+k6kg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECIbB+hs/abeLkLsY+7NjVm4pst/4Jlz/f+lYZ8OxqXuK4ynztvp3P1n6TtzQClr7g==",
                             PhoneNumber = "0000000000",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "37a8956f-d292-4249-bf89-bab743e243bf",
+                            SecurityStamp = "ebcc58b5-252e-41f8-bc84-cdeb9257a741",
                             Sexo = "Masculino",
                             Telefone = "0000000000",
                             TwoFactorEnabled = false,
@@ -400,7 +403,7 @@ namespace LeantIt.Web.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "8b57ae66-f0b1-4218-830e-d1b37276b175",
+                            UserId = "59c57002-9c30-4afc-bce1-d007f799046b",
                             RoleId = "1"
                         });
                 });
