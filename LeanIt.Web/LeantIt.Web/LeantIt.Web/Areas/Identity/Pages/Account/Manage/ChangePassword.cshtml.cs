@@ -50,6 +50,8 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
 
         public AluguelCarros Aluguel {  get; set; }
 
+        public string ImagemUrl { get; set; }
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -105,6 +107,7 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account.Manage
 
                 var pendente = _context.AlguelCarros.FirstOrDefault(aluguelSelecionado => aluguelSelecionado.User == users.Id && aluguelSelecionado.Pendente == true);
                 Aluguel = pendente;
+                ImagemUrl = users.ImagemDePerfil;
             }
 
             var userr = await _userManager.GetUserAsync(User);

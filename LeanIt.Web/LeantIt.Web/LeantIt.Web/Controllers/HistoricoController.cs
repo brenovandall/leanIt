@@ -45,6 +45,9 @@ namespace LeantIt.Web.Controllers
                 var qnt = _context.AlguelCarros.FirstOrDefault(aluguel => aluguel.User == users.Id);
                 ViewBag.Qnt = qnt;
 
+                var foto = users.ImagemDePerfil;
+                ViewBag.Foto = foto;
+
                 return View(aluguel.ToPagedList(pageNumber, pageSize));
             }
 

@@ -150,6 +150,7 @@ nav ul li:nth-child(-n+4) a {
 .pnavbar {
     font-size: 34px;
     font-weight: 500;
+    margin-left: 20px;
 }
 
 .conteudo {
@@ -204,9 +205,9 @@ nav ul li:nth-child(-n+4) a {
     cursor: pointer;
 }
 
-.caminhos a{
-    color: black;
-}
+    .caminhos a {
+        color: black;
+    }
 
 .detalhesConta {
     background-color: rgb(255, 129, 16);
@@ -228,18 +229,19 @@ nav ul li:nth-child(-n+4) a {
 
 
 .formu .enviar {
-    width: 85%;
+    
+    width: 85.2%;
     background-color: rgb(255, 129, 16);
     margin-top: 20px;
     margin-bottom: 60px;
 }
 
-    .enviar:hover {
-        background-color: rgb(255, 161, 79);
-        transition: 0.5s;
-        border: solid 2px rgb(255, 161, 79);
-        cursor: pointer;
-    }
+.enviar:hover {
+    background-color: rgb(255, 161, 79);
+    transition: 0.5s;
+    border: solid 2px rgb(255, 161, 79);
+    cursor: pointer;
+}
 
 .footer-main {
     margin-top: 5vh;
@@ -299,68 +301,53 @@ nav ul li:nth-child(-n+4) a {
 }
 
 
-.mobile-nav{
+.mobile-nav {
     display: none;
 }
 
 
-.profile-picture {
-    position: relative;
-    width: 200px;
-    height: 200px;
+.overlay {
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    /*padding: 0.7em 1.8em;*/
+    width: 17%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #fff;
+    position: fixed;
+    bottom: 40%;
+    left: 20px;
+    padding: 10px 50px;
+    z-index: 1;
+}
+
+#inputExternalImage{
+    border: none;
+}
+
+.divImg .imgPerfil {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+.divImg {
+    width: 260px;
+    height: 235px;
     border-radius: 50%;
     overflow: hidden;
-}
-
-    .profile-picture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-    .overlay #inputExternalImage {
-        color: white;
-        cursor: pointer;
-        font-size: 14px;
-        padding: 10px 20px;
-        border: 2px solid white;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-        .overlay #inputExternalImage:hover {
-            background-color: white;
-            color: black;
-        }
-
-.profile-picture:hover .overlay {
-    opacity: 1;
-}
-
-.profile-picture:hover img {
-    transform: scale(1.1);
+    margin-bottom: 10px
 }
 
 @media screen and (max-width: 800px) {
-    header{
+    header {
         display: none;
     }
+
     .mobile-nav {
         width: 90%;
         display: flex;
@@ -377,76 +364,75 @@ nav ul li:nth-child(-n+4) a {
         .logo-mobile:hover {
             cursor: pointer;
         }
-    .caminhos {
-        width: 80%;
-        cursor: pointer;
-    }
 
-    .conteudo {
-        display: flex;
-        margin-top: 30px;
-        margin-left: 18px;
+    .caminhos {
+        width: 87%;
+        cursor: pointer;
     }
 
 
     .conteudo{
-        display:block;
+        display: block;
+        margin-left: 0px
     }
 
-
-    .preencher{
+    .preencher {
         display: block;
         margin-left: 0px;
     }
 
-    .pnavbar{
+    .pnavbar {
         text-align: center;
         font-size: 20px
     }
 
-    .conteudo img{
-        display: block;
-        margin-left: 25px;
+    .divImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 220px;
         width: 80%;
+        margin-left: 42px
     }
 
-.titulo {
-    margin-top: 50px;
-    width: 90%;
-    display: block;
-    text-align: center;
-}
+    .titulo {
+        margin-top: 50px;
+        width: 90%;
+        display: block;
+        text-align: center;
+    }
 
-    .voltar{
+    .voltar {
         display: none;
     }
 
 
-/*    .informacoes{
-        width: 100%;
+    .informacoes{
+        width: 95%;
+        margin-left: 23px
     }
 
     .informacoes div{
-        width: 90%;
-    }*/
-
-.formu{
-    margin-top: 20px;
-}
-
-    .formu input {
-        width: 87%;
-        border: 2px solid rgb(255, 129, 16);
-        padding: 8px;
-        margin-bottom: 2px;
+        width: 100%;
     }
 
-    .formu .enviar {
-        width: 93%;
-        background-color: rgb(255, 129, 16);
+    .formu {
         margin-top: 20px;
-        margin-bottom: 60px;
     }
+
+        .formu input {
+            width: 87%;
+            border: 2px solid rgb(255, 129, 16);
+            padding: 8px;
+            margin-bottom: 2px;
+        }
+
+        .formu .enviar {
+            width: 92.5%;
+            background-color: rgb(255, 129, 16);
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
 
     .enviar:hover {
         background-color: rgb(255, 161, 79);
@@ -522,3 +508,42 @@ nav ul li:nth-child(-n+4) a {
     }
 }
 
+
+
+@media screen and (max-width: 280px){
+    .formu .enviar {
+        width: 95%;
+        background-color: rgb(255, 129, 16);
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+
+    .informacoes {
+        width: 91%;
+        margin-left: 21px
+    }
+
+        .informacoes div {
+            width: 100%;
+        }
+    .pnavbar {
+        text-align: center;
+        margin-left: 35px
+    }
+
+    .caminhos {
+        width: 86.5%;
+        margin-left: 21px;
+        cursor: pointer;
+    }
+
+    .divImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 220px;
+        width: 80%;
+        margin-left: 30px
+    }
+}

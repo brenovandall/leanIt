@@ -98,7 +98,13 @@
 <main>
     <div class="conteudo">
         <div>
-            <img class="imgPerfil" src="https://res.cloudinary.com/dubnbered/image/upload/v1702248124/perfil_bwxiye.png" alt="">
+            <div class="divImg">
+                <img class="imgPerfil" src="@ViewBag.Foto" alt="">
+                <input id="imageString" type="text" style="display: none" />
+            </div>
+            <div class="overlay" style="display: none">
+                <input id="inputExternalImage" type="file" placeholder="" value="">
+            </div>
             <div class="caminhos">
                 <div class="historico">
                     <i class="fa-solid fa-car"></i> <span><a asp-area="" asp-controller="Historico" asp-action="Index">Histórico de viagens</a></span>
@@ -153,13 +159,13 @@
                                             @switch (itemModel.Carro.Categoria.Descricao)
                                             {
                                                 case "Basico":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" width="240px" height="200px" alt="">
+                                                    <img class="imgCarro" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_onix_vdns5r_azgtcz.png" width="240px" height="200px" alt="">
                                                     break;
                                                 case "Carga":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" width="340px" height="200px" alt="">
+                                                    <img class="imgCarro" src="https://res.cloudinary.com/dubnbered/image/upload/v1706293153/mlp-img-top-2022-sprinter_hwhox5.png" width="340px" height="200px" alt="">
                                                     break;
                                                 case "Familia":
-                                                    <img src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" width="240px" height="200px" alt="">
+                                                    <img class="imgCarro" src="https://res.cloudinary.com/dubnbered/image/upload/v1702226094/carro_ecosport_rw5dxh_a1v2gt.png" width="240px" height="200px" alt="">
                                                     break;
                                             }
                                         </div>

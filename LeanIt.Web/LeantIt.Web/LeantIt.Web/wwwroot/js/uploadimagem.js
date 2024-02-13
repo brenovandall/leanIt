@@ -1,6 +1,9 @@
 ﻿const selectedImage = document.querySelector("#inputExternalImage");
 const image = document.querySelector("#imageString");
 
+document.querySelector('.imgPerfil').addEventListener('click', function () {
+    document.getElementById('inputExternalImage').click();
+});
 
 async function uploadImage(e) {
     console.log(e.target.files[0])

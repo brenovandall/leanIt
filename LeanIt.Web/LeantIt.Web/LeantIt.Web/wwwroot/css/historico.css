@@ -362,6 +362,44 @@ nav ul li:nth-child(-n+4) a {
     appearance: unset;
 }
 
+
+.overlay {
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    /*padding: 0.7em 1.8em;*/
+    width: 17%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #fff;
+    position: fixed;
+    bottom: 40%;
+    left: 20px;
+    padding: 10px 50px;
+    z-index: 1;
+}
+
+#inputExternalImage {
+    border: none;
+}
+
+.divImg .imgPerfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.divImg {
+    width: 260px;
+    height: 235px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
 @media screen and (max-width: 800px) {
     header {
         display: none;
@@ -385,25 +423,19 @@ nav ul li:nth-child(-n+4) a {
         }
 
     .caminhos {
-        width: 80%;
+        width: 87%;
         cursor: pointer;
     }
 
-    .conteudo {
-        display: flex;
-        margin-top: 30px;
-        margin-left: 18px;
-    }
-
 
     .conteudo {
         display: block;
+        margin-left: 0px
     }
-
 
     .preencher {
         display: block;
-        margin-left: 0px;
+        margin-left: 12px;
     }
 
     .pnavbar {
@@ -411,18 +443,13 @@ nav ul li:nth-child(-n+4) a {
         font-size: 20px
     }
 
-    .conteudo .imgPerfil {
-        display: block;
-        margin-left: 25px;
+    .divImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 220px;
         width: 80%;
-    }
-
-    .conteudo .img img{
-        display: block;
-        margin-left: 0px;
-        width: 175px;
-        height: 150px;
-        margin-top: 25px
+        margin-left: 42px
     }
 
     .titulo {
@@ -436,7 +463,6 @@ nav ul li:nth-child(-n+4) a {
         display: none;
     }
 
-
     /*    .informacoes{
         width: 100%;
     }
@@ -445,19 +471,20 @@ nav ul li:nth-child(-n+4) a {
         width: 90%;
     }*/
 
+
     .formu {
         margin-top: 20px;
     }
 
         .formu input {
-            width: 87%;
+            width: 88%;
             border: 2px solid rgb(255, 129, 16);
             padding: 8px;
             margin-bottom: 2px;
         }
 
         .formu .enviar {
-            width: 93%;
+            width: 120%;
             background-color: rgb(255, 129, 16);
             margin-top: 20px;
             margin-bottom: 60px;
@@ -559,3 +586,54 @@ nav ul li:nth-child(-n+4) a {
 
 
 
+@media screen and (max-width: 280px) {
+    .formu .enviar {
+        width: 95%;
+        background-color: rgb(255, 129, 16);
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+
+    .informacoes {
+        width: 91%;
+        margin-left: 21px
+    }
+
+        .informacoes div {
+            width: 100%;
+        }
+
+    .pnavbar {
+        text-align: center;
+        margin-left: 35px
+    }
+
+    .caminhos {
+        width: 86.5%;
+        margin-left: 21px;
+        cursor: pointer;
+    }
+
+    .divImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 220px;
+        width: 80%;
+        margin-left: 30px
+    }
+
+    .card div{
+        width: 85%
+    }
+
+    .preencher{
+        margin-left: 0px
+    }
+
+    .imgCarro {
+        width: 100%;
+        height: 150px;
+    }
+}
