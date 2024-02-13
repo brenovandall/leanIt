@@ -335,6 +335,10 @@ nav ul li:nth-child(-n+4) a {
     border-radius: 50%;
 }
 
+.divImg .imgPerfil:hover {
+    cursor: pointer;
+}
+
 .divImg {
     width: 260px;
     height: 235px;
@@ -545,5 +549,9 @@ nav ul li:nth-child(-n+4) a {
         height: 220px;
         width: 80%;
         margin-left: 30px
+    }
+
+    .divImg .imgPerfil:hover {
+        cursor: pointer;
     }
 }
