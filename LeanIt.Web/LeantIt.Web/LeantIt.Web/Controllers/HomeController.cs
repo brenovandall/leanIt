@@ -65,6 +65,13 @@ namespace LeantIt.Web.Controllers
         [HttpPost("api/chat")]
         public async Task<JsonResult> Chat(RequestApi request)
         {
+            var mensagemCompleta = await _context.RespostaChat.FirstOrDefaultAsync(x => x.Mensagem.ToUpper() == request.mensagem.ToUpper());
+            if(mensagemCompleta is not null)
+            {
+                var respostaCompleta = new ResponseApi { resposta = mensagemCompleta.Resposta };
+
+                return Json(respostaCompleta);
+            }
 
             var respostaChat = await _context.RespostaChat.FirstOrDefaultAsync(m => m.Mensagem.ToUpper().Contains(request.mensagem.ToUpper()));
 
