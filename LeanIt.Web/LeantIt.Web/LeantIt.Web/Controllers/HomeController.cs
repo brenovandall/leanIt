@@ -65,30 +65,57 @@ namespace LeantIt.Web.Controllers
         [HttpPost("api/chat")]
         public async Task<JsonResult> Chat(RequestApi request)
         {
-            var mensagemCompleta = await _context.RespostaChat.FirstOrDefaultAsync(x => x.Mensagem.ToUpper() == request.mensagem.ToUpper());
-            if(mensagemCompleta is not null)
+            Func<char, bool> isSpecialCharacter = c =>
             {
-                var respostaCompleta = new ResponseApi { resposta = mensagemCompleta.Resposta };
+                return !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c);
+            };
 
-                return Json(respostaCompleta);
-            }
+            // Crie um array com todos os caracteres especiais
+            var arrayDeCaracteresNaoAceitos = Enumerable.Range(char.MinValue, char.MaxValue)
+                .Select(c => (char)c)
+                .Where(c => isSpecialCharacter(c))
+                .Select(c => c.ToString())
+                .ToArray();
 
-            var respostaChat = await _context.RespostaChat.FirstOrDefaultAsync(m => m.Mensagem.ToUpper().Contains(request.mensagem.ToUpper()));
-
-            if (respostaChat != null)
+            if (request is not null)
             {
-                var resposta = new ResponseApi { resposta = respostaChat.Resposta };
+                foreach(var item in arrayDeCaracteresNaoAceitos)
+                {
+                    if (request.mensagem.Contains(item))
+                    {
+                        request.mensagem = request.mensagem.Replace(item, string.Empty);
+                    }
+                }
 
-                return Json(resposta);
-            }
-            else
-            {
-    
-                var resposta = new ResponseApi { resposta = "Não consigo " +
-                    "compreender sua mensagem. Tente reformular sua pergunta de forma mais clara" };
+                var mensagemCompleta = await _context.RespostaChat.FirstOrDefaultAsync(x => x.Mensagem.ToUpper() == request.mensagem.ToUpper());
+                if (mensagemCompleta is not null)
+                {
+                    var respostaCompleta = new ResponseApi { resposta = mensagemCompleta.Resposta };
 
-                return Json(resposta);
+                    return Json(respostaCompleta);
+                }
+
+                var respostaChat = await _context.RespostaChat.FirstOrDefaultAsync(m => m.Mensagem.ToUpper().Contains(request.mensagem.ToUpper()));
+
+                if (respostaChat != null)
+                {
+                    var resposta = new ResponseApi { resposta = respostaChat.Resposta };
+
+                    return Json(resposta);
+                }
+                else
+                {
+
+                    var resposta = new ResponseApi
+                    {
+                        resposta = "Não consigo " +
+                        "compreender sua mensagem. Tente reformular sua pergunta de forma mais clara"
+                    };
+
+                    return Json(resposta);
+                }
             }
+            return null;
         }
     }
 }
