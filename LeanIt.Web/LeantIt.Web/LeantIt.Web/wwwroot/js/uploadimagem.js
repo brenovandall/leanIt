@@ -11,7 +11,7 @@ async function uploadImage(e) {
     let data = new FormData();
     data.append('imagem', e.target.files[0]);
 
-    await fetch('https://localhost:7042/api/ImagensCloud/carregar', {
+    await fetch('/api/ImagensCloud/carregar', {
         method: 'POST',
         headers: {
             'Accept': '*/*',
