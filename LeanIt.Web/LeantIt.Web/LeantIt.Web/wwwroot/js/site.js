@@ -53,3 +53,14 @@ searchBox.addListener('places_changed', function () {
     // Update the map with the new location
     map.setCenter(selectedPlace.geometry.location);
 });
+
+function fecharAlerta() {
+    document.getElementById("alerta").style.display = "none";
+    localStorage.setItem("alertaFechado", "true");
+}
+
+window.onload = function () {
+    if (localStorage.getItem("alertaFechado")) {
+        document.getElementById("alerta").style.display = "none";
+    }
+};
