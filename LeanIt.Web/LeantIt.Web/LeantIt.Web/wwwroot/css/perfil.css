@@ -394,7 +394,7 @@ nav ul li:nth-child(-n+4) a {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 220px;
+        height: 320px;
         width: 80%;
         margin-left: 42px
     }
@@ -546,7 +546,7 @@ nav ul li:nth-child(-n+4) a {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 220px;
+        height: 320px;
         width: 80%;
         margin-left: 30px
     }
