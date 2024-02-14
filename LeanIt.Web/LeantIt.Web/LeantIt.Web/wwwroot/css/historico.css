@@ -471,7 +471,9 @@ nav ul li:nth-child(-n+4) a {
         width: 90%;
     }*/
 
-
+    #carroCarga{
+        width: 122%
+    }
     .formu {
         margin-top: 20px;
     }
@@ -538,6 +540,11 @@ nav ul li:nth-child(-n+4) a {
         font-weight: 700;
         margin-bottom: 10px;
         margin-top: 2vh;
+    }
+
+    .imgCarro {
+        width: 114%;
+        height: 150px;
     }
 
     footer p {
