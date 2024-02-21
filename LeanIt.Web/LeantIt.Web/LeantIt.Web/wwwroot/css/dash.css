@@ -32,6 +32,10 @@ header {
 #map {
 }
 
+#logout {
+    cursor: pointer;
+}
+
 header nav {
     position: absolute;
     top: 0;

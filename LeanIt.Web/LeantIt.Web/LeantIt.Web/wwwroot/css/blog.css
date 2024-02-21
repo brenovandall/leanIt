@@ -226,6 +226,10 @@ main {
     margin-top: 40px;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 
 /*FOOTER*/
 

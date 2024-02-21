@@ -528,6 +528,10 @@ main {
     display: none;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1025px) {
     .mobile-nav {
         width: 90%;

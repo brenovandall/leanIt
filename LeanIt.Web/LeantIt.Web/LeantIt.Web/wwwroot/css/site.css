@@ -18,6 +18,10 @@ header {
     z-index: 1;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 .logo {
     margin: 7vh 0 0 10vh;
     width: 20vh;
