@@ -1,0 +1,418 @@
+﻿:root {
+    --corUm: #fb8314; /* Cor Laranja */
+    --corDois: #1c1c1c; /* Cor Cinza Escuro */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Aqui é o header da página de serviços */
+header {
+    width: 100%;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin: 7vh 0 0 10vh;
+    width: 20vh;
+    height: 5vh;
+}
+
+/* Começo da estilização do navbar */
+header nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav ul {
+    margin: 0 10vh 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+    nav ul li {
+        list-style: none;
+        margin: 7vh 0 0 0;
+        padding: 1vh 4vh;
+    }
+
+        nav ul li a {
+            color: rgb(26, 26, 26);
+            text-decoration: none;
+            font-size: 1.0rem;
+            letter-spacing: 2px;
+            font-family: 'Poppins';
+            transition: 0.5s all;
+            border: transparent;
+        }
+
+
+.button-home {
+    color: rgb(255, 129, 16);
+}
+
+.button-do-register {
+    background-color: rgb(255, 129, 16);
+    color: white;
+    padding: 7px 11px;
+    transition: 0.5s background;
+}
+
+    .button-do-register:hover {
+        background-color: rgb(26, 26, 26);
+    }
+
+nav ul li:nth-child(-n+3) a {
+    transition: 0.6s border;
+}
+
+    nav ul li:nth-child(-n+3) a:hover {
+        border-bottom: 1px solid rgb(26, 26, 26);
+    }
+
+.nav-item {
+    position: relative;
+}
+
+    .nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+
+/* Aqui é o menu dropdown com as opções de administrador */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 180px;
+    padding-top: 10px;
+    left: 0;
+    background-color: #F3F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 170px;
+    margin-left: -28px;
+}
+
+.dropdown-menu li {
+    margin-top: -10px;
+    width: 100%;
+    padding: 0px;
+}
+
+    .dropdown-menu li a {
+        /*margin-left: -10px*/
+    }
+
+.dropdown-menu li {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    .dropdown-menu li a {
+        color: #555;
+    }
+
+    .dropdown-menu li .add {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dropdown-menu li .listando {
+        display: inline-block;
+    }
+
+
+/* Aqui começa a estilização do article */
+.article-description {
+    width: 98vh;
+    text-align: center;
+    margin: auto;
+    margin-top: 5vh;
+    font-weight: 200;
+}
+
+.paragraph-welcome {
+    font-size: 1.1rem;
+    font-family: 'Poppins';
+}
+
+.article-description h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3vh;
+}
+
+.destaque-title {
+    color: rgb(255, 129, 16);
+    width: 1vw;
+}
+
+/*gradient*/
+
+.gradient {
+    height: 3vw;
+    background-image: linear-gradient(to bottom, white, rgb(235, 235, 235));
+}
+
+/* main */
+
+main {
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    color: black;
+}
+
+.TituloLeanIt {
+    font-size: 2.5rem;
+}
+
+.mainSection {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+.introEquipe p {
+    line-height: 1.8rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.mainSection h2 {
+    padding: 20px;
+}
+
+.introEquipe {
+    margin: auto;
+    text-align: center;
+}
+
+    .introEquipe img {
+        height: 40vw;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+.equipeFoto {
+    background-image: url(https://res.cloudinary.com/dubnbered/image/upload/v1708540508/IMG-20240206-WA0006_mmcsb7.jpg);
+    width: 100%;
+    height: 50vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.divFoto{
+    padding-bottom: 50px;
+}
+
+.turmaTitulo {
+    margin-top: 40px;
+}
+
+
+/*FOOTER*/
+
+.footer-main {
+    background-color: rgb(255, 129, 16);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-about, .footer-extra, .footer-contact {
+    width: 20%;
+    color: rgb(26, 26, 26);
+}
+
+.footer-extra {
+    margin-bottom: 3vh;
+}
+
+.footer-main a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+    .footer-main a:hover {
+        color: white;
+    }
+
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2vh;
+}
+
+.footer-about i {
+    color: white;
+    font-size: 3vh;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+
+.footer-contact i {
+    color: white;
+    margin-right: 1vh;
+}
+
+.footer-copyright {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.8vh;
+    background-color: white;
+}
+
+.footer-about a {
+    display: inline-block;
+    margin-right: 1vh;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media screen and (max-width: 1025px) {
+    .mobile-nav {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .logo-mobile {
+        width: 90px;
+        height: 3vh;
+    }
+
+        .logo-mobile:hover {
+            cursor: pointer;
+        }
+
+    .logo {
+        display: none;
+    }
+
+    header {
+        padding: 0px;
+        margin: 0px;
+        height: 5vh;
+    }
+
+    .article-description {
+        width: 94vw;
+        margin-left: 0px;
+    }
+
+        .article-description h1 {
+            width: 100vw;
+            margin: 0px;
+            font-size: 25px;
+        }
+
+    .paragraph-welcome {
+        font-size: 10px;
+    }
+
+    .line-style-orange {
+        margin-top: 20px;
+        width: 115px;
+        height: 20px;
+    }
+
+    .paragraph-description {
+        width: 100%;
+        font-size: 15px;
+        padding-right: 3vw;
+        padding-left: 3vw;
+    }
+
+    .navbar-desktop {
+        display: none;
+    }
+
+    .footer-about {
+        width: 100%;
+    }
+
+    .footer-title {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-about a {
+        display: inline-block;
+        margin-right: 0vh;
+    }
+
+    .footer-about, .footer-extra, .footer-contact {
+        width: 100%;
+        color: rgb(26, 26, 26);
+    }
+
+    .footer-extra {
+        margin-bottom: 3vh;
+    }
+
+    .footer-main a {
+        color: rgb(26, 26, 26);
+        text-decoration: none;
+    }
+
+        .footer-main a:hover {
+            color: white;
+        }
+
+    .footer-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 2vh;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .footer-about i {
+        color: white;
+        font-size: 3vh;
+        margin-left: 4%;
+        margin-top: 10px;
+    }
+
+    .footer-contact i {
+        color: white;
+        margin-right: 1vh;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
+}
