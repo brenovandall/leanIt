@@ -28,6 +28,10 @@ header nav {
     height: 100%;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 nav ul {
     margin: 0 10vh 0 0;
     padding: 0;

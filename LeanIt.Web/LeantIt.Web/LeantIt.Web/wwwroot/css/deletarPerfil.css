@@ -30,6 +30,10 @@ button {
     visibility: hidden;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 800px) {
     p{
