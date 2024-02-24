@@ -196,7 +196,7 @@ nav ul li:nth-child(-n+4) a {
     display: flex;
     justify-content: space-between; 
     margin-left: 55px;
-    width: 84%;
+    width: 93%;
 }
 
 .informacoesPessoais div{
@@ -219,7 +219,7 @@ nav ul li:nth-child(-n+4) a {
     display: flex;
     justify-content: space-between;
     margin-left: 55px;
-    width: 84.3%;
+    width: 96%;
 }
 
     .informacoes2 div {
@@ -254,7 +254,7 @@ nav ul li:nth-child(-n+4) a {
 .senhas {
     display: flex;
     margin-left: 55px;
-    width: 84%;
+    width: 93%;
 }
 
     .senhas div {

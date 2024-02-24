@@ -172,7 +172,7 @@ nav ul li:nth-child(-n+4) a {
     padding-bottom: 5px;
     padding-top: 5px;
     padding-left: 7px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 
@@ -194,7 +194,7 @@ nav ul li:nth-child(-n+4) a {
 }
 
 .botao-entrar {
-    margin-top: 20px;
+    margin-top: 3.1px;
     width: 500px;
     background-color: #fb8314;
     border: none;
