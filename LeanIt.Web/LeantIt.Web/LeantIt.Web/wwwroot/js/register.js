@@ -1,4 +1,25 @@
-﻿function validaCPF() {
+﻿document.getElementById("check").addEventListener("click", () => {
+    var a = document.getElementsByName("marcado")
+
+    for (let i = 0; i < a.length; i++) {
+
+        if (a[i].checked) {
+            document.querySelector(".botaoCadastro").removeAttribute("disabled")
+            document.querySelector(".botaoCadastro").style.cursor = "pointer"
+        }
+        else {
+            document.querySelector(".botaoCadastro").setAttribute("disabled", true)
+            document.querySelector(".botaoCadastro").style.cursor = "not-allowed"
+        }
+    }
+}) 
+
+
+
+
+
+
+function validaCPF() {
     let cpfInput = document.querySelector('#cpfCadastro');
     let cpf = cpfInput.value.replace(/\D/g, '');
 

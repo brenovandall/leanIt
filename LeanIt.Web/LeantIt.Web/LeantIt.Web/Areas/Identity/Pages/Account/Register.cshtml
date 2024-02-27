@@ -132,8 +132,12 @@
             </div>
         }
     </div>
+    <div class="senhas marcadorTermo">
+        <input type="checkbox" id="check" name="marcado">
+        <label> Eu concordo com os <a asp-action="Index" asp-controller="Termos" asp-area="" style="color: #ff8110">Termos de Uso</a> e <a asp-action="Index" asp-controller="Termos" asp-area="" style="color: #ff8110">Política de Privacidade</a></label>
+    </div>
     <div class="confirmarCadastro">
-        <button class="botaoCadastro" type="submit">Cadastre-se</button>
+        <button class="botaoCadastro" type="submit" disabled>Cadastre-se</button>
         @if (Model.Aluguel == null)
         {
             <a class="voltarLogin" asp-area="Identity" asp-page="/Account/Login">Voltar para o login</a>
