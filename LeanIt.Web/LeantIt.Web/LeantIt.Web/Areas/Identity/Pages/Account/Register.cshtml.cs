@@ -120,9 +120,15 @@ namespace LeantIt.Web.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "As credenciais devem ser iguais")]
             public string ConfirmPassword { get; set; }
 
+            [Required(ErrorMessage = "Este campo deve ser preenchido")]
+            [MinLength(11, ErrorMessage = "A CNH deve ter no mínimo 11 caracteres")]
+            [MaxLength(11, ErrorMessage = "A CNH deve ter no máximo 11 caracteres")]
             [Display(Name = "Digite a CNH")]
             public string CNH { get; set; }
 
+            [Required(ErrorMessage = "Este campo deve ser preenchido")]
+            [MinLength(14, ErrorMessage = "O CPF deve ter no mínimo 11 caracteres")]
+            [MaxLength(14, ErrorMessage = "O CPF deve ter no máximo 11 caracteres")]
             [Display(Name = "Digite a CPF")]
             public string CPF { get; set; }
 
