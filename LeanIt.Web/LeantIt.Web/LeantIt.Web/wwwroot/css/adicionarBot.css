@@ -212,7 +212,7 @@ nav ul li:nth-child(-n+4) a {
 /*FOOTER*/
 
 .footer-main {
-    margin-top: 5vh;
+    margin-top: 20vh;
     background-color: rgb(255, 129, 16);
     display: flex;
     justify-content: space-around;
